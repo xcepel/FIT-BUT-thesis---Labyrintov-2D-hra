@@ -17,7 +17,10 @@
 \todo{Dopsat}
 
 \section{Labyrintové hry}
-\todo{Dopsat}
+\todo{Dopsat - obecne princip}
+\subsection*{PacMan}
+\subsection*{Pixel Dungeon?}
+\url{https://en.wikipedia.org/wiki/List_of_maze_video_games}
 
 \section{Herní engine}
 Herní engine (také game engine) je softwarový framework využívaný pro tvorbu a vývoj (nejen) videoher. Nabízí mnoho nástrojů pro zjednodušení tvůrčího procesu, jako jsou například podpůrné programy, knihovny, a některé poskytují i speciální programovací jazyky vytvořené specificky pro programovaní her v daném engine~\cite{Valencia-Garcia_2016}. V následující části textu jsou popsány a uvedeny některé příklady z nejpopulárnějších herních enginů (viz obrázek~\ref{fig:most_popular_game_engines}).
@@ -38,7 +41,7 @@ Unity je hojně využívána na vývoj AAA (také Triple-A hry, neboli produkt o
 \subsection*{Unreal Engine}\label{Unreal Engine}
 Unreal Engine je série herních engine, s nejnovější verzí Unreal Engine 5 z roku 2022, od společnosti Epic Games. První verze byla vytvořena pro tvorbu Unreal, 3D střílečky z pohledu první osoby, a byla velmi populární, jelikož díky UnrealScriptu (založeném na C++) mohli uživatele jednoduše původní hru modifikovat~\cite{sanders2016introduction}. Novější verze využívají klasické C++. Podobně jako Unity, nabízí bezplatnou i placenou verzi. Je také multiplatformní, ale podporuje menší škálu platforem než Unity\,--\,základní (Windows, Linux, PlayStation, Nintendo Switch, Xbox), ale podporuje~\cite{unreal_engine}.
 
-V porovnání s dalšími zástupci herních engine je hodnocen jako jeden ze složitějších~\cite{Kevuru_Games_Unreal-Unity}. Díky své komplikovanější stavbě a strmé křivce učení práce s Unreal Engine je doporučován spíše na větší, komplikovanější projekty, než například na mobilní hry (i přestože podporuje vývoj her na Android)~\cite{cap_porovnani}. Unreal Engine 5 je zaměřený hlavně na 3D vývoj a proto přišel s mnoha funkcemi pro vylepšení vykreslování a práci s trojdimenzionálními objekty - jsou to Nanite (vizuální geometrický systém), Lumen (vylepšená práce se světlem) a MetaSounds (managment audia)~\cite{UnrealEngine5}.
+V porovnání s dalšími zástupci herních engine je hodnocen jako jeden ze složitějších. Díky své komplikovanější stavbě a strmé křivce učení práce s Unreal Engine je doporučován spíše na větší, komplikovanější projekty, než například na mobilní hry (i přestože podporuje vývoj her na Android)~\cite{Kevuru_Games_Unreal-Unity}. Unreal Engine 5 je zaměřený hlavně na 3D vývoj a proto přišel s mnoha funkcemi pro vylepšení vykreslování a práci s trojdimenzionálními objekty - jsou to Nanite (vizuální geometrický systém), Lumen (vylepšená práce se světlem) a MetaSounds (managment audia)~\cite{UnrealEngine5}.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth]{obrazky-figures/ch2/fortnite.png}
@@ -119,8 +122,31 @@ Stephen Wolfram ve své knize \textit{A New Kind of Science}~\cite{wolfram-NewKi
 
 Některé celulární automaty lze označovat také jako \textbf{reverzibilní}. Ty jsou definované jako systémy, které neztrácí informaci při svém vývoji v čase - což znamená, že v každém okamžiku lze otočit vývoj času a navrátit se k předchozím stavům~\cite{ims}. Kvůli jejích chaotickému chování nejsou CA 4. třídy nikdy reverzibilní.
 
-\subsection*{Historie - Game of Life}
-\todo{Game of Life}
+\subsection*{Historie a Game of Life}
+Za vznikem celulárních automatů stáli ve 40. letech 20. století matematici John von Neumann a Stanisław Ulam. Ulam studoval růst krystalů pomocí jednoduché mřížky~\cite{pickover2009math} a Neumann řešil modely samoreprodukujících se organismů~\cite{history_CA}. Ulam Neumannovi navrhl využití diskrétního systému~\cite{schiff2011cellular} s buňkami, které se mění po jednotlivých krocích/iteracích. Na základě dalšího výzkumu došli k vyvinutí základů CA a John von Neumann následně sepsal knihu \textit{Theory of Self-Reproducing Automata}, kde detailně, spolu s důkazi o jeho možné existenci, popisuje jeden z prvních CA, \textit{von Neumannův univerzální konstruktor}~\cite{theory_neumann} který funguje jako univerzální kopírka, jak je vidět na obrázku~\ref{fig:universal_constructor}.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{obrazky-figures/ch2/universal_constructor.png}\hspace{0.5cm}
+    \caption{Ukázka von Neumannova univerzálního konstruktoru.}
+    \label{fig:universal_constructor}
+\end{figure}
+\todo{toto je obrázek z wikipedie můžu ho ocitovat/vůbec ho tam dávat? jiný lepší se mi nepovedlo najít}
+
+Dalším z důležitých matematiků pro vývoj CA byl John Conway, který v roce 1970 vytvořil pravidla pro \textbf{Game of Life}~\cite{history_CA}, celulární automat na 2D mřížce s buňkami nabývajících 2 stavů\,--\, živá, mrtvá, využívající Moorovo okolí o 8 sousedech (viz obrázek~\ref{fig:2D-okoli}). Pravidly jsou~\cite{Game_Of_Life}:
+\begin{itemize}
+    \item pokud živá buňka sousedí s 2 nebo 3 živými sousedy přežívá do další generace,
+    \item neživá buňka, která má přesně 3 živé sousedy oživne,
+    \item zbytek buněk do další generace nepřežívá a stává se mrtvými.
+\end{itemize}
+I přes svoji jednoduchost tento systém nabývá klasifikace 4. třídy, tedy projevuje náhodnost, ale zároveň se v jeho generacích objevují struktury, které vykazují rozmanité vlastnosti a dodávající systému částečný řád. Jedním z těchto struktur, je takzvaný kluzák (anglicky \textit{glider}), který se postupem iterací pohybuje po mřížce~\cite{Game_Of_Life}. Ilustraci jeho pohybu je možné vidět na obrázku~\ref{fig:game_of_life}.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{obrazky-figures/ch2/GameOfLife.png}
+    \caption{Pohyb kluzáku/glideru v CA Game of Life.}
+    \label{fig:game_of_life}
+\end{figure}
+
+Posledním, zde zmíněným, důležitým vědcem v historii CA byl Stephen Wolfram, který, jak již bylo zmíněno, ve své knize \textit{A New Kind of Science}~\cite{wolfram-NewKindOfScience} popsal 4 třídy pro klasifikování celulárních automatů a to podle jejich vztahům k druhému na základě fyzikálního zákonu zachování hmotnosti.
 
 \subsection*{Využití celulárních automatů ve hrách}
 Jedním z využití CA obsahují hry \uv{padajícího písku}, neboli \textit{Falling-sand games/simulators}. Tyto hry jsou nejčastěji 2D, sandboxové (= podporující kreativitu), jsou založeny například na blokovému/rozdělujícímu celulárnímu automatu, které mohou simulovat reálnou fyziku, jelikož jsou reverzibilní a dodržují fyzikální zákon zachování hmot~\cite{schiff2011cellular}. Nejjednodušší okolí využívané na vyhodnocení těchto CA je Margolusovo (viz obrázek~\ref{fig:Margolus})\,--\,2D mřížka je rozdělena na 2x2 čtverce, které se každou generaci posouvají diagonálně o jednu buňku~\cite{schiff2011cellular} (okolí v čase t se tedy skládá ze všech buněk, které se nacházejí v bloku v aktuálním čase).
@@ -183,7 +209,7 @@ Algoritmus funguje na několika jednoduchých principech, s nimiž je možné r�
 \end{itemize}
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.3\textwidth]{obrazky-figures/ch2/cave.png}
+    \includegraphics[width=0.4\textwidth]{obrazky-figures/ch2/cave.png}
     \caption{Příklad algoritmu generování jeskyní s využitím Moorova okolí,	deathLimit = 3, birthLimit = 4.}
     \label{fig:cave}
 \end{figure}
@@ -199,8 +225,13 @@ Také je možné využít algoritmy, generující strukturu podobnou bludišti. 
 
 \section{Grafové algoritmy}
     \todo{Dopsat - takove to na rozdelení do grup/nalezeni nejkratsi cesty (viz IZU)}
+    
 \section{Prohledávání stavového prostoru}
-    \todo{Dopsat - BFS,~\ldots (z IZU)}
+    \todo{obecne - co je to stavovy prostor}
+\subsection*{Neinformované metody}
+\todo{BFS, DFS + omezeni, iterativni, ... (IZU)}
+\subsection*{Informované metody}
+\todo{(IZU)}
 
 %===KONCEPT====
 \chapter{Koncept 2D labyrintové hry}
