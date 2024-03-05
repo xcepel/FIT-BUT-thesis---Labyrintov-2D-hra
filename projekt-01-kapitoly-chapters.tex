@@ -5,11 +5,16 @@
 % Pro kompilaci po částech (viz projekt.tex), nutno odkomentovat a upravit
 %\documentclass[../projekt.tex]{subfiles}
 %\begin{document}
-%===UVOD====
+
+%===---------------====
+% UVOD
+%===---------------====
 \chapter{Úvod}
 \todo{Dopsat - az na konci}
 
-%===TEORIE====
+%===---------------====
+% TEORIE
+%===---------------====
 \chapter{Aspekty vývoje  videoher}
 \todo{popsat aspekty}
 
@@ -112,7 +117,7 @@ Některá pravidla mohou mít i vlastnosti udávající typ pravidlu, které def
 \end{itemize}
 
 \subsection*{Klasifikace}
-Stephen Wolfram ve své knize \textit{A New Kind of Science}~\cite{wolfram-NewKindOfScience} definoval 4 třídy pro dělní CA, kterými jsou:
+Stephen Wolfram ve své knize \textit{A New Kind of Science}~\cite{wolfram-NewKindOfScience} definoval 4 třídy pro dělní CA, vypsané níže.
 \begin{enumerate}
     \item Téměř všechny počáteční vzory CA se po konečném počtu kroků dostanou do 1 stabilního, homogenního stavu. Zmizí jakákoliv náhodnost v počátečním vzoru.
     \item Téměř všechny počáteční vzory CA se vyvinou do periodicky se opakujících (oscilujících) struktur/stavů nebo zůstane stabilně v některém ze stavů.
@@ -219,7 +224,7 @@ Také je možné využít algoritmy, generující strukturu podobnou bludišti. 
     \centering
     \includegraphics[width=0.40\textwidth]{obrazky-figures/ch2/OCA:Maze.png}\hspace{0.5cm}
     \includegraphics[width=0.40\textwidth]{obrazky-figures/ch2/Mazectric.png}
-    \caption{Porovnání výsledků CA OCA:Maze a Mazectric.}
+    \caption{Porovnání výsledků CA OCA:Maze (vlevo) a Mazectric (vpravo).}
     \label{fig:OCA:Maze}
 \end{figure}
 
@@ -227,13 +232,48 @@ Také je možné využít algoritmy, generující strukturu podobnou bludišti. 
     \todo{Dopsat - takove to na rozdelení do grup/nalezeni nejkratsi cesty (viz IZU)}
     
 \section{Prohledávání stavového prostoru}
-    \todo{obecne - co je to stavovy prostor}
-\subsection*{Neinformované metody}
-\todo{BFS, DFS + omezeni, iterativni, ... (IZU)}
-\subsection*{Informované metody}
-\todo{(IZU)}
+Stavový prostor (anglicky \textit{State space}), využívaný na řešení úloh, lze v informatice popsat jako orientovaný graf, v němž jeho uzly reprezentují stavy, a hrany reprezentují operátory, či stavové přechody~\cite{State-Space_Search}. Formálně je možné stavový prostor a jeho aktuální řešenou úlohu zapsat jakožto čtveřici (S, O, $S_0$, G), jejíž prvky zde definovat jako~\cite{izu}:
+\begin{itemize}
+    \item S je množina všech možných stavů,
+    \item O je množina všech přechodů mezi stavy/operátorů, kterými lze měnit stavy,
+    \item $S_0$ je počáteční stav řešené úlohy, $s_0 \in S$,
+    \item G je neprázdná podmnožina S cílových stavů úlohy.
+\end{itemize}
+Úlohy lze řešit díky neinformovaným/slepým metodám, nebo informovaným metodám, které jsou popsány níže. 
 
-%===KONCEPT====
+\subsection*{Neinformované metody}
+Nazývají se neinformovanými, neboli slepými, jelikož nemají žádné informace o umístění cíle. Což znamená, že tyto vyhledávající metody systematicky prohledávají stavový prostor, dokud nenajdou zadaný hledaný výsledek~\cite{poole2023artificial}. Níže v textu jsou popsány některé příklady metod tohoto typu.
+
+\subsubsection*{\textbullet Metoda slepého prohledávání do šířky (BFS)}
+Metoda funguje na principu fronty FIFO (\textit{= first-in, first-out}) do které postupně zapisuje uzly, které jsou objeveny, ale neprohledány~\cite{poole2023artificial}. Prohledávání začíná v kořeni, neboli startovním uzlu, a postupně po úrovních, prochází prvně sousedy kořene, následně sousedy jeho sousedů,~\ldots dokud nedojde k cíli (zadaný hledaný uzel), od kterého navrátí nejkratší cestu až ke kořeni~\cite{Introduction_to_Algorithms}, či dokud neprohledá neúspěšně celý prostor. Výsledek prohledávání je možné vidět vlevo na obrázku~\ref{fig:BFS_DFS}
+
+Časová složitost je \(O_{DFS} = |V| + |E|\), kde \(|V|\) je součet počtu uzlů a \(|E|\) je počet hran~\cite{CS225BFSDFS}.
+
+\subsubsection*{\textbullet Metoda slepého prohledávání do hloubky (DFS)}
+Metoda pracující se zásobníkem LIFO (\textit{= lirst-in, first-out}), jenž využívá k \textit{backtrackingu}, neboli navrácení~\cite{poole2023artificial}. Stejně jako BFS začíná v kořeni, od kterého ale jde do hloubky. To znamená, že vybere jeden neprozkoumaný  synovský sousední uzel, u kterého vybere jeho neprozkoumaný synovský sousední uzel a takto pokračuje, dokud nedorazí na \uv{dno}, tedy do místa, kde už nemůže pokračovat hlouběji do dalších sousedů\,--\, v tomto případě se pomoci, již zmíněného, \textit{backtrackingu} navrátí k nejbližšímu otcovskému sousedovi, u kterého ještě nebyly prozkoumány všechny sousedské uzly a prohledává dál~\cite{Introduction_to_Algorithms}. Toto pokračuje, dokud nenajde hledaný cílový uzel, nebo dokud neprojde celý prostor bez nalezení cíle. Ukázka průchodu stromem je v pravé části obrázku~\ref{fig:BFS_DFS}
+
+Stejně jako u BFS, časová složitost je \(O_{DFS} = |V| + |E|\), kde \(|V|\) je součet počtu uzlů a \(|E|\) je počet hran~\cite{CS225BFSDFS}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.40\textwidth]{obrazky-figures/ch2/BFS.png}\hspace{1.5cm}
+    \includegraphics[width=0.40\textwidth]{obrazky-figures/ch2/DFS.png}
+    \caption{Porovnání metod prohledávání stavového prostoru BFS (vlevo) a DFS (vpravo).}
+    \label{fig:BFS_DFS}
+\end{figure}
+
+\subsubsection*{\textbullet Metoda postupného zanořování do hloubky (IDS)}
+Tato metoda je kombinací BFS a DFS, což znamená, že prohledávání funguje stejně jako u DFS s výjimkou, že algoritmus postupuje po úrovních a postupně zvyšuje limit hloubky~\cite{poole2023artificial}. Tedy při první iteraci prohledává hloubkově pouze první úroveň, poté co je celá prohledaná postupuje na druhou iteraci, při které už vstupuje i do druhé,~\ldots dokud nenajde cíl, či nevyčerpá celý stavový prostor. 
+
+IDS se využívá pokud nemůžeme stanovit hloubku řešení a jeho časová složitost je \(O_{IDS}(b^{d})\), kde \(b\) je faktor větvení (průměrný počet následovníků uzlu) a \(d\) hloubku optimálního řešení~\cite{izu}.
+
+
+\subsection*{Informované metody}
+\todo{(Usporadane prohledavani x lokalni prohledavani?)}
+
+%===---------------====
+% KONCEPT
+%===---------------====
 \chapter{Koncept 2D labyrintové hry}
 \todo{Dopsat - popsat koncept typu her obecně (pravidla labyrintových her,..)}
 
@@ -245,7 +285,9 @@ Také je možné využít algoritmy, generující strukturu podobnou bludišti. 
 \section{Uživatelské rozhraní}
 \todo{Dopsat}
 
-%===IMPLEMENTACE====
+%===---------------====
+% IMPLEMENTACE
+%===---------------====
 \chapter{Implementace 2D labyrintové hry} % TODO NECO KONKRETNEJSIHO
 \todo{Dopsat}
 \section{Generování mapy}
@@ -253,14 +295,18 @@ Také je možné využít algoritmy, generující strukturu podobnou bludišti. 
 \section{Umístění postavy} % start + cil
 \section{Experimenty s generováním map pomocí CA} % statistiky, proc jsem vybrala dany postup
 
-%===TESTOVANI====
+%===---------------====
+% TESTOVANI
+%===---------------====
 \chapter{Uživatelské testování}
 \todo{Dopsat}
 \section{Dotazník}
 \section{Analýza výsledků}
 \section{Závěr testování}
 
-%===ZAVER====
+%===---------------====
+% ZAVER
+%===---------------====
 \chapter{Závěr}
 \todo{Dopsat - az na konci}
 %===============================================================================
