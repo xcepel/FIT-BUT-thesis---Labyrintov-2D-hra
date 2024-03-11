@@ -22,10 +22,52 @@
 \todo{Dopsat}
 
 \section{Labyrintové hry}
-\todo{Dopsat - obecne princip}
-\subsection*{PacMan}
-\subsection*{Pixel Dungeon?}
-\url{https://en.wikipedia.org/wiki/List_of_maze_video_games}
+Dle Akademického slovníku současné češtiny~\cite{AkademickySlovnik-Bludiste} je bludiště, neboli labyrint, definováno jako \uv{místo, kde se bloudí} a \uv{složitý, neuspořádaný systém}. Bludiště jsou multikurzální, je to tedy spleť cest, chodeb a prostor, kde se snadno zabloudí a jsou definovaná slepými konci a větvícími chodbami, kvůli kterým je procházející nucen se rozhodovat.
+
+Andrew Rollings a Ernest Adams definují bludiště ve hrách jako prostředí, kde každé místo vypadá stejně, nebo velmi podobně a hráč musí zjistit jak jsou místa propojená, často jejím procházením, aby našel cestu ven~\cite{rollings2003andrew}. Tyto hry jsou často doplněné o i nějaké výzvy, než pouze procházení bludištěm, kterými, dle stejných autorů~\cite{rollings2003andrew}, může být například hledání klíče k otevření zamknutích dveří, sbírání věcí (např. pro zvýšení skóre), řešení hádanek, paměťových testů, luštění kryptických zpráv, \ldots
+
+V 80. letech 20. století měli hry s tématem bludiště největší rozmach, hlavně kvůli rozšíření domácích konzolí (např. Atari 2600), a díky jejich množství a rozmanitosti je lze rozdělit na 4 typy~\cite{DoYouMaze}:
+\begin{itemize}
+    \item bludiště s pohledem z vrchu\,--\,při hraní je vidět celé (či skoro celé) bludiště z vrchu (Mouse in the Maze, Bomberman),
+    \item bludiště z prvního pohledu\,--\,stejný pohled na hru, jako herní postavička (Maze/Maze War, Capture the Flag)
+    \item pronásledování bludištěm\,--\,hráč je pronásledován, či může pronásledovat nepřátele; tento typ je propojen s různými styly pohledu na bludiště (Pac-Man, Rally-X, Lady Bug),
+    \item bludiště s obsazováním políček mřížky\,--\,hráč při průchodu bludištěm musí zabrat co nejvíce políček (Amidar).
+\end{itemize}
+
+Dále v textu se nachází příklady různých důležitých labyrintových her vytvořených v průběhu historie.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{obrazky-figures/ch2/MOUSE.png}
+	\caption{Ukázka ze hry Mouse in the Maze.~\cite{Videogamehistorian}}
+	\label{fig:mouse}
+\end{figure}
+
+\subsection*{Mouse in the Maze}
+První labyrintovou hrou byla hra s názvem \textit{MOUSE}, nebo také \textit{Mouse in the Maze}, naprogramovaná roku 1959  Douglasem T. Rossem a John E. Wardem na sálovém počítači TX-0~\cite{TheOriginOfSpacewar}. 
+
+Hráč dostal 8x8 mřížku a následně mohl světelným perem odmazat zdi a přidat sýr(y) (či v upravené verzi martini) a následně sledovat myš procházející bludiště, kde si pamatovala již prošlé cesty, a hledající sýr, který musela najít než se vyčerpala~\cite{Videogamehistorian}. Ukázka ze hry je zobrazena na obrázku~\ref{fig:mouse}, ze kterého je vidět, že hra je bludiště s pohledem z vrchu.
+
+\subsection*{Maze/Maze War}
+3D labyrintová pronásledující střílecí hra z roku 1974 vyvinutá studenty MIT~\cite{Maze_War}. Byla to průlomová hra, nabízející nejen iluzi 3D grafiky, ale i podporou hraní až pro 8 hráčů, či nehráčské boty a byla nejspíše jednou z prvních, či možná i první střílecí hrou~\cite{virtual_worlds}. Později byla hra díky využití TCP/IP protokolu, díky kterému hráči mohli hrát mezi sebou po internetu, průkopníkem i v online hrách~\cite{Maze_War}.
+
+Úkolem hráčů, hrající jako avatar oční bulvy, bylo projít bludiště (kde mohli chodit pouze dozadu, dopředu a otáčet se o 90° vpravo, či vlevo), najít nepřátele a postřílet je, čímž sbírali skóre~\cite{Maze_War}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{obrazky-figures/ch2/pacman.png}
+	\caption{Ukázka ze hry Pac-Man.~\cite{von2007space}}
+	\label{fig:pacman}
+\end{figure}
+
+\subsection*{Pac-Man}
+Japonská arkádová hra od společnosti Namco (dnes Bandai Namco Entertainment) vyšla původně v roce 1980 pod jménem Puck-Man (kvůli jeho tvaru puku, jméno ale bylo pro USA změněno, kvůli strachu z vandalů~\cite{kent2010ultimate}) a po svém vydání v USA to byl okamžitý hit\,--\,v 1 roce se prodalo více než 100 000 arkádových automatů s touto hrou~\cite{PACMAN}. Hitem byly i další hry z rychle rostoucí série Pac-Man. Roku 1981 vyšla Ms. PAC-MAN, jenž získala několik nových herních prvků, jako například více bludišť (oproti pouze 1, které nabízel originál) či náhodnější nepřátele\,--\,po svém vydání prodala i tato hra v USA více než 100 000 automatů, což žádná jiná hra v USA nedokázala~\cite{kent2010ultimate}.
+
+Pac-Man je hra založena na principu pronásledování hráče nepřáteli bludištěm~\cite{kent2010ultimate}, jak je vidět na obrázku~\ref{fig:pacman}. Hráč má za úkol projít bludiště a sebrat všechny tečky na zemi, čímž se dostane do další úrovně. Při tom ho ale pronásledují 4 duchové, kteří pokud ho chytí tak Pac-Man ztratí jeden ze 3 životů (když ztratí všechny, hra je prohraná). Hráč nadále může získat bonusové body díky sebranému ovoci, nebo pomocí bonusů, čímž se na omezenou dobu může nazpátek Pac-Man pojídat duchy.
+
+\subsection*{Bomberman/Dyna Blaster}
+Další labyrintová hra od japonských vývojářů, která je podobně jako Pac-Man, populární a vydávaná dodnes je Bomberman, v Evropě známý pod názvem Dyna Blaster, vydaný v roce 1983 (1985 na Nintendo knzole), kterého se prodalo za několik prvních let skoro milion kopií~\cite{Bomberman}. 
+Mapa hry je jednoduchý obdélník s několika systematicky rozdělenými nerozbitnými zdmi, mezi nimiž se nachází volná místa a rozbitné zdi. Hráčův úkol je zabít všechny nepřátele pomocí pokládání bomb, které po určitém čase vybouchnou v křížovém tvaru a zabijí nepřátele a rozbijí zdi v jeho výbušné oblasti, a také odejít dveřmi, které jsou schované za jednou z rozbitných zdí~\cite{Bomberman}. 
 
 \section{Herní engine}
 Herní engine (také game engine) je softwarový framework využívaný pro tvorbu a vývoj (nejen) videoher. Nabízí mnoho nástrojů pro zjednodušení tvůrčího procesu, jako jsou například podpůrné programy, knihovny, a některé poskytují i speciální programovací jazyky vytvořené specificky pro programovaní her v daném engine~\cite{Valencia-Garcia_2016}. V následující části textu jsou popsány a uvedeny některé příklady z nejpopulárnějších herních enginů (viz obrázek~\ref{fig:most_popular_game_engines}).
@@ -49,7 +91,7 @@ Unreal Engine je série herních engine, s nejnovější verzí Unreal Engine 5 
 V porovnání s dalšími zástupci herních engine je hodnocen jako jeden ze složitějších. Díky své komplikovanější stavbě a strmé křivce učení práce s Unreal Engine je doporučován spíše na větší, komplikovanější projekty, než například na mobilní hry (i přestože podporuje vývoj her na Android)~\cite{Kevuru_Games_Unreal-Unity}. Unreal Engine 5 je zaměřený hlavně na 3D vývoj a proto přišel s mnoha funkcemi pro vylepšení vykreslování a práci s trojdimenzionálními objekty - jsou to Nanite (vizuální geometrický systém), Lumen (vylepšená práce se světlem) a MetaSounds (managment audia)~\cite{UnrealEngine5}.
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\textwidth]{obrazky-figures/ch2/fortnite.png}
+	\includegraphics[width=0.9\textwidth]{obrazky-figures/ch2/fortnite.png}
 	\caption{Ukázka ze hry Fortnite vytvořená pomocí Unreal Engine 5.~\cite{unreal_engine}}
 	\label{fig:fortnite-unreal_engine}
 \end{figure}
@@ -91,12 +133,12 @@ Příkladem zápisu definice celulárního automatu Game of Life (vysvětlený n
 
 Vlastnosti CA je možné popsat také pomocí řetězců pravidel (anglicky \textit{rulestring}). V následujícím textu jsou uvedeny 2 příklady přebrané ze stránky LifeWiki~\cite{LifeWiki} pro 2 stavové CA. Těmito stavy jsou 1 = živá buňka a 0 = mrtvá buňka. 
 \begin{itemize}
-    \item \textit{Birth/Survival} notace\,--\,Nejpoužívanější notace, která je zapisována pomocí \verb|B{list}| \verb|/S{nlist}|. Notace je vyjadřována 2 seznamy. V prvním (B) je zapsán počet živých sousedů potřebný pro vznik nové živé buňky, neboli oživení. Druhý seznam určuje kolik živých sousedů musí buňka mít, aby přežila do dalšího kroku. Game of Life by touto notací byla zapsána B3/S23.
+    \item \textit{Birth/Survival} notace\,--\,Nejpoužívanější notace, která je zapisována pomocí \verb|B{list}| \verb|/S{list}|. Notace je vyjadřována 2 seznamy. V prvním (B) je zapsán počet živých sousedů potřebný pro vznik nové živé buňky, neboli oživení. Druhý seznam určuje kolik živých sousedů musí buňka mít, aby přežila do dalšího kroku. Game of Life by touto notací byla zapsána B3/S23.
     \item S/B notace\,--\,Dříve často používaná, dnes spíše nahrazena Birth/Survival notací. Podobně jako ona je zapisována pomocí 2 seznamů \verb|{list}|\verb|/{list}|. Jeden označuje počet živých sousedů potřebných pro přežití živé buňky a druhý počet živých sousedů potřebných pro oživení mrtvé buňky. Tedy opak Birth/Survival listu. Game of Life je zapsána jako 23/3.
 \end{itemize}
 
 Typ okolí závisí na tvaru buněk (čtverec, hexagon,~\ldots) a také typu prostoru (1D, 2D,~\ldots)~\cite{ims}. Dvě nejpoužívanější okolí jsou Moorovo a Von Neumannovo s různými variacemi~\cite{sloot2004cellular}, jak je vidět na obrázku~\ref{fig:2D-okoli}.
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{obrazky-figures/ch2/2D-okoli.png}\hspace{0.5cm}
     \includegraphics[width=0.6\textwidth]{obrazky-figures/ch2/jina-okoli.png}
@@ -129,9 +171,9 @@ Některé celulární automaty lze označovat také jako \textbf{reverzibilní}.
 
 \subsection*{Historie a Game of Life}
 Za vznikem celulárních automatů stáli ve 40. letech 20. století matematici John von Neumann a Stanisław Ulam. Ulam studoval růst krystalů pomocí jednoduché mřížky~\cite{pickover2009math} a Neumann řešil modely samoreprodukujících se organismů~\cite{history_CA}. Ulam Neumannovi navrhl využití diskrétního systému~\cite{schiff2011cellular} s buňkami, které se mění po jednotlivých krocích/iteracích. Na základě dalšího výzkumu došli k vyvinutí základů CA a John von Neumann následně sepsal knihu \textit{Theory of Self-Reproducing Automata}, kde detailně, spolu s důkazi o jeho možné existenci, popisuje jeden z prvních CA, \textit{von Neumannův univerzální konstruktor}~\cite{theory_neumann} který funguje jako univerzální kopírka, jak je vidět na obrázku~\ref{fig:universal_constructor}.
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{obrazky-figures/ch2/universal_constructor.png}\hspace{0.5cm}
+    \includegraphics[width=0.6\textwidth]{obrazky-figures/ch2/universal_constructor.png}
     \caption{Ukázka von Neumannova univerzálního konstruktoru.}
     \label{fig:universal_constructor}
 \end{figure}
@@ -144,7 +186,7 @@ Dalším z důležitých matematiků pro vývoj CA byl John Conway, který v roc
     \item zbytek buněk do další generace nepřežívá a stává se mrtvými.
 \end{itemize}
 I přes svoji jednoduchost tento systém nabývá klasifikace 4. třídy, tedy projevuje náhodnost, ale zároveň se v jeho generacích objevují struktury, které vykazují rozmanité vlastnosti a dodávající systému částečný řád. Jedním z těchto struktur, je takzvaný kluzák (anglicky \textit{glider}), který se postupem iterací pohybuje po mřížce~\cite{Game_Of_Life}. Ilustraci jeho pohybu je možné vidět na obrázku~\ref{fig:game_of_life}.
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{obrazky-figures/ch2/GameOfLife.png}
     \caption{Pohyb kluzáku/glideru v CA Game of Life.}
@@ -155,7 +197,7 @@ Posledním, zde zmíněným, důležitým vědcem v historii CA byl Stephen Wolf
 
 \subsection*{Využití celulárních automatů ve hrách}
 Jedním z využití CA obsahují hry \uv{padajícího písku}, neboli \textit{Falling-sand games/simulators}. Tyto hry jsou nejčastěji 2D, sandboxové (= podporující kreativitu), jsou založeny například na blokovému/rozdělujícímu celulárnímu automatu, které mohou simulovat reálnou fyziku, jelikož jsou reverzibilní a dodržují fyzikální zákon zachování hmot~\cite{schiff2011cellular}. Nejjednodušší okolí využívané na vyhodnocení těchto CA je Margolusovo (viz obrázek~\ref{fig:Margolus})\,--\,2D mřížka je rozdělena na 2x2 čtverce, které se každou generaci posouvají diagonálně o jednu buňku~\cite{schiff2011cellular} (okolí v čase t se tedy skládá ze všech buněk, které se nacházejí v bloku v aktuálním čase).
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.48\textwidth]{obrazky-figures/ch2/Margolus.png}
     \caption{Margolusovo okolí (tmavě modrá = zkoumaná buňka, červená = 2x2 blok, světle modrá = okolí).}
@@ -163,24 +205,22 @@ Jedním z využití CA obsahují hry \uv{padajícího písku}, neboli \textit{Fa
 \end{figure}
 
 \noindent Hráč má při hraní hry přístup k několika materiálům/elementům, které mají každý své vlastní vlastnosti (gravitace, reaktivnost s jinými materiály), se kterými může interagovat na dané ploše. Příkladem těchto her může být The Powder Toy~\footnote{https://powdertoy.co.uk}, The Sandbox (2012), Sandspiel (ukázka na obrázku~\ref{fig:Sandspiel}) či Noita (hra doplněná o roguelike aspekt).
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{obrazky-figures/ch2/SandSpiel.png}
     \caption{Ukázka ze hry Sandspiel.}
     \label{fig:Sandspiel}
 \end{figure}
-\newline
 
 Rozšířenější, a v moderních hrách i častější, je využití CA na procedurální generování terénu\,--\,to je možné najít ve hrách jako je Tje využit u her vyžadujících větší a pestrý svět, či vysoký počet úrovní vyžadujících rozmanité překážky. Je to jelikož klasické \uv{lidské} výtvory mohou být drahé 2 způsoby. Manuální navrhovaní obrovské mapy, či 100+ úrovní lidmi zabere mnoho času, energie a může naskytnout repetitivita, také tyto před-vytvořené mapy zabírají mnoho paměti a jejich načítaní může být obtížné na procesor\,--\,procedurální generace tedy vytváří mapy za chodu aplikace, takže vyřeší oba problémy~\cite{Procedural_Game_Map}.
 
 Minecraft například generuje základ své mapy díky stochastickým celulárním automatům spuštěných nad zpracovanými(např. pomocí šumu) výsledky kongruentních generátorů~\cite{Minecraft}. Stochaistické/Náhodné celulární automaty, jsou CA u nichž nejsou pravidla deterministická (tj. nepředvídatelná), ale pravděpodobnostní\,--\,to znamená, že místo pevného pravidla určujícího následující stav buňky má zadané pravděpodobnosti možných nových stavů buňky~\cite{DBLP:journals/corr/abs-1304-7185}. Díky tomuto dochází k definování přechodů a prolínání mezi různými poddruhy biomů (příklad vygenerované mapy je vidět na obrázku~\ref{fig:minecraft_biom}). Například teplé oblasti mají 50\% šanci, že se promění v poušť, 33\% v savanu a 17\% v roviny, nebo oceány mající 50\% šanci, že se promění v zem~\cite{Minecraft}.
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{obrazky-figures/ch2/minecraft_biom.png}
     \caption{Příklad vygenerovaného Minecaft světa s různými biomy}
     \label{fig:minecraft_biom}
 \end{figure}
-\newline
 
 Některé z jednodušších možností generování prostředí s celulárními automaty je využití algoritmů na náhodné generování jeskyní. Příkladem může být například algoritmus(zapsán níže pod algoritmem \ref{algo:cave_gen}) z naučné stránky envatotuts+~\cite{CaveCA}, kde buňka CA může nabývat 2 stavů\,--\,živá, mrtvá, jehož výsledek je na obrázku~\ref{fig:cave}.
 \begin{algorithm}
@@ -212,15 +252,15 @@ Algoritmus funguje na několika jednoduchých principech, s nimiž je možné r�
     \item smrt = pokud je buňka živá a má příliš málo mrtvých sousedů, zemře v následující iteraci (vytváření otevřených prostorů v jeskyni),
     \item přežití = pokud je buňka živá a má dostatečný počet živých sousedů, přežívá do následující iterace (udržování existující struktury jeskyní).
 \end{itemize}
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.4\textwidth]{obrazky-figures/ch2/cave.png}
     \caption{Příklad algoritmu generování jeskyní s využitím Moorova okolí,	deathLimit = 3, birthLimit = 4.}
     \label{fig:cave}
 \end{figure}
 
-Také je možné využít algoritmy, generující strukturu podobnou bludišti. Celulárním automatem s touto vlastností je OCA:Maze~\cite{OCA:Maze}. Hlavním principem tohoto algoritmu s Mooreovým okolím je, že pokud má buňka živých 1 až 5 sousedů tak přežije a ožívá pokud má přesně 3 sousedy\,--\,to znamená, že je pro buňky složitější zemřít a tím se vytváří vzory podobné bludišti, jak je vidět v levé částí obrázku~\ref{fig:OCA:Maze}. Při generování s náhodnou matici, ale nejsou cesty zcela propojené, získáváme jen mnoho nepropojených místností. Existuje i jeho upravená verze (Mazectric), která ale omezuje počet sousedů potřebný přežití na 1 až 4, díky čemuž vznikají rovnější a delší \uv{cesty}~\cite{OCA:Maze}, což je možné vidět na pravé částí obrázku~\ref{fig:OCA:Maze}.
-\begin{figure}[h]
+Také je možné využít algoritmy, generující strukturu podobnou bludišti. Celulárním automatem s touto vlastností je OCA:Maze~\cite{OCA:Maze}. Hlavním principem tohoto algoritmu s Mooreovým okolím je, že pokud má buňka živých 1 až 5 sousedů tak přežije a ožívá pokud má přesně 3 sousedy\,--\,to znamená, že je pro buňky složitější zemřít a tím se vytváří vzory podobné bludišti, jak je vidět v levé částí obrázku~\ref{fig:OCA:Maze}. Při generování s náhodnou matici, ale nejsou cesty zcela propojené, získáváme jen mnoho nepropojených místností. Existuje~i jeho upravená verze (Mazectric), která ale omezuje počet sousedů potřebný přežití na 1 až 4, díky čemuž vznikají rovnější a delší \uv{cesty}~\cite{OCA:Maze}, což je možné vidět na pravé částí obrázku~\ref{fig:OCA:Maze}.
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.40\textwidth]{obrazky-figures/ch2/OCA:Maze.png}\hspace{0.5cm}
     \includegraphics[width=0.40\textwidth]{obrazky-figures/ch2/Mazectric.png}
@@ -228,8 +268,8 @@ Také je možné využít algoritmy, generující strukturu podobnou bludišti. 
     \label{fig:OCA:Maze}
 \end{figure}
 
-\section{Grafové algoritmy}
-    \todo{Dopsat - takove to na rozdelení do grup/nalezeni nejkratsi cesty (viz IZU)}
+\section{Počítačové vidění a dekompozice scény}
+    \todo{Začátek počítačové vidění, pak dekompozice z IZU??}
     
 \section{Prohledávání stavového prostoru}
 Stavový prostor (anglicky \textit{State space}), využívaný na řešení úloh, lze v informatice popsat jako orientovaný graf, v němž jeho uzly reprezentují stavy, a hrany reprezentují operátory, či stavové přechody~\cite{State-Space_Search}. Formálně je možné stavový prostor a jeho aktuální řešenou úlohu zapsat jakožto čtveřici (S, O, $S_0$, G), jejíž prvky zde definovat jako~\cite{izu}:
@@ -254,7 +294,7 @@ Metoda pracující se zásobníkem LIFO (\textit{= lirst-in, first-out}), jenž 
 
 Stejně jako u BFS, časová složitost je \(O_{DFS} = |V| + |E|\), kde \(|V|\) je součet počtu uzlů a \(|E|\) je počet hran~\cite{CS225BFSDFS}.
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.45\textwidth]{obrazky-figures/ch2/BFS.png}\hspace{1cm}
     \includegraphics[width=0.45\textwidth]{obrazky-figures/ch2/DFS.png}
@@ -271,7 +311,7 @@ IDS se využívá pokud nemůžeme stanovit hloubku řešení a jeho časová sl
 \subsection*{Informované metody}
 Informované metody na rozdíl od neinformovaných znají polohu cíle~\cite{izu}, kterou využívají na zhodnocení cesty pomocí funkce  ${f(n)}$, kde ${n}$ je stav/uzel. Tyto metody jsou také nazývány heuristickými, jelikož využívají k dosáhnutí cíle heuristickou funkci\,--\,díky této funkci ${h(n)}$ lze vypočítat pomocí uzlu ${n}$ nezáporné reálné číslo značící odhad nákladů na cestu z uzlu ${n}$ do uzlu cílového~\cite{poole2023artificial}. Čím menší je výsledné číslo, tím pravděpodobněji povede k cílovému uzlu a tedy ${h(n) = 0}$, ${n}$ je cílovým uzlem~\cite{AI-Modern_approach}.
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{obrazky-figures/ch2/GreedySearch.png}
     \caption{Nespolehlivost metody hladového prohledávání při hledání cesty z A do G, červeně zvýrazněno cyklení (uzly ve formátu [název uzlu, heuristika]).~\cite{poole2023artificial}}
@@ -312,6 +352,7 @@ Podobně jako u metody hladového prohledávání hledá algoritmus cestu po nej
 \section{Optimalizace mapy}
 \section{Umístění postavy} % start + cil
 \section{Experimenty s generováním map pomocí CA} % statistiky, proc jsem vybrala dany postup
+\todo{statistiky v generovani mistnosti, po propojeni obsah zdi vs cest + right hand rule test}
 
 %===---------------====
 % TESTOVANI
