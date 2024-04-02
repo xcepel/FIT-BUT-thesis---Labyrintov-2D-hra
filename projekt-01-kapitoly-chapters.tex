@@ -26,12 +26,12 @@ Dle Akademického slovníku současné češtiny~\cite{AkademickySlovnik-Bludist
 
 Andrew Rollings a Ernest Adams definují bludiště ve hrách jako prostředí, kde každé místo vypadá stejně, nebo velmi podobně a hráč musí zjistit jak jsou místa propojená, často jejím procházením, aby našel cestu ven~\cite{rollings2003andrew}. Tyto hry jsou často doplněné o i nějaké výzvy, než pouze procházení bludištěm, kterými, dle stejných autorů~\cite{rollings2003andrew}, může být například hledání klíče k otevření zamknutích dveří, sbírání věcí (např. pro zvýšení skóre), řešení hádanek, paměťových testů, luštění kryptických zpráv, atd.
 
-V 80. letech 20. století měli hry s tématem bludiště největší rozmach, hlavně kvůli rozšíření domácích konzolí (např. Atari 2600), a díky jejich množství a rozmanitosti je lze rozdělit na 4 typy~\cite{DoYouMaze}:
+V 80. letech 20. století měly hry s tématem bludiště největší rozmach, hlavně kvůli rozšíření domácích konzolí (např. Atari 2600), a díky jejich množství a rozmanitosti je lze rozdělit na 4 typy~\cite{DoYouMaze}:
 \begin{itemize}
-    \item bludiště s pohledem z vrchu~~\,--\,~~při hraní je vidět celé (či skoro celé) bludiště z vrchu (Mouse in the Maze, Bomberman),
-    \item bludiště z prvního pohledu~~\,--\,~~stejný pohled na hru, jako herní postavička (Maze/Maze War, Capture the Flag),
-    \item pronásledování bludištěm~~\,--\,~~hráč je pronásledován, či může pronásledovat nepřátele; tento typ je propojen s různými styly pohledu na bludiště (Pac-Man, Rally-X, Lady Bug),
-    \item bludiště s obsazováním políček mřížky~~\,--\,~~hráč při průchodu bludištěm musí zabrat co nejvíce políček (Amidar).
+    \item bludiště s pohledem z vrchu\,--\,při hraní je vidět celé (či skoro celé) bludiště z vrchu (Mouse in the Maze, Bomberman),
+    \item bludiště z prvního pohledu\,--\,stejný pohled na hru, jako herní postavička (Maze/Maze War, Capture the Flag),
+    \item pronásledování bludištěm\,--\,hráč je pronásledován, či může pronásledovat nepřátele; tento typ je propojen s různými styly pohledu na bludiště (Pac-Man, Rally-X, Lady Bug),
+    \item bludiště s obsazováním políček mřížky\,--\,hráč při průchodu bludištěm musí zabrat co nejvíce políček (Amidar).
 \end{itemize}
 
 Dále v textu se nachází příklady různých důležitých labyrintových her vytvořených v průběhu historie.
@@ -133,7 +133,7 @@ Příkladem zápisu definice celulárního automatu Game of Life (vysvětlený n
 
 Vlastnosti CA je možné popsat také pomocí řetězců pravidel (anglicky \textit{rulestring}). V následujícím textu jsou uvedeny 2 příklady přebrané ze stránky LifeWiki~\cite{LifeWiki} pro 2 stavové CA. Těmito stavy jsou 1 = živá buňka a 0 = mrtvá buňka. 
 \begin{itemize}
-    \item \textit{Birth/Survival} notace~\,--\,~Nejpoužívanější notace, která je zapisována pomocí \verb|B{list}| \verb|/S{list}|. Notace je vyjadřována 2 seznamy. V prvním (B) je zapsán počet živých sousedů potřebný pro vznik nové živé buňky, neboli oživení. Druhý seznam určuje kolik živých sousedů musí buňka mít, aby přežila do dalšího kroku. Game of Life by touto notací byla zapsána B3/S23.
+    \item Birth/Survival notace~\,--\,~Nejpoužívanější notace, která je zapisována pomocí \verb|B{list}| \verb|/S{list}|. Notace je vyjadřována 2 seznamy. V prvním (B) je zapsán počet živých sousedů potřebný pro vznik nové živé buňky, neboli oživení. Druhý seznam určuje kolik živých sousedů musí buňka mít, aby přežila do dalšího kroku. Game of Life by touto notací byla zapsána B3/S23.
     \item S/B notace~\,--\,~Dříve často používaná, dnes spíše nahrazena Birth/Survival notací. Podobně jako ona je zapisována pomocí 2 seznamů \verb|{list}|\verb|/{list}|. Jeden označuje počet živých sousedů potřebných pro přežití živé buňky a druhý počet živých sousedů potřebných pro oživení mrtvé buňky. Tedy opak Birth/Survival listu. Game of Life je zapsána jako 23/3.
 \end{itemize}
 
@@ -169,7 +169,8 @@ Stephen Wolfram ve své knize \textit{A New Kind of Science}~\cite{wolfram-NewKi
 Některé celulární automaty lze označovat také jako \textbf{reverzibilní}. Ty jsou definované jako systémy, které neztrácí informaci při svém vývoji v čase~\,--\,~což znamená, že v každém okamžiku lze otočit vývoj času a navrátit se k předchozím stavům~\cite{ims}. Kvůli jejích chaotickému chování nejsou CA 4. třídy nikdy reverzibilní.
 
 \subsection*{Historie a Game of Life}
-Za vznikem celulárních automatů stáli ve 40. letech 20. století matematici John von Neumann a Stanisław Ulam. Ulam studoval růst krystalů pomocí jednoduché mřížky~\cite{pickover2009math} a von Neumann řešil modely samoreprodukujících se organismů~\cite{history_CA}. Ulam von Neumannovi navrhl využití diskrétního systému~\cite{schiff2011cellular} s buňkami, které se mění po jednotlivých krocích/iteracích. Na základě dalšího výzkumu došli k vyvinutí základů CA a John von Neumann následně sepsal knihu \textit{Theory of Self-Reproducing Automata}, kde detailně, spolu s důkazy o jeho možné existenci, popisuje jeden z prvních CA, \textit{von Neumannův univerzální konstruktor}~\cite{theory_neumann} který funguje jako univerzální kopírka. \todo{dovysvětlit co kopíruje}
+Za vznikem celulárních automatů stáli ve 40. letech 20. století matematici John von Neumann a Stanisław Ulam. Ulam studoval růst krystalů pomocí jednoduché mřížky~\cite{pickover2009math} a von Neumann řešil modely samoreprodukujících se organismů~\cite{history_CA}. Ulam von Neumannovi navrhl využití diskrétního systému~\cite{schiff2011cellular} s buňkami, které se mění po jednotlivých krocích/iteracích. Na základě dalšího výzkumu došli k vyvinutí základů CA a John von Neumann následně na základě myšlenek celulárních automatů sepsal knihu \textit{Theory of Self-Reproducing Automata}, kde detailně, spolu s důkazy o jeho možné existenci, popisuje jeden z prvních konceptů realistických samo-replikujícího systému, \textit{von Neumannův univerzální konstruktor}~\cite{theory_neumann} který funguje jako univerzální kopírka, která by v teorii replikovala sebe sama pomocí surovin z prostředí, ve kterém se nachází. 
+\todo{je to zajímavé ale mám to tu vůbec zmiňovat když to nesouvisí s počítačovýma CA?}
 
 Dalším z důležitých matematiků pro vývoj CA byl John Conway, který v roce 1970 vytvořil pravidla pro \textbf{Game of Life}~\cite{history_CA}, celulární automat na 2D mřížce s buňkami nabývajících 2 stavů~\,--\,~živá, mrtvá, využívající Moorovo okolí o 8 sousedech (viz obrázek~\ref{fig:2D-okoli}). Pravidly jsou~\cite{Game_Of_Life}:
 \begin{itemize}
@@ -259,9 +260,6 @@ Také je možné využít algoritmy, generující strukturu podobnou bludišti. 
     \caption{Porovnání výsledků CA OCA:Maze (vlevo) a Mazectric (vpravo).}
     \label{fig:OCA:Maze}
 \end{figure}
-
-\section{Počítačové vidění a dekompozice scény}
-    \todo{Začátek počítačové vidění, pak dekompozice z IZU??}
     
 \section{Prohledávání stavového prostoru}
 Stavový prostor (anglicky \textit{State space}), využívaný na řešení úloh, lze v informatice popsat jako orientovaný graf, v němž jeho uzly reprezentují stavy, a hrany reprezentují operátory, či stavové přechody~\cite{State-Space_Search}. Formálně je možné stavový prostor a jeho aktuální řešenou úlohu zapsat jakožto čtveřici (S, O, $s_0$, G), jejíž prvky zde definovat jako~\cite{izu}:
@@ -305,7 +303,7 @@ Informované metody na rozdíl od neinformovaných znají polohu cíle~\cite{izu
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{obrazky-figures/ch2/GreedySearch.png}
+    \includegraphics[width=0.5\textwidth]{obrazky-figures/ch2/GreedySearch.png}
     \caption{Nespolehlivost metody hladového prohledávání při hledání cesty z A do G, červeně zvýrazněno cyklení (uzly ve formátu [název uzlu, heuristika]).~\cite{poole2023artificial}}
     \label{fig:GreedySearch}
 \end{figure}
@@ -321,6 +319,39 @@ Metoda A* vyhodnocuje další krok na základě hodnotící funkce ${f(n) = g(n)
 Pro správnou funkci A* algoritmu je důležité zvolit přípustnou (anglicky \textit{admissible}) heuristiku, což je heuristika, u které cena cesty z uzlu ${n}$ do cílového uzlu nikdy nepřeceňuje cenu ze startovního uzlu k cílovému~\cite{AI-Modern_approach, izu}. Jednou z přípustných heuristik, je přímá euklidovská vzdálenost mezi 2 uzly~\cite{poole2023artificial}, která vhodná na využití u prostorových problémů s přesnými rozměry (např. 2D mřížkový prostor, bez překážek, se 4 povolenými směry - nahoru, dolu, doleva, doprava). Pokud algoritmus při jeho výpočtu dorazí k výsledku heuristické, který by toto nesplňoval, využívá \textit{backtracking} a pokračuje cestu k dalšímu nejlepšímu uzlu.
 
 Podobně jako u metody hladového prohledávání hledá algoritmus cestu po nejmenších hodnotách, ale díky využití kombinace ${g(n)}$ a ${h(n)}$ je algoritmus řazen jako přípustný (vždy, když existuje, vrací optimální řešení)~\cite{poole2023artificial}.
+
+\section{Rejection sampling}
+Rejection sampling, či metoda accept-reject (česky přijetí-odmítnutí), je metoda vzorkování využívaná ke generování náhodných proměnných na základě vstupních omezení (například metematické funkce)~\cite{thomopoulos2012essentials}. Je jedním z mnoha algoritmů metody Monte Carlo a je využívána na vzorkování dat ze sofistikované, neboli obtížně vzorkovatelné, distribuce~\cite{Sachdeva_2021}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{obrazky-figures/ch2/RA_graph.png}
+    \caption{Příklad Rejection samplingu, kde jsou díky využití jednodušší distribuce Q(X) (modrá) získány vzorky ze složitější funkce f(X) (červená)}
+    \label{fig:RA_graph}
+\end{figure}
+
+Základní myšlenkou rejection samplingu je, že místo přímého vzorkování komplikované funkce f(X) můžeme generovat vzorky pomocí jednodušší distribuce Q(X), ty následně překontrolovat, zda patří do funkce komplikovanější~\cite{ghojogh2020sampling} a na základě toho je přijmout, či pokud do ní nepatří, odmítnout. Vizuální příklad je možné vidět na obrázku~\ref{fig:RA_graph}, který vyobrazuje vzorky vygenerované na základě funkce Q(X). Vzorky nacházející se v území patřící pod funkci f(X) a  označené zelenou barvou, budou akceptovány a body mimo (označené žlutě) jsou odmítnuty.
+
+Pro detailnější vysvětlení je využit algoritmus~\ref{algo:rejection_sampling} sepsaný podle výukového a literárního přehledu z Univerzity Waterloo~\cite{ghojogh2020sampling} a edukační stránky~\cite{Sachdeva_2021}. V tomto algoritmu je $\mathcal{S}$ sada vzorkovacích dat o velikosti $n$, která se postupně naplňuje generovanými daty, které jsou vzorky složitější funkce f(X). V cyklu generujícím a potvrzujícím vzorky je prvně vytvořen vzorek $x$ z funkce g(X) a následně vzorek $u$ z rovnoměrného rozložení $U(0, c\, g(x_i))$. Škálovací konstanta $c$ je využívána k určení horních mezí pro přijetí nebo odmítnutí vzorku a platí, že $c \cdot g(x) \geq f(x) \ \text{pro všechny } x$.
+\label{eq:RA_c}
+\begin{algorithm}[h]
+\caption{Rejection sampling/Accept-reject}\label{algo:rejection_sampling}
+\begin{algorithmic}[1]
+    \State \textbf{Input:} $f(x), g(x), c$\;
+    \State \textbf{Output:} $\mathcal{S}$
+    \State $\mathcal{S} \gets \varnothing$
+    \For{$i = 1$ to $n$}
+        \State $x_i \sim g(x)$
+        \State $u_i \sim U(0, c\, Q(x_i))$
+        \If{$u_i < f(x_i)$}
+            \State Accept $x_i$: $\mathcal{S} \gets \mathcal{S} \cup \{x_i\}$
+        \Else
+            \State Reject $x_i$: $i \gets i - 1$
+        \EndIf
+    \EndFor
+\end{algorithmic}
+\end{algorithm}
+
 %===---------------====
 % KONCEPT
 %===---------------====
@@ -342,9 +373,26 @@ Podobně jako u metody hladového prohledávání hledá algoritmus cestu po nej
 \todo{Dopsat}
 \section{Generování mapy}
 \section{Optimalizace mapy}
-\section{Umístění postavy} % start + cil
+\section{Umístění hráčské postavy} % start + cil
 \section{Experimenty s generováním map pomocí CA} % statistiky, proc jsem vybrala dany postup
-\todo{statistiky v generovani mistnosti, po propojeni obsah zdi vs cest + right hand rule test}
+\todo{statistiky v generovani mistnosti, po propojeni obsah zdi vs cest + kolik CA generaci na plno}
+
+\subsection*{Generování pomocí různých kombinací}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{obrazky-figures/maze_generation_combinations2.png}
+    \caption{průměr groups!poměr cesty/přímá cesta k cíli}
+    \label{fig:maze_generation_combinations2}
+\end{figure}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{obrazky-figures/maze_generation_combinations1.png}
+    \caption{groups / walkable / len(start - cil)}
+    \label{fig:maze_generation_combinations1}
+\end{figure}
+\todo{remake in latex}
+
+\section{Rozmístění nepřátel a objektů}
 
 %===---------------====
 % TESTOVANI
