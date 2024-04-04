@@ -18,9 +18,28 @@
 \chapter{Aspekty vývoje  videoher}
 \todo{popsat aspekty}
 
-\section{Historie herního vývoje}
-\todo{Dopsat}
+%--------------------------
+% Začátek videoher
+\section{Začátek videoher}
+První počítačové hry vznikaly kolem 50. let 20. století na vojenských základnách a univerzitách a jejich sálových počítačích~\cite{novak2011game}\,--\,těmito videohrami byla například OXO (1952), Tennis for Two (1958), ale do nepopulárnějších videoher (vytvořených v té době) se počítá hlavně hra vytvořena MIT studentem Stevem Russellem  \uv{Spacewar!}~\cite{bellis2019spacewar}. 
 
+\begin{figure}[H]
+    \centering
+	\includegraphics[width=0.6\textwidth]{obrazky-figures/ch2/Spacewar.png}
+	\caption{Ukázka hry \uv{Spacewar}.~\cite{bellis2019spacewar}}
+	\label{fig:spacewar}
+\end{figure}
+
+Nápad této hry byl následně, na začátku 70. let, přebrán Nolanem Bushnellem (zakladatelem Atari), který z ní vytvořil první komerční arkádovou hru (a tedy volně přístupnou veřejnosti) pod jménem \uv{Computer Space}, která byla velmi úspěšná~\cite{video_games_history}. To spustilo vývoj dalších velmi úspěšných arkádových videoher, oproti dnešním hrám převážně dovedností, jako například \uv{Pong}, či \uv{Space Invaders} a \uv{Asteroids}, což byly první hry umožňující hráčům ukládat své skóre, dále například Galaxian, Pac-Man, Donkey Kong a Tron~\cite{novak2011game}.
+
+Ve stejnou dobu začal i vývoj konzolových her, tedy možností hrát hry v pohodlí domova. Firmami, které vznikli kolem této doby a zasloužili se o rozvoj počítačových her, jako je známe dnes, byly Atari (1976 vydali jednu z prvních konzolí Atari VCS/2600, která odstartovala velkoprodej domácích konzolí), Nintendo (jejich první konzole, NES, vydána roku 1985) a Sega~\cite{novak2011game}.
+
+S příchodem personálních počítačů do domácností se zvýšil zájem o hry, mnoho původně pouze univerzitních her, bylo adaptováno do personálních počítačů, což způsobilo úpadek placených arkádových her~\cite{novak2011game}, jelikož teď měl přístup ke hrám každý, kdo vlastnil počítač. 
+
+V dnešní době jsou možnosti pro hraní videoher ještě rozšířenější, od možnosti hrát na telefonech, vyvinutějších ručních konzolích, či dokonce virtuální realita.
+
+%--------------------------
+% Labyrintové hry
 \section{Labyrintové hry}
 Dle Akademického slovníku současné češtiny~\cite{AkademickySlovnik-Bludiste} je bludiště, neboli labyrint, definováno jako \uv{místo, kde se bloudí} a \uv{složitý, neuspořádaný systém}. Bludiště jsou multikurzální, je to tedy spleť cest, chodeb a prostor, kde se snadno zabloudí a jsou definovaná slepými konci a větvícími chodbami, kvůli kterým je procházející nucen se rozhodovat.
 
@@ -69,6 +88,8 @@ Pac-Man je hra založena na principu pronásledování hráče nepřáteli bludi
 Další labyrintová hra od japonských vývojářů, která je podobně jako Pac-Man, populární a vydávaná dodnes je Bomberman, v Evropě známý pod názvem Dyna Blaster, vydaný v roce 1983 (1985 na Nintendo konzole), kterého se prodalo za několik prvních let skoro milion kopií~\cite{Bomberman}. 
 Mapa hry je jednoduchý obdélník s několika systematicky rozdělenými nerozbitnými zdmi, mezi nimiž se nachází volná místa a rozbitné zdi. Hráčův úkol je zničit všechny nepřátele pomocí pokládání bomb, které po určitém čase vybouchnou v křížovém tvaru, čímž zlikvidují nepřátele a rozbijí zdi v jeho výbušné oblasti, a také odejít dveřmi, které jsou schované za jednou ze zničitelných zdí~\cite{Bomberman}. 
 
+%--------------------------
+% Herní engine
 \section{Herní engine}
 Herní engine (také game engine) je softwarový framework využívaný pro tvorbu a vývoj (nejen) videoher. Nabízí mnoho nástrojů pro zjednodušení tvůrčího procesu, jako jsou například podpůrné programy, knihovny, a některé poskytují i speciální programovací jazyky vytvořené specificky pro programovaní her v daném engine~\cite{Valencia-Garcia_2016}. V následující části textu jsou popsány a uvedeny některé příklady z nejpopulárnějších herních enginů (viz obrázek~\ref{fig:most_popular_game_engines}).
 \begin{figure}[H]
@@ -110,6 +131,8 @@ V Godotu byly vytvořeny například hry Brotato, Hive Time, Tail Quest a aplika
 	\label{fig:godot_view}
 \end{figure}
 
+%--------------------------
+% Celulární automaty
 \section{Celulární automaty}
 Celulární automat (nadále označován také zkratkou CA) je dynamický systém a diskrétní model prostorového systému využívaný na modelování fyzikálních či biologických simulací. Prostorový systém vyjadřuje prostorovou dekompozici systému~\,--\,~zkoumaný systém je rozdělen na malé části s definovaných chováním~\cite{ims}.
 
@@ -261,6 +284,8 @@ Také je možné využít algoritmy, generující strukturu podobnou bludišti. 
     \label{fig:OCA:Maze}
 \end{figure}
     
+%--------------------------
+% Prohledávání stavového prostoru
 \section{Prohledávání stavového prostoru}
 Stavový prostor (anglicky \textit{State space}), využívaný na řešení úloh, lze v informatice popsat jako orientovaný graf, v němž jeho uzly reprezentují stavy, a hrany reprezentují operátory, či stavové přechody~\cite{State-Space_Search}. Formálně je možné stavový prostor a jeho aktuální řešenou úlohu zapsat jakožto čtveřici (S, O, $s_0$, G), jejíž prvky zde definovat jako~\cite{izu}:
 \begin{itemize}
@@ -319,9 +344,11 @@ Metoda A* vyhodnocuje další krok na základě hodnotící funkce ${f(n) = g(n)
 Pro správnou funkci A* algoritmu je důležité zvolit přípustnou (anglicky \textit{admissible}) heuristiku, což je heuristika, u které cena cesty z uzlu ${n}$ do cílového uzlu nikdy nepřeceňuje cenu ze startovního uzlu k cílovému~\cite{AI-Modern_approach, izu}. Jednou z přípustných heuristik, je přímá euklidovská vzdálenost mezi 2 uzly~\cite{poole2023artificial}, která vhodná na využití u prostorových problémů s přesnými rozměry (např. 2D mřížkový prostor, bez překážek, se 4 povolenými směry - nahoru, dolu, doleva, doprava). Pokud algoritmus při jeho výpočtu dorazí k výsledku heuristické, který by toto nesplňoval, využívá \textit{backtracking} a pokračuje cestu k dalšímu nejlepšímu uzlu.
 
 Podobně jako u metody hladového prohledávání hledá algoritmus cestu po nejmenších hodnotách, ale díky využití kombinace ${g(n)}$ a ${h(n)}$ je algoritmus řazen jako přípustný (vždy, když existuje, vrací optimální řešení)~\cite{poole2023artificial}.
-
+    
+%--------------------------
+% Rejection sampling
 \section{Rejection sampling}
-Rejection sampling, či metoda accept-reject (česky přijetí-odmítnutí), je metoda vzorkování využívaná ke generování náhodných proměnných na základě vstupních omezení (například metematické funkce)~\cite{thomopoulos2012essentials}. Je jedním z mnoha algoritmů metody Monte Carlo a je využívána na vzorkování dat ze sofistikované, neboli obtížně vzorkovatelné, distribuce~\cite{Sachdeva_2021}.
+Rejection sampling, či metoda accept-reject (česky přijetí-odmítnutí), je metoda vzorkování využívaná ke generování náhodných proměnných~\cite{thomopoulos2012essentials}. Je jedním z mnoha algoritmů metody Monte Carlo využívána na vzorkování dat ze sofistikované, neboli obtížně vzorkovatelné, distribuce~\cite{Sachdeva_2021}.
 
 \begin{figure}[H]
     \centering
@@ -352,56 +379,102 @@ Pro detailnější vysvětlení je využit algoritmus~\ref{algo:rejection_sampli
 \end{algorithmic}
 \end{algorithm}
 
+\todo{zeptat se zda vůbec můj kod je rejection sampling}
 %===---------------====
 % KONCEPT
 %===---------------====
 \chapter{Koncept 2D labyrintové hry}
 \todo{Dopsat - popsat koncept typu her obecně (pravidla labyrintových her,..)}
-
-\section{Úvod do hry/cíle/myšlenka} %todo lepší nazev
-
+    
+%--------------------------
+% Úvod
+\section{Úvod do hry/cíle/myšlenka}
+\todo{popsat návrh přístupu k problému (zadání), asi taky grafík}
+    
+%--------------------------
+% Mechaniky hry
 \section{Mechaniky hry}
-\todo{Dopsat - kamera, mapa, nepratele, itemy}
 
+\todo{Dopsat - kamera, mapa, nepratele, itemy, zvysovani urovni (zde nejaky graf), princip hry (nekonecna, zvysujici se narocnost)}
+    
+%--------------------------
+% Uživatelské rozhraní
 \section{Uživatelské rozhraní}
+FIGMA
+
 \todo{Dopsat}
 
 %===---------------====
 % IMPLEMENTACE
 %===---------------====
 \chapter{Implementace 2D labyrintové hry} % TODO NECO KONKRETNEJSIHO
-\todo{Dopsat}
+Pro implementaci hry jsem otestovala několik game enginů a zvážila jsem jejich výhody a nevýhody. Jelikož mým cílem bylo vytvořit jednoduchou 2D hru jejíž hlavním a nejsložitějším bodem je mapa vybrala jsem si Godot verzi 4. 
+
+Tuto platformu jsem zvolila oproti jiným možnostem díky její široké a jednoduché podpoře vytváření 2D her, oproti například Unreal Engine, která je zaměřená spíše na realistické 3D světy. Jak je již zmíněno v kapitole o Godotu, tento herní engine na rozdíl od Unity či Unreal Engine využívá vlastní skriptovací jazyk GDScript, podobný syntaxí pythonu, který díky svým knihovnám ulehčuje manipulaci s herními prvky (nodes) a urychluje tak vývoj.
+
+Nejdůležitější vlastností Godotu pro vyváření této hry a její základní mapy byla node "TileMap", která slouží pro vytváření 2D dlaždicových map. Její využití je popsáno v následujících podkapitolách.
+    
+%--------------------------
+% Generování mapy
 \section{Generování mapy}
-\section{Optimalizace mapy}
-\section{Umístění hráčské postavy} % start + cil
+\todo{mock up grafík}
+\subsection*{Kostra bludiště}
+CA
+\subsection*{Propojení bludiště}
+GRAFOVÉ ALGORITMY
+
+%--------------------------
+% Hráčská postava a její umístění
+\section{Hráčská postava a její umístění} % start + cil
+
+%--------------------------
+% Experimenty s generováním map pomocí CA
 \section{Experimenty s generováním map pomocí CA} % statistiky, proc jsem vybrala dany postup
 \todo{statistiky v generovani mistnosti, po propojeni obsah zdi vs cest + kolik CA generaci na plno}
 
-\subsection*{Generování pomocí různých kombinací}
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=\linewidth]{obrazky-figures/maze_generation_combinations2.png}
-    \caption{průměr groups!poměr cesty/přímá cesta k cíli}
-    \label{fig:maze_generation_combinations2}
-\end{figure}
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=\linewidth]{obrazky-figures/maze_generation_combinations1.png}
-    \caption{groups / walkable / len(start - cil)}
-    \label{fig:maze_generation_combinations1}
-\end{figure}
-\todo{remake in latex}
+%--------------------------
+% Nepřátelé, objekty a jejich rozmístění
+\section{Nepřátelé, objekty a jejich rozmístění}
 
-\section{Rozmístění nepřátel a objektů}
+%--------------------------
+% Úrovňový systém
+\section{Úrovňový systém}
+
+\subsection*{Skóre}
 
 %===---------------====
 % TESTOVANI
 %===---------------====
 \chapter{Uživatelské testování}
-\todo{Dopsat}
+Uživatelské testování bylo prováděno formou online anonymního dotazníku (Google Forms), který testované subjekty vyplnily po otestování hry. Hra byla testována na počítačích s Windows a Linux operačními systémy. Testery byli aktivní i nezkušení hráči her, naverbováni primárně díky sdílení testovacích prostředků na sociálních sítích.
+
+%--------------------------
+% Dotazník
 \section{Dotazník}
+Otázky jsem vytvářela tak, abych protestovala hlavní aspekty vytvořené hry, které bych následně mohla upravit, či předělat na základně zpětné vazby. Testovanými aspekty jsou její hratelnost, náročnost, uživatelské rozhraní a stabilita programu. Vzhledem k tomu, že byl dotazník vypracován pro hromadné testování, jsou otázky formulovány tak, aby umožňovaly výběr z předem definovaných možností, než aby vyžadovaly volné textové odpovědi, a to kvůli jednoduššímu vyhodnocování.
+\newline \newline
+\noindent Seznam otázek:
+\begin{enumerate}
+\item Kolik času jste strávili u hraní?
+\item Jaká byla vaše nejvyšší dosažená úroveň (level)?
+\item Jaký je váš celkový dojem ze hry?
+\item Jak byste ohodnotili uživatelské rozhraní a celkovou přehlednost hry?
+\item Jak byste ohodnotili stabilitu a výkon hry (záseky/pády,...)?
+\item Co pro vás bylo nejtěžší?
+\item Jak byste ohodnotil vyváženost zvyšující se obtížnosti?
+\item Pokud jste hodnotili hru jako spíše nevyváženou, jaký k tomu byl důvod? (vyberte co platí, popřípadě doplňte)
+\item Jaké další funkce/vlastnosti/prvky byste ve hře ocenili/změnili?
+\end{enumerate}
+
+%--------------------------
+% Analýza výsledků
 \section{Analýza výsledků}
+Byly získány odpovědi od ... subjektů, kompletní výpis všech odpovědí je přístupný v příloze~\ref{chap:user_testing}.
+
+%--------------------------
+% Závěr testování
 \section{Závěr testování}
+\subsection*{Implementované změny}
 
 %===---------------====
 % ZAVER
