@@ -17,29 +17,49 @@
 %===---------------====
 \chapter{Aspekty vývoje  videoher}
 Vývoj videoher je práce, jejíž výsledkem je hra na elektronické zařízení, jako například počítač, telefon, či konzole. Na jejím vzniku spolupracují umělci, designeři a programátoři, kteří mohou využít software vytvořený pro vývoj her\,--\,herní engine, který nabízí prostředky pro pohodlnější práci na vývoji her (viz kapitola~\ref{chap:Herní engine} Herní engine).
-\newline \newline
-\noindent Proces vývoje videoher je možné rozdělit na 7 základních etap~\cite{pickell2019a}:
-\begin{itemize}
-    \item Plánování
-    \item Před-produkce
-    \item Produkce
-    \item Testování
-    \item Před-spuštění
-    \item Spuštění
-    \item Post produkce
-\end{itemize}
 
-V deštní době se vývoj videoher rozděluje na \todo{indie x AAA}
+Proces vývoje videoher lze rozdělit na 7 základních etap: plánování, před-produkce, produkce, testování, před-spuštění, spuštění a post produkce~\cite{pickell2019a}.
+\subsection*{Plánování}
+V této etapě je vytvářen prvotní nápad na vývoj hry. Je základním kamenem a proto je velmi důležité důkladně vše promyslet a připravit, jelikož pozdější změny v plánu hry mohou mít drtivé dopady na celý vývoj~\cite{GameMaker_development}, jak časové, tak peněžní. 
+
+Plánování je celé o pokládání a odpovídání si na otázky. Ty se můžou být obecné \uv{Jaký typ hry budeme vytvářet?}, \uv{Kdo bude cílové publikum naší hry?}, nebo se týkat příběhu hry: \uv{Jaká bude zápletka příběhu?}, \uv{Kde se bude hra odehrávat?}, \uv{Jaké postavy se budou ve hře nacházet?} a také technických parametrů hry: \uv{Pro jakou platformu budeme hru vytvářet?}, \uv{Jaké budou klíčové vlastnosti naší hry?}~\cite{pickell2019a}.
+
+Pro takzvaný \uv{proof of concept}, díky kterému je zváženo, zda danou hru můžeme vytvořit je důležité najít a zanalyzovat otázky na odpovědi pro trh~\cite{GameMaker_development}. Těmi je například \uv{Kolik bude stát vývoj hry a jak tyto peníze získáme?}, \uv{Jak dlouho bude trvat vývoj?}, \uv{Máme potřebné zaměstnance a technologie na vývoj?} či  \uv{Jakým způsobem hru zpeněžíme?}.
+
+Cílem plánování je vytvořit základní koncept o čem hra bude, zjistit si cílový trh a zhodnotit firemní zdroje a potenciály~\cite{novak2011game}.
+
+\begin{figure}[H]
+    \centering
+	\includegraphics[width=0.95\textwidth]{obrazky-figures/ch2/concept_art.png}
+	\caption{Concept art postavy ze hry League of Legends~\cite{artLOLvol1}.}
+	\label{fig:concept_art_lol}
+\end{figure}
+
+\subsection*{Před-produkce}
+Tato fáze přebírá odpovědi z plánování a rozšíří je o důležité detaily. Odehrává se při ní mnoho kolaborací mezi různými týmy (spisovatelé, programátoři, umělci, designeři, ...), aby se vyhovělo co nejvíce požadavkům a zabránilo se pozdějším komplikacím\,--\,programátoři například spisovatelům přiblíží technologické překážky platformy, které není možné překročit, či umělci a designeři navrhnou konzistentní barevné palety.~\cite{pickell2019a}.
+
+Výsledkem před-produkce je dokument o herním designu (\textit{Game Design Document}, neboli GDD) a dokument technického návrhu a mohou zde být navrhovány první prototypy~\cite{novak2011game}. GDD je \uv{živý} dokument a vyvíjí se postupně po celou tvorbu hry\,--\,nalezneme tam detailní popis věcí jako například myšlenku hry, její žánr, celkový příběh, strategii monetizace, příběh a detaily postav, základní herní mechaniky, design úrovní a světa, skici a \textit{concept arty}, neboli návrhy objektů/prostředí/postav~\cite{CG_Spectrum_GAMEDEVELOPMENT} (ukázka concept artu je na obrázku~\ref{fig:concept_art_lol}).
+
+\subsection*{Produkce}
+388
+
+\subsection*{Testování}
+
+\subsection*{Před-spuštění}
+
+\subsection*{Spuštění}
+
+\subsection*{Post produkce}
 
 %--------------------------
 % Začátek videoher
 \section{Začátek videoher}
-První počítačové hry vznikaly kolem 50. let 20. století na vojenských základnách a univerzitách a jejich sálových počítačích~\cite{novak2011game}\,--\,těmito videohrami byla například OXO (1952), Tennis for Two (1958), ale do nepopulárnějších videoher (vytvořených v té době) se počítá hlavně hra vytvořena MIT studentem Stevem Russellem  \uv{Spacewar!}~\cite{bellis2019spacewar}, jenž je vidět na obrázku~\ref{fig:spacewar}. 
+První počítačové hry vznikaly kolem 50. let 20. století na vojenských základnách a univerzitách a jejich sálových počítačích~\cite{novak2011game}\,--\,těmito videohrami byla například OXO (1952), Tennis for Two (1958), ale do nepopulárnějších videoher (vytvořených v té době) se počítá hlavně hra vytvořena MIT studentem Stevem Russellem Spacewar!~\cite{bellis2019spacewar}, jenž je vidět na obrázku~\ref{fig:spacewar}. 
 
 \begin{figure}[H]
     \centering
 	\includegraphics[width=0.6\textwidth]{obrazky-figures/ch2/Spacewar.png}
-	\caption{Ukázka hry \uv{Spacewar}.~\cite{bellis2019spacewar}}
+	\caption{Ukázka hry Spacewar~\cite{bellis2019spacewar}.}
 	\label{fig:spacewar}
 \end{figure}
 
@@ -477,8 +497,8 @@ Uživatelské testování bylo prováděno formou online anonymního dotazníku 
 %--------------------------
 % Dotazník
 \section{Dotazník}
-Otázky jsem vytvářela tak, abych protestovala hlavní aspekty vytvořené hry, které bych následně mohla upravit, či předělat na základně zpětné vazby. Testovanými aspekty jsou její hratelnost, uživatelské rozhraní a stabilita programu a  náročnost. Vzhledem k tomu, že byl dotazník vypracován pro hromadné testování, jsou otázky formulovány tak, aby umožňovaly výběr z předem definovaných možností, než aby vyžadovaly volné textové odpovědi, a to kvůli jednoduššímu vyhodnocování.
-\newline \newline
+Otázky jsem vytvářela tak, abych protestovala hlavní aspekty vytvořené hry, kterými jsou její hratelnost, uživatelské rozhraní, stabilita programu a celková náročnost hry. Byla jsem připravena prvky těchto aspektů následně, na základně zpětné vazby, upravit, či předělat aby vyhovovaly požadavkům testerů. Vzhledem k tomu, že byl dotazník vypracován pro hromadné testování, jsou otázky formulovány tak, aby umožňovaly spíše výběr z předem definovaných možností, než aby vyžadovaly volné textové odpovědi, a to kvůli jednoduššímu vyhodnocování. \\
+\newline
 \noindent Seznam otázek:
 \begin{enumerate}
 \item Kolik času jste strávili u hraní?
