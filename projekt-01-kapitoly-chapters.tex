@@ -16,12 +16,25 @@
 % TEORIE
 %===---------------====
 \chapter{Aspekty vývoje  videoher}
-\todo{popsat aspekty}
+Vývoj videoher je práce, jejíž výsledkem je hra na elektronické zařízení, jako například počítač, telefon, či konzole. Na jejím vzniku spolupracují umělci, designeři a programátoři, kteří mohou využít software vytvořený pro vývoj her\,--\,herní engine, který nabízí prostředky pro pohodlnější práci na vývoji her (viz kapitola~\ref{chap:Herní engine} Herní engine).
+\newline \newline
+\noindent Proces vývoje videoher je možné rozdělit na 7 základních etap~\cite{pickell2019a}:
+\begin{itemize}
+    \item Plánování
+    \item Před-produkce
+    \item Produkce
+    \item Testování
+    \item Před-spuštění
+    \item Spuštění
+    \item Post produkce
+\end{itemize}
+
+V deštní době se vývoj videoher rozděluje na \todo{indie x AAA}
 
 %--------------------------
 % Začátek videoher
 \section{Začátek videoher}
-První počítačové hry vznikaly kolem 50. let 20. století na vojenských základnách a univerzitách a jejich sálových počítačích~\cite{novak2011game}\,--\,těmito videohrami byla například OXO (1952), Tennis for Two (1958), ale do nepopulárnějších videoher (vytvořených v té době) se počítá hlavně hra vytvořena MIT studentem Stevem Russellem  \uv{Spacewar!}~\cite{bellis2019spacewar}. 
+První počítačové hry vznikaly kolem 50. let 20. století na vojenských základnách a univerzitách a jejich sálových počítačích~\cite{novak2011game}\,--\,těmito videohrami byla například OXO (1952), Tennis for Two (1958), ale do nepopulárnějších videoher (vytvořených v té době) se počítá hlavně hra vytvořena MIT studentem Stevem Russellem  \uv{Spacewar!}~\cite{bellis2019spacewar}, jenž je vidět na obrázku~\ref{fig:spacewar}. 
 
 \begin{figure}[H]
     \centering
@@ -30,9 +43,20 @@ První počítačové hry vznikaly kolem 50. let 20. století na vojenských zá
 	\label{fig:spacewar}
 \end{figure}
 
-Nápad této hry byl následně, na začátku 70. let, přebrán Nolanem Bushnellem (zakladatelem Atari), který z ní vytvořil první komerční arkádovou hru (a tedy volně přístupnou veřejnosti) pod jménem \uv{Computer Space}, která byla velmi úspěšná~\cite{video_games_history}. To spustilo vývoj dalších velmi úspěšných arkádových videoher, oproti dnešním hrám převážně dovedností, jako například \uv{Pong}, či \uv{Space Invaders} a \uv{Asteroids}, což byly první hry umožňující hráčům ukládat své skóre, dále například Galaxian, Pac-Man, Donkey Kong a Tron~\cite{novak2011game}.
+Nápad této hry byl následně, na začátku 70. let, přebrán Nolanem Bushnellem (zakladatelem Atari), který z ní vytvořil první komerční arkádovou hru (a tedy volně přístupnou veřejnosti) pod jménem \uv{Computer Space}, která byla velmi úspěšná~\cite{video_games_history}. To spustilo vývoj dalších velmi úspěšných arkádových videoher, oproti dnešním hrám převážně dovednostích, jako například \uv{Pong}, či \uv{Space Invaders} a \uv{Asteroids}, což byly první hry umožňující hráčům ukládat své skóre, dále například Galaxian, Pac-Man, Donkey Kong a Tron~\cite{novak2011game}.
 
-Ve stejnou dobu začal i vývoj konzolových her, tedy možností hrát hry v pohodlí domova. Firmami, které vznikli kolem této doby a zasloužili se o rozvoj počítačových her, jako je známe dnes, byly Atari (1976 vydali jednu z prvních konzolí Atari VCS/2600, která odstartovala velkoprodej domácích konzolí), Nintendo (jejich první konzole, NES, vydána roku 1985) a Sega~\cite{novak2011game}.
+Ve stejnou dobu začal i vývoj konzolových her, tedy možností hrát hry v pohodlí domova. Příklady firem, jejich konzolí a her (či herních sérií), které vznikli kolem této doby a zasloužili se o rozvoj konzolových/počítačových her, jako je známe dnes, jsou vypsány v následujícím odstavci.
+\begin{itemize}
+    \item Atari\,--\,roku 1976 vydali jednu z prvních konzolí Atari VCS/2600, která odstartovala velkoprodej domácích konzolí~\cite{novak2011game}.
+        \begin{itemize}
+        \item Tato konzole přišla s mnoha, pro svojí dobu, ikonickými hrami, které byly často předělané tituly známe z arkád, jako je například Pac-Man série, Space Invaders, Asteroids, Q*bert, Pole Position či Frogger~\cite{Atari_games}.
+    \end{itemize}
+    \item Nintendo\,--\,jejich první konzole, NES, byla vydána roku 1985.
+    \begin{itemize}
+        \item Vyšlo na ni mnoho dodnes populárních herních titulů, jako je například The~Legend of~Zelda, Super Mario Bros, Final Fantasy, Dragon Quest nebo Tetris~\cite{NES_GAMES}.
+    \end{itemize}
+    \item Sega\,--\,jejíž první konzolí byla SG-1000 z roku 1983 s nejpopulárnější vydanou sérií Sonic the~Hedgehog~\cite{SegaRetro_2023}.
+\end{itemize}
 
 S příchodem personálních počítačů do domácností se zvýšil zájem o hry, mnoho původně pouze univerzitních her, bylo adaptováno do personálních počítačů, což způsobilo úpadek placených arkádových her~\cite{novak2011game}, jelikož teď měl přístup ke hrám každý, kdo vlastnil počítač. 
 
@@ -40,7 +64,7 @@ V dnešní době jsou možnosti pro hraní videoher ještě rozšířenější, 
 
 %--------------------------
 % Labyrintové hry
-\section{Labyrintové hry}
+\section{Labyrintové videohry}
 Dle Akademického slovníku současné češtiny~\cite{AkademickySlovnik-Bludiste} je bludiště, neboli labyrint, definováno jako \uv{místo, kde se bloudí} a \uv{složitý, neuspořádaný systém}. Bludiště jsou multikurzální, je to tedy spleť cest, chodeb a prostor, kde se snadno zabloudí a jsou definovaná slepými konci a větvícími chodbami, kvůli kterým je procházející nucen se rozhodovat.
 
 Andrew Rollings a Ernest Adams definují bludiště ve hrách jako prostředí, kde každé místo vypadá stejně, nebo velmi podobně a hráč musí zjistit jak jsou místa propojená, často jejím procházením, aby našel cestu ven~\cite{rollings2003andrew}. Tyto hry jsou často doplněné o i nějaké výzvy, než pouze procházení bludištěm, kterými, dle stejných autorů~\cite{rollings2003andrew}, může být například hledání klíče k otevření zamknutích dveří, sbírání věcí (např. pro zvýšení skóre), řešení hádanek, paměťových testů, luštění kryptických zpráv, atd.
@@ -90,7 +114,7 @@ Mapa hry je jednoduchý obdélník s několika systematicky rozdělenými nerozb
 
 %--------------------------
 % Herní engine
-\section{Herní engine}
+\section{Herní engine}\label{chap:Herní engine}
 Herní engine (také game engine) je softwarový framework využívaný pro tvorbu a vývoj (nejen) videoher. Nabízí mnoho nástrojů pro zjednodušení tvůrčího procesu, jako jsou například podpůrné programy, knihovny, a některé poskytují i speciální programovací jazyky vytvořené specificky pro programovaní her v daném engine~\cite{Valencia-Garcia_2016}. V následující části textu jsou popsány a uvedeny některé příklady z nejpopulárnějších herních enginů (viz obrázek~\ref{fig:most_popular_game_engines}).
 \begin{figure}[H]
 	\centering
@@ -99,14 +123,14 @@ Herní engine (také game engine) je softwarový framework využívaný pro tvor
 	\label{fig:most_popular_game_engines}
 \end{figure}
 
-\subsection*{Unity}\label{Unity}
+\subsection*{Unity}
 Unity je multiplatformní game engine od společnosti Unity Technologies. Dle oficiálních webových stránek aktuálně podporuje více než 20 platforem (např. Windows, macOS, Linux, Android, PlayStation 5, Nintendo Switch,~\ldots)~\cite{unity_website}, nejen díky čemuž je jedním z nejpoužívanějších softwarů na tvoření her~\cite{arnia_unity}. Poskytuje bezplatnou verzi (pro soukromé užití, nebo pokud výdělek hry za rok nepřesahuje 100 000\$) i placenou verzi \uv{Unity Pro}. 
 
 Pro implementaci her, ať už 2D, 3D či VR (hry pro virtuální realitu), nabízí možnost vizuálního/grafického editoru a skriptů v C\#. Základní herní entita je \verb|GameObject|, které je množné přiřazovat různé vlastnosti, herní mechaniky, grafiku, atd. a to již předefinované, či naprogramované uživatelem pomocí skriptů. Různé \verb|GameObjects| můžou být součástí \verb|Scene| z čehož je následně konstruován finální produkt~\cite{hocking2015unity}.
 
 Unity je hojně využívána na vývoj AAA (také Triple-A hry, neboli produkt od distributora, pro jehož vývoj byl k dispozici bohatý rozpočet) her, například: Marvel Snap, Apex Legends, ale i indie (takzvaně od nezávislých tvůrců = independent creator), například: Cult of the Lamb, Among Us, Slime Rancher, Cuphead~\cite{unity_website}.
 
-\subsection*{Unreal Engine}\label{Unreal Engine}
+\subsection*{Unreal Engine}
 Unreal Engine je série herních engine, s nejnovější verzí Unreal Engine 5 z roku 2022, od společnosti Epic Games. První verze byla vytvořena pro tvorbu Unreal, 3D střílečky z pohledu první osoby, a byla velmi populární, jelikož díky UnrealScriptu (založeném na C++) mohli uživatele jednoduše původní hru modifikovat~\cite{sanders2016introduction}. Novější verze využívají klasické C++. Podobně jako Unity, nabízí bezplatnou i placenou verzi. Je také multiplatformní, ale podporuje menší škálu platforem než Unity~\,--\,~základní (Windows, Linux, PlayStation, Nintendo Switch, Xbox), ale podporuje~\cite{unreal_engine}.
 
 V porovnání s dalšími zástupci herních engine je hodnocen jako jeden ze složitějších. Díky své komplikovanější stavbě a strmé křivce učení práce s Unreal Engine je doporučován spíše na větší, komplikovanější projekty, než například na mobilní hry (i přestože podporuje vývoj her na Android)~\cite{Kevuru_Games_Unreal-Unity}. Unreal Engine 5 je zaměřený hlavně na 3D vývoj a proto přišel s mnoha funkcemi pro vylepšení vykreslování a práci s trojdimenzionálními objekty - jsou to Nanite (vizuální geometrický systém), Lumen (vylepšená práce se světlem) a MetaSounds (managment audia)~\cite{UnrealEngine5}.
@@ -389,20 +413,22 @@ Pro detailnější vysvětlení je využit algoritmus~\ref{algo:rejection_sampli
 %--------------------------
 % Úvod
 \section{Úvod do hry/cíle/myšlenka}
-\todo{popsat návrh přístupu k problému (zadání), asi taky grafík}
-    
+\todo{popsat návrh přístupu k problému (zadání), asi taky grafík -> jak jsem postupovala}
 %--------------------------
 % Mechaniky hry
 \section{Mechaniky hry}
-
-\todo{Dopsat - kamera, mapa, nepratele, itemy, zvysovani urovni (zde nejaky graf), princip hry (nekonecna, zvysujici se narocnost)}
-    
+\todo{mapa, obecne o hre- princip hry (nekonecna, zvysujici se narocnost)}
+\subsection*{Úrovně}
+\todo{zvysovani urovni (zde nejaky graf)}
+\subsection*{Hráč}
+\todo{kamera -> proc jsem vybrala jen cast, ovladani, grafika}
+\subsection*{Nepřátelé}
+\subsection*{Další objekty}
+ 
 %--------------------------
 % Uživatelské rozhraní
 \section{Uživatelské rozhraní}
-FIGMA
-
-\todo{Dopsat}
+\todo{FIGMA + popis proc}
 
 %===---------------====
 % IMPLEMENTACE
@@ -425,12 +451,12 @@ GRAFOVÉ ALGORITMY
 
 %--------------------------
 % Hráčská postava a její umístění
-\section{Hráčská postava a její umístění} % start + cil
+\section{Cesta bludištěm} % start + cil
 
 %--------------------------
 % Experimenty s generováním map pomocí CA
-\section{Experimenty s generováním map pomocí CA} % statistiky, proc jsem vybrala dany postup
-\todo{statistiky v generovani mistnosti, po propojeni obsah zdi vs cest + kolik CA generaci na plno}
+\section{Experimenty s generováním map} % statistiky, proc jsem vybrala dany postup
+\todo{statistiky v generovani mistnosti, po propojeni obsah zdi vs cest + kolik CA generaci na plno - jak na kolika, proc, rovnice}
 
 %--------------------------
 % Nepřátelé, objekty a jejich rozmístění
@@ -451,7 +477,7 @@ Uživatelské testování bylo prováděno formou online anonymního dotazníku 
 %--------------------------
 % Dotazník
 \section{Dotazník}
-Otázky jsem vytvářela tak, abych protestovala hlavní aspekty vytvořené hry, které bych následně mohla upravit, či předělat na základně zpětné vazby. Testovanými aspekty jsou její hratelnost, náročnost, uživatelské rozhraní a stabilita programu. Vzhledem k tomu, že byl dotazník vypracován pro hromadné testování, jsou otázky formulovány tak, aby umožňovaly výběr z předem definovaných možností, než aby vyžadovaly volné textové odpovědi, a to kvůli jednoduššímu vyhodnocování.
+Otázky jsem vytvářela tak, abych protestovala hlavní aspekty vytvořené hry, které bych následně mohla upravit, či předělat na základně zpětné vazby. Testovanými aspekty jsou její hratelnost, uživatelské rozhraní a stabilita programu a  náročnost. Vzhledem k tomu, že byl dotazník vypracován pro hromadné testování, jsou otázky formulovány tak, aby umožňovaly výběr z předem definovaných možností, než aby vyžadovaly volné textové odpovědi, a to kvůli jednoduššímu vyhodnocování.
 \newline \newline
 \noindent Seznam otázek:
 \begin{enumerate}
@@ -470,6 +496,10 @@ Otázky jsem vytvářela tak, abych protestovala hlavní aspekty vytvořené hry
 % Analýza výsledků
 \section{Analýza výsledků}
 Byly získány odpovědi od ... subjektů, kompletní výpis všech odpovědí je přístupný v příloze~\ref{chap:user_testing}.
+\subsection*{Hratelnost}
+\subsection*{Uživatelské rozhraní}
+\subsection*{Stabilita programu}
+\subsection*{Náročnost}
 
 %--------------------------
 % Závěr testování
