@@ -18,17 +18,17 @@
 \chapter{Aspekty vývoje  videoher}
 Vývoj videoher je práce, jejíž výsledkem je hra na elektronické zařízení, jako například počítač, telefon, či konzole. Na jejím vzniku spolupracují umělci, designeři a programátoři, kteří mohou využít software vytvořený pro vývoj her\,--\,herní engine, který nabízí prostředky pro pohodlnější práci na vývoji her (viz kapitola~\ref{chap:Herní engine} Herní engine).
 
-Proces vývoje videoher lze rozdělit na 7 základních etap: plánování, před-produkce, produkce, testování, před-spuštění, spuštění a post produkce~\cite{pickell2019a}.
+Proces vývoje videoher lze rozdělit na 7 základních etap: plánování, před-produkce, produkce, testování, před-spuštění, spuštění a post produkce~\cite{g2_game_development}.
 \subsection*{Plánování}
 V této etapě je vytvářen prvotní nápad na vývoj hry. Je základním kamenem a proto je velmi důležité důkladně vše promyslet a připravit, jelikož pozdější změny v plánu hry mohou mít drtivé dopady na celý vývoj~\cite{GameMaker_development}, jak časové, tak peněžní. 
 
-Plánování je celé o pokládání a odpovídání si na otázky. Ty se můžou být obecné \uv{Jaký typ hry budeme vytvářet?}, \uv{Kdo bude cílové publikum naší hry?}, nebo se týkat příběhu hry: \uv{Jaká bude zápletka příběhu?}, \uv{Kde se bude hra odehrávat?}, \uv{Jaké postavy se budou ve hře nacházet?} a také technických parametrů hry: \uv{Pro jakou platformu budeme hru vytvářet?}, \uv{Jaké budou klíčové vlastnosti naší hry?}~\cite{pickell2019a}.
+Plánování je celé o pokládání a odpovídání si na otázky. Ty se můžou být obecné \uv{Jaký typ hry budeme vytvářet?}, \uv{Kdo bude cílové publikum naší hry?}, nebo se týkat příběhu hry: \uv{Jaká bude zápletka příběhu?}, \uv{Kde se bude hra odehrávat?}, \uv{Jaké postavy se budou ve hře nacházet?} a také technických parametrů hry: \uv{Pro jakou platformu budeme hru vytvářet?}, \uv{Jaké budou klíčové vlastnosti naší hry?}~\cite{g2_game_development}.
 
-Pro takzvaný \uv{proof of concept}, díky kterému je zváženo, zda danou hru můžeme vytvořit je důležité najít a zanalyzovat otázky na odpovědi pro trh~\cite{GameMaker_development}. Těmi je například \uv{Kolik bude stát vývoj hry a jak tyto peníze získáme?}, \uv{Jak dlouho bude trvat vývoj?}, \uv{Máme potřebné zaměstnance a technologie na vývoj?} či  \uv{Jakým způsobem hru zpeněžíme?}.
+Pro takzvaný \uv{proof of concept}, díky kterému je zváženo, zda danou hru můžeme vytvořit je důležité najít a zanalyzovat otázky na odpovědi pro trh~\cite{GameMaker_development}. Těmi je například \uv{Kolik bude stát vývoj hry a jak tyto peníze získáme?}, \uv{Jak dlouho bude trvat vývoj?}, \uv{Máme potřebné zaměstnance a technologie na vývoj?} či \uv{Jakým způsobem hru zpeněžíme?}.
 
 Cílem plánování je vytvořit základní koncept o čem hra bude, zjistit si cílový trh a zhodnotit firemní zdroje a potenciály~\cite{novak2011game}.
 
-\begin{figure}[H]
+\begin{figure}[hb]
     \centering
 	\includegraphics[width=0.95\textwidth]{obrazky-figures/ch2/concept_art.png}
 	\caption{Concept art postavy ze hry League of Legends~\cite{artLOLvol1}.}
@@ -36,51 +36,77 @@ Cílem plánování je vytvořit základní koncept o čem hra bude, zjistit si 
 \end{figure}
 
 \subsection*{Před-produkce}
-Tato fáze přebírá odpovědi z plánování a rozšíří je o důležité detaily. Odehrává se při ní mnoho kolaborací mezi různými týmy (spisovatelé, programátoři, umělci, designeři, ...), aby se vyhovělo co nejvíce požadavkům a zabránilo se pozdějším komplikacím\,--\,programátoři například spisovatelům přiblíží technologické překážky platformy, které není možné překročit, či umělci a designeři navrhnou konzistentní barevné palety.~\cite{pickell2019a}.
+Tato fáze přebírá odpovědi z plánování a rozšíří je o důležité detaily. Odehrává se při ní mnoho kolaborací mezi různými týmy (spisovatelé, programátoři, umělci, designeři, ...), aby se vyhovělo co nejvíce požadavkům a zabránilo se pozdějším komplikacím\,--\,programátoři například spisovatelům přiblíží technologické překážky platformy, které není možné překročit, či umělci a designeři navrhnou konzistentní barevné palety.~\cite{g2_game_development}.
 
-Výsledkem před-produkce je dokument o herním designu (\textit{Game Design Document}, neboli GDD) a dokument technického návrhu a mohou zde být navrhovány první prototypy~\cite{novak2011game}. GDD je \uv{živý} dokument a vyvíjí se postupně po celou tvorbu hry\,--\,nalezneme tam detailní popis věcí jako například myšlenku hry, její žánr, celkový příběh, strategii monetizace, příběh a detaily postav, základní herní mechaniky, design úrovní a světa, skici a \textit{concept arty}, neboli návrhy objektů/prostředí/postav~\cite{CG_Spectrum_GAMEDEVELOPMENT} (ukázka concept artu je na obrázku~\ref{fig:concept_art_lol}).
+Výsledkem před-produkce je dokument o herním designu (\textit{Game Design Document}, neboli GDD) a dokument technického návrhu a mohou zde být navrhovány první prototypy~\cite{novak2011game}. GDD je \uv{živý} dokument a vyvíjí se postupně po celou tvorbu hry\,--\,nalezneme tam detailní popis věcí jako například myšlenku hry, její žánr, celkový příběh, strategii monetizace, informace o postavách, základní herní mechaniky, design úrovní a světa, skici a \textit{concept arty}, neboli návrhy objektů/prostředí/postav~\cite{CG_Spectrum_GAMEDEVELOPMENT} (ukázka concept artu je na obrázku~\ref{fig:concept_art_lol}).
 
 \subsection*{Produkce}
-388
+Nejdelší, nejdražší, nejnáročnější a nejdůležitější část vývoje~\cite{g2_game_development}, jejíž výsledkem je hotová hra. 
+
+V této fázi je postupně vytvářen finální produkt. Jsou vymodelovány a animovány objekty, jako jsou postavy či prostředí, které jsou dále naprogramovány, čímž se přidají herní mechaniky a objekty jsou přivedeny k životu~\cite{GameMaker_development}. Tomu napomáhají i zvukoví designeři a dabéři, kteří se starají o audio stránku hry.
+
+Při produkci nejsou neobvyklé změny, kde je nutné smazat i celé segmenty hry~\cite{g2_game_development}. Často se stává, že je nutné změnit nějaké natrhnuté či již vytvořené části, ať už je to kvůli nutnosti zmenšit pracovní zátěž vývojářského týmu, či kvůli zjištění, že neimplementovaný objekt do hry nesedí, či nefunguje podle původních představ\,--\,jako například postava \uv{Boatman} ze hry Spyro the Dragon (viz obrázek~\ref{fig:spyro_cut}), která byla změněna na postavu \uv{Ballonist}, nejspíše aby dávalo větší smysl cestování na ostrov v oblacích~\cite{GameMaker_development}.
+
+\begin{figure}[hb]
+    \vspace{0.5cm}
+    \centering
+    \includegraphics[width=0.5\textwidth]{obrazky-figures/ch2/Spyro-Boatman.png}\hspace{0.1cm}
+    \includegraphics[width=0.46\textwidth]{obrazky-figures/ch2/Spyro-Ballonist.png}
+    \caption{Postava Boatman (vlevo) ze hry Spyro the Dragon, který byl ve finální hře změněn na postavu Ballonist (vpravo)~\cite{GameMaker_development}.}
+    \label{fig:spyro_cut}
+\end{figure}
 
 \subsection*{Testování}
+Další důležitou fází je testování. V této fázi je důležité protestovat všechny možné problémy hry, které by mohli kazit zážitek ze hry.
 
-\subsection*{Před-spuštění}
+Testy se dají rozdělit na 2 základní typy\,--\,testy technické stability a testování takzvaného \uv{fun factoru} hry, což je průzkum hratelnosti hry, její zábavnosti, poutavosti, a nebo zda není moc těžká, či lehká~\cite{GameMaker_development}. Testy technického faktoru zkoumají zda se hra správně renderuje, neseká se, dále testeři vyhledávají různé bugy/chyby (např. zda opravdu nejde projít zdmi, nebo jestli se postavička projde místy, kterými by měla v pořádku projít), zda všechny funkce a postavy fungují tak jak mají a další podobné věci~\cite{g2_game_development}.
 
-\subsection*{Spuštění}
+\subsection*{Před-publikace}
+Fáze před publikací je marketingová. Je to období kdy se k veřejnosti dostanou trailery, teasery a demo verze hry~~\cite{GameMaker_development}. Díky tomu může hra získat větší fanouškovskou základnu a vydavateli může dostat první zpětnou vazbu od veřejnosti.
+
+\subsection*{Publikace}
+Vypuštění a distribuce plné verze hry publiku.
+
+Do spuštění hry musí být opraveno co nejvíce (při nejlepším všechny) chyb, proto často studia přichází s hierarchií chyb, které jsou potřeba opravit, od těch nejproblémovějších, které například rozbíjí hru, tak že často padá, až po ty nejdrobnější~\cite{g2_game_development}.
 
 \subsection*{Post produkce}
+V této etapě již hru vlastní a hraje veřejnost, často je ale vydáno zdarma několik dalších verzí hry (zvané \textit{patch}), které ji technicky vylepšují, vyvažují a často i opravují chyby~\cite{novak2011game}, na které se nedostalo při produkci, či které byly nově objeveny hráči. 
+
+Také zde mohou přibýt \textit{updaty}, které do hry přidávají nový obsah (například události (\textit{eventy}), nové postavy/místa, atd.)~\cite{g2_game_development}. Nový obsah přidávají také rozšíření, neboli DLC, které jsou ale často oproti updatům placené, nabízí více obsahu, a pro jejich spuštění vyžadují vlastní software (občas v kombinací s originální hrou) na spuštění~\cite{novak2011game}. Nový obsah udržuje hru relevantní~\cite{GameMaker_development}.
+
+\subsection*{Milníky verzí vývoje her}
+V průběhu vývoje videohra projde několika různými verzemi, které se od sebe liší jejich technickými vlastnostmi, kniha Game Development Essentials: An Introduction~\cite{novak2011game} uvádí nejdůležitější 3 z nich uvedené níže.
+\begin{itemize}
+    \item Alfa\,--\,v této fázi je již hra hratelná od začátku k cíli a je označována jako \textit{\uv{feature complete}}~\cite{CG_Spectrum_GAMEDEVELOPMENT}, což znamená že všechny hlavní vlastnosti jsou již implementované, nemusí zde být ale vše kompletně zoptimalizované. Měla by to být první verze testovaná lidmi mimo vývojářský tým.
+    \item Beta\,--\,hra již v sobě má integrovaný všechen obsah, zaměření už je jen na opravě chyb a stabilizování projektu.
+    \item Gold\,--\,finální dodělaná hra, která je připravena na publikaci.
+\end{itemize}
 
 %--------------------------
 % Začátek videoher
 \section{Začátek videoher}
 První počítačové hry vznikaly kolem 50. let 20. století na vojenských základnách a univerzitách a jejich sálových počítačích~\cite{novak2011game}\,--\,těmito videohrami byla například OXO (1952), Tennis for Two (1958), ale do nepopulárnějších videoher (vytvořených v té době) se počítá hlavně hra vytvořena MIT studentem Stevem Russellem Spacewar!~\cite{bellis2019spacewar}, jenž je vidět na obrázku~\ref{fig:spacewar}. 
 
-\begin{figure}[H]
-    \centering
-	\includegraphics[width=0.6\textwidth]{obrazky-figures/ch2/Spacewar.png}
-	\caption{Ukázka hry Spacewar~\cite{bellis2019spacewar}.}
-	\label{fig:spacewar}
-\end{figure}
 
 Nápad této hry byl následně, na začátku 70. let, přebrán Nolanem Bushnellem (zakladatelem Atari), který z ní vytvořil první komerční arkádovou hru (a tedy volně přístupnou veřejnosti) pod jménem \uv{Computer Space}, která byla velmi úspěšná~\cite{video_games_history}. To spustilo vývoj dalších velmi úspěšných arkádových videoher, oproti dnešním hrám převážně dovednostích, jako například \uv{Pong}, či \uv{Space Invaders} a \uv{Asteroids}, což byly první hry umožňující hráčům ukládat své skóre, dále například Galaxian, Pac-Man, Donkey Kong a Tron~\cite{novak2011game}.
 
 Ve stejnou dobu začal i vývoj konzolových her, tedy možností hrát hry v pohodlí domova. Příklady firem, jejich konzolí a her (či herních sérií), které vznikli kolem této doby a zasloužili se o rozvoj konzolových/počítačových her, jako je známe dnes, jsou vypsány v následujícím odstavci.
 \begin{itemize}
-    \item Atari\,--\,roku 1976 vydali jednu z prvních konzolí Atari VCS/2600, která odstartovala velkoprodej domácích konzolí~\cite{novak2011game}.
-        \begin{itemize}
-        \item Tato konzole přišla s mnoha, pro svojí dobu, ikonickými hrami, které byly často předělané tituly známe z arkád, jako je například Pac-Man série, Space Invaders, Asteroids, Q*bert, Pole Position či Frogger~\cite{Atari_games}.
-    \end{itemize}
-    \item Nintendo\,--\,jejich první konzole, NES, byla vydána roku 1985.
-    \begin{itemize}
-        \item Vyšlo na ni mnoho dodnes populárních herních titulů, jako je například The~Legend of~Zelda, Super Mario Bros, Final Fantasy, Dragon Quest nebo Tetris~\cite{NES_GAMES}.
-    \end{itemize}
+    \item Atari\,--\,roku 1976 vydali jednu z prvních konzolí Atari VCS/2600, která odstartovala velkoprodej domácích konzolí~\cite{novak2011game}. Tato konzole přišla s mnoha, pro svojí dobu, ikonickými hrami, které byly často předělané tituly známe z arkád, jako je například Pac-Man série, Space Invaders, Asteroids, Q*bert, Pole Position či Frogger~\cite{Atari_games}.
+    \item Nintendo\,--\,jejich první konzole, NES, byla vydána roku 1985. Vyšlo na ni mnoho dodnes populárních herních titulů, jako je například The~Legend of~Zelda, Super Mario Bros, Final Fantasy, Dragon Quest nebo Tetris~\cite{NES_GAMES}.
     \item Sega\,--\,jejíž první konzolí byla SG-1000 z roku 1983 s nejpopulárnější vydanou sérií Sonic the~Hedgehog~\cite{SegaRetro_2023}.
 \end{itemize}
 
-S příchodem personálních počítačů do domácností se zvýšil zájem o hry, mnoho původně pouze univerzitních her, bylo adaptováno do personálních počítačů, což způsobilo úpadek placených arkádových her~\cite{novak2011game}, jelikož teď měl přístup ke hrám každý, kdo vlastnil počítač. 
+S příchodem personálních počítačů do domácností se zvýšil zájem o hry, mnoho původně pouze univerzitních her, bylo adaptováno do personálních počítačů, což způsobilo úpadek placených arkádových her~\cite{novak2011game}. 
 
-V dnešní době jsou možnosti pro hraní videoher ještě rozšířenější, od možnosti hrát na telefonech, vyvinutějších ručních konzolích, či dokonce virtuální realita.
+V dnešní době jsou možnosti pro hraní videoher ještě rozšířenější, od možnosti hrát na telefonech, vyvinutějších ručních konzolích, či pomocí virtuální reality.
+
+\begin{figure}[H]
+    \centering
+	\includegraphics[width=0.53\textwidth]{obrazky-figures/ch2/Spacewar.png}
+	\caption{Ukázka hry Spacewar~\cite{bellis2019spacewar}.}
+	\label{fig:spacewar}
+\end{figure}
 
 %--------------------------
 % Labyrintové hry
@@ -101,7 +127,7 @@ Dále v textu se nachází příklady různých důležitých labyrintových her
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.4\textwidth]{obrazky-figures/ch2/MOUSE.png}
+	\includegraphics[width=0.5\textwidth]{obrazky-figures/ch2/MOUSE.png}
 	\caption{Ukázka ze hry Mouse in the Maze.~\cite{Videogamehistorian}}
 	\label{fig:mouse}
 \end{figure}
@@ -116,15 +142,15 @@ Hráč dostal 8x8 mřížku a následně mohl světelným perem odmazat zdi a p�
 
 Úkolem hráčů, hrající jako avatar oční bulvy, bylo projít bludiště (kde mohli chodit pouze dozadu, dopředu a otáčet se o 90° vpravo, či vlevo), najít nepřátele a střelit je, čímž sbírali skóre~\cite{Maze_War}.
 
-\begin{figure}[H]
+\subsection*{Pac-Man}
+Japonská arkádová hra od společnosti Namco (dnes Bandai Namco Entertainment) vyšla původně v roce 1980 pod jménem Puck-Man (kvůli jeho tvaru puku, jméno ale bylo pro USA změněno, kvůli strachu z vandalů~\cite{kent2010ultimate}) a po svém vydání v USA se z ní stal okamžitý hit, neboť se v jednom roce prodalo více než 100 000 arkádových automatů s touto hrou~\cite{PACMAN}. Hitem byly i další hry z rychle rostoucí série Pac-Man. Roku 1981 vyšla Ms. PAC-MAN, jenž získala několik nových herních prvků, jako například více bludišť (oproti pouze 1, které nabízel originál) či náhodnější nepřátele~\,--\,~po svém vydání prodala i tato hra v USA více než 100 000 automatů, což žádná jiná hra v USA nedokázala~\cite{kent2010ultimate}.
+
+\begin{figure}[hb]
 	\centering
-	\includegraphics[width=0.6\textwidth]{obrazky-figures/ch2/pacman.png}
+	\includegraphics[width=0.7\textwidth]{obrazky-figures/ch2/pacman.png}
 	\caption{Ukázka ze hry Pac-Man.~\cite{von2007space}}
 	\label{fig:pacman}
 \end{figure}
-
-\subsection*{Pac-Man}
-Japonská arkádová hra od společnosti Namco (dnes Bandai Namco Entertainment) vyšla původně v roce 1980 pod jménem Puck-Man (kvůli jeho tvaru puku, jméno ale bylo pro USA změněno, kvůli strachu z vandalů~\cite{kent2010ultimate}) a po svém vydání v USA se z ní stal okamžitý hit, neboť se v jednom roce prodalo více než 100 000 arkádových automatů s touto hrou~\cite{PACMAN}. Hitem byly i další hry z rychle rostoucí série Pac-Man. Roku 1981 vyšla Ms. PAC-MAN, jenž získala několik nových herních prvků, jako například více bludišť (oproti pouze 1, které nabízel originál) či náhodnější nepřátele~\,--\,~po svém vydání prodala i tato hra v USA více než 100 000 automatů, což žádná jiná hra v USA nedokázala~\cite{kent2010ultimate}.
 
 Pac-Man je hra založena na principu pronásledování hráče nepřáteli bludištěm~\cite{kent2010ultimate}, jak je vidět na obrázku~\ref{fig:pacman}. Hráč má za úkol projít bludiště a sebrat všechny tečky na zemi, čímž se dostane do další úrovně. Při tom ho ale pronásledují 4 duchové, kteří pokud ho chytí tak Pac-Man ztratí jeden ze 3 životů (když ztratí všechny, hra je prohraná). Hráč nadále může získat bonusové body díky sebranému ovoci, nebo pomocí bonusů, čímž se na omezenou dobu může nazpátek Pac-Man pojídat duchy.
 
@@ -137,6 +163,7 @@ Mapa hry je jednoduchý obdélník s několika systematicky rozdělenými nerozb
 \section{Herní engine}\label{chap:Herní engine}
 Herní engine (také game engine) je softwarový framework využívaný pro tvorbu a vývoj (nejen) videoher. Nabízí mnoho nástrojů pro zjednodušení tvůrčího procesu, jako jsou například podpůrné programy, knihovny, a některé poskytují i speciální programovací jazyky vytvořené specificky pro programovaní her v daném engine~\cite{Valencia-Garcia_2016}. V následující části textu jsou popsány a uvedeny některé příklady z nejpopulárnějších herních enginů (viz obrázek~\ref{fig:most_popular_game_engines}).
 \begin{figure}[H]
+    \vspace{0.5cm}
 	\centering
 	\includegraphics[width=\textwidth]{obrazky-figures/ch2/most_popular_game_engines.png}
 	\caption{Výzkum SlashData z roku 2021 o nejpoužívanějších herních enginů.~\cite{SlashData_game-engines}}
@@ -154,13 +181,15 @@ Unity je hojně využívána na vývoj AAA (také Triple-A hry, neboli produkt o
 Unreal Engine je série herních engine, s nejnovější verzí Unreal Engine 5 z roku 2022, od společnosti Epic Games. První verze byla vytvořena pro tvorbu Unreal, 3D střílečky z pohledu první osoby, a byla velmi populární, jelikož díky UnrealScriptu (založeném na C++) mohli uživatele jednoduše původní hru modifikovat~\cite{sanders2016introduction}. Novější verze využívají klasické C++. Podobně jako Unity, nabízí bezplatnou i placenou verzi. Je také multiplatformní, ale podporuje menší škálu platforem než Unity~\,--\,~základní (Windows, Linux, PlayStation, Nintendo Switch, Xbox), ale podporuje~\cite{unreal_engine}.
 
 V porovnání s dalšími zástupci herních engine je hodnocen jako jeden ze složitějších. Díky své komplikovanější stavbě a strmé křivce učení práce s Unreal Engine je doporučován spíše na větší, komplikovanější projekty, než například na mobilní hry (i přestože podporuje vývoj her na Android)~\cite{Kevuru_Games_Unreal-Unity}. Unreal Engine 5 je zaměřený hlavně na 3D vývoj a proto přišel s mnoha funkcemi pro vylepšení vykreslování a práci s trojdimenzionálními objekty - jsou to Nanite (vizuální geometrický systém), Lumen (vylepšená práce se světlem) a MetaSounds (managment audia)~\cite{UnrealEngine5}.
+
+Hrami, které byly vytvořeny za pomocí Unreal Engine je například Minecraft Dungeons, Final Fantasy VII Remake, Fortnite (ukázka na obrázku~\ref{fig:fortnite-unreal_engine}) nebo Stray~\cite{unreal_engine}.
+
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.9\textwidth]{obrazky-figures/ch2/fortnite.png}
+	\includegraphics[width=0.66\textwidth]{obrazky-figures/ch2/fortnite.png}
 	\caption{Ukázka ze hry Fortnite vytvořená pomocí Unreal Engine 5.~\cite{unreal_engine}}
 	\label{fig:fortnite-unreal_engine}
 \end{figure}
-Hrami, které byly vytvořeny za pomocí Unreal Engine je například Minecraft Dungeons, Final Fantasy VII Remake, Fortnite (ukázka na obrázku~\ref{fig:fortnite-unreal_engine}) nebo Stray~\cite{unreal_engine}.
 
 \subsection*{Godot}
 Godot (s nejnovější verzí 4.2.1) je další software pro tvorbu 3D a 2D her. Na rozdíl od Unity a Unreal Engine je od verze 3.0 kompletně zdarma, svobodný a otevřený (open-source)\footnote{\url{https://github.com/godotengine/godot}}. Kvůli tomu má ale Godot oproti jiným zmíněným herním engine omezené oficiální možnosti platforem, jelikož jsou konzole (PlayStation, Xbox) uzavřené ekosystémy a Godot nimi není licencovaný~\cite{Godot_Engine_consoles}. Stále ale podporuje škálu platforem, příkladem desktopové (Windows, Linux, macOS), webové (HTML5), mobilní (Android, iOS) a virtuální realita (Oculus Rift/Quest, HTC Vive).
@@ -207,8 +236,8 @@ Vlastnosti CA je možné popsat také pomocí řetězců pravidel (anglicky \tex
 Typ okolí závisí na tvaru buněk (čtverec, hexagon,~\ldots) a také typu prostoru (1D, 2D,~\ldots)~\cite{ims}. Dvě nejpoužívanější okolí jsou Moorovo a von Neumannovo s různými variacemi~\cite{sloot2004cellular}, jak je vidět na obrázku~\ref{fig:2D-okoli}.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{obrazky-figures/ch2/2D-okoli.png}\hspace{0.5cm}
-    \includegraphics[width=0.6\textwidth]{obrazky-figures/ch2/jina-okoli.png}
+    \includegraphics[width=0.65\textwidth]{obrazky-figures/ch2/2D-okoli.png}\hspace{0.5cm}
+    \includegraphics[width=0.65\textwidth]{obrazky-figures/ch2/jina-okoli.png}
     \caption{Příklady okolí (tmavě modrá = zkoumaná buňka, světle modrá = okolí).}
     \label{fig:2D-okoli}
 \end{figure}
@@ -253,34 +282,36 @@ I přes svoji jednoduchost tento systém nabývá klasifikace 4. třídy, tedy p
     \label{fig:game_of_life}
 \end{figure}
 
-Posledním, zde zmíněným, důležitým vědcem v historii CA byl Stephen Wolfram, který, jak již bylo zmíněno, ve své knize \textit{A New Kind of Science}~\cite{wolfram-NewKindOfScience} popsal 4 třídy pro klasifikování celulárních automatů a to podle jejich vztahům k druhému na základě fyzikálního zákonu zachování hmotnosti.
-
-\subsection*{Využití celulárních automatů ve hrách}
-Jedním z využití CA obsahují hry \uv{padajícího písku}, neboli \textit{Falling-sand games/simulators}. Tyto hry jsou nejčastěji 2D, sandboxové (= podporující kreativitu), jsou založeny například na blokovému/rozdělujícímu celulárnímu automatu, které mohou simulovat reálnou fyziku, jelikož jsou reverzibilní a dodržují fyzikální zákon zachování hmot~\cite{schiff2011cellular}. Nejjednodušší okolí využívané na vyhodnocení těchto CA je Margolusovo (viz obrázek~\ref{fig:Margolus})~\,--\,~2D mřížka je rozdělena na 2x2 čtverce, které se každou generaci posouvají diagonálně o jednu buňku~\cite{schiff2011cellular} (okolí v čase t se tedy skládá ze všech buněk, které se nacházejí v bloku v aktuálním čase).
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.48\textwidth]{obrazky-figures/ch2/Margolus.png}
+    \includegraphics[width=0.6\textwidth]{obrazky-figures/ch2/Margolus.png}
     \caption{Margolusovo okolí (tmavě modrá = zkoumaná buňka, červená = 2x2 blok, světle modrá = okolí).}
     \label{fig:Margolus}
 \end{figure}
 
+Posledním, zde zmíněným, důležitým vědcem v historii CA byl Stephen Wolfram, který, jak již bylo zmíněno, ve své knize \textit{A New Kind of Science}~\cite{wolfram-NewKindOfScience} popsal 4 třídy pro klasifikování celulárních automatů a to podle jejich vztahům k druhému na základě fyzikálního zákonu zachování hmotnosti.
+
+\subsection*{Využití celulárních automatů ve hrách}
+Jedním z využití CA obsahují hry \uv{padajícího písku}, neboli \textit{Falling-sand games/simulators}. Tyto hry jsou nejčastěji 2D, sandboxové (= podporující kreativitu), jsou založeny například na blokovému/rozdělujícímu celulárnímu automatu, které mohou simulovat reálnou fyziku, jelikož jsou reverzibilní a dodržují fyzikální zákon zachování hmot~\cite{schiff2011cellular}. Nejjednodušší okolí využívané na vyhodnocení těchto CA je Margolusovo (viz obrázek~\ref{fig:Margolus})~\,--\,~2D mřížka je rozdělena na 2x2 čtverce, které se každou generaci posouvají diagonálně o jednu buňku~\cite{schiff2011cellular} (okolí v čase t se tedy skládá ze všech buněk, které se nacházejí v bloku v aktuálním čase).
+
 \noindent Hráč má při hraní hry přístup k několika materiálům/elementům, které mají každý své vlastní vlastnosti (gravitace, reaktivnost s jinými materiály), se kterými může interagovat na dané ploše. Příkladem těchto her může být The Powder Toy~\footnote{https://powdertoy.co.uk}, The Sandbox (2012), Sandspiel (ukázka na obrázku~\ref{fig:Sandspiel}) či Noita (hra doplněná o roguelike aspekt).
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{obrazky-figures/ch2/SandSpiel.png}
+    \includegraphics[width=0.5\textwidth]{obrazky-figures/ch2/SandSpiel.png}
     \caption{Ukázka ze hry Sandspiel.}
     \label{fig:Sandspiel}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{obrazky-figures/ch2/minecraft_biom.png}
+    \caption{Příklad vygenerovaného Minecaft světa s různými biomy}
+    \label{fig:minecraft_biom}
 \end{figure}
 
 Rozšířenější, a v moderních hrách i častější, je využití CA na procedurální generování terénu~\,--\,~to je možné najít ve hrách jako je Tje využit u her vyžadujících větší a pestrý svět, či vysoký počet úrovní vyžadujících rozmanité překážky. Je to jelikož klasické \uv{lidské} výtvory mohou být drahé 2 způsoby. Manuální navrhovaní obrovské mapy, či 100+ úrovní lidmi zabere mnoho času, energie a může naskytnout repetitivita, také tyto před-vytvořené mapy zabírají mnoho paměti a jejich načítaní může být obtížné na procesor~\,--\,~procedurální generace tedy vytváří mapy za chodu aplikace, takže vyřeší oba problémy~\cite{Procedural_Game_Map}.
 
 Minecraft například generuje základ své mapy díky stochastickým celulárním automatům spuštěných nad zpracovanými(např. pomocí šumu) výsledky kongruentních generátorů~\cite{Minecraft}. Stochaistické/Náhodné celulární automaty, jsou CA u nichž nejsou pravidla deterministická (tj. nepředvídatelná), ale pravděpodobnostní~\,--\,~to znamená, že místo pevného pravidla určujícího následující stav buňky má zadané pravděpodobnosti možných nových stavů buňky~\cite{DBLP:journals/corr/abs-1304-7185}. Díky tomuto dochází k definování přechodů a prolínání mezi různými poddruhy biomů (příklad vygenerované mapy je vidět na obrázku~\ref{fig:minecraft_biom}). Například teplé oblasti mají 50\% šanci, že se promění v poušť, 33\% v savanu a 17\% v roviny, nebo oceány mající 50\% šanci, že se promění v zem~\cite{Minecraft}.
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.6\textwidth]{obrazky-figures/ch2/minecraft_biom.png}
-    \caption{Příklad vygenerovaného Minecaft světa s různými biomy}
-    \label{fig:minecraft_biom}
-\end{figure}
 
 Některé z jednodušších možností generování prostředí s celulárními automaty je využití algoritmů na náhodné generování jeskyní. Příkladem může být například algoritmus (zapsán níže algoritmem \ref{algo:cave_gen}) z naučné stránky envatotuts+~\cite{CaveCA}, kde buňka CA může nabývat 2 stavů~\,--\,~živá, mrtvá, jehož výsledek je na obrázku~\ref{fig:cave}.
 \begin{algorithm}
@@ -312,9 +343,10 @@ Algoritmus funguje na několika jednoduchých principech, s nimiž je možné r�
     \item smrt = pokud je buňka živá a má příliš málo mrtvých sousedů, zemře v následující iteraci (vytváření otevřených prostorů v jeskyni),
     \item přežití = pokud je buňka živá a má dostatečný počet živých sousedů, přežívá do následující iterace (udržování existující struktury jeskyní).
 \end{itemize}
+
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.4\textwidth]{obrazky-figures/ch2/cave.png}
+    \includegraphics[width=0.5\textwidth]{obrazky-figures/ch2/cave.png}
     \caption{Příklad algoritmu generování jeskyní s využitím Moorova okolí,	deathLimit = 3, birthLimit = 4.}
     \label{fig:cave}
 \end{figure}
@@ -322,8 +354,8 @@ Algoritmus funguje na několika jednoduchých principech, s nimiž je možné r�
 Také je možné využít algoritmy, generující strukturu podobnou bludišti. Celulárním automatem s touto vlastností je OCA:Maze~\cite{OCA:Maze}. Hlavním principem tohoto algoritmu s Mooreovým okolím je, že pokud má buňka živých 1 až 5 sousedů tak přežije a ožívá pokud má přesně 3 sousedy~\,--\,~to znamená, že je pro buňky složitější zemřít a tím se vytváří vzory podobné bludišti, jak je vidět v levé částí obrázku~\ref{fig:OCA:Maze}. Při generování s náhodnou matici, ale nejsou cesty zcela propojené, získáváme jen mnoho nepropojených místností. Existuje~i jeho upravená verze (Mazectric), která ale omezuje počet sousedů potřebný přežití na 1 až 4, díky čemuž vznikají rovnější a delší \uv{cesty}~\cite{OCA:Maze}, což je možné vidět na pravé částí obrázku~\ref{fig:OCA:Maze}.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.40\textwidth]{obrazky-figures/ch2/OCA:Maze.png}\hspace{0.5cm}
-    \includegraphics[width=0.40\textwidth]{obrazky-figures/ch2/Mazectric.png}
+    \includegraphics[width=0.47\textwidth]{obrazky-figures/ch2/OCA:Maze.png}\hspace{0.5cm}
+    \includegraphics[width=0.47\textwidth]{obrazky-figures/ch2/Mazectric.png}
     \caption{Porovnání výsledků CA OCA:Maze (vlevo) a Mazectric (vpravo).}
     \label{fig:OCA:Maze}
 \end{figure}
@@ -345,8 +377,8 @@ Nazývají se neinformovanými, neboli slepými, jelikož nemají žádné zač�
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.45\textwidth]{obrazky-figures/ch2/BFS.png}\hspace{1cm}
-    \includegraphics[width=0.45\textwidth]{obrazky-figures/ch2/DFS.png}
+    \includegraphics[width=0.48\textwidth]{obrazky-figures/ch2/BFS.png}\hspace{0.25cm}
+    \includegraphics[width=0.48\textwidth]{obrazky-figures/ch2/DFS.png}
     \caption{Porovnání metod prohledávání stavového prostoru BFS (vlevo) a DFS (vpravo).}
     \label{fig:BFS_DFS}
 \end{figure}
@@ -364,18 +396,17 @@ Stejně jako u BFS, časová složitost je \(\mathcal{O}_{DFS} = |V| + |E|\), kd
 \subsubsection*{\textbullet Metoda postupného zanořování do hloubky (IDS)}
 Tato metoda je kombinací BFS a DFS, což znamená, že prohledávání funguje stejně jako u DFS s výjimkou, že algoritmus postupuje po úrovních a postupně zvyšuje limit hloubky~\cite{poole2023artificial}. Tedy při první iteraci prohledává hloubkově pouze první úroveň, poté co je celá prohledaná postupuje na druhou iteraci, při které už vstupuje i do druhé, atd. dokud nenajde cíl, či nevyčerpá celý stavový prostor. 
 
-IDS se využívá pokud nemůžeme stanovit hloubku řešení a jeho časová složitost je \(\mathcal{O}_{IDS}(b^{d})\), kde \(b\) je faktor větvení (průměrný počet následovníků uzlu) a \(d\) hloubku optimálního řešení~\cite{izu}.
-
-
-\subsection*{Informované metody}
-Informované metody na rozdíl od neinformovaných znají polohu cíle~\cite{izu}, kterou využívají na zhodnocení cesty pomocí funkce  ${f(n)}$, kde ${n}$ je stav/uzel. Tyto metody jsou také nazývány heuristickými, jelikož využívají k dosáhnutí cíle heuristickou funkci~\,--\,~díky této funkci ${h(n)}$ lze vypočítat pomocí uzlu ${n}$ nezáporné reálné číslo značící odhad nákladů na cestu z uzlu ${n}$ do uzlu cílového~\cite{poole2023artificial}. Čím menší je výsledné číslo, tím pravděpodobněji povede k cílovému uzlu a tedy ${h(n) = 0}$, ${n}$ je cílovým uzlem~\cite{AI-Modern_approach}.
-
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{obrazky-figures/ch2/GreedySearch.png}
+    \includegraphics[width=0.7\textwidth]{obrazky-figures/ch2/GreedySearch.png}
     \caption{Nespolehlivost metody hladového prohledávání při hledání cesty z A do G, červeně zvýrazněno cyklení (uzly ve formátu [název uzlu, heuristika]).~\cite{poole2023artificial}}
     \label{fig:GreedySearch}
 \end{figure}
+
+IDS se využívá pokud nemůžeme stanovit hloubku řešení a jeho časová složitost je \(\mathcal{O}_{IDS}(b^{d})\), kde \(b\) je faktor větvení (průměrný počet následovníků uzlu) a \(d\) hloubku optimálního řešení~\cite{izu}.
+
+\subsection*{Informované metody}
+Informované metody na rozdíl od neinformovaných znají polohu cíle~\cite{izu}, kterou využívají na zhodnocení cesty pomocí funkce  ${f(n)}$, kde ${n}$ je stav/uzel. Tyto metody jsou také nazývány heuristickými, jelikož využívají k dosáhnutí cíle heuristickou funkci~\,--\,~díky této funkci ${h(n)}$ lze vypočítat pomocí uzlu ${n}$ nezáporné reálné číslo značící odhad nákladů na cestu z uzlu ${n}$ do uzlu cílového~\cite{poole2023artificial}. Čím menší je výsledné číslo, tím pravděpodobněji povede k cílovému uzlu a tedy ${h(n) = 0}$, ${n}$ je cílovým uzlem~\cite{AI-Modern_approach}.
 
 \subsubsection*{\textbullet Metoda hladového prohledávání}
 Anglicky nazývaný \textit{Greedy search}, je jeden z nejlehčích přístupů, jelikož využívá na zhodnocení uzlu pouze heuristickou funkci, tedy ${f(n) = h(n)}$~\cite{AI-Modern_approach}. Další krok od aktuálního uzlu se rozhoduje pouze v závislosti na této funkci, tedy hrana s nejmenší heuristikou, čímž může dojít k chybnému výsledku~\,--\,~metoda hladového prohledávání negarantuje nalezení výsledku~\cite{poole2023artificial}. 
@@ -394,14 +425,14 @@ Podobně jako u metody hladového prohledávání hledá algoritmus cestu po nej
 \section{Rejection sampling}
 Rejection sampling, či metoda accept-reject (česky přijetí-odmítnutí), je metoda vzorkování využívaná ke generování náhodných proměnných~\cite{thomopoulos2012essentials}. Je jedním z mnoha algoritmů metody Monte Carlo využívána na vzorkování dat ze sofistikované, neboli obtížně vzorkovatelné, distribuce~\cite{Sachdeva_2021}.
 
+Základní myšlenkou rejection samplingu je, že místo přímého vzorkování komplikované funkce f(X) můžeme generovat vzorky pomocí jednodušší distribuce Q(X), ty následně překontrolovat, zda patří do funkce komplikovanější~\cite{ghojogh2020sampling} a na základě toho je přijmout, či pokud do ní nepatří, odmítnout. Vizuální příklad je možné vidět na obrázku~\ref{fig:RA_graph}, který vyobrazuje vzorky vygenerované na základě funkce Q(X). Vzorky nacházející se v území patřící pod funkci f(X) a  označené zelenou barvou, budou akceptovány a body mimo (označené žlutě) jsou odmítnuty.
+
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{obrazky-figures/ch2/RA_graph.png}
+    \includegraphics[width=0.9\textwidth]{obrazky-figures/ch2/RA_graph.png}
     \caption{Příklad Rejection samplingu, kde jsou díky využití jednodušší distribuce Q(X) (modrá) získány vzorky ze složitější funkce f(X) (červená)}
     \label{fig:RA_graph}
 \end{figure}
-
-Základní myšlenkou rejection samplingu je, že místo přímého vzorkování komplikované funkce f(X) můžeme generovat vzorky pomocí jednodušší distribuce Q(X), ty následně překontrolovat, zda patří do funkce komplikovanější~\cite{ghojogh2020sampling} a na základě toho je přijmout, či pokud do ní nepatří, odmítnout. Vizuální příklad je možné vidět na obrázku~\ref{fig:RA_graph}, který vyobrazuje vzorky vygenerované na základě funkce Q(X). Vzorky nacházející se v území patřící pod funkci f(X) a  označené zelenou barvou, budou akceptovány a body mimo (označené žlutě) jsou odmítnuty.
 
 Pro detailnější vysvětlení je využit algoritmus~\ref{algo:rejection_sampling} sepsaný podle výukového a literárního přehledu z Univerzity Waterloo~\cite{ghojogh2020sampling} a edukační stránky~\cite{Sachdeva_2021}. V tomto algoritmu je $\mathcal{S}$ sada vzorkovacích dat o velikosti $n$, která se postupně naplňuje generovanými daty, které jsou vzorky složitější funkce f(X). V cyklu generujícím a potvrzujícím vzorky je prvně vytvořen vzorek $x$ z funkce g(X) a následně vzorek $u$ z rovnoměrného rozložení $U(0, c\, g(x_i))$. Škálovací konstanta $c$ je využívána k určení horních mezí pro přijetí nebo odmítnutí vzorku a platí, že $c \cdot g(x) \geq f(x) \ \text{pro všechny } x$.
 \label{eq:RA_c}
@@ -448,7 +479,7 @@ Pro detailnější vysvětlení je využit algoritmus~\ref{algo:rejection_sampli
 %--------------------------
 % Uživatelské rozhraní
 \section{Uživatelské rozhraní}
-\todo{FIGMA + popis proc}
+\todo{FIGMA (asi strana plná obrázků + popis proc}
 
 %===---------------====
 % IMPLEMENTACE
@@ -492,7 +523,7 @@ GRAFOVÉ ALGORITMY
 % TESTOVANI
 %===---------------====
 \chapter{Uživatelské testování}
-Uživatelské testování bylo prováděno formou online anonymního dotazníku (Google Forms), který testované subjekty vyplnily po otestování hry. Hra byla testována na počítačích s Windows a Linux operačními systémy. Testery byli aktivní i nezkušení hráči her, naverbováni primárně díky sdílení testovacích prostředků na sociálních sítích.
+Uživatelské testování bylo prováděno formou online anonymního dotazníku (Google Forms), který testované subjekty vyplnily po otestování alfa verze hry. Hra byla testována na počítačích s Windows a Linux operačními systémy. Testery byli aktivní i nezkušení hráči her, naverbováni primárně díky sdílení testovacích prostředků na sociálních sítích.
 
 %--------------------------
 % Dotazník
