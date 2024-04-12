@@ -24,13 +24,13 @@ V této etapě je vytvářen prvotní nápad na vývoj hry. Je základním kamen
 
 Plánování je celé o pokládání a odpovídání si na otázky. Ty se můžou být obecné \uv{Jaký typ hry budeme vytvářet?}, \uv{Kdo bude cílové publikum naší hry?}, nebo se týkat příběhu hry: \uv{Jaká bude zápletka příběhu?}, \uv{Kde se bude hra odehrávat?}, \uv{Jaké postavy se budou ve hře nacházet?} a také technických parametrů hry: \uv{Pro jakou platformu budeme hru vytvářet?}, \uv{Jaké budou klíčové vlastnosti naší hry?}~\cite{g2_game_development}.
 
-Pro takzvaný \uv{proof of concept}, díky kterému je zváženo, zda danou hru můžeme vytvořit je důležité najít a zanalyzovat otázky na odpovědi pro trh~\cite{GameMaker_development}. Těmi je například \uv{Kolik bude stát vývoj hry a jak tyto peníze získáme?}, \uv{Jak dlouho bude trvat vývoj?}, \uv{Máme potřebné zaměstnance a technologie na vývoj?} či \uv{Jakým způsobem hru zpeněžíme?}.
+Pro takzvaný \uv{proof of concept}, díky kterému je zváženo, zda danou hru je možné vytvořit, je důležité najít a zanalyzovat odpovědi na otázky pro trh~\cite{GameMaker_development}. Těmi je například \uv{Kolik bude stát vývoj hry a jak tyto peníze získáme?}, \uv{Jak dlouho bude trvat vývoj?}, \uv{Máme potřebné zaměstnance a technologie na vývoj?} či \uv{Jakým způsobem hru zpeněžíme?}.
 
 Cílem plánování je vytvořit základní koncept o čem hra bude, zjistit si cílový trh a~zhodnotit firemní zdroje a potenciály~\cite{novak2011game}.
 
 \begin{figure}[hb]
     \centering
-	\includegraphics[width=0.95\textwidth]{obrazky-figures/ch2/concept_art.png}
+	\includegraphics[width=0.85\textwidth]{obrazky-figures/ch2/concept_art.png}
 	\caption{Concept art postavy ze hry League of Legends~\cite{artLOLvol1}.}
 	\label{fig:concept_art_lol}
 \end{figure}
@@ -45,7 +45,7 @@ Nejdelší, nejdražší, nejnáročnější a nejdůležitější část vývoj
 
 V této fázi je postupně vytvářen finální produkt. Jsou vymodelovány a animovány objekty, jako jsou postavy či prostředí, které jsou dále naprogramovány, čímž se přidají herní mechaniky a objekty jsou přivedeny k životu~\cite{GameMaker_development}. Tomu napomáhají i zvukoví designeři~a~dabéři, kteří se starají o audio stránku hry.
 
-Při produkci nejsou neobvyklé změny, kde je nutné smazat i celé segmenty hry~\cite{g2_game_development}. Často se stává, že je nutné změnit nějaké natrhnuté či již vytvořené části, ať už je to kvůli nutnosti zmenšit pracovní zátěž vývojářského týmu, či kvůli zjištění, že neimplementovaný objekt do hry nesedí, či nefunguje podle původních představ\,--\,jako například postava \uv{Boatman} ze hry Spyro the Dragon (viz obrázek~\ref{fig:spyro_cut}), která byla změněna na postavu \uv{Ballonist}, nejspíše aby dávalo větší smysl cestování na ostrov v oblacích~\cite{GameMaker_development}.
+Při produkci nejsou neobvyklé změny, kde je nutné smazat i celé segmenty hry~\cite{g2_game_development}. Často se stává, že je nutné změnit nějaké navržené či již vytvořené části, ať už je to kvůli nutnosti zmenšit pracovní zátěž vývojářského týmu, či kvůli zjištění, že neimplementovaný objekt do hry nesedí, či nefunguje podle původních představ\,--\,jako například postava \uv{Boatman} ze hry Spyro the Dragon (viz obrázek~\ref{fig:spyro_cut}), která byla změněna na postavu \uv{Ballonist}, nejspíše aby dávalo větší smysl cestování na ostrov v oblacích~\cite{GameMaker_development}.
 
 \begin{figure}[hb]
     \vspace{0.5cm}
@@ -69,7 +69,7 @@ Vypuštění a distribuce plné verze hry publiku.
 
 Do spuštění hry musí být opraveno co nejvíce (při nejlepším všechny) chyb, proto často studia přichází s hierarchií chyb, které jsou potřeba opravit, od těch nejproblémovějších, které například rozbíjí hru, tak že často padá, až po ty nejdrobnější~\cite{g2_game_development}.
 
-\subsection*{Post produkce}
+\subsection*{Post-produkce}
 V této etapě již hru vlastní a hraje veřejnost, často je ale vydáno zdarma několik dalších verzí hry (zvané \textit{patch}), které ji technicky vylepšují, vyvažují a často i opravují chyby~\cite{novak2011game}, na které se nedostalo při produkci, či které byly nově objeveny hráči. 
 
 Také zde mohou přibýt \textit{updaty}, které do hry přidávají nový obsah (například události (\textit{eventy}), nové postavy/místa, atd.)~\cite{g2_game_development}. Nový obsah přidávají také rozšíření neboli DLC, které jsou ale často oproti updatům placené, nabízí více obsahu, a pro jejich spuštění vyžadují vlastní software (občas v kombinací s originální hrou) na spuštění~\cite{novak2011game}. Nový obsah udržuje hru relevantní~\cite{GameMaker_development}.
@@ -266,7 +266,6 @@ Některé celulární automaty lze označovat také jako \textbf{reverzibilní}.
 
 \subsection*{Historie a Game of Life}
 Za vznikem celulárních automatů stáli ve 40. letech 20. století matematici John von Neumann a~Stanisław Ulam. Ulam studoval růst krystalů pomocí jednoduché mřížky~\cite{pickover2009math} a~von Neumann řešil modely samoreprodukujících se organismů~\cite{history_CA}. Ulam von Neumannovi navrhl využití diskrétního systému~\cite{schiff2011cellular} s buňkami, které se mění po jednotlivých krocích/iteracích. Na základě dalšího výzkumu došli k vyvinutí základů CA a John von Neumann následně na základě myšlenek celulárních automatů sepsal knihu \textit{Theory of Self-Reproducing Automata}, kde detailně, spolu s důkazy o jeho možné existenci, popisuje jeden z prvních konceptů realistických samo-replikujícího systému, \textit{von Neumannův univerzální konstruktor}~\cite{theory_neumann} který funguje jako univerzální kopírka, která by v teorii replikovala sebe sama pomocí surovin z prostředí, ve kterém se nachází. 
-\todo{je to zajímavé ale mám to tu vůbec zmiňovat když to nesouvisí s počítačovýma CA?}
 
 Dalším z důležitých matematiků pro vývoj CA byl John Conway, který v roce 1970 vytvořil pravidla pro \textbf{Game of Life}~\cite{history_CA}, celulární automat na 2D mřížce s buňkami nabývajících 2 stavů\,--\,živá, mrtvá, využívající Moorovo okolí o 8 sousedech (viz obrázek~\ref{fig:2D-okoli}). Pravidly jsou~\cite{Game_Of_Life}:
 \begin{itemize}
@@ -425,27 +424,27 @@ Podobně jako u metody hladového prohledávání hledá algoritmus cestu po nej
 %--------------------------
 % Rejection sampling
 \section{Rejection sampling}
-Rejection sampling, či metoda accept-reject (česky přijetí-odmítnutí), je metoda vzorkování využívaná ke generování náhodných proměnných~\cite{thomopoulos2012essentials}. Je jedním z mnoha algoritmů metody Monte Carlo využívána na vzorkování dat ze sofistikované, neboli obtížně vzorkovatelné, distribuce~\cite{Sachdeva_2021}.
+Rejection sampling, či metoda accept-reject (česky přijetí-odmítnutí), je metoda vzorkování využívaná ke generování náhodných proměnných~\cite{thomopoulos2012essentials} a na vzorkování dat ze sofistikované, neboli obtížně vzorkovatelné, distribuce~\cite{Sachdeva_2021}.
 
 Základní myšlenkou rejection samplingu je, že místo přímého vzorkování komplikované funkce f(X) můžeme generovat vzorky pomocí jednodušší distribuce Q(X), ty následně překontrolovat, zda patří do funkce komplikovanější~\cite{ghojogh2020sampling} a na základě toho je přijmout, či pokud do ní nepatří, odmítnout. Vizuální příklad je možné vidět na obrázku~\ref{fig:RA_graph}, který vyobrazuje vzorky vygenerované na základě funkce Q(X). Vzorky nacházející se v území patřící pod funkci f(X) a označené zelenou barvou, budou akceptovány a body mimo (označené žlutě) jsou odmítnuty.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\textwidth]{obrazky-figures/ch2/RA_graph.png}
+    \includegraphics[width=\textwidth]{obrazky-figures/ch2/RA_graph.png}
     \caption{Příklad Rejection samplingu, kde jsou díky využití jednodušší distribuce Q(X) (modrá) získány vzorky ze složitější funkce f(X) (červená)}
     \label{fig:RA_graph}
 \end{figure}
 
-Pro detailnější vysvětlení je využit algoritmus~\ref{algo:rejection_sampling} sepsaný podle výukového a literárního přehledu z Univerzity Waterloo~\cite{ghojogh2020sampling} a edukační stránky~\cite{Sachdeva_2021}. V tomto algoritmu je $\mathcal{S}$ sada vzorkovacích dat o velikosti $n$, která se postupně naplňuje generovanými daty, které jsou vzorky složitější funkce f(X). V cyklu generujícím a potvrzujícím vzorky je prvně vytvořen vzorek $x$ z funkce g(X) a následně vzorek $u$ z rovnoměrného rozložení $U(0, c\, g(x_i))$. Škálovací konstanta $c$ je využívána k určení horních mezí pro přijetí nebo odmítnutí vzorku a platí, že $c \cdot g(x) \geq f(x) \ \text{pro všechny } x$.
+Pro detailnější vysvětlení je využit algoritmus~\ref{algo:rejection_sampling} sepsaný podle výukového a literárního přehledu z Univerzity Waterloo~\cite{ghojogh2020sampling} a edukační stránky~\cite{Sachdeva_2021}. V tomto algoritmu je $\mathcal{S}$ sada vzorkovacích dat o velikosti $n$, která se postupně naplňuje generovanými daty, které jsou vzorky složitější funkce f(X). V cyklu generujícím a potvrzujícím vzorky je prvně vytvořen vzorek $x$ z funkce Q(X) a následně vzorek $u$ z rovnoměrného rozložení $U(0, c\, Q(x_i))$. Škálovací konstanta $c$ je využívána k určení horních mezí pro přijetí nebo odmítnutí vzorku a platí, že $c \cdot Q(X) \geq f(x) \ \text{pro všechny } x$.
 \label{eq:RA_c}
 \begin{algorithm}[h]
 \caption{Rejection sampling/Accept-reject}\label{algo:rejection_sampling}
 \begin{algorithmic}[1]
-    \State \textbf{Input:} $f(x), g(x), c$\;
+    \State \textbf{Input:} $f(x), Q(X), c$\;
     \State \textbf{Output:} $\mathcal{S}$
     \State $\mathcal{S} \gets \varnothing$
     \For{$i = 1$ to $n$}
-        \State $x_i \sim g(x)$
+        \State $x_i \sim Q(X)$
         \State $u_i \sim U(0, c\, Q(x_i))$
         \If{$u_i < f(x_i)$}
             \State Accept $x_i$: $\mathcal{S} \gets \mathcal{S} \cup \{x_i\}$
@@ -455,8 +454,7 @@ Pro detailnější vysvětlení je využit algoritmus~\ref{algo:rejection_sampli
     \EndFor
 \end{algorithmic}
 \end{algorithm}
-
-\todo{zeptat se zda vůbec můj kod je rejection sampling}
+\todo{malé/velé x?}
 %===---------------====
 % KONCEPT
 %===---------------====
@@ -487,11 +485,11 @@ Pro detailnější vysvětlení je využit algoritmus~\ref{algo:rejection_sampli
 % IMPLEMENTACE
 %===---------------====
 \chapter{Implementace 2D labyrintové hry} % TODO NECO KONKRETNEJSIHO
-Pro implementaci hry jsem otestovala několik game enginů a zvážila jsem jejich výhody a nevýhody. Jelikož mým cílem bylo vytvořit jednoduchou 2D hru jejíž hlavním a nejsložitějším bodem je mapa vybrala jsem si Godot verzi 4. 
+Pro implementaci hry bylo otestováno několik game enginů a zváženy jejich výhody a nevýhody. Jelikož cílem bylo vytvořit jednoduchou 2D hru jejíž hlavním a nejsložitějším bodem je mapa nyl vybrán Godot verze 4. 
 
-Tuto platformu jsem zvolila oproti jiným možnostem díky její široké a jednoduché podpoře vytváření 2D her, oproti například Unreal Engine, která je zaměřená spíše na realistické 3D světy. Jak je již zmíněno v kapitole o Godotu, tento herní engine na rozdíl od Unity či Unreal Engine využívá vlastní skriptovací jazyk GDScript, podobný syntaxí pythonu, který díky svým knihovnám ulehčuje manipulaci s herními prvky (nodes) a urychluje tak vývoj.
+Tato platforma byla zvolena oproti jiným možnostem díky její široké a jednoduché podpoře vytváření 2D her. Například Unreal Engine, která je zaměřená spíše na realistické 3D světy. Jak je již zmíněno v kapitole o Godotu, tento herní engine na rozdíl od Unity či Unreal Engine využívá vlastní skriptovací jazyk GDScript, podobný syntaxí pythonu, který díky svým knihovnám ulehčuje manipulaci s herními prvky (nodes) a urychluje tak vývoj.
 
-Nejdůležitější vlastností Godotu pro vyváření této hry a její základní mapy byla node "TileMap", která slouží pro vytváření 2D dlaždicových map. Její využití je popsáno v následujících podkapitolách.
+Nejdůležitější vlastností Godotu pro vyváření této hry a její základní mapy byla node \uv{TileMap}, která slouží pro vytváření 2D dlaždicových map. Její využití je popsáno v následujících podkapitolách.
     
 %--------------------------
 % Generování mapy
@@ -508,9 +506,47 @@ GRAFOVÉ ALGORITMY
 
 %--------------------------
 % Experimenty s generováním map pomocí CA
+\newpage
 \section{Experimenty s generováním map} % statistiky, proc jsem vybrala dany postup
 \todo{statistiky v generovani mistnosti, po propojeni obsah zdi vs cest + kolik CA generaci na plno - jak na kolika, proc, rovnice}
 
+\begin{table}[htbp]
+    \centering
+    \caption{Výsledky experimentu s mapou}
+    \label{tab:map_experiment}
+    \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    a & Mazetric\_1\_1 & Mazetric\_3\_2 & Cave\_Mazetric\_1\_1 & Cave\_Mazetric\_3\_2 \\ \hline
+    5  & \textbf{0,858}         & 0,860          & 0,890                 & 0,886                \\ \hline
+    10 & \textbf{0,859}          & 0,861          & 0,862                 & 0,860                \\ \hline
+    15 & 0,856          & \textbf{0,852}          & 0,855                 & 0,856                \\ \hline
+    20 & \textbf{0,847}          & 0,851          & 0,854                 & 0,851                \\ \hline
+    25 & 0,845          & 0,847          & \textbf{0,849}                 & 0,847                \\ \hline
+    30 & 0,845          & 0,843          & \textbf{0,847}                 & 0,846                \\ \hline
+    35 & 0,841          & 0,841          & \textbf{0,845}                 & 0,843                \\ \hline
+    40 & 0,840          & 0,839          & \textbf{0,844}                 & 0,842                \\ \hline
+    45 & 0,838          & 0,838          & 0,841                 & \textbf{0,842}                \\ \hline
+    50 & 0,838          & 0,838          & 0,839                 & \textbf{0,840}                \\ \hline
+    \end{tabular}
+\end{table}
+
+\begin{equation}
+    \text{Efektivita} = \left(1 - \frac{g}{\text{a}^2}\right) \cdot \alpha + \left(\text{p} \cdot \beta \right)
+\end{equation}
+
+kde: 
+\begin{itemize}
+    \item $g$ je průměrný počet skupin ve 100 instancích bludiště
+    \item $a$ je velikost 1 strany zkoumaného bludiště ($a^2$ je obsah čtvercového bludiště)
+    \item $\alpha$ je konstanta\,--\,váha důležitosti přidělena počtu skupin = $0,85$
+    \item $\frac{g}{\text{a}^2}$ označuje složitost vytvořeného bludiště
+    \item $p$ označuje poměr mezi nejkratší cestou od začátku ke konci a zbytkem cest (políček na které jde vstoupit)
+    \item $\beta$ je konstanta\,--\,váha důležitosti poměru cest = $0,15$
+\end{itemize}
+do 20 beru nejnižší hodnotu, od 20+ beru nejnižší hodnotu -> vizuální odhad, menší bludiště potřebují víc cest, větší už jsou chaotické dost, ulehčujeme to
+ méně skupin vede k většímu výsledku
+  hustší cesty vedou k většímu výsledku
+\newpage
 %--------------------------
 % Nepřátelé, objekty a jejich rozmístění
 \section{Nepřátelé, objekty a jejich rozmístění}
@@ -530,19 +566,46 @@ Uživatelské testování bylo prováděno formou online anonymního dotazníku 
 %--------------------------
 % Dotazník
 \section{Dotazník}
-Otázky jsem vytvářela tak, abych protestovala hlavní aspekty vytvořené hry, kterými jsou její hratelnost, uživatelské rozhraní, stabilita programu a celková náročnost hry. Byla jsem připravena prvky těchto aspektů následně, na základně zpětné vazby, upravit, či předělat aby vyhovovaly požadavkům testerů. Vzhledem k tomu, že byl dotazník vypracován pro hromadné testování, jsou otázky formulovány tak, aby umožňovaly spíše výběr z předem definovaných možností, než aby vyžadovaly volné textové odpovědi, a to kvůli jednoduššímu vyhodnocování. \\
+Otázky byly vytvářeny tak, aby se protestovaly hlavní aspekty vytvořené hry, kterými jsou její hratelnost, uživatelské rozhraní, stabilita programu a celková náročnost hry. Vzhledem k tomu, že byl dotazník vypracován pro hromadné testování, jsou otázky formulovány tak, aby umožňovaly spíše výběr z předem definovaných možností/škál, než aby vyžadovaly volné textové odpovědi, a to kvůli jednoduššímu vyhodnocování. \\
 \newline
 \noindent Seznam otázek:
 \begin{enumerate}
 \item Kolik času jste strávili u hraní?
+    \begin{itemize}
+        \item otevřená otázka
+    \end{itemize}
 \item Jaká byla vaše nejvyšší dosažená úroveň (level)?
+    \begin{itemize}
+        \item otevřená otázka
+    \end{itemize}
 \item Jaký je váš celkový dojem ze hry?
+    \begin{itemize}
+        \item uzavřená otázka (velmi negativní\,--\,velmi pozitivní)
+    \end{itemize}
 \item Jak byste ohodnotili uživatelské rozhraní a celkovou přehlednost hry?
+    \begin{itemize}
+        \item uzavřená otázka (velmi nepřehledné\,--\,velmi přehledné)
+    \end{itemize}
 \item Jak byste ohodnotili stabilitu a výkon hry (záseky/pády, \ldots)?
+    \begin{itemize}
+        \item uzavřená otázka (velmi stabilní\,--\,nestabilní)
+    \end{itemize}
 \item Co pro vás bylo nejtěžší?
+    \begin{itemize}
+        \item polo-uzavřená otázka (orientace v bludišti, boj/vyhýbání se nepřátelům, technické chyby, ovládání, jiné:\ldots)
+    \end{itemize}
 \item Jak byste ohodnotil vyváženost zvyšující se obtížnosti?
+    \begin{itemize}
+        \item uzavřená otázka (velmi nevyvážená\,--\,velmi vyvážená)
+    \end{itemize}
 \item Pokud jste hodnotili hru jako spíše nevyváženou, jaký k tomu byl důvod? (vyberte co platí, popřípadě doplňte)
+    \begin{itemize}
+        \item polo-uzavřená otázka (obtíýnost se zvyšuje moc pomalu/rychle, na začátku moc jednoduchá a na konci moc složitá, jiné:\ldots)
+    \end{itemize}
 \item Jaké další funkce/vlastnosti/prvky byste ve hře ocenili/změnili?
+    \begin{itemize}
+        \item otevřená otázka
+    \end{itemize}
 \end{enumerate}
 
 %--------------------------
@@ -559,6 +622,69 @@ Byly získány odpovědi od ... subjektů, kompletní výpis všech odpovědí j
 \section{Závěr testování}
 \subsection*{Implementované změny}
 
+\subsubsection*{Hratelnost}
+Oprava počítání skóre \todo{nová rovnice} + člověk nemůže jít do záporu
+
+Oprava kamery - zvýšena rychlost posunu, aby panáček zůstával v centru obrazovky, což by mělo ulehčit i viditelnost nepřátel a zabránění neočekávaným kolizím s nimi
+
+Předělán item bot, zvyšuje rychlost na celou dobu + násobitelný jako meč
+
+Zjednodušen zpomalovací mob/slime\,--\,jeho zpomalení se nově nenásobí, pouze se obnovuje časovač zpomalení + změněno HP 10 -> 8
+
+Legenda/vysvětlení objektů ve hře (itemy + nepřátelé)\,--\,přidaní stránky \uv{GUIDE}, kde se nachází stránky s vysvětlením základů hry (ovládání, hlavní cíle hry\,--\,pro přehled získávání skóre a zdůraznění životů), vysvětlení itemů, vysvětlení vlastností nepřátel a pastí
+
+Diagonální pohyb hráče je v aktualizované formě stejně rychlý jak pohyb vertikální/horizontální, čehož bylo docíleno pomocí normalizace.
+
+Synchronizace animace útoku a vyslání signálu útoku u hráče
+
+Odstranění nepřítele divočáka\,--\,nevhodný do prostorů bludiště, moc se zasekával o zdi, nebylo to možné opravit
+
+Řazení skóre\,--\,implementován bubble sort místo nativního sortu
+\subsubsection*{Uživatelské rozhraní}
+Sbírání mečů\,--\,již dříve se násobili, ale nebylo to nijak uživateli dáno na vědomí, předělána ikona, aby obsahovala i rámeček s počtem
+
+Sbírání bot\,--\,předělána ikona, aby obsahovala i rámeček s počtem zrychlení
+
+Zlepšena viditelnost zvoleného tlačítka pomocí rámečku + změněn focus a hover mode tlačítek
+
+Možnost zrušení pauzy hry pomocí klávesy Esc
+
+Zamrznutí obrazovky po dohrání úrovně/hry aby bylo zabráněno missclicku + potvrzovací okna o navrácení do menu a ukončení hry u dohrání úrovně/hry/pauzy
+
+Zobrazování času stráveném v úrovni ve hře
+
+Oprava textury pasti
+
+Animace přidání skóre u truhly
+
+Změna nastavení fullscreen na windowed fullscreen
+\subsubsection*{Stabilita programu}
+Po dohraní a zadaní jména (bez diakritiky) a zmačknutí éteru hra spadla\,--\,nešlo zreplikovat, ale přidána ikonka na potvrzení uložení jména
+\subsubsection*{Náročnost}
+Změna algoritmu pro přidávání nepřátel do hry, nepřátele se objeví ve hře o kolo dřív a dále se objevují častěji pro zvýšení náročnosti hry.
+
+Pro vyhýbání se nepřátelům snížena jejich viditelnost/vzdálenost od kdy začnou pronásledovat hráče na 3 bloky a drobné zmenšeni jejich modelů
+
+\subsection*{Zavrhnuté návrhy a návrhy pro budoucí práci}
+Ukazování předmětů, které je možné získat\,--\,bloudění, možná v budoucnu pro lehčí mód
+
+Odhalovací minimapa\,--\,možná v budoucnu pro lehčí mód či později u složitějších/výšších úrovní
+
+Hudba
+
+Úprava panáčka za sesbírané skóre
+
+Zobrazování skóre ve hře\,--\,kvůli způsobu počítání skóre by to bylo matoucí, místo toho přidán čas
+
+Větší prostory\,--\,do budoucna
+
+Poznačování prošlých úseků\,--\,do budoucna pomocí itemu (spotřebovatelné itemy)
+
+Změna velkosti kamery/plochy kterou hráč vidí\,--\,naschvál, má to udržet pocit bloudění v bludišti
+
+Po skončení ukázání mapy labyrintu\,--\,možná v budoucnu, ale jen zapnutelná možnost, bylo by to moc rušivé
+
+Prostestováno spawnování portálu (konce hry) a nepřátel, vše se objevuje dle algoritmů.
 %===---------------====
 % ZAVER
 %===---------------====
