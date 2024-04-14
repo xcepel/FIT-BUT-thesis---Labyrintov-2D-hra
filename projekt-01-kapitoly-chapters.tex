@@ -611,9 +611,20 @@ Otázky byly vytvářeny tak, aby se protestovaly hlavní aspekty vytvořené hr
 %--------------------------
 % Analýza výsledků
 \section{Analýza výsledků}
-Byly získány odpovědi od ... subjektů, kompletní výpis všech odpovědí je přístupný v příloze~\ref{chap:user_testing}.
+Byly získány odpovědi od 22 subjektů, kompletní výpis všech odpovědí je dostupný v příloze~\ref{chap:user_testing}. Hráči strávili hraním hry průměrně půl hodiny s mediánem 20 minut. Průměrná úroveň, které dosáhli byla úroveň 14 a nejvyšší dosažený level byl 28.
+
 \subsection*{Hratelnost}
+Celkový dojem hráčů ze hry byl spíše kladný. Největší problém byl se způsobem počítání skóre, u kterého připouštím, že první verze nebyla dokonalá. Hlavním problémem bylo, že skóre bylo rozděleno dle stupňů, které nebyly rozděleny adekvátně, tak aby odpovídaly jejich společné časové náročnosti. To následně vytvořilo problém, že někteří hráči získávali za vyšší úrovně skóre záporné.
+
+Dalším problémem, na který několik testerů upozornilo byla absence legendy, či vysvětlení významu a vlastností objektů ve hře (předmětů a nepřátel). To také vyvolávalo zmatení u některých předmětů, jelikož hráči očekávali jinou funkci\,--\,například item truhly původně po sebrání jen zmizel bez dodatečných efektů, což u hráče vyvolalo zmatení, jelikož očekával, že dostane nějaký bonusový předmět, i přestože truhla dodává pouze bonusové skóre.
+
+Našlo se také několik drobných technických problémů a to u kamery s pohledem na hráče, jenž nebyla vhodně vycentrovaná a optimalizovaná pro rychlost hratelné postavy, čímž se hráči setkávali s problémem že kamera \uv{nestíhala} zabírat postavičku při vertikálním pohybu a nastávaly neočekávané kolize.
+
+Kladný byl i názor na složitost hry a její postupné zvyšování obtížnostní úrovně, i když se našli někteří kteří nepocítili rozdíly mezi různými úrovněmi.
+
+Na základě zpětné vazby na složitost byly i upraveny někter
 \subsection*{Uživatelské rozhraní}
+I uživatelské rozhraní hodnotili uživatelé kladně s drobnými chybičkami. Hráči oceňovali nápaditost a grafickou stránku hry.
 \subsection*{Stabilita programu}
 \subsection*{Náročnost}
 
@@ -623,7 +634,7 @@ Byly získány odpovědi od ... subjektů, kompletní výpis všech odpovědí j
 \subsection*{Implementované změny}
 
 \subsubsection*{Hratelnost}
-Oprava počítání skóre \todo{nová rovnice} + člověk nemůže jít do záporu
+Oprava počítání skóre, nová rovnice + člověk nemůže jít do záporu
 
 Oprava kamery - zvýšena rychlost posunu, aby panáček zůstával v centru obrazovky, což by mělo ulehčit i viditelnost nepřátel a zabránění neočekávaným kolizím s nimi
 
@@ -640,6 +651,7 @@ Synchronizace animace útoku a vyslání signálu útoku u hráče
 Odstranění nepřítele divočáka\,--\,nevhodný do prostorů bludiště, moc se zasekával o zdi, nebylo to možné opravit
 
 Řazení skóre\,--\,implementován bubble sort místo nativního sortu
+
 \subsubsection*{Uživatelské rozhraní}
 Sbírání mečů\,--\,již dříve se násobili, ale nebylo to nijak uživateli dáno na vědomí, předělána ikona, aby obsahovala i rámeček s počtem
 
@@ -658,8 +670,10 @@ Oprava textury pasti
 Animace přidání skóre u truhly
 
 Změna nastavení fullscreen na windowed fullscreen
+
 \subsubsection*{Stabilita programu}
 Po dohraní a zadaní jména (bez diakritiky) a zmačknutí éteru hra spadla\,--\,nešlo zreplikovat, ale přidána ikonka na potvrzení uložení jména
+
 \subsubsection*{Náročnost}
 Změna algoritmu pro přidávání nepřátel do hry, nepřátele se objeví ve hře o kolo dřív a dále se objevují častěji pro zvýšení náročnosti hry.
 
