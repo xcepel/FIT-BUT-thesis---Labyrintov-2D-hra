@@ -562,143 +562,167 @@ do 20 beru nejnižší hodnotu, od 20+ beru nejnižší hodnotu -> vizuální od
 %===---------------====
 \chapter{Uživatelské testování}
 Uživatelské testování bylo prováděno formou online anonymního dotazníku (Google Forms), který testované subjekty vyplnily po otestování alfa verze hry. Hra byla testována na počítačích s Windows a Linux operačními systémy. Testery byli aktivní i nezkušení hráči her, naverbováni primárně díky sdílení testovacích prostředků na sociálních sítích.
-
 %--------------------------
 % Dotazník
 \section{Dotazník}
-Otázky byly vytvářeny tak, aby se protestovaly hlavní aspekty vytvořené hry, kterými jsou její hratelnost, uživatelské rozhraní, stabilita programu a celková náročnost hry. Vzhledem k tomu, že byl dotazník vypracován pro hromadné testování, jsou otázky formulovány tak, aby umožňovaly spíše výběr z předem definovaných možností/škál, než aby vyžadovaly volné textové odpovědi, a to kvůli jednoduššímu vyhodnocování. \\
-\newline
-\noindent Seznam otázek:
-\begin{enumerate}
-\item Kolik času jste strávili u hraní?
-    \begin{itemize}
-        \item otevřená otázka
-    \end{itemize}
-\item Jaká byla vaše nejvyšší dosažená úroveň (level)?
-    \begin{itemize}
-        \item otevřená otázka
-    \end{itemize}
-\item Jaký je váš celkový dojem ze hry?
-    \begin{itemize}
-        \item uzavřená otázka (velmi negativní\,--\,velmi pozitivní)
-    \end{itemize}
-\item Jak byste ohodnotili uživatelské rozhraní a celkovou přehlednost hry?
-    \begin{itemize}
-        \item uzavřená otázka (velmi nepřehledné\,--\,velmi přehledné)
-    \end{itemize}
-\item Jak byste ohodnotili stabilitu a výkon hry (záseky/pády, \ldots)?
-    \begin{itemize}
-        \item uzavřená otázka (velmi stabilní\,--\,nestabilní)
-    \end{itemize}
-\item Co pro vás bylo nejtěžší?
-    \begin{itemize}
-        \item polo-uzavřená otázka (orientace v bludišti, boj/vyhýbání se nepřátelům, technické chyby, ovládání, jiné:\ldots)
-    \end{itemize}
-\item Jak byste ohodnotil vyváženost zvyšující se obtížnosti?
-    \begin{itemize}
-        \item uzavřená otázka (velmi nevyvážená\,--\,velmi vyvážená)
-    \end{itemize}
-\item Pokud jste hodnotili hru jako spíše nevyváženou, jaký k tomu byl důvod? (vyberte co platí, popřípadě doplňte)
-    \begin{itemize}
-        \item polo-uzavřená otázka (obtíýnost se zvyšuje moc pomalu/rychle, na začátku moc jednoduchá a na konci moc složitá, jiné:\ldots)
-    \end{itemize}
-\item Jaké další funkce/vlastnosti/prvky byste ve hře ocenili/změnili?
-    \begin{itemize}
-        \item otevřená otázka
-    \end{itemize}
-\end{enumerate}
+Otázky byly vytvořeny k testování hlavních aspektů hry, jako je hratelnost, uživatelské rozhraní, stabilita programu a celková náročnost. Dotazník je navržen tak, aby umožňoval rychlé vyhodnocení prostřednictvím výběru z několika otázek s předdefinovanými možnostmi/škálami a pár otevřených otázek, a to kvůli využití hromadného testování. Otázky a~jejich typ je vypsán v tabulce~\ref{tab:questions}.
+
+\begin{table}[h]
+    \centering
+    \begin{tabularx}{\textwidth}{X | X}
+    \hline
+    \textbf{Otázka} & \textbf{Typ otázky} \\ \hline
+    1. Kolik času jste strávili u hraní? & Otevřená otázka \\ 
+    2. Jaká byla vaše nejvyšší dosažená úroveň (level)? & Otevřená otázka \\ 
+    3. Jaký je váš celkový dojem ze hry? & Uzavřená otázka (velmi negativní--velmi pozitivní) \\ 
+    4. Jak byste ohodnotili uživatelské rozhraní a celkovou přehlednost hry? & Uzavřená otázka (velmi nepřehledné--velmi přehledné) \\ 
+    5. Jak byste ohodnotili stabilitu a výkon hry (záseky/pády, \ldots)? & Uzavřená otázka (velmi stabilní--nestabilní) \\ 
+    6. Co pro vás bylo nejtěžší? & Polo-uzavřená otázka (orientace v bludišti, boj/vyhýbání se nepřátelům, technické chyby, ovládání, jiné:\ldots) \\ 
+    7. Jak byste ohodnotili vyváženost zvyšující se obtížnosti? & Uzavřená otázka (velmi nevyvážená--velmi vyvážená) \\ 
+    8. Pokud jste hodnotili hru jako spíše nevyváženou, jaký k tomu byl důvod? & Polo-uzavřená otázka (obtížnost se zvyšuje moc pomalu/rychle, na začátku moc jednoduchá a na konci moc složitá, jiné:\ldots) \\ 
+    9. Jaké další funkce/vlastnosti/prvky byste ve hře ocenili/změnili? & Otevřená otázka\\
+    \hline
+    \end{tabularx}
+    \caption{Seznam otázek}
+    \label{tab:questions}
+\end{table}
 
 %--------------------------
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth, height=0.25\textheight]{obrazky-figures/ch5/hodnoceni_celkovy_dojem.png}
+    \caption{Graf odpovědí na otázku \uv{Jaký je váš celkový dojem ze hry?}.}
+    \label{fig:hodnoceni_celkovy_dojem}
+\end{figure}
+
 % Analýza výsledků
-\section{Analýza výsledků}
+\section{Analýza výsledků} \label{chap:Analýza výsledků}
 Byly získány odpovědi od 22 subjektů, kompletní výpis všech odpovědí je dostupný v příloze~\ref{chap:user_testing}. Hráči strávili hraním hry průměrně půl hodiny s mediánem 20 minut. Průměrná úroveň, které dosáhli byla úroveň 14 a nejvyšší dosažený level byl 28.
 
 \subsection*{Hratelnost}
-Celkový dojem hráčů ze hry byl spíše kladný. Největší problém byl se způsobem počítání skóre, u kterého připouštím, že první verze nebyla dokonalá. Hlavním problémem bylo, že skóre bylo rozděleno dle stupňů, které nebyly rozděleny adekvátně, tak aby odpovídaly jejich společné časové náročnosti. To následně vytvořilo problém, že někteří hráči získávali za vyšší úrovně skóre záporné.
+Celkový dojem hráčů ze hry byl spíše kladný, jak je vidět na obrázku s grafem~\ref{fig:hodnoceni_celkovy_dojem}. Největší problém byl se způsobem počítání skóre, u kterého připouštím, že první verze nebyla dokonalá. Hlavním problémem bylo, že skóre bylo rozděleno dle stupňů, které nebyly rozděleny adekvátně, tak aby odpovídaly jejich společné časové náročnosti. To následně vytvořilo problém, že někteří hráči získávali za vyšší úrovně skóre záporné. Skóre se také občas špatně řadilo v tabulce výsledků. K tomuto jevy podle testerů docházelo, pokud bylo v tabulce více příspěvků se stejným jménem. Také se objevila stížnost na chybějící návod na ovládání.
 
 Dalším problémem, na který několik testerů upozornilo byla absence legendy, či vysvětlení významu a vlastností objektů ve hře (předmětů a nepřátel). To také vyvolávalo zmatení u některých předmětů, jelikož hráči očekávali jinou funkci\,--\,například item truhly původně po sebrání jen zmizel bez dodatečných efektů, což u hráče vyvolalo zmatení, jelikož očekával, že dostane nějaký bonusový předmět, i přestože truhla dodává pouze bonusové skóre.
 
-Našlo se také několik drobných technických problémů a to u kamery s pohledem na hráče, jenž nebyla vhodně vycentrovaná a optimalizovaná pro rychlost hratelné postavy, čímž se hráči setkávali s problémem že kamera \uv{nestíhala} zabírat postavičku při vertikálním pohybu a nastávaly neočekávané kolize.
+Objevilo se také několik drobných technických problémů a to u kamery s pohledem na hráče, jenž dle recenzí testerů nebyla vhodně vycentrovaná a optimalizovaná pro rychlost hratelné postavy, kvůli čemuž se hráči setkávali s problémem že kamera \uv{nestíhala} zabírat postavičku při vertikálním pohybu a nastávaly neočekávané kolize se zdmi, pastmi nebo nepřáteli. To mohlo vést i k pocitu, že kamera zabírá moc malé území. Také si jeden tester povšiml, že hráčská postava se pohybuje diagonálně rychleji, než vertikálně a horizontálně, a že vyslání signálu útoku hráče není správně synchronizované s animací útoku, jelikož postava prvně zaútočí a odebere životy nepřátelům a následně se provede animace seknutí.
 
-Kladný byl i názor na složitost hry a její postupné zvyšování obtížnostní úrovně, i když se našli někteří kteří nepocítili rozdíly mezi různými úrovněmi.
+Hráči také vyjádřili své přání k budoucím implementacím pro zvýšení zábavnosti hry, těmito návrhy bylo například přidání hudby, či možnost úpravy hratelné postavy za získané skóre (jako měna).
 
-Na základě zpětné vazby na složitost byly i upraveny někter
-\subsection*{Uživatelské rozhraní}
-I uživatelské rozhraní hodnotili uživatelé kladně s drobnými chybičkami. Hráči oceňovali nápaditost a grafickou stránku hry.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth, height=0.25\textheight]{obrazky-figures/ch5/hodnoceni_ui.png}
+    \caption{Graf odpovědí na otázku \uv{Jak byste ohodnotili uživatelské rozhraní a celkovou přehlednost hry?}.}
+    \label{fig:hodnoceni_ui}
+\end{figure}
+
+\subsection*{Uživatelské rozhraní a grafická stránka hry}
+Uživatelské rozhraní hodnotili testeři kladně, pouze s drobnými chybičkami\,--\,průměrný výsledek hodnocení je 8, tedy blíže k velmi přehledné s mediánem 8,5, jak je vidět na obrázku~\ref{fig:hodnoceni_ui}. Hráči oceňovali nápaditost a jednoduchost grafické a pixelové stránky hry. 
+
+Nejčastěji opakovanou potřebou byla žádost na zobrazování skóre, či uběhlého času v úrovni, a ne pouze na konci u vyhodnocení, jelikož hráči byli zmatení nad způsobem počítání skóre. Na rozložení se objevila se pouze jedna stížnost testera, který byl zmatený umístěním srdíček, označující životy a jejich významem. Jiné stížnosti na rozložení nebyly, pouze jeden tester vyjádřil přání lepší viditelnosti zvoleného tlačítka, jelikož dle něj nebyl původní způsob dostatečně viditelný (byla pouze měněna barva textu tlačítka).
+
+K ovládání se objevili stížnosti u hráčů hrajících pomocí šipek, jelikož ty jsou propojené i s ovládáním tlačítek v různých menu. Podle hráčů při vertikálnímu vstupu do portálu mohlo dojít k neočekávanému vypnutí hry, jelikož šipky ihned začali reagovat v ovládání menu. V otázce o dalších funkcích byla odpověď s návrhem na odchod z pauzy pomocí \textit{Esc} tlačítka. Jeden tester také vyjádřil žádost, aby se hra ihned po spuštění nedostávala do fullscreen módu, ale například jen do maximalizace, a to kvůli lepšímu manipulování při využití více obrazovek.
+
+Pár drobných grafických úprav si dle testerů vyžádali i některé předměty, jako například meč (předmět zvyšující poškození) u kterého nebylo nijak jasné, že se násobní, nebo předmět truhly, který po jejím sebrání nedával nijak najevo jaký byl jeho význam. U pasti byl objeven problém s chybně vloženou texturou, takže se při hraní zobrazovala část textury jiné.
+
 \subsection*{Stabilita programu}
+Většina testerů (90\%, viz obrázek~\ref{fig:hodnoceni_stabilita}) označila hru jako stabilní a plynulou, nesetkali se tedy s žádným zbytečně dlouhým čekáním na generování nové úrovně, či pády hry.
+
+Pouze 10\% (2 testeři) mělo drobné problémy, z nichž jeden se týkal pádu hry po zadaní jména a stisknutí \textit{Enter}\,--\,po znovuspouštění hry bylo ale vše úspěšně uloženo. Tato chyba se však nepodařa replikovat. Druhý tester zaznamenal občasné záseky, ale dle zbytku jeho vyplněného dotazníku se tyto problémy zdají být spojeny spíše s chováním nepřítele \uv{Boar}/divočák (viz další podkapitola) než se stabilitou hry samotné.
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.85\textwidth]{obrazky-figures/ch5/hodnoceni_stabilita.png}
+    \caption{Graf odpovědí na otázku \uv{Jak byste ohodnotili stabilitu a výkon hry (záseky/pády,...)?}.}
+    \label{fig:hodnoceni_stabilita}
+\end{figure}
+
 \subsection*{Náročnost}
+Na náročnost hry a její postupné zvyšování obtížností úrovně byl převážně kladný názor, i~když se našli někteří (3 testeři) kteří nepocítili rozdíly mezi různými úrovněmi. Někteří si naopak přáli možnost lehčího vyhýbání se nepřátelům, jelikož boje byly moc složité a bylo na ně málo místa. Také ale přišlo pár žádostí na zlehčení bloudění a to například přidáním odhalující se minimapy, předmětu na poznačování cest, či seznamu hledaných předmětů a~nepřátel na začátku úrovně. Pár hráčům přišlo, že se nepřátelé a předměty neobjevují nějak kontrolovaně, například že v některých úrovních se jim nepovedlo potkat žádného nepřítele a v jiných i několik, podobné reakce byly i u předmětů a jeden tester dokonce oznámil, že se mu v jedné úrovni nedařilo najít konec hry (portál). 
+
+Na základě zpětné vazby ohledně obtížnosti hry bylo nutné přemýšlet nad úpravou některých herních objektů. Jedním z nich byly boty/předmět na zrychlení, které poskytovaly hráči velké zrychlení po omezenou dobu. Další stížnosti se týkaly nepřítele \uv{slime}, který byl příliš obtížný kvůli svému excesivnímu zpomalení hráče. Také byly identifikovány problémy s nepřítelem "boar"/divočák, který se zasekával na hráčské postavě kvůli svému speciálnímu útoku a často zůstával uvízlý na zdech, což snižovalo jeho herní výzvu.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth, height=0.25\textheight]{obrazky-figures/ch5/hodnoceni_vyvazenost.png}
+    \caption{Graf odpovědí na otázku \uv{Jak byste ohodnotili vyváženost zvyšující se obtížnosti?}.}
+    \label{fig:hodnoceni_vyvazenost}
+\end{figure}
 
 %--------------------------
 % Závěr testování
 \section{Závěr testování}
 \subsection*{Implementované změny}
+Na základě dotazníku byla vyhodnocena zpětná vazba, včetně otázky číslo 9 \uv{Jaké další funkce/vlastnosti/prvky byste ve hře ocenili/změnili?}, návrhy a poznámky byly rozděleny na skupiny \uv{implementované} a \uv{zavrhnuté a pro budoucí práci} a to v závislosti na jejich důležitosti pro hratelnost/vyváženost/chod hry, složitosti implementace a dle počtu žádostí o změnu/přidání.
 
-\subsubsection*{Hratelnost}
-Oprava počítání skóre, nová rovnice + člověk nemůže jít do záporu
+\subsubsection*{\textbullet Hratelnost}
+Hlavním problémem, který vyžadoval opravu, jak je již zmíněno v kapitole~\ref{chap:Analýza výsledků} Analýza výsledků, bylo počítání skóre. Proto byla vytvořena nová rovnice~\todo{viz rovnice x.x} na počítání skóre a do kódu byla přidaná kontrola zajišťující, že výsledné skóre z úrovně nemůže být nižší než 0. Také byl pro řazení skóre implementován lehčí a spolehlivější bubble sort namísto nativního Godot řazení.
 
-Oprava kamery - zvýšena rychlost posunu, aby panáček zůstával v centru obrazovky, což by mělo ulehčit i viditelnost nepřátel a zabránění neočekávaným kolizím s nimi
+Druhý častý problém testerů byl s nepochopením významu některých předmětů a tedy i absence legendy/průvodce herními objekty. Proto byla přidaná do menu záložka \uv{Guide}, neboli \uv{Průvodce}, jenž má 4 stránky. První stránka \uv{Basics}, vysvětluje hráči základní ovládání, prioritu úkolů pro získání nejvyššího skóre a připomíná hráči mortalitu jeho herní postavy v závislosti na ikonách srdíček v levé části obrazovky. Další část \uv{Enemies} popisuje všechny nepřátele ve hře, jejich životy a speciální vlastnosti. Vlastnosti předmětů a pastí/překážek pak popisují stránky \uv{Items} a \uv{Traps}.
 
-Předělán item bot, zvyšuje rychlost na celou dobu + násobitelný jako meč
+Následně bylo potřeba upravit pohled kamery, aby se vyvarovalo problémům s postavičkou opouštějící střed obrazovky a způsobující nečekané kolize. Řešením bylo zvýšení rychlosti posunu kamery (na 16 pixelů, velikost 1 dlaždice hry) a důkladnější vycentrování postavy, rozdíl mezi původní kamerou a novou je vidět na obrázku~\ref{fig:rozdil_kamer}.
 
-Zjednodušen zpomalovací mob/slime\,--\,jeho zpomalení se nově nenásobí, pouze se obnovuje časovač zpomalení + změněno HP 10 -> 8
+Hráčská postava prošla také aktualizací, jelikož její diagonální pohyb je v aktualizované formě stejně rychlý jak pohyb vertikální/horizontální, čehož bylo docíleno pomocí normalizace rychlostního vektoru. Také byl upraven čas vyslání signálu útoku hráče na nepřítele, aby byl synchronizovaný s animací útoku (čas kdy hráčská postava sekne zbraní, oproti původnímu napřahování se).
 
-Legenda/vysvětlení objektů ve hře (itemy + nepřátelé)\,--\,přidaní stránky \uv{GUIDE}, kde se nachází stránky s vysvětlením základů hry (ovládání, hlavní cíle hry\,--\,pro přehled získávání skóre a zdůraznění životů), vysvětlení itemů, vysvětlení vlastností nepřátel a pastí
+\begin{figure}[hb]
+    \centering
+    \includegraphics[width=0.45\textwidth]{obrazky-figures/ch5/old_camera.png}\hspace{0.5cm}
+    \includegraphics[width=0.474\textwidth]{obrazky-figures/ch5/new_camera.png}
+    \caption{Rozdíl mezi pohledem staré kamery (vlevo) a nové (vpravo).}
+    \label{fig:rozdil_kamer}
+\end{figure}
 
-Diagonální pohyb hráče je v aktualizované formě stejně rychlý jak pohyb vertikální/horizontální, čehož bylo docíleno pomocí normalizace.
 
-Synchronizace animace útoku a vyslání signálu útoku u hráče
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.1\textwidth]{obrazky-figures/ch5/new_demage.png}\hspace{3cm}
+    \includegraphics[width=0.1\textwidth]{obrazky-figures/ch5/new_speed.png}
+    \caption{Nové, vylepšené ikony zvýšení poškození a zrychlení.}
+    \label{fig:new_icons}
+\end{figure}
 
-Odstranění nepřítele divočáka\,--\,nevhodný do prostorů bludiště, moc se zasekával o zdi, nebylo to možné opravit
+\subsubsection*{\textbullet Uživatelské rozhraní a grafická stránka hry}
+Z ohledu uživatelského rozhraní bylo na žádost testerů přidáno viditelné počítaní času stráveného na úrovní v horní liště hry. Je to kompromis, jelikož kvůli způsobu počítaní skóre (tedy odečítání uplynulého času) by bylo ubývající skóre pro hráče matoucí. V liště byl i zvětšen text popisků informačních sloupců (\uv{HP} a \uv{MODS}) pro zdůraznění jejich důležitosti.
 
-Řazení skóre\,--\,implementován bubble sort místo nativního sortu
+Významnou změnou pro UI je přidání několika setinového zamrznutí ovládání po vstupu do obrazovky shrnující úspěšné dokončení úrovně. K tomu bylo přidána vyskakující okna potvrzující hráčovo rozhodnutí o opuštění hry, či navrácení se ze hry do menu. Tyto změny byly mířené na testery, kteří měli problém s mylným vypínáním hry. Pro hráčské pohodlí je hra spouštěna namísto předvolby celé obrazovky pouze v maximalizovaném okně. Také hráčům bylo umožněno odejít z pauzy pomocí žádaného tlačítka \textit{Esc}. Dále byla poupravena textura zvolených tlačítek a to pomocí přidání světlého rámečku ohraničující vybrané tlačítko.
+Ikony vylepšení v sloupci \uv{MODS} prošly grafickou úpravou. Při sbírání mečů se nyní zobrazuje ikona meče, nově s rámečkem, vyjadřujícím poškození. Podobně byla upravena ikona bot pro zrychlení, která nově zobrazuje násobek původní rychlosti. Obě nové ikony jsou vidět na obrázku~\ref{fig:new_icons}. Byla také přidána animace přičtení skóre při sebrání truhly pro vizuální vysvětlení jejího významu. Textura pasti byla opravena a již nezobrazuje kus jiné textury.
 
-\subsubsection*{Uživatelské rozhraní}
-Sbírání mečů\,--\,již dříve se násobili, ale nebylo to nijak uživateli dáno na vědomí, předělána ikona, aby obsahovala i rámeček s počtem
+\subsubsection*{\textbullet Stabilita programu}
+Jak již bylo zmíněno v analýze dotazníku, při dodatečném testování nebylo možné zreplikovat pád hry, jenž jeden z testerů popisoval. I tak ale byla přidána ikona potvrzení jména po stisknutí klávesy \textit{Enter} na obrazovce konce hry, která má naznačovat uživateli úspěšné dokončení uložení výsledků hry. Vzhledem k spokojenosti ostatních testerů se stabilitou hry nebylo třeba implementovat žádné úpravy zajišťující lepší stabilitu.
 
-Sbírání bot\,--\,předělána ikona, aby obsahovala i rámeček s počtem zrychlení
+\subsubsection*{\textbullet Náročnost}
+Vzhledem k několika feedbackům o nesprávném generování, kdy chyběly v některých úrovních nepřátelé, předměty a či portál/cíl hry, bylo provedeno důkladné testování na mnoha úrovních testujících zda algoritmy generování odpovídají očekávaní. Nebyly nalezeny žádné nesrovnalosti s návrhem, vše se generuje podle očekávání a ve správných počtech.
 
-Zlepšena viditelnost zvoleného tlačítka pomocí rámečku + změněn focus a hover mode tlačítek
+Na základě zpětné vazby byla upravena celková náročnost hry. Jelikož pár hráčům přišlo, že se obtížnost zvyšuje moc pomalu, byla snížena úroveň na které se poprvé objeví nepřítel na úroveň 3. Naopak ale byla zvýšena výzva pro možnost procházení bludiště bez bojů díky zmenšení nepřátelských modelů a snížení vzdálenosti od které začnou pronásledovat hráče na 3 bloky. Na vyvážení této změny byla zvýšena bodoví odměna za zabití nepřítele. Díky tomu má hráč stále motivaci s nepříteli radši bojovat než se jim vyhýbat.
 
-Možnost zrušení pauzy hry pomocí klávesy Esc
-
-Zamrznutí obrazovky po dohrání úrovně/hry aby bylo zabráněno missclicku + potvrzovací okna o navrácení do menu a ukončení hry u dohrání úrovně/hry/pauzy
-
-Zobrazování času stráveném v úrovni ve hře
-
-Oprava textury pasti
-
-Animace přidání skóre u truhly
-
-Změna nastavení fullscreen na windowed fullscreen
-
-\subsubsection*{Stabilita programu}
-Po dohraní a zadaní jména (bez diakritiky) a zmačknutí éteru hra spadla\,--\,nešlo zreplikovat, ale přidána ikonka na potvrzení uložení jména
-
-\subsubsection*{Náročnost}
-Změna algoritmu pro přidávání nepřátel do hry, nepřátele se objeví ve hře o kolo dřív a dále se objevují častěji pro zvýšení náročnosti hry.
-
-Pro vyhýbání se nepřátelům snížena jejich viditelnost/vzdálenost od kdy začnou pronásledovat hráče na 3 bloky a drobné zmenšeni jejich modelů
+Byl přepracován předmět lektvar zrychlení, který nyní poskytuje dlouhodobé mírné zrychlení hráče, na rozdíl od původního krátkodobého rapidního zrychlení. Úpravu dostal i \uv{slime} (zpomalovací nepřítel) jehož zpomalení se již nenásobí, ale pouze obnovuje časovač zpomalení a jeho zdraví bylo sníženo z 10 na 8. Nakonec byl odstraněn nepřítel \uv{boar}/divočák, který byl na základě dodatečného testování a snah o opravu vyhodnocen jako nevhodný do prostorů bludiště.
 
 \subsection*{Zavrhnuté návrhy a návrhy pro budoucí práci}
-Ukazování předmětů, které je možné získat\,--\,bloudění, možná v budoucnu pro lehčí mód
+Ve zpětné vazbě bylo získáno mnoho návrhů na úpravu hry. Některé z nich byly bohužel komplexní a vzhledem k období, ve kterém se testování odehrávalo, již nebyl čas je implementovat. Jiné byly naopak vyhodnoceny jako nápady, které by podkopávali hlavní nápad hry, tedy bloudění a simulace reálného labyrintu.
 
-Odhalovací minimapa\,--\,možná v budoucnu pro lehčí mód či později u složitějších/výšších úrovní
+\noindent Zavrhnuté nápady:
+\begin{itemize}
+    \item Zobrazení skóre ve hře\,--\,matoucí kvůli způsobu počítání skóre, nahrazeno zobrazením času.
+    \item  Ukázka získatelných předmětů na začátku úrovně\,--\, nabádalo by k ignorování nepotřebných předmětů, čímž by byl ztracen důvod pro důkladné prohledávání bludiště.
+    \item  Oddálení kamery\,--\,aktuální velikost ideální k udržení zmatení simulující bloudění.
+    \item Zobrazení dokončené mapy bludiště\,--\,rušivé, bránící plynulému přechodu do další úrovně.
+\end{itemize}
 
-Hudba
+\noindent Návrhy pro budoucí práci:
+\begin{itemize}
+    \item Odhlovací minimapa\,--\,vhodná pro lehčí verzi bludiště/vyšší úrovně, v základní verzi by odebrala motiv simulace reálného bludiště.
+    (návrh na obrázeku~\ref{fig:map_idea}).
+    \item Hudba\,--\,není čas a přístup k vytvoření vlastní hudby.
+    \item Obchod/Editace postavy za sesbírané skóre\,--\,podporuje opakované hraní hry kvůli získaní přizpůsobitelných předmětů.
+    \item  Předmět na poznačování prošlých úseků\,--\,vhodný pro pozdější, větší, úrovně, možnost implementace jako sbíratelný předmět.
+\end{itemize}
 
-Úprava panáčka za sesbírané skóre
+\begin{figure}[hb]
+    \centering
+    \includegraphics[width=0.55\textwidth, height=0.23\textheight]{obrazky-figures/ch5/Game_screen-MAP.png}
+    \caption{Možný návrh odkrývající se mapy hry ve Figma.}
+    \label{fig:map_idea}
+\end{figure}
 
-Zobrazování skóre ve hře\,--\,kvůli způsobu počítání skóre by to bylo matoucí, místo toho přidán čas
-
-Větší prostory\,--\,do budoucna
-
-Poznačování prošlých úseků\,--\,do budoucna pomocí itemu (spotřebovatelné itemy)
-
-Změna velkosti kamery/plochy kterou hráč vidí\,--\,naschvál, má to udržet pocit bloudění v bludišti
-
-Po skončení ukázání mapy labyrintu\,--\,možná v budoucnu, ale jen zapnutelná možnost, bylo by to moc rušivé
-
-Prostestováno spawnování portálu (konce hry) a nepřátel, vše se objevuje dle algoritmů.
 %===---------------====
 % ZAVER
 %===---------------====
