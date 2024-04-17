@@ -308,7 +308,7 @@ Jedním z využití CA obsahují hry \uv{padajícího písku}, neboli \textit{Fa
     \label{fig:minecraft_biom}
 \end{figure}
 
-Rozšířenější, a v moderních hrách i častější, je využití CA na procedurální generování terénu\,--\,to je možné najít ve hrách jako je Tje využit u her vyžadujících větší a pestrý svět, či vysoký počet úrovní vyžadujících rozmanité překážky. Je to, jelikož klasické \uv{lidské} výtvory mohou být drahé 2 způsoby. Manuální navrhovaní obrovské mapy, či 100+ úrovní lidmi zabere mnoho času, energie a může naskytnout repetitivita, také tyto před-vytvořené mapy zabírají mnoho paměti a jejich načítaní může být obtížné na procesor\,--\,procedurální generace tedy vytváří mapy za chodu aplikace, takže vyřeší oba problémy~\cite{Procedural_Game_Map}.
+Rozšířenější, a v moderních hrách i častější, je využití CA na procedurální generování terénu. CA využito hlavně u her vyžadujících větší a pestrý svět\,--\,například Minecraft, či vysoký počet úrovní vyžadujících rozmanité překážky. Důvodem je, jelikož klasické \uv{lidské} výtvory mohou být drahé dvěma způsoby. Manuální navrhovaní obrovské mapy, či 100+ úrovní lidmi zabere mnoho času, energie a může naskytnout repetitivita, také tyto před-vytvořené mapy zabírají mnoho paměti a jejich načítaní může být obtížné na procesor\,--\,procedurální generace tedy vytváří mapy za chodu aplikace, takže vyřeší oba problémy~\cite{Procedural_Game_Map}.
 
 Minecraft například generuje základ své mapy díky stochastickým celulárním automatům spuštěných nad zpracovanými (např. pomocí šumu) výsledky kongruentních generátorů~\cite{Minecraft}. Stochaistické/Náhodné celulární automaty, jsou CA u nichž nejsou pravidla deterministická (tj. nepředvídatelná), ale pravděpodobnostní\,--\,to znamená, že místo pevného pravidla určujícího následující stav buňky má zadané pravděpodobnosti možných nových stavů buňky~\cite{DBLP:journals/corr/abs-1304-7185}. Díky tomuto dochází k definování přechodů a prolínání mezi různými poddruhy biomů (příklad vygenerované mapy je vidět na obrázku~\ref{fig:minecraft_biom}). Například teplé oblasti mají 50\% šanci, že se promění v poušť, 33\% v savanu a 17\% v roviny, nebo oceány mající 50\% šanci, že se promění v zem~\cite{Minecraft}.
 
@@ -455,19 +455,45 @@ Pro detailnější vysvětlení je využit algoritmus~\ref{algo:rejection_sampli
 \end{algorithmic}
 \end{algorithm}
 \todo{malé/velé x?}
+
 %===---------------====
 % KONCEPT
 %===---------------====
 \chapter{Koncept 2D labyrintové hry}
-\todo{Dopsat - popsat koncept typu her obecně (pravidla labyrintových her,..)}
-    
+Labyrintová hra ve svém pravém slova smyslu je hra, která umístí hráče do cizího prostředí, ze kterého má za úkol dostat se pryč. V základní verzi mu cestu ztěžují pouze slepé cesty. 
+
+Toto téma ale v základu moc zájmu nepřiláká. Nejvíce populárních labyrintových her bylo vyvinuto jako, původně arkádové, hry v 80. letech 20. století a každé bylo doplněno o~nějaký prvek/mechaniku, který je dělal zábavnější a hratelnější. Pac-Man například doplnil bloudění bludištěm o výzvu \uv{duchů}, tedy nepřátel pronásledujících hráče a dále sesbírání všech teček, namísto hledání východu. Bomberman využil zajímavé mechaniky s bombami, díky kterým se hráč zbavuje nepřátel a vytváří si vlastní, unikátní bludiště, ve kterém hledá východ.
+
 %--------------------------
 % Úvod
-\section{Úvod do hry/cíle/myšlenka}
+\section{Fáze vývoje labyrintové hry}
+K vývoji hry byly využity upravené postupy aspektů vývoje, jelikož hra byla vytvářena pouze 1 osobou, takže k plánování a vývoji nebylo potřeba podrobných domluv s několika týmy\,--\,byla tedy odstraněna fáze \uv{před-produkce} a všechny potřebné věci byly promyšleny a otestovány ve fázi \uv{plánování}. Hru také nebylo v plánu komercializovat, což odstranilo fázi \uv{před-publikace}, jelikož pro hru nebylo potřeba vytvářet marketingový plán.
+
+\subsection*{Plán}
+V této fázi byl vytvořen první návrh hry. Hlavním nápadem bylo vytvoření procedurálně generované bludiště pomocí celulárních automatů a popřípadě dalších algoritmů. Jeho cílem byla automatizace generování libovolně velkého hratelného bludiště, které ušetří lidskou práci na vývoji prostředí. Také by mělo přinést aspekt \uv{náhodnosti}, jelikož lidská bludiště mohou trpět na problémy repetitivnosti~\cite{Procedural_Game_Map}.
+
+Inspirace pro premisy hry byla brána z arkádových (\textit{skill-based}) her, v češtině her založených na dovednosti. Byl ponechán základní úkol\,--\,v bludišti se co nejrychleji zorientovat a dojít k východu. V tom by hráči měli zabraňovat různí nepřátelé, se kterými může bojovat pro větší zisk skóre a bezstarostnější hledání cíle. V boji, přežití a pohybu v bludišti  by mu měly pomoci různé předměty. Nápady na různé herní objekty jsou popsány důkladněji v kapitole~\ref{chap:Mechaniky hry}~Mechaniky hry.
+
+Hra byla vytvořena jako hra na počítač, konkrétně pro Windows a Linux. Kvůli svému žánru a povaze hra nemá příběh, ale je připravena hráče zabavit nápadem, výzvou a grafikou inspirovanou nostalgií a jednoduchostí arkádových pixelových her.
+
+\todo{náčrtek nápadu návrhu bludiště}
+
+\subsection*{Produkce}
+
+
+\subsection*{Testování}
+
+
+\subsection*{Publikace}
+Pro publikaci hry byla vybrána stránka \textit{itch.io} a to kvůli její přívětivosti pro začínající herní developery oproti známější a populárnější platformě na publikaci her Steam. Ten totiž vyžaduje za publikaci poplatek přes 90~€~\cite{Steam_submission}. Tento poplatek navrácen poté co hra dosáhne čistého zisku minimálně 1000~\$\,--\,tato informace ale není nijak polehčující, jelikož plán pro vydaní byl vydat hru zdarma. Vydání hry na \textit{itch.io} je naopak zdarma a nabízí možnost lepšího propojení s hráči a získávání zpětné vazby v post-produkci, což z ní dělá ideální platformu pro budoucí vývoj~\cite{GDevelop}.
+
+\subsection*{Post-produkce}
+
 \todo{popsat návrh přístupu k problému (zadání), asi taky grafík -> jak jsem postupovala}
+
 %--------------------------
 % Mechaniky hry
-\section{Mechaniky hry}
+\section{Mechaniky hry}\label{chap:Mechaniky hry}
 \todo{mapa, obecne o hre- princip hry (nekonecna, zvysujici se narocnost)}
 \subsection*{Úrovně}
 \todo{zvysovani urovni (zde nejaky graf)}
@@ -731,7 +757,7 @@ Pouze 10\% (2 testeři) mělo drobné problémy, z nichž jeden se týkal pádu 
 \end{figure}
 
 \subsection*{Náročnost}
-Na náročnost hry a její postupné zvyšování obtížností úrovně byl převážně kladný názor (jak je vidět na obrázku~\ref{fig:hodnoceni_vyvazenost}), i~když se našli někteří (3 testeři) kteří nepocítili rozdíly mezi různými úrovněmi. Někteří si naopak přáli možnost lehčího vyhýbání se nepřátelům, jelikož boje byly moc složité a bylo na ně málo místa. Také ale přišlo pár žádostí na zlehčení bloudění, a to například přidáním odhalující se minimapy, předmětu na poznačování cest, či seznamu hledaných předmětů a~nepřátel na začátku úrovně. Pár hráčům přišlo, že se nepřátelé a předměty neobjevují nějak kontrolovaně, například že v některých úrovních se jim nepovedlo potkat žádného nepřítele a v jiných i několik, podobné reakce byly i u předmětů a jeden tester dokonce oznámil, že se mu v jedné úrovni nedařilo najít konec hry (portál). 
+Na náročnost hry a její postupné zvyšování obtížností úrovně byl převážně kladný názor (jak je vidět na obrázku~\ref{fig:hodnoceni_vyvazenost}), i~když se našli někteří (3 testeři) kteří nepocítili rozdíly mezi různými úrovněmi. Někteří si naopak přáli možnost lehčího vyhýbání se nepřátelům, jelikož boje byly moc složité a bylo na ně málo místa. Také ale přišlo pár žádostí na zlehčení bloudění, a to například přidáním odhalující se minimapy, předmětu na poznačování cest, či seznamu hledaných předmětů a~nepřátel na začátku úrovně. Pár hráčům přišlo, že se nepřátelé a předměty neobjevují nějak kontrolovaně, například že v některých úrovních se jim nepovedlo potkat žádného nepřítele a v jiných i několik, podobné reakce byly~i~u~předmětů a jeden tester dokonce oznámil, že se mu v jedné úrovni nedařilo najít konec hry (portál). 
 
 Na základě zpětné vazby ohledně obtížnosti hry bylo nutné přemýšlet nad úpravou některých herních objektů. Jedním z nich byly boty/předmět na zrychlení, které poskytovaly hráči velké zrychlení po omezenou dobu. Další stížnosti se týkaly nepřítele \uv{slime}, který byl příliš obtížný kvůli svému excesivnímu zpomalení hráče. Také byly identifikovány problémy s nepřítelem \uv{boar}/divočák, který se zasekával na hráčské postavě kvůli svému speciálnímu útoku a často zůstával uvízlý na zdech, což snižovalo jeho herní výzvu.
 
@@ -781,7 +807,7 @@ Ikony vylepšení v sloupci \uv{MODS} prošly grafickou úpravou. Při sbírán�
 Jak již bylo zmíněno v analýze dotazníku, při dodatečném testování nebylo možné zreplikovat pád hry, jenž jeden z testerů popisoval. I tak ale byla přidána ikona potvrzení jména po stisknutí klávesy \textit{Enter} na obrazovce konce hry, která má naznačovat uživateli úspěšné dokončení uložení výsledků hry. Vzhledem k spokojenosti ostatních testerů se stabilitou hry nebylo třeba implementovat žádné úpravy zajišťující lepší stabilitu.
 
 \subsubsection*{\textbullet Náročnost}
-Vzhledem k několika zmínění ve zpětné vazbě o nesprávném generování, kdy chyběly v některých úrovních nepřátelé, předměty a či portál/cíl hry, bylo provedeno důkladné testování na mnoha úrovních testujících, zda algoritmy generování odpovídají očekávaní. Nebyly nalezeny žádné nesrovnalosti s návrhem, vše se generuje podle očekávání a ve správných počtech.
+Vzhledem k několika zmínění ve zpětné vazbě o nesprávném generování, kdy chyběly v~některých úrovních nepřátelé, předměty a či portál/cíl hry, bylo provedeno důkladné testování na mnoha úrovních testujících, zda algoritmy generování odpovídají očekávaní. Nebyly nalezeny žádné nesrovnalosti s návrhem, vše se generuje podle očekávání a ve správných počtech.
 
 Na základě zpětné vazby byla upravena celková náročnost hry. Jelikož pár hráčům přišlo, že se obtížnost zvyšuje moc pomalu, byla snížena úroveň, na které se poprvé objeví nepřítel na úroveň 3. Naopak ale byla zvýšena výzva pro možnost procházení bludiště bez bojů díky zmenšení nepřátelských modelů a snížení vzdálenosti od které začnou pronásledovat hráče na 3 bloky. Na vyvážení této změny byla zvýšena bodoví odměna za zabití nepřítele. Díky tomu má hráč stále motivaci s nepříteli radši bojovat než se jim vyhýbat.
 
