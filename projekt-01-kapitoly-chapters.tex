@@ -469,27 +469,34 @@ Toto téma ale v základu moc zájmu nepřiláká. Nejvíce populárních labyri
 \section{Fáze vývoje labyrintové hry}
 K vývoji hry byly využity upravené postupy aspektů vývoje, jelikož hra byla vytvářena pouze 1 osobou, takže k plánování a vývoji nebylo potřeba podrobných domluv s několika týmy\,--\,byla tedy odstraněna fáze \uv{před-produkce} a všechny potřebné věci byly promyšleny a otestovány ve fázi \uv{plánování}. Hru také nebylo v plánu komercializovat, což odstranilo fázi \uv{před-publikace}, jelikož pro hru nebylo potřeba vytvářet marketingový plán.
 
-\subsection*{Plán}
-V této fázi byl vytvořen první návrh hry. Hlavním nápadem bylo vytvoření procedurálně generované bludiště pomocí celulárních automatů a popřípadě dalších algoritmů. Jeho cílem byla automatizace generování libovolně velkého hratelného bludiště, které ušetří lidskou práci na vývoji prostředí. Také by mělo přinést aspekt \uv{náhodnosti}, jelikož lidská bludiště mohou trpět na problémy repetitivnosti~\cite{Procedural_Game_Map}.
+\subsection*{Plánování}
+V této fázi byl vytvořen první návrh hry. Hlavním nápadem bylo vytvoření procedurálně generované bludiště pomocí celulárních automatů a popřípadě dalších algoritmů. Jeho cílem byla automatizace generování libovolně velkého hratelného bludiště, které ušetří lidskou práci na vývoji prostředí. Také by mělo přinést aspekt \uv{náhodnosti}, jelikož lidská bludiště mohou trpět na problémy repetitivnosti~\cite{Procedural_Game_Map}. Návrh vytváření tohoto bludiště je na obrázku~\ref{fig:navrh_generovani}.
 
 Inspirace pro premisy hry byla brána z arkádových (\textit{skill-based}) her, v češtině her založených na dovednosti. Byl ponechán základní úkol\,--\,v bludišti se co nejrychleji zorientovat a dojít k východu. V tom by hráči měli zabraňovat různí nepřátelé, se kterými může bojovat pro větší zisk skóre a bezstarostnější hledání cíle. V boji, přežití a pohybu v bludišti  by mu měly pomoci různé předměty. Nápady na různé herní objekty jsou popsány důkladněji v kapitole~\ref{chap:Mechaniky hry}~Mechaniky hry.
 
 Hra byla vytvořena jako hra na počítač, konkrétně pro Windows a Linux. Kvůli svému žánru a povaze hra nemá příběh, ale je připravena hráče zabavit nápadem, výzvou a grafikou inspirovanou nostalgií a jednoduchostí arkádových pixelových her.
 
-\todo{náčrtek nápadu návrhu bludiště}
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.96\textwidth]{obrazky-figures/ch3/navrh_generovani.png}
+    \caption{Návrh automatizace generování bludiště}
+    \label{fig:navrh_generovani}
+\end{figure}
 
 \subsection*{Produkce}
+Produkce hry byla rozdělena na několik etap. V první etapě byly vytvořeny algoritmy generující mapu a její start a cíl. Ty byly následně důkladně otestovány a byly vybrány nejlepší způsoby generování různých velikostí map pomocí různých algoritmů. Druhá etapa zahrnovala implementaci hráčské postavy, jeho textur a mechanik. Ve třetí etapě byly implementovány a animovnány herní objekty jako jsou nepřátelé a předměty. Nakonec bylo naimplementované GUI navržené pomocí programu \textit{Figma}.
 
+Textury byly některé získány z internetu (stránky \textit{itch.io} pod licencí \textit{Creative Commons} a některé vytvořeny vlastnoručně a font získaný ze stránky \textit{Google Fonts} pod licencí \textit{Open Font License}\,--\,více informací ke game assetům se nachází v README na přiloženém CD.
 
 \subsection*{Testování}
+Alfa verze hry (tedy \uv{feature complete} verze byla zpřístupněna veřejnosti spolu s formulářem obsahujícím otázky technického charakteru a hratelnosti hry. Testeři mohli po ohodnocení hry přidat i svoje návrhy a nápady na zlepšení hry, ze kterých bylo několik vybráno a implementováno. Detailnější popis testování a jeho výsledků se nachází v kapitole~\ref{chap:Uživatelské testování}~Uživatelské testování.
 
 
 \subsection*{Publikace}
-Pro publikaci hry byla vybrána stránka \textit{itch.io} a to kvůli její přívětivosti pro začínající herní developery oproti známější a populárnější platformě na publikaci her Steam. Ten totiž vyžaduje za publikaci poplatek přes 90~€~\cite{Steam_submission}. Tento poplatek navrácen poté co hra dosáhne čistého zisku minimálně 1000~\$\,--\,tato informace ale není nijak polehčující, jelikož plán pro vydaní byl vydat hru zdarma. Vydání hry na \textit{itch.io} je naopak zdarma a nabízí možnost lepšího propojení s hráči a získávání zpětné vazby v post-produkci, což z ní dělá ideální platformu pro budoucí vývoj~\cite{GDevelop}.
+Pro plánovanou publikaci hry byla vybrána stránka \textit{itch.io} a to kvůli její přívětivosti pro začínající herní vývojáře oproti známější a populárnější platformě na publikaci her Steam. Ten totiž vyžaduje za publikaci poplatek přes 90~€~\cite{Steam_submission}. Tento poplatek navrácen poté co hra dosáhne čistého zisku minimálně 1000~\$\,--\,tato informace ale není nijak polehčující, jelikož plán pro vydaní byl vydat hru zdarma. Vydání hry na \textit{itch.io} je naopak zdarma a nabízí možnost lepšího propojení s hráči a získávání zpětné vazby v post-produkci, což z ní dělá ideální platformu pro budoucí vývoj~\cite{GDevelop}.
 
 \subsection*{Post-produkce}
-
-\todo{popsat návrh přístupu k problému (zadání), asi taky grafík -> jak jsem postupovala}
+Je plánován budoucí vývoj hry i po dokončení práce. Do hry by mohli přibýt nové mechaniky, či herní módy a budou opravovány nalezené chyby.
 
 %--------------------------
 % Mechaniky hry
@@ -586,7 +593,7 @@ do 20 beru nejnižší hodnotu, od 20+ beru nejnižší hodnotu -> vizuální od
 %===---------------====
 % TESTOVANI
 %===---------------====
-\chapter{Uživatelské testování}
+\chapter{Uživatelské testování}\label{chap:Uživatelské testování}
 Uživatelské testování bylo prováděno formou online anonymního dotazníku (Google Forms), který testované subjekty vyplnily po otestování alfa verze hry. Hra byla testována na počítačích s Windows a Linux operačními systémy. Testery byli aktivní i nezkušení hráči her, naverbováni primárně díky sdílení testovacích prostředků na sociálních sítích.
 %--------------------------
 \section{Dotazník}
