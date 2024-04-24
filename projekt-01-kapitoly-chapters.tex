@@ -10,7 +10,17 @@
 % UVOD
 %===---------------====
 \chapter{Úvod}
-\todo{Dopsat - az na konci}
+\todo{obecný netechnický úvod}
+
+\todo{odvětví práce}
+
+\todo{téma a jeho zařazení v aktuálním světě}
+
+\todo{cíl práce (minulý čas)}
+
+\todo{V pˇr´ıpade uˇ zivatelsk ˇ e aplikace lze v uvodu p ´ ˇredstavit vysledn ´ y produkt formou 1-2 screenshot ´ u a k nim popis v textu}
+
+\todo{navigace v práci}
 
 %===---------------====
 % TEORIE
@@ -901,13 +911,36 @@ Typ \uv{malý} byl omezen i přes výsledky jeho testování pouze na 1 typ a to
 %--------------------------
 % Nepřátelé, objekty a jejich rozmístění
 \section{Nepřátelé, objekty a jejich rozmístění}
-\todo{obecné rozmístěni pomocí rejection sampling}
+Pozice objektů jsou určeny pomocí rejection samplingu, kde vzorkovací matice o rozměrech bludiště je naplněna náhodnými hodnotami 0 a 1 v poměru 2:3. Tato matice je následně aplikována na bludiště, a na základě ní jsou vyhodnocovány možné pozice objektů.
+
+Body jsou vybírány na základě několika kritérií. Prvním je, že bodem bude vybrána souřadnice která má ve vzorkovací matici hodnotu 1 a v mapové matici hodnotu cesty. Tím jsou vyřazeny body překrývající zdi. Následně jsou odstraněny body v okolí 3 dlaždicového radiusu od startovní pozice hráče, aby nedošlo k instantnímu střetu hráče a objektu hned na začátku, a také body na pozici cíle. 
+
+Všechny zbylé body jsou zapsány do listu a promíchány. Následně se z tohoto seznamu vyjme potřebný počet pozic, které budou umístěny náhodně vybrané objekty. Pokud algoritmus vygeneruje nedostatečný počet vhodných pozic, je spuštěn znovu a nové hodnoty jsou doplněny do původního listu. Toto je opakováno, dokud není získán potřebný počet bodů.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{obrazky-figures/ch4/vyber_pozic.pdf}
+    \caption{Algoritmus výběru pozic\,--\,zeleně jsou označena výsledné možné pozice.}
+    \label{fig:vyber_pozic}
+\end{figure}
 
 \subsection*{Nepřátelé a pasti}
-\todo{rovnice}
+Ve hře se vyskytují nepřátelé a pasti, které společně tvoří jednu skupinu nazvanou \uv{nepřátelské entity}. Proto jsou k seznamu nepřátel přidány i pasti ve formě vysunovacích bodáků (zbylé pasti jsou považovány za nepřátele). Z tohoto sjednoceného seznamu je každou úroveň náhodně vybrán přesný počet objektů, které jsou následně umístěny na hrací pole.
+
+Počet nepřátel na mapě je vyhodnocen na základě hráčovi úrovně. V~následující rovnici~\ref{eq:hostile} figuruje $L$~jakožto označení pro číslo úrovně. Každá skupina dvou úrovní přidává k počtu nepřátel minulé skupiny úrovní $1$ nepřítele. Například, na úrovních 1 a 2 nejsou žádní nepřátelé. Teprve na úrovních 3, 4 se na každé mapě objeví jeden nepřítel. Až hráč dosáhne úrovní 6, 7 objeví se na mapách dva nepřátelé atd.
+
+\begin{equation}
+    \text{Počet nepřátel na mapě} = \left\lfloor \frac{\text{L} - 1}{2} \right\rfloor
+\label{eq:hostile}
+\end{equation}
 
 \subsection*{Předměty}
-\todo{rovnice}
+Pokládání předmětů je přísnější jak počet pokládaných nepřátelských entit. Předmětů se pokládá průměrně méně než nepřátel a to kvůli zvyšování obtížnosti hry. Stejně jako nepřátelé jsou vybírány náhodně z jejich seznamu. Rovnice pro potřebný počet pokládaných předmětů je~\ref{eq:item}. V této rovnici $L$~značí číslo úrovně. Rovnice funguje stejně jako rovnice na počet nepřátelských entit~\ref{eq:hostile}, ale zvyšuje se pomaleji. Skupiny úrovní jsou po 3, což znamená, že první 3 úrovně hráč neobjeví žádný předmět, další 3 na každé mapě jeden,~atd.
+
+\begin{equation}
+    \text{Počet předmětů na mapě} = \left\lfloor \frac{\text{L} - 1}{3} \right\rfloor
+\label{eq:item}
+\end{equation}
 
 %--------------------------
 % Úrovňový systém
@@ -1141,9 +1174,9 @@ Ikony vylepšení v sloupci \uv{MODS} prošly grafickou úpravou. Při sbírán�
 Jak již bylo zmíněno v analýze dotazníku, při dodatečném testování nebylo možné zreplikovat pád hry, jenž jeden z testerů popisoval. I tak ale byla přidána ikona potvrzení jména po stisknutí klávesy \textit{Enter} na obrazovce konce hry, která má naznačovat uživateli úspěšné dokončení uložení výsledků hry. Vzhledem k spokojenosti ostatních testerů se stabilitou hry nebylo třeba implementovat žádné úpravy zajišťující lepší stabilitu.
 
 \subsubsection*{\textbullet Náročnost}
-Vzhledem k několika zmínění ve zpětné vazbě o nesprávném generování, kdy chyběly v~některých úrovních nepřátelé, předměty a či portál/cíl hry, bylo provedeno důkladné testování na mnoha úrovních testujících, zda algoritmy generování odpovídají očekávaní. Nebyly nalezeny žádné nesrovnalosti s návrhem, vše se generuje podle očekávání a ve správných počtech.
+Vzhledem k několika zmínění ve zpětné vazbě o nesprávném generování, kdy chyběly v~některých úrovních nepřátelé, předměty a či portál/cíl hry, bylo provedeno důkladné testování na mnoha úrovních testujících, zda algoritmy generování odpovídají očekávaní. I tak ale byly zlehčeny pro konzistentnější míru objevování jak předmětů, tak nepřátel.
 
-Na základě zpětné vazby byla upravena celková náročnost hry. Jelikož pár hráčům přišlo, že se obtížnost zvyšuje moc pomalu, byla snížena úroveň, na které se poprvé objeví nepřítel na úroveň 3. Naopak ale byla zvýšena výzva pro možnost procházení bludiště bez bojů díky zmenšení nepřátelských modelů a snížení vzdálenosti od které začnou pronásledovat hráče na 3 bloky. Na vyvážení této změny byla zvýšena bodoví odměna za zabití nepřítele. Díky tomu má hráč stále motivaci s nepříteli radši bojovat než se jim vyhýbat.
+Na základě zpětné vazby byla upravena celková náročnost hry. Jelikož pár hráčům přišlo, že se obtížnost zvyšuje moc pomalu, byla snížena úroveň, na které se poprvé objeví nepřítel na úroveň 3. Naopak ale byla podpořena výzva pro možnost procházení bludiště bez bojů díky zmenšení nepřátelských modelů a snížení vzdálenosti od které začnou pronásledovat hráče na 3 bloky. Na vyvážení této změny byla zvýšena bodová odměna za zabití nepřítele. Díky tomu má hráč stále motivaci s nepříteli radši bojovat než se jim vyhýbat.
 
 Byl přepracován předmět lektvar zrychlení, který nyní poskytuje dlouhodobé mírné zrychlení hráče, na rozdíl od původního krátkodobého rapidního zrychlení. Úpravu dostal i \uv{slime} (zpomalovací nepřítel) jehož zpomalení se již nenásobí, ale pouze obnovuje časovač zpomalení a jeho zdraví bylo sníženo z 10 na 8. Nakonec byl odstraněn nepřítel \uv{boar}/divočák, který byl na základě dodatečného testování a snah o opravu vyhodnocen jako nevhodný do prostorů bludiště.
 
@@ -1178,7 +1211,15 @@ Ve zpětné vazbě bylo získáno mnoho návrhů na úpravu hry. Některé z nic
 % ZAVER
 %===---------------====
 \chapter{Závěr}
-\todo{Dopsat - az na konci}
+\todo{zopakovat cíl práce a zda byl splněn - 2-3 věty}
+
+\todo{ukázka splnění jednotlivých bodů zadání - kde to bylo uděláno}
+
+\todo{shrnutí dosažených výsledků - co se podařilo naimplementovat, co to umí, součásti,..}
+
+\todo{co mi práce dala - 1. osoba, 2-3 řádky}
+
+\todo{budoucí práce a možná rozšíření}
 %===============================================================================
 
 % Pro kompilaci po částech (viz projekt.tex) nutno odkomentovat
