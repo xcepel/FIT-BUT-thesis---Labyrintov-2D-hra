@@ -19,7 +19,110 @@
 \todo{txt s game assety}
 
 \chapter{Výsledky experimentů s mapou}\label{chap:map_experiments}
-\todo{tabulky s průměry}
+Poměry generátoru náhodných matic\,--\,formát: \verb|zdi : cesty|; 1 buňka $= 100$ instancí.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+\multicolumn{4}{|c|}{\textbf{ Randomizovaná matice s poměrem generování 1:1 a Mazectric }} \\
+\hline
+\multicolumn{1}{|c|}{\multirow{2}{*}{\textbf{\#}}} & \multicolumn{1}{c|}{\multirow{2}{*}{\textbf{Průměrný}}} & \multicolumn{1}{c|}{\multirow{2}{*}{\textbf{Průměrný počet}}} & \multicolumn{1}{c|}{\multirow{2}{*}{\textbf{Poměr všechny}}} \\
+\multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{\multirow{2}{*}{\textbf{počet skupin}}} & \multicolumn{1}{c|}{\multirow{2}{*}{\textbf{všech políček cest}}} & \multicolumn{1}{c|}{\multirow{2}{*}{\textbf{cesty:nejkratší cesta start-cíl}}} \\
+\multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} \\
+\hline
+\textbf{5} & 2.84 & 11.53 & 0.695 \\
+\textbf{10} & 8.19 & 29.84 & 0.524 \\
+\textbf{15} & 14.43 & 51.18 & 0.407 \\
+\textbf{20} & 24.43 & 72.18 & 0.325 \\
+\textbf{25} & 34.46 & 96.32 & 0.279 \\
+\textbf{30} & 45.91 & 124.77 & 0.253 \\
+\textbf{35} & 61.32 & 150.61 & 0.224 \\
+\textbf{40} & 75.94 & 174.85 & 0.200 \\
+\textbf{45} & 95.61 & 207.63 & 0.188 \\
+\textbf{50} & 115.43 & 243.06 & 0.178 \\ \hline
+\end{tabular}
+\caption{Podrobné výsledky randomizované matice s poměrem  1:1 a Mazectric}
+\label{tab:mazetric_1_1}
+\end{table}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+\multicolumn{4}{|c|}{\textbf{ Randomizovaná matice s poměrem generování 2:3 a CA Mazectric }} \\
+\hline
+\multicolumn{1}{|c|}{\multirow{2}{*}{\textbf{\#}}} & \multicolumn{1}{c|}{\multirow{2}{*}{\textbf{Průměrný}}} & \multicolumn{1}{c|}{\multirow{2}{*}{\textbf{Průměrný počet}}} & \multicolumn{1}{c|}{\multirow{2}{*}{\textbf{Poměr všechny}}} \\
+\multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{\multirow{2}{*}{\textbf{počet skupin}}} & \multicolumn{1}{c|}{\multirow{2}{*}{\textbf{všech políček cest}}} & \multicolumn{1}{c|}{\multirow{2}{*}{\textbf{cesty:nejkratší cesta start-cíl}}} \\
+\multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} \\
+\hline
+\textbf{5} & 2,81 & 11,58 & 0,703 \\
+\textbf{10} & 7,80 & 29,10 & 0,513 \\
+\textbf{15} & 15,08 & 49,65 & 0,394 \\
+\textbf{20} & 23,12 & 73,93 & 0,333 \\
+\textbf{25} & 34,29 & 99,24 & 0,288 \\
+\textbf{30} & 47,04 & 122,57 & 0,248 \\
+\textbf{35} & 61,01 & 148,33 & 0,221 \\
+\textbf{40} & 77,82 & 177,72 & 0,203 \\
+\textbf{45} & 96,02 & 211,37 & 0,191 \\
+\textbf{50} & 113,39 & 244,19 & 0,179 \\ \hline
+\end{tabular}
+\caption{Podrobné výsledky randomizované matice s poměrem  2:3 a CA Mazectric}
+\label{tab:mazetric_2_3}
+\end{table}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+\multicolumn{4}{|c|}{\textbf{ Randomizovaná matice s poměrem generování 1:1 a jeskyňovým CA }} \\
+\hline
+\multicolumn{1}{|c|}{\multirow{2}{*}{\textbf{\#}}} & \multicolumn{1}{c|}{\multirow{2}{*}{\textbf{Průměrný}}} & \multicolumn{1}{c|}{\multirow{2}{*}{\textbf{Průměrný počet}}} & \multicolumn{1}{c|}{\multirow{2}{*}{\textbf{Poměr všechny}}} \\
+\multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{\multirow{2}{*}{\textbf{počet skupin}}} & \multicolumn{1}{c|}{\multirow{2}{*}{\textbf{všech políček cest}}} & \multicolumn{1}{c|}{\multirow{2}{*}{\textbf{cesty:nejkratší cesta start-cíl}}} \\
+\multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} \\
+\hline
+\textbf{5} & 1,75 & 14,22 & 0,666 \\
+\textbf{10} & 7,48 & 29,82 & 0,503 \\
+\textbf{15} & 14,60 & 50,47 & 0,401 \\
+\textbf{20} & 21,74 & 73,86 & 0,334 \\
+\textbf{25} & 32,05 & 98,07 & 0,285 \\
+\textbf{30} & 43,34 & 125,62 & 0,255 \\
+\textbf{35} & 56,74 & 152,36 & 0,228 \\
+\textbf{40} & 69,19 & 178,96 & 0,206 \\
+\textbf{45} & 88,80 & 204,42 & 0,186 \\
+\textbf{50} & 107,55 & 233,25 & 0,172 \\ 
+\hline
+\end{tabular}
+\caption{Podrobné výsledky randomizované matice s poměrem  1:1 a jeskyňovým CA}
+\label{tab:cave_1_1}
+\end{table}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+\multicolumn{4}{|c|}{\textbf{ Randomizovaná matice s poměrem generování 2:3 a jeskyňovým CA }} \\
+\hline
+\multicolumn{1}{|c|}{\multirow{2}{*}{\textbf{\#}}} & \multicolumn{1}{c|}{\multirow{2}{*}{\textbf{Průměrný}}} & \multicolumn{1}{c|}{\multirow{2}{*}{\textbf{Průměrný počet}}} & \multicolumn{1}{c|}{\multirow{2}{*}{\textbf{Poměr všechny}}} \\
+\multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{\multirow{2}{*}{\textbf{počet skupin}}} & \multicolumn{1}{c|}{\multirow{2}{*}{\textbf{všech políček cest}}} & \multicolumn{1}{c|}{\multirow{2}{*}{\textbf{cesty:nejkratší cesta start-cíl}}} \\
+\multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} \\
+\hline
+\textbf{5} & 1,89 & 13,52 & 0,670 \\
+\textbf{10} & 7,76 & 29,32 & 0,504 \\
+\textbf{15} & 14,23 & 50,24 & 0,399 \\
+\textbf{20} & 22,58 & 72,76 & 0,329 \\
+\textbf{25} & 32,62 & 95,41 & 0,277 \\
+\textbf{30} & 44,78 & 124,45 & 0,253 \\
+\textbf{35} & 58,19 & 149,29 & 0,223 \\
+\textbf{40} & 72,53 & 176,17 & 0,202 \\
+\textbf{45} & 87,14 & 206,65 & 0,188 \\
+\textbf{50} & 108,93 & 241,58 & 0,178 \\ 
+\hline
+\end{tabular}
+\caption{Podrobné výsledky randomizované matice s poměrem  2:3 a jeskyňovým CA}
+\label{tab:cave_2_3}
+\end{table}
+
 
 \chapter{Výsledky uživatelského testování}\label{chap:user_testing}
 
@@ -28,7 +131,7 @@
 \begin{tabularx}{\textwidth}{|X|X|X|}
 \hline
 \multicolumn{1}{|c|}{\textbf{otázka č. 1}} & \multicolumn{1}{c|}{\textbf{otázka č. 2}} & \multicolumn{1}{c|}{\textbf{otázka č. 3}} \\ \hline
-\textbf{Kolik času jste strávili u hraní?} & \textbf{Jaká byla vaše nejvyšší dosažená úroveň (level)?} & \textbf{Jaký je váš celkový dojem ze hry?} (1 = velmi negativní - 10 = velmi pozitivní) \\ \hline
+\textbf{Kolik času jste strávili u~hraní?} & \textbf{Jaká byla vaše nejvyšší dosažená úroveň (level)?} & \textbf{Jaký je váš celkový dojem ze hry?} (1 = velmi negativní - 10 = velmi pozitivní) \\ \hline
 0:03:50 & 7 & 8 \\ \hline
 0:07:00 & 12 & 7 \\ \hline
 0:10:00 & 11 & 5 \\ \hline
@@ -134,7 +237,7 @@ Opětovné sbírání mečů nemá nejspíše žádný další účinek na hran�
 2. Odhalovacia minimapa.\\ 
 3. Skóre počas levelu. Ja som dokonca získal záporné skóre. \\ \hline
 
-Jen drobnost, ale pokud dojde k odečtení skóre, bylo by lepší skóre odečíst rovnou a nedávat +    -score. Bavím se nyní o obrazovce, která se zobrazí po dokončení levelu.\\ \hline
+Jen drobnost, ale pokud dojde k odečtení skóre, bylo by lepší skóre odečíst rovnou a~nedávat +    -score. Bavím se nyní o obrazovce, která se zobrazí po dokončení levelu.\\ \hline
 
 Celkovy cas straveny ve hre v danem levelu nebo v celkovem, lepsi viditelnosti zvoleneho pole v menu i pri death screen\\ \hline
 

@@ -405,7 +405,7 @@ Metoda pracující se zásobníkem LIFO (\textit{= last-in, first-out}), který 
 Stejně jako u BFS, časová složitost je \(\mathcal{O}_{DFS} = |V| + |E|\), kde \(|V|\) je součet počtu uzlů a \(|E|\) je počet hran~\cite{CS225BFSDFS}.
 
 \subsubsection*{\textbullet Metoda postupného zanořování do hloubky (IDS)}
-Tato metoda je kombinací BFS a DFS, což znamená, že prohledávání funguje stejně jako u~DFS s výjimkou, že algoritmus postupuje po úrovních a postupně zvyšuje limit hloubky~\cite{poole2023artificial}. Tedy při první iteraci prohledává hloubkově pouze první úroveň, poté co je celá prohledaná postupuje na druhou iteraci, při které už vstupuje i do druhé atd. dokud nenajde cíl, či nevyčerpá celý stavový prostor. 
+Tato metoda je kombinací BFS a DFS\,--\,prohledávání funguje stejně jako u~DFS s výjimkou, že algoritmus postupuje po úrovních a postupně si zvyšuje limit hloubky~\cite{poole2023artificial}. Při první iteraci prohledává hloubkově pouze první úroveň, poté co je celá prohledaná postupuje na druhou iteraci, při které už vstupuje i do druhé atd. dokud nenajde cíl, či nevyčerpá celý stavový prostor. 
 
 IDS se využívá pokud nemůžeme stanovit hloubku řešení a jeho časová složitost je \(\mathcal{O}_{IDS}(b^{d})\), kde \(b\) je faktor větvení (průměrný počet následovníků uzlu) a \(d\) hloubku optimálního řešení~\cite{izu}.
 
@@ -555,6 +555,7 @@ Dále hráč získá body za zabití nepřátel a sběr předmětů, popřípad�
 
 \begin{equation}
     \text{Skóre} = (\text{L} \times \alpha) - \text{t} + (\text{E} \times \beta) + (\text{I} \times \delta) + \textit{Bonus}
+    \label{eq:default_score}
 \end{equation}
 
 \noindent kde:
@@ -945,10 +946,21 @@ Pokládání předmětů je přísnější jak počet pokládaných nepřátelsk
 %--------------------------
 % Úrovňový systém
 \section{Úrovňový systém}
-\todo{jen poznámka o zvětšující se pole nabývání počtu objektů (popsáno výše), vše v závislosti na úrovni}
+Úroveň 1 začíná na poli o velikosti $7 \times 7$ s 0 předměty a nepřáteli. Dále se v každé úrovni pole zvětšuje o $(n + 1) \times (n + 1)$ a entity se přidávají vzhledem k jejich rovnicím.
+
+Číslo úrovně je jednou z nejdůležitějších proměnných v celé hře. Na základně úrovně je vybírána velikost bludiště, způsob jeho generování, jeho textura, počet nepřátel a předmětů a také je z něj počítáno skóre.
 
 \subsection*{Skóre}
-\todo{rovnice}
+Rovnice herního skóre~\ref{eq:score} je upravená rovnice~\ref{eq:default_score}. Konstantám odměn je udělena adekvátní hodnota odpovídající splnění úkolu. Za dokončení úrovně ($\alpha$) je uděleno skóre $(50 \times\text{úroveň}) -~\text{čas}$ bodů. Skóre je pojištěné, aby nemohlo dosahovat záporných hodnot. Pokud hráči bude trvat dokončení úrovně déle, než je bodové ohdnocení za ni, získá za tento úkol 0 bodů.
+
+Za bonusové úkoly, kterými je zabití nepřítele ($\beta$) je uděleno skóre $40 \times \text{úroveň}$ bodů a~za~získaný item ($\delta$) je $20 \times \text{úroveň}$ bodů. Jako \textit{Bonus} jsou označeny body, které může hráč získat z předmětu \uv{truhla}.
+
+Skóre je po dosažení každého úkolu přičteno k celkovému skóre, takže se hráči přičtou body např. za sesbírání předmětů i pokud bludiště dokončil neúspěšně.
+
+\begin{equation}
+    \text{Skóre} = ((\text{L} \times 50) - \text{t}) + (\text{E} \times 40) + (\text{I} \times 20) + \textit{Bonus}
+    \label{eq:score}
+\end{equation}
 
 %===---------------====
 % TESTOVANI
