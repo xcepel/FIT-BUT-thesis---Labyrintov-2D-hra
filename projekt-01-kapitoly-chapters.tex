@@ -14,9 +14,9 @@ Tato bakalářská práce má za cíl vytvořit automatický způsob generován�
 
 Téma generování bludišť pomocí celulárních automatů patří do oblasti herního designu a vývoje. Konkrétněji do odvětví procedurálního generování, jenž se v herním průmyslu využívá k automatickému vytváření různorodých herních prostředí/úrovní. 
 
-Procedurální generování je v dnešní době čím dál populárnější. Jeho implementací se zlepšuje rozmanitost a znovu-hratelnost her, což přináší hráčům nové výzvy při prozkoumávání prostředí. Herním vývojářům to soustředit se na důležitější aspekty hry.
+Procedurální generování je v dnešní době čím dál populárnější. Jeho implementací se zlepšuje rozmanitost a znovu-hratelnost her, což přináší hráčům nové výzvy při prozkoumávání prostředí. Herním vývojářům to umožňuje soustředit se na důležitější aspekty hry.
 
-Úkolem práce bylo vyvinout způsob, kterým je možno procedurálně generovat bludiště libovolných velikostí. To bylo dosaženo pomocí celulárních automatů a dalších technik, jako například grafových algoritmů, či prohledávacích metod. Výsledný algoritmus generování byl následně implementován do hry, jež prezentuje jedno z jeho možných využití. Cílem vytvořené hry je otestování navigačních dovedností hráčů prostřednictvím postupného procházení úrovní, kde každá nabízí unikátní vygenerované bludiště. Hráči čelí nejen fyzickým výzvám v podobě komplexních chodeb, ale také časovému tlaku a boji s nepřáteli. Snímky z výsledné hry (menu a hraná úroveň), je možno vidět na obrázku~\ref{fig:final_game}.
+Úkolem práce bylo vyvinout způsob, kterým je možno procedurálně generovat bludiště libovolných velikostí. Toho bylo dosaženo pomocí celulárních automatů a dalších technik, jako například grafových algoritmů, či prohledávacích metod. Výsledný algoritmus generování byl následně implementován do hry, jež prezentuje jedno z jeho možných využití. Cílem vytvořené hry je otestování navigačních dovedností hráčů prostřednictvím postupného procházení úrovní, kde každá nabízí unikátní vygenerované bludiště. Hráči čelí nejen fyzickým výzvám v podobě komplexních chodeb, ale také časovému tlaku a boji s nepřáteli. Snímky z výsledné hry (menu a hraná úroveň), je možno vidět na obrázku~\ref{fig:final_game}.
 
 \begin{figure}[b]
     \centering
@@ -26,23 +26,23 @@ Procedurální generování je v dnešní době čím dál populárnější. Jeh
     \label{fig:final_game}
 \end{figure}
 
-Kapitola~\ref{chap:Aspekty vývoje videoher} je věnována průzkumu vývoje videoher, jejich historii a také obsahuje i~detailnější náhled na různé labyrintové hry. V kapitole je také popsána i~důležitá teorie, jež byla využita k~vytvoření algoritmu generování labyrintů. Tou jsou například celulární automaty, stavový prostor, či rejection sampling. Další kapitola~\ref{chap:Koncept 2D labyrintové hry} se věnuje podrobnému návrhu přístupu ke generování bludiště. Zde je možné nalézt popis postupu vývoje hry, návrh herních prvků a uživatelského rozhraní. V kapitole~\ref{Tvorba bludiště a realizace hry} je popisována implementace jak algoritmu generování labyrintů, tak jeho integrace do finální hry. Nachází se zde také podkapitola věnována testování algoritmu. Cílem tohoto testování bylo nalézt nejoptimálnější způsobu generování pro různé velikosti. Po vytvoření alfa verze hry, bylo nutné hru otestovat uživateli. Podrobnosti k tomuto uživatelskému testování, kterými je například analýza, či výsledky, se nachází v kapitole~\ref{chap:Uživatelské testování}. Poslední kapitola~\ref{chap:Závěr} je věnována konečnému zhodnocení výsledků práce.
+Kapitola~\ref{chap:Aspekty vývoje videoher} je věnována průzkumu vývoje videoher, jejich historii a také obsahuje i~detailnější náhled na různé labyrintové hry. V kapitole je popsána také důležitá teorie, jež byla využita k~vytvoření algoritmu generování labyrintů\,--\,například celulární automaty, stavový prostor, či rejection sampling. Následující kapitola~\ref{chap:Koncept 2D labyrintové hry} se věnuje podrobnému návrhu přístupu ke generování bludiště. Zde je možné nalézt popis postupu vývoje hry, návrh herních prvků a~uživatelského rozhraní. V kapitole~\ref{Tvorba bludiště a realizace hry} je popisována implementace jak algoritmu generování labyrintů, tak jeho integrace do finální hry. Nachází se zde také podkapitola věnována testování algoritmu. Cílem tohoto testování bylo nalézt nejoptimálnější způsob generování pro různé velikosti. Po vytvoření alfa verze hry bylo nutné hru nechat otestovat uživateli. Podrobnosti k tomuto uživatelskému testování, kterými je například analýza, či výsledky, se nachází v~kapitole~\ref{chap:Uživatelské testování}. Poslední kapitola~\ref{chap:Závěr} je věnována konečnému zhodnocení výsledků práce.
 
 %===---------------====
 % TEORIE
 %===---------------====
 \chapter{Aspekty vývoje videoher}\label{chap:Aspekty vývoje videoher}
-Vývoj videoher je práce, jejíž výsledkem je hra na elektronické zařízení, jako například počítač, telefon, či konzole. Na jejím vzniku spolupracují umělci, designeři a programátoři, kteří mohou využít software vytvořený pro vývoj her\,--\,herní engine, který nabízí prostředky pro pohodlnější práci na vývoji her (viz kapitola~\ref{chap:Herní engine} Herní engine).
+Vývoj videoher je práce, jejímž výsledkem je hra na elektronické zařízení, jako například počítač, telefon, či konzole. Na jejím vzniku spolupracují umělci, designeři a programátoři, kteří mohou využít software vytvořený pro vývoj her\,--\,herní engine. Ten nabízí prostředky pro pohodlnější práci na vývoji her (viz kapitola~\ref{chap:Herní engine} Herní engine).
 
-Proces vývoje videoher lze rozdělit na 7 základních etap: plánování, před-produkce, produkce, testování, před-spuštění, spuštění a post produkce~\cite{g2_game_development}.
+Proces vývoje videoher lze rozdělit na 7 základních etap: plánování, preprodukce, produkce, testování, prelaunch, spuštění a postprodukce~\cite{g2_game_development}.
 \subsection*{Plánování}
-V této etapě je vytvářen prvotní nápad na vývoj hry. Je základním kamenem a proto je velmi důležité důkladně vše promyslet a připravit, jelikož pozdější změny v plánu hry mohou mít drtivé dopady na celý vývoj~\cite{GameMaker_development}, jak časové, tak peněžní. 
+V této etapě je vytvářen prvotní nápad na vývoj hry. Je základním kamenem a proto je velmi důležité důkladně vše promyslet a připravit, jelikož pozdější změny v plánu hry mohou mít drtivé dopady na celý vývoj~\cite{GameMaker_development}, jak časové, tak finanční. 
 
-Plánování je celé o pokládání a odpovídání si na otázky. Ty mohou být obecné \uv{Jaký typ hry budeme vytvářet?}, \uv{Kdo bude cílové publikum naší hry?}, nebo se týkat příběhu hry: \uv{Jaká bude zápletka příběhu?}, \uv{Kde se bude hra odehrávat?}, \uv{Jaké postavy se budou ve hře nacházet?} a také technických parametrů hry: \uv{Pro jakou platformu budeme hru vytvářet?}, \uv{Jaké budou klíčové vlastnosti naší hry?}~\cite{g2_game_development}.
+Plánování je celé o pokládání si otázek a jejich zodpovídání. Ty mohou být obecné \uv{Jaký typ hry budeme vytvářet?}, \uv{Kdo bude cílové publikum naší hry?}, nebo se týkat příběhu hry: \uv{Jaká bude zápletka příběhu?}, \uv{Kde se bude hra odehrávat?}, \uv{Jaké postavy se budou ve hře nacházet?} a také technických parametrů hry: \uv{Pro jakou platformu budeme hru vytvářet?}, \uv{Jaké budou klíčové vlastnosti naší hry?}~\cite{g2_game_development}.
 
-Pro takzvaný \uv{proof of concept}, díky kterému je zváženo, zda je možné danou hru vytvořit, je důležité najít a zanalyzovat odpovědi na otázky pro trh~\cite{GameMaker_development}. Těmi je například \uv{Kolik bude stát vývoj hry a jak tyto peníze získáme?}, \uv{Jak dlouho bude trvat vývoj?}, \uv{Máme potřebné zaměstnance a technologie na vývoj?} či \uv{Jakým způsobem hru zpeněžíme?}.
+Pro takzvaný \uv{proof of concept}, díky kterému je zváženo, zda je možné danou hru vytvořit, je důležité najít a zanalyzovat odpovědi na otázky pro trh~\cite{GameMaker_development}. Těmi jsou například otázky jako \uv{Kolik bude stát vývoj hry a jak tyto peníze získáme?}, \uv{Jak dlouho bude trvat vývoj?}, \uv{Máme potřebné zaměstnance a technologie na vývoj?} či \uv{Jakým způsobem hru zpeněžíme?}.
 
-Cílem plánování je vytvořit základní koncept o čem hra bude, zjistit si cílový trh a~zhodnotit firemní zdroje a potenciály~\cite{novak2011game}.
+Cílem plánování je vytvořit základní koncept\,--\,o čem hra bude, zjistit si cílový trh a~zhodnotit firemní zdroje a potenciály~\cite{novak2011game}.
 
 \begin{figure}[hb]
     \centering
@@ -51,71 +51,71 @@ Cílem plánování je vytvořit základní koncept o čem hra bude, zjistit si 
 	\label{fig:concept_art_lol}
 \end{figure}
 
-\subsection*{Před-produkce}
-Tato fáze přebírá odpovědi z plánování a rozšiřuje je o důležité detaily. Odehrává se při ní mnoho kooperací mezi různými týmy (spisovatelé, programátoři, umělci, designeři, ...), aby se vyhovělo co nejvíce požadavkům a zabránilo se pozdějším komplikacím\,--\,programátoři například spisovatelům přiblíží technologické překážky platformy, které není možné překročit, či umělci a designeři navrhnou konzistentní barevné palety.~\cite{g2_game_development}.
+\subsection*{Preprodukce}
+Tato fáze přebírá odpovědi z plánování a rozšiřuje je o důležité detaily. Odehrává se při ní mnoho kooperací mezi různými týmy (spisovatelé, programátoři, umělci, designeři, ...), aby se vyhovělo co nejvíce požadavkům a zabránilo se pozdějším komplikacím. Programátoři například spisovatelům přiblíží technologické překážky platformy, které není možné překročit, či umělci a designeři navrhnou konzistentní barevné palety~\cite{g2_game_development}.
 
-Výsledkem před-produkce je dokument o herním designu (\textit{Game Design Document}, neboli GDD) a dokument technického návrhu a mohou zde být navrhovány první prototypy~\cite{novak2011game}. GDD je \uv{živý} dokument a vyvíjí se postupně po celou tvorbu hry\,--\,nalezneme tam detailní popis věcí jako například myšlenku hry, její žánr, celkový příběh, strategii monetizace, informace o postavách, základní herní mechaniky, design úrovní a světa, skici a \textit{concept arty}, neboli návrhy objektů/prostředí/postav~\cite{CG_Spectrum_GAMEDEVELOPMENT} (ukázka concept artu je na obrázku~\ref{fig:concept_art_lol}).
+Výsledkem preprodukce je dokument o herním designu (\textit{Game Design Document}, neboli GDD) a dokument technického návrhu a mohou zde být navrhovány první prototypy~\cite{novak2011game}. GDD je \uv{živý} dokument a vyvíjí se postupně po celou tvorbu hry\,--\,nalezneme tam detailní popis věcí, jako například myšlenku hry, její žánr, celkový příběh, strategii monetizace, informace o postavách, základní herní mechaniky, design úrovní a světa, skici a \textit{concept arty}, neboli návrhy objektů/prostředí/postav~\cite{CG_Spectrum_GAMEDEVELOPMENT} (ukázka concept artu je na obrázku~\ref{fig:concept_art_lol}).
 
 \subsection*{Produkce}
-Nejdelší, nejdražší, nejnáročnější a nejdůležitější část vývoje~\cite{g2_game_development}, jehož výsledkem je hotová hra. 
+Nejdelší, nejdražší, nejnáročnější a nejdůležitější část vývoje~\cite{g2_game_development}, jejímž výsledkem je hotová hra. 
 
-V této fázi je postupně vytvářen finální produkt. Jsou vymodelovány a animovány objekty, jako jsou postavy či prostředí, které jsou dále naprogramovány, čímž se přidají herní mechaniky a objekty jsou přivedeny k životu~\cite{GameMaker_development}. Tomu napomáhají i zvukoví designeři~a~dabéři, kteří se starají o audio stránku hry.
+V této fázi je postupně vytvářen finální produkt. Jsou vymodelovány a animovány objekty, jako jsou postavy, či prostředí. Ty  jsou dále naprogramovány, čímž se přidají herní mechaniky a objekty jsou přivedeny k životu~\cite{GameMaker_development}. Tomu napomáhají i zvukoví designéři~a~dabéři, kteří se starají o audio stránku hry.
 
-Při produkci nejsou neobvyklé změny, kde je nutné smazat i celé segmenty hry~\cite{g2_game_development}. Často se stává, že je nutné změnit nějaké navržené či již vytvořené části, ať už je to kvůli nutnosti zmenšit pracovní zátěž vývojářského týmu, či kvůli zjištění, že neimplementovaný objekt do hry nesedí, či nefunguje podle původních představ\,--\,jako například postava \uv{Boatman} ze hry Spyro the Dragon (viz obrázek~\ref{fig:spyro_cut}), která byla změněna na postavu \uv{Ballonist}, nejspíše aby dávalo větší smysl cestování na ostrov v oblacích~\cite{GameMaker_development}.
+Při produkci nejsou neobvyklé změny, při kterých je nutné smazat i celé segmenty hry~\cite{g2_game_development}. Často se stává, že je nutné změnit nějaké navržené či již vytvořené části, ať už je to kvůli nutnosti zmenšit pracovní zátěž vývojářského týmu, či kvůli zjištění, že neimplementovaný objekt do hry nesedí, či nefunguje podle původních představ. Příkladem je postava \uv{Boatman} ze hry Spyro the Dragon (viz obrázek~\ref{fig:spyro_cut}), která byla změněna na postavu \uv{Ballonist}, nejspíše aby dávalo větší smysl cestování na ostrov v oblacích~\cite{GameMaker_development}.
 
 \begin{figure}[hb]
     \vspace{0.5cm}
     \centering
     \includegraphics[width=0.5\textwidth]{obrazky-figures/ch2/Spyro-Boatman.png}\hspace{0.1cm}
     \includegraphics[width=0.46\textwidth]{obrazky-figures/ch2/Spyro-Ballonist.png}
-    \caption{Postava Boatman (vlevo) ze hry Spyro the Dragon, který byl ve finální hře změněn na postavu Ballonist (vpravo).~\cite{GameMaker_development}}
+    \caption{Postava jménem Boatman (vlevo) ze hry Spyro the Dragon, která byla ve finální hře změněna na postavu jménem Ballonist (vpravo).~\cite{GameMaker_development}}
     \label{fig:spyro_cut}
 \end{figure}
 
 \subsection*{Testování}
-Další důležitou fází je testování. V této fázi je důležité protestovat všechny možné problémy hry, které by mohli kazit zážitek ze hry.
+Další důležitou fází je testování. V této fázi je důležité otestovat všechny možné problémy hry, které by mohli kazit zážitek ze hry.
 
-Testy se dají rozdělit na 2 základní typy\,--\,testy technické stability a testování takzvaného \uv{fun factoru} hry, což je průzkum hratelnosti hry, její zábavnosti, poutavosti, a nebo zda není moc těžká, či lehká~\cite{GameMaker_development}. Testy technického faktoru zkoumají, zda se hra správně renderuje, neseká se, dále testeři vyhledávají různé bugy/chyby (např. zda opravdu nejde projít zdmi, nebo jestli se postavička projde místy, kterými by měla v pořádku projít), zda všechny funkce a postavy fungují tak, jak mají, a další podobné věci~\cite{g2_game_development}.
+Testy se dají rozdělit na 2 základní typy\,--\,testy technické stability a testování takzvaného \uv{fun factoru} hry, což je průzkum hratelnosti hry, její zábavnosti, poutavosti, a nebo zda není moc těžká, či lehká~\cite{GameMaker_development}. Testy technického faktoru zkoumají, zda se hra správně renderuje a neseká se. Dále testeři vyhledávají různé bugy/chyby (např. zda opravdu nejde projít zdmi, nebo jestli se postavička projde místy, kterými by měla v pořádku projít), testují, zda všechny funkce a postavy fungují dle specifikací a další podobné věci~\cite{g2_game_development}.
 
-\subsection*{Před-publikace}
-Fáze před publikací je marketingová. Je to období kdy se k veřejnosti dostanou trailery, teasery a demo verze hry~~\cite{GameMaker_development}. Díky tomu může hra získat větší fanouškovskou základnu a~vydavateli může dostat první zpětnou vazbu od veřejnosti.
+\subsection*{Prelaunch}
+Fáze před publikací je marketingová. Je to období kdy se k veřejnosti dostávají trailery, teasery a demo verze hry~\cite{GameMaker_development}. Díky tomu může hra získat větší fanouškovskou základnu a~vydavatel může získat první zpětnou vazbu od veřejnosti.
 
 \subsection*{Publikace}
-Vypuštění a distribuce plné verze hry publiku.
+V této fázi dochází k vypuštění a distribuci plné verze hry publiku.
 
-Do spuštění hry musí být opraveno co nejvíce (nejlépe všechny) chyb, proto často studia přichází s hierarchií chyb, které jsou potřeba opravit, od těch nejproblémovějších, které například rozbíjí hru, tak že často padá, až po ty nejdrobnější~\cite{g2_game_development}.
+Do spuštění hry musí být opraveno co nejvíce chyb (nejlépe všechny), proto často studia přichází s hierarchií chyb, které jsou potřeba opravit. Od těch nejproblémovějších, které například způsobují pády hry, až po ty nejdrobnější~\cite{g2_game_development}.
 
-\subsection*{Post-produkce}
-V této etapě již hru vlastní a hraje veřejnost, často je ale vydáno zdarma několik dalších verzí hry (zvané \textit{patch}), které ji technicky vylepšují, vyvažují a často i opravují chyby~\cite{novak2011game}, na které se nedostalo při produkci, či které byly nově objeveny hráči. 
+\subsection*{Postprodukce}
+V této etapě již hru může koupit a hrát zákazník. Obvykle  jsou také vydávány bezplatné aktualizace (zvané \textit{patch}), které ji technicky vylepšují, vyvažují a často i opravují chyby~\cite{novak2011game}, na které se nedostalo při produkci, či které byly nově objeveny hráči. 
 
-Také zde mohou přibýt \textit{updaty}, které do hry přidávají nový obsah (například události (\textit{eventy}), nové postavy/místa atd.)~\cite{g2_game_development}. Nový obsah přidávají také rozšíření neboli DLC, které jsou ale často oproti updatům placené, nabízí více obsahu, a pro jejich spuštění vyžadují vlastní software (občas v kombinací s originální hrou) na spuštění~\cite{novak2011game}. Nový obsah udržuje hru relevantní~\cite{GameMaker_development}.
+V této fázi také mohou být vydávány i aktualizace, které do hry přidávají nový obsah (například události, nové postavy/místa atd.)~\cite{g2_game_development}. Tyto aktualizace jsou však často přidávány formou rozšíření/datadisků neboli DLC. Ty jsou oproti běžným aktualizacím obvykle placené, nabízí více obsahu a pro jejich spuštění vyžadují standardně originální hru (v některých případech ale figurují i jako samostatná hra)~\cite{novak2011game}. Nový obsah udržuje hru relevantní~\cite{GameMaker_development}.
 
 \subsection*{Milníky verzí vývoje her}
 V průběhu vývoje videohra projde několika různými verzemi, které se od sebe odlišují jejich technickými vlastnostmi. Kniha Game Development Essentials: An Introduction~\cite{novak2011game} uvádí nejdůležitější 3 z nich uvedené níže.
 \begin{itemize}
     \item Alfa\,--\,v této fázi je již hra hratelná od začátku k cíli a je označována jako \textit{\uv{feature complete}}~\cite{CG_Spectrum_GAMEDEVELOPMENT}, což znamená že všechny hlavní vlastnosti jsou již implementované, nemusí zde být ale vše kompletně zoptimalizované. Měla by to být první verze testovaná lidmi mimo vývojářský tým.
-    \item Beta\,--\,hra již v sobě má integrovaný všechen obsah, zaměření už je jen na opravě chyb a stabilizování projektu.
-    \item Gold\,--\,finální dodělaná hra, která je připravena na publikaci.
+    \item Beta\,--\,hra již v sobě má integrovaný všechen obsah, zaměření už primárně na opravu chyb a stabilizaci.
+    \item Gold\,--\,finální dodělaná hra, která je připravena pro publikaci.
 \end{itemize}
 
 %--------------------------
-% Začátek videoher
-\section{Začátek videoher}
-První počítačové hry vznikaly kolem 50. let 20. století na vojenských základnách a univerzitách a jejich sálových počítačích~\cite{novak2011game}. Těmito videohrami byla například OXO (1952), Tennis for Two (1958), ale do nepopulárnějších videoher (vytvořených v té době) se počítá hlavně hra vytvořena MIT studentem Stevem Russellem Spacewar!~\cite{bellis2019spacewar}, jež je vidět na obrázku~\ref{fig:spacewar}. 
+% Počátek videoher
+\section{Počátek videoher}
+První počítačové hry vznikaly kolem 50. let 20. století v prostředí vojenských základen a univerzit na jejich sálových počítačích~\cite{novak2011game}. Těmi byly například videohry OXO (1952) a Tennis for Two (1958), ale mezi nejpopulárnější videohry (vytvořené v té době) se počítá především hra Spacewar!~\cite{bellis2019spacewar}. Ta byla vytvořena studentem univerzity MIT, Stevem Russellem a lze ji vidět na obrázku~\ref{fig:spacewar}. 
 
 
-Nápad této hry byl následně, na začátku 70. let, přebrán Nolanem Bushnellem (zakladatelem Atari), který z ní vytvořil první komerční arkádovou hru (a tedy volně přístupnou veřejnosti) pod jménem \uv{Computer Space}, která byla velmi úspěšná~\cite{video_games_history}. To spustilo vývoj dalších velmi úspěšných arkádových videoher, oproti dnešním hrám převážně dovednostích, jako například \uv{Pong}, či \uv{Space Invaders} a \uv{Asteroids}, což byly první hry umožňující hráčům ukládat své skóre, dále například Galaxian, Pac-Man, Donkey Kong a Tron~\cite{novak2011game}.
+Nápad této hry byl následně na začátku 70. let přebrán Nolanem Bushnellem (zakladatelem Atari), který z ní vytvořil první komerční arkádovou hru (a tedy volně přístupnou veřejnosti) pod jménem \uv{Computer Space}, která byla velmi úspěšná~\cite{video_games_history}. To spustilo vývoj dalších úspěšných arkádových videoher, oproti dnešním hrám převážně dovednostních. Příkladem mohou být hry \uv{Pong}, či \uv{Space Invaders} a \uv{Asteroids}, což byly první hry umožňující ukládání skóre, dále například Galaxian, Pac-Man, Donkey Kong a Tron~\cite{novak2011game}.
 
-Ve stejnou dobu začal i vývoj konzolových her, tedy možností hrát hry v pohodlí domova. Příklady firem, jejich konzolí a her (či herních sérií), které vznikli kolem této doby a zasloužili se o rozvoj konzolových/počítačových her, jako je známe dnes, jsou vypsány v~následujícím odstavci.
+Ve stejnou dobu začal i vývoj konzolových her, tedy možností hrát hry v pohodlí domova. Příklady firem, jejich konzolí a her (či herních sérií), které vznikly kolem této doby a zasloužily se o rozvoj konzolových/počítačových her, jak je známe dnes, jsou zmíněny v~následujících odstavcích.
 \begin{itemize}
-    \item Atari\,--\,roku 1976 vydali jednu z prvních konzolí Atari VCS/2600, která odstartovala velkoprodej domácích konzolí~\cite{novak2011game}. Tato konzole přišla s mnoha, pro svojí dobu, ikonickými hrami, které byly často předělané tituly známe z arkád, jako je například Pac-Man série, Space Invaders, Asteroids, Q*bert, Pole Position či Frogger~\cite{Atari_games}.
+    \item Atari\,--\,roku 1976 vydali jednu z prvních konzolí Atari VCS/2600, která odstartovala velkoprodej domácích konzolí~\cite{novak2011game}. Tato konzole přišla s mnoha, pro svojí dobu, ikonickými hrami, které byly často předělané tituly známé z arkád, jako je například Pac-Man série, Space Invaders, Asteroids, Q*bert, Pole Position, či Frogger~\cite{Atari_games}.
     \item Nintendo\,--\,jejich první konzole, NES, byla vydána roku 1985. Vyšlo na ni mnoho dodnes populárních herních titulů, jako je například The~Legend of~Zelda, Super Mario Bros, Final Fantasy, Dragon Quest nebo Tetris~\cite{NES_GAMES}.
     \item Sega\,--\,jejíž první konzolí byla SG-1000 z roku 1983 s nejpopulárnější vydanou sérií Sonic the~Hedgehog~\cite{SegaRetro_2023}.
 \end{itemize}
 
-S příchodem osobních počítačů do domácností se zvýšil zájem o hry, mnoho původně pouze univerzitních her, bylo adaptováno do personálních počítačů, což způsobilo úpadek placených arkádových her~\cite{novak2011game}. 
+S příchodem osobních počítačů do domácností se zvýšil zájem o hry. Mnoho původně pouze univerzitních her bylo adaptováno pro personální počítače, což způsobilo úpadek placených arkádových her~\cite{novak2011game}. 
 
-V dnešní době jsou možnosti pro hraní videoher ještě rozšířenější, od možnosti hrát na telefonech, vyvinutějších ručních konzolích, či pomocí virtuální reality.
+V dnešní době jsou možnosti pro hraní videoher ještě rozšířenější. Možnosti jsou od hraní na telefonech, přes vyvinutější přenosné konzole po využití virtuální reality.
 
 \begin{figure}[H]
     \centering
@@ -127,14 +127,14 @@ V dnešní době jsou možnosti pro hraní videoher ještě rozšířenější, 
 %--------------------------
 % Labyrintové hry
 \section{Labyrintové videohry}
-Dle Akademického slovníku současné češtiny~\cite{AkademickySlovnik-Bludiste} je bludiště, neboli labyrint, definováno jako \uv{místo, kde se bloudí} a \uv{složitý, neuspořádaný systém}. Bludiště jsou multikurzální, je to tedy spleť cest, chodeb a prostor, kde se snadno zabloudí a jsou definovaná slepými konci a~větvícími chodbami, kvůli kterým je procházející nucen se rozhodovat.
+Dle Akademického slovníku současné češtiny~\cite{AkademickySlovnik-Bludiste} je bludiště, neboli labyrint, definováno jako \uv{místo, kde se bloudí} a \uv{složitý, neuspořádaný systém}. Bludiště jsou mnohocestné, je to tedy spleť cest, chodeb a prostor, kde se snadno zabloudí a jsou definovaná slepými konci a~větvícími se chodbami, kvůli kterým je procházející nucen se rozhodovat.
 
-Andrew Rollings a Ernest Adams definují bludiště ve hrách jako prostředí, kde každé místo vypadá stejně, nebo velmi podobně a hráč musí zjistit, jak jsou místa propojená, často jejím procházením, aby našel cestu ven~\cite{rollings2003andrew}. Tyto hry jsou často doplněné i o nějaké jiné výzvy než je pouze procházení bludištěm, kterými (dle stejných autorů~\cite{rollings2003andrew}), může být například hledání klíče k otevření zamknutích dveří, sbírání věcí (např. pro zvýšení skóre), řešení hádanek, paměťových testů, luštění kryptických zpráv, atd.
+Andrew Rollings a Ernest Adams definují bludiště ve hrách jako prostředí, kde každé místo vypadá stejně, nebo velmi podobně a hráč musí zjistit, jak jsou místa propojená, často jejich procházením, aby našel cestu ven~\cite{rollings2003andrew}. Tyto hry jsou často doplněné i o nějaké jiné výzvy, než je pouze procházení bludištěm, kterými (dle stejných autorů~\cite{rollings2003andrew}) může být například hledání klíče k otevření zamknutých dveří, sbírání věcí (např. pro zvýšení skóre), řešení hádanek, paměťových testů, luštění kryptických zpráv, atd.
 
-V 80. letech 20. století měly hry s tématem bludiště největší rozmach, hlavně kvůli rozšíření domácích konzolí (např. Atari 2600), a díky jejich množství a rozmanitosti je lze rozdělit na 4 typy~\cite{DoYouMaze}:
+V 80. letech 20. století měly hry s tématem bludiště největší rozmach, hlavně díky rozšíření domácích konzolí (např. Atari 2600). Díky jejich množství a rozmanitosti je lze rozdělit na 4 typy~\cite{DoYouMaze}:
 \begin{itemize}
     \item bludiště s pohledem z vrchu\,--\,při hraní je vidět celé (či skoro celé) bludiště z vrchu (Mouse in the Maze, Bomberman),
-    \item bludiště z prvního pohledu\,--\,stejný pohled na hru, jako herní postavička (Maze/Maze War, Capture the Flag),
+    \item bludiště s pohledem z první osoby\,--\,stejný pohled na hru, jako herní postavička (Maze/Maze War, Capture the Flag),
     \item pronásledování bludištěm\,--\,hráč je pronásledován, či může pronásledovat nepřátele; tento typ je propojen s různými styly pohledu na bludiště (Pac-Man, Rally-X, Lady Bug),
     \item bludiště s obsazováním políček mřížky\,--\,hráč při průchodu bludištěm musí zabrat co nejvíce políček (Amidar).
 \end{itemize}
@@ -149,17 +149,17 @@ V 80. letech 20. století měly hry s tématem bludiště největší rozmach, h
 \end{figure}
 
 \subsection*{Mouse in the Maze}
-První labyrintovou hrou byla hra s názvem \textit{MOUSE}, nebo také \textit{Mouse in the Maze}, naprogramovaná roku 1959  Douglasem T. Rossem a John E. Wardem na sálovém počítači TX-0~\cite{TheOriginOfSpacewar}. 
+První labyrintovou videohrou byl titul s názvem \textit{MOUSE} neboli také \textit{Mouse in the Maze}, naprogramovaná roku 1959  Douglasem T. Rossem a John E. Wardem na sálovém počítači TX-0~\cite{TheOriginOfSpacewar}. 
 
-Hráč dostal 8x8 mřížku a následně mohl světelným perem odmazat zdi a přidat sýr(y) (v upravené verzi martini) a následně sledovat myš procházející bludiště, kde si pamatovala již prošlé cesty, a hledající sýr, který musela najít než se vyčerpala~\cite{Videogamehistorian}. Ukázka ze hry je zobrazena na obrázku~\ref{fig:mouse}, ze kterého je vidět, že hra je bludiště s pohledem z vrchu.
+Hráč dostal 8×8 mřížku a následně mohl světelným perem odmazat zdi a přidat sýr(y) (v upravené verzi martini) a následně sledovat myš procházející bludiště, kde si pamatovala již prošlé cesty, a hledající sýr, který musela najít, než se vyčerpala~\cite{Videogamehistorian}. Ukázka ze hry je zobrazena na obrázku~\ref{fig:mouse}, ze kterého je vidět, že hra je bludiště s pohledem z vrchu.
 
 \subsection*{Maze/Maze War}
-3D labyrintová pronásledující střílecí hra z roku 1974 vyvinutá studenty MIT~\cite{Maze_War}. Byla to průlomová hra, nabízející nejen iluzi 3D grafiky, ale i podporou hraní až pro 8 hráčů, či nehráčské boty a byla nejspíše jednou z prvních, či možná i první střílecí hrou~\cite{virtual_worlds}. Později byla hra díky využití TCP/IP protokolu, díky kterému hráči mohli hrát mezi sebou po internetu, průkopníkem i v online hrách~\cite{Maze_War}.
+3D labyrintová pronásledující střílecí hra z roku 1974 vyvinutá studenty MIT~\cite{Maze_War}. Byla to průlomová hra, nabízející nejen iluzi 3D grafiky, ale i podporou hraní až pro 8 hráčů, či nehráčské boty. Byla nejspíše jednou z prvních, či možná i první střílecí hrou~\cite{virtual_worlds}. Později byla hra, díky využití TCP/IP protokolu, který hráčům umožnil hraní po internetu, průkopníkem i v online hrách~\cite{Maze_War}.
 
 Úkolem hráčů, hrajících jako avatar oční bulvy, bylo projít bludiště (kde mohli chodit pouze dozadu, dopředu a otáčet se o 90° vpravo, či vlevo), najít nepřátele a střelit je, čímž sbírali skóre~\cite{Maze_War}.
 
 \subsection*{Pac-Man}
-Japonská arkádová hra od společnosti Namco (dnes Bandai Namco Entertainment) vyšla původně v roce 1980 pod jménem Puck-Man (kvůli jeho tvaru puku, jméno ale bylo pro USA změněno, kvůli strachu z vandalů~\cite{kent2010ultimate}) a po svém vydání v USA se z ní stal okamžitý hit, neboť se v jednom roce prodalo více než 100 000 arkádových automatů s touto hrou~\cite{PACMAN}. Hitem byly i další hry z rychle rostoucí série Pac-Man. Roku 1981 vyšla Ms. PAC-MAN, jenž získala několik nových herních prvků, jako například více bludišť (oproti pouze jednomu, které nabízel originál) či náhodnější nepřátele\,--\,po svém vydání prodala i tato hra v USA více než 100 000 automatů, což žádná jiná hra v USA nedokázala~\cite{kent2010ultimate}.
+Japonská arkádová hra od společnosti Namco (dnes Bandai Namco Entertainment) vyšla původně v roce 1980 pod jménem Puck-Man (kvůli jeho tvaru puku, jméno ale bylo pro USA změněno kvůli strachu z vandalů~\cite{kent2010ultimate}) a po svém vydání v USA se z ní stal okamžitý hit. V jediném roce se prodalo více než 100 000 arkádových automatů s touto hrou~\cite{PACMAN}. Hitem byly i další hry z rychle rostoucí série Pac-Man. Roku 1981 vyšla Ms. PAC-MAN, jež získala několik nových herních prvků, jako například více bludišť (oproti pouze jednomu, které nabízel originál), či náhodnější nepřátele\,--\,po svém vydání prodala i tato hra v USA více než 100 000 automatů, což žádná jiná hra v USA nedokázala~\cite{kent2010ultimate}.
 
 \begin{figure}[hb]
 	\centering
@@ -168,37 +168,37 @@ Japonská arkádová hra od společnosti Namco (dnes Bandai Namco Entertainment)
 	\label{fig:pacman}
 \end{figure}
 
-Pac-Man je hra založená na principu pronásledování hráče nepřáteli bludištěm~\cite{kent2010ultimate}, jak je vidět na obrázku~\ref{fig:pacman}. Hráč má za úkol projít bludiště a sebrat všechny tečky na zemi, čímž se dostane do další úrovně. Při tom ho ale pronásledují 4 duchové, kteří pokud ho chytí, tak Pac-Man ztratí jeden ze tří životů (když ztratí všechny, hra je prohraná). Hráč nadále může získat bonusové body díky sebranému ovoci, nebo pomocí bonusů, čímž na omezenou dobu může nazpátek Pac-Man pojídat duchy.
+Pac-Man je hra založená na principu pronásledování hráče nepřáteli v bludišti~\cite{kent2010ultimate}, jak je vidět na obrázku~\ref{fig:pacman}. Hráč má za úkol projít bludiště a sebrat všechny tečky na zemi, čímž se dostane do další úrovně. Při tom ho ale pronásledují 4 duchové., Pokud ho chytí, tak Pac-Man ztratí jeden ze tří životů (když ztratí všechny, hra končí). Hráč dále může získat bonusové body díky sebranému ovoci, nebo pomocí bonusů, které mu umožní po omezenou dobu naopak duchy pojídat.
 
 \subsection*{Bomberman/Dyna Blaster}
-Další labyrintová hra od japonských vývojářů, která je podobně jako Pac-Man, populární a vydávaná dodnes je Bomberman, v Evropě známý pod názvem Dyna Blaster, vydaný v roce 1983 (1985 na Nintendo konzole), kterého se prodalo za několik prvních let skoro milion kopií~\cite{Bomberman}. 
-Mapa hry je jednoduchý obdélník s několika systematicky rozdělenými nerozbitnými zdmi, mezi nimiž se nachází volná místa a rozbitné zdi. Hráčův úkol je zničit všechny nepřátele pomocí pokládání bomb, které po určitém čase vybouchnou v křížovém tvaru, čímž zlikvidují nepřátele a rozbijí zdi v jeho výbušné oblasti, a také odejít dveřmi, které jsou schované za jednou ze zničitelných zdí~\cite{Bomberman}. 
+Další labyrintová hra od japonských vývojářů, která je podobně jako Pac-Man populární a~dodnes vydávaná, je Bomberman. V Evropě je též známý pod názvem Dyna Blaster. Vydán byl v roce 1983 (1985 na Nintendo konzole), kterého se prodalo za prvních několik let téměř milion kopií~\cite{Bomberman}. 
+Mapa hry je jednoduchý obdélník s několika systematicky rozmístěnými nerozbitnými zdmi, mezi nimiž se nachází volná místa a rozbitné zdi. Hráčův úkol je porazit všechny nepřátele v lokaci pomocí pokládání bomb, které po určitém čase vybuchnou v~křížovém tvaru, čímž zlikvidují nepřátele a rozbijí zdi v jeho výbušné oblasti~\cite{Bomberman}. 
 
 %--------------------------
 % Herní engine
 \section{Herní engine}\label{chap:Herní engine}
-Herní engine (také game engine) je softwarový framework využívaný pro tvorbu a vývoj (nejen) videoher. Nabízí mnoho nástrojů pro zjednodušení tvůrčího procesu, jako jsou například podpůrné programy, knihovny, a některé poskytují i speciální programovací jazyky vytvořené specificky pro programovaní her v daném engine~\cite{Valencia-Garcia_2016}. V následující části textu jsou popsány a uvedeny některé příklady z nejpopulárnějších herních enginů (viz obrázek~\ref{fig:most_popular_game_engines}).
+Herní engine (také game engine) je softwarový framework využívaný pro tvorbu a vývoj (nejen) videoher. Nabízí mnoho nástrojů pro zjednodušení tvůrčího procesu, jako jsou například podpůrné programy a knihovny. Některé poskytují také speciální programovací jazyky vytvořené specificky pro programovaní her v daném enginu~\cite{Valencia-Garcia_2016}. V následující části textu jsou uvedeny a popsány některé příklady z nejpopulárnějších herních enginů (viz obrázek~\ref{fig:most_popular_game_engines}).
 \begin{figure}[H]
-    \vspace{0.5cm}
+    \vspace{1cm}
 	\centering
 	\includegraphics[width=\textwidth]{obrazky-figures/ch2/most_popular_game_engines.png}
-	\caption{Výzkum SlashData z roku 2021 o nejpoužívanějších herních enginů.~\cite{SlashData_game-engines}}
+	\caption{Výzkum SlashData z roku 2021 o nejpoužívanějších herních enginech.~\cite{SlashData_game-engines}}
 	\label{fig:most_popular_game_engines}
 \end{figure}
 
 \subsection*{Unity}
-Unity je multiplatformní game engine od společnosti Unity Technologies. Dle oficiálních webových stránek aktuálně podporuje více než 20 platforem (např. Windows, macOS, Linux, Android, PlayStation 5, Nintendo Switch,~\ldots)~\cite{unity_website}, nejen díky čemuž je jedním z~nejpoužívanějších softwarů na tvoření her~\cite{arnia_unity}. Poskytuje bezplatnou verzi (pro soukromé užití, nebo pokud výdělek hry za rok nepřesahuje 100 000\$) i placenou verzi \uv{Unity Pro}. 
+Unity je multiplatformní game engine od společnosti Unity Technologies. Dle oficiálních webových stránek aktuálně podporuje více než 20 platforem (např. Windows, macOS, Linux, Android, PlayStation 5, Nintendo Switch,~\ldots)~\cite{unity_website}, nejen díky čemuž je jedním z~nejpoužívanějších enginů pro tvorbu her~\cite{arnia_unity}. Poskytuje bezplatnou verzi (pro soukromé užití, nebo pokud výdělek hry za rok nepřesahuje 100 000\$) i placenou verzi \uv{Unity Pro}. 
 
-Pro implementaci her, ať už 2D, 3D či VR (hry pro virtuální realitu), nabízí možnost vizuálního/grafického editoru a skriptů v C\#. Základní herní entita je \verb|GameObject|, které je množné přiřazovat různé vlastnosti, herní mechaniky, grafiku atd. a to již předefinované, či naprogramované uživatelem pomocí skriptů. Různé \verb|GameObjects| můžou být součástí \verb|Scene| z čehož je následně konstruován finální produkt~\cite{hocking2015unity}.
+Pro implementaci her, ať už 2D, 3D či VR (hry pro virtuální realitu), nabízí možnost vizuálního/grafického editoru a skriptů v C\#. Základní herní entita je \verb|GameObject|, které je možné přiřazovat různé vlastnosti, herní mechaniky, grafiku atd. Ty mohou být předefinované, či naprogramované uživatelem pomocí skriptů. Různé \verb|GameObjects| můžou být součástí \verb|Scene| z čehož je následně konstruován finální produkt~\cite{hocking2015unity}.
 
-Unity je hojně využívána na vývoj AAA (také Triple-A hry neboli produkt od distributora, pro jehož vývoj byl k dispozici bohatý rozpočet) her, například: Marvel Snap, Apex Legends, ale i indie (takzvaně od nezávislých tvůrců = independent creator), například: Cult of the Lamb, Among Us, Slime Rancher, Cuphead~\cite{unity_website}.
+Unity je hojně využíváno na vývoj AAA (také Triple-A hry neboli produkt od distributora, pro jehož vývoj byl k dispozici bohatý rozpočet) her, například: Marvel Snap, Apex Legends, ale i indie her (takzvaně od nezávislých tvůrců = independent creator), například: Cult of the Lamb, Among Us, Slime Rancher, Cuphead~\cite{unity_website}.
 
 \subsection*{Unreal Engine}
-Unreal Engine je série herních engine, s nejnovější verzí Unreal Engine 5 z roku 2022, od společnosti Epic Games. První verze byla vytvořena pro tvorbu Unreal, 3D střílečky z pohledu první osoby, a byla velmi populární, jelikož díky UnrealScriptu (založeném na C++) mohli uživatele jednoduše původní hru modifikovat~\cite{sanders2016introduction}. Novější verze využívají klasické C++. Podobně jako Unity, nabízí bezplatnou i placenou verzi. Je také multiplatformní, ale podporuje menší škálu platforem než Unity\,--\,základní (Windows, Linux, PlayStation, Nintendo Switch, Xbox), ale podporuje~\cite{unreal_engine}.
+Unreal Engine je série herních enginů s nejnovější verzí Unreal Engine 5 z roku 2022 od společnosti Epic Games. Poprvé byl představen ve hře Unreal, 3D střílečce z pohledu první osoby. Ta byla velmi populární, jelikož díky UnrealScriptu (založeném na C++) mohli uživatele jednoduše původní hru modifikovat~\cite{sanders2016introduction}. Novější verze využívají klasické C++. Podobně jako Unity nabízí bezplatnou i placenou verzi. Je také multiplatformní, ale podporuje menší škálu platforem než Unity\,--\,např. Windows, Linux, PlayStation, Nintendo Switch, Xbox~\cite{unreal_engine}.
 
-V porovnání s dalšími zástupci herních engine je hodnocen jako jeden ze složitějších. Díky své komplikovanější stavbě a strmé křivce učení práce s Unreal Engine je doporučován spíše na větší, komplikovanější projekty, než například na mobilní hry (i přestože podporuje vývoj her na Android)~\cite{Kevuru_Games_Unreal-Unity}. Unreal Engine 5 je zaměřený hlavně na 3D vývoj a proto přišel s~mnoha funkcemi pro vylepšení vykreslování a práci s trojdimenzionálními objekty - jsou to Nanite (vizuální geometrický systém), Lumen (vylepšená práce se světlem) a MetaSounds (managment audia)~\cite{UnrealEngine5}.
+V porovnání s dalšími zástupci herních enginů je hodnocen jako jeden ze složitějších. Díky své komplikovanější stavbě a strmé křivce učení je doporučován spíše na větší, komplikovanější projekty, než například na mobilní hry (i přestože podporuje vývoj her na Android)~\cite{Kevuru_Games_Unreal-Unity}. Unreal Engine 5 je zaměřený primárně na 3D vývoj a proto přišel s~mnoha funkcemi pro vylepšení vykreslování a práci s třídimenzionálními objekty - jsou to Nanite (vizuální geometrický systém), Lumen (vylepšená práce se světlem) a MetaSounds (managment audia)~\cite{UnrealEngine5}.
 
-Hrami, které byly vytvořeny za pomocí Unreal Engine je například Minecraft Dungeons, Final Fantasy VII Remake, Fortnite (ukázka na obrázku~\ref{fig:fortnite-unreal_engine}) nebo Stray~\cite{unreal_engine}.
+Hrami, které byly vytvořeny za pomocí Unreal Enginu, jsou například Minecraft Dungeons, Final Fantasy VII Remake, Fortnite (ukázka na obrázku~\ref{fig:fortnite-unreal_engine}) nebo Stray~\cite{unreal_engine}.
 
 \begin{figure}[H]
 	\centering
@@ -208,32 +208,32 @@ Hrami, které byly vytvořeny za pomocí Unreal Engine je například Minecraft 
 \end{figure}
 
 \subsection*{Godot}
-Godot (s nejnovější verzí 4.2.1) je další software pro tvorbu 3D a 2D her. Na rozdíl od Unity a Unreal Engine je od verze 3.0 kompletně zdarma, svobodný a otevřený (open-source)\footnote{\url{https://github.com/godotengine/godot}}. Kvůli tomu má ale Godot oproti jiným zmíněným herním engine omezené oficiální možnosti platforem, jelikož jsou konzole (PlayStation, Xbox) uzavřené ekosystémy a Godot nimi není licencovaný~\cite{Godot_Engine_consoles}. Stále ale podporuje škálu platforem, příkladem desktopové (Windows, Linux, macOS), webové (HTML5), mobilní (Android, iOS) a virtuální realita (Oculus Rift/Quest, HTC Vive).
+Godot (s aktuální verzí Godot 4) je další software pro tvorbu 3D a 2D her. Na rozdíl od Unity a Unreal Enginu je od verze 3.0 kompletně zdarma, svobodný a otevřený (open-source)\footnote{\url{https://github.com/godotengine/godot}}. Z toho důvodu má Godot ve srovnání s jinými zmíněnými herními enginy omezené oficiální možnosti platforem, jelikož jsou konzole (PlayStation, Xbox, Nintendo) uzavřené ekosystémy a Godot nimi není licencovaný~\cite{Godot_Engine_consoles}. Stále ale podporuje škálu platforem, jako jsou desktopové (Windows, Linux, macOS), webové (HTML5), mobilní (Android, iOS) a~virtuální realita (Oculus Rift/Quest, HTC Vive).
 
-Základní stavební blok pro vytváření projektu v Godot je \verb|Node| (objekt reprezentující specializovaný prvek)\,--\,tyto objekty lze následně propojovat do \verb|Scene|, jak je vidět na obrázku~\ref{fig:godot_view}, což jsou stromy závislostí tvořící finální produkt~\cite{bradfield2018godot}. K těmto \verb|Nodes| lze přiřazovat skripty v jazycích GDScript (dynamicky typovaný jazyk syntaxí podobný Pythonu), C\# a C++\cite{GameEngineWizardry}. Godot se oproti předešlým zmíněným softwarům zaměřuje na 2D, pro které nabízí optimalizovaný přístup zdůrazňující jednoduchost a efektivitu (např. \verb|TileMap|, pro tvoření map, či \verb|Sprite2D| s vlastnostmi pro funkci 2D postav)~\cite{Godot_Engine}.
+Základní stavební blok pro vytváření projektu v Godotu je \verb|Node| (objekt reprezentující specializovaný prvek)\,--\,tyto objekty lze následně propojovat do \verb|Scene|, jak je vidět na obrázku~\ref{fig:godot_view}, což jsou stromy závislostí tvořící finální produkt~\cite{bradfield2018godot}. K těmto \verb|Nodes| lze přiřazovat skripty v jazycích GDScript (dynamicky typovaný jazyk syntaxí podobný Pythonu), C\# a C++\cite{GameEngineWizardry}. Godot se oproti předešlým zmíněným softwarům zaměřuje na 2D, pro které nabízí optimalizovaný přístup zdůrazňující jednoduchost a efektivitu (např. \verb|TileMap|, pro tvoření map, či \verb|Sprite2D| s vlastnostmi pro funkci 2D postav)~\cite{Godot_Engine}.
 
 V Godotu byly vytvořeny například hry Brotato, Hive Time, Tail Quest a aplikace Dungeoncraft a Material Maker~\cite{Godot_Engine}.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\textwidth]{obrazky-figures/ch2/godot_view.png}
-	\caption{Grafické rozhraní pro zobrazení Scene v Godot verzi 4.}
+	\caption{Grafické rozhraní pro zobrazení Scene v Godotu 4.}
 	\label{fig:godot_view}
 \end{figure}
 
 %--------------------------
 % Celulární automaty
 \section{Celulární automaty}\label{chap:Celulární automaty}
-Celulární automat (nadále označován také zkratkou CA) je dynamický systém a diskrétní model prostorového systému využívaný na modelování fyzikálních či biologických simulací. Prostorový systém vyjadřuje prostorovou dekompozici systému\,--\,zkoumaný systém je rozdělen na malé části s definovaných chováním~\cite{ims}.
+Celulární automat (dále označován také zkratkou CA) je dynamický systém a diskrétní model prostorového systému využívaný na modelování fyzikálních či biologických simulací. Prostorový systém vyjadřuje prostorovou dekompozici systému\,--\,zkoumaný systém je rozdělen na malé části s definovaným chováním~\cite{ims}.
 
 \subsection*{Základní definice }
 Celulární automat je čtveřice ${(\alpha^{n}, S, N, f)}$, kterou lze dle Stanfordské encyklopedie filozofie~\cite{sep-cellular-automata}, definovat následovně:
 \begin{itemize}
     \item ${ \alpha^{n} }$ (\textit{Lattice}) je diskrétní n-dimenzionální mřížka buněk (${ n >= 1 }$)\,--\,tyto buňky jsou identické (některé mohou být speciální\,--\,např. modelují pevné hranice), 
-    \item ${ S }$ je konečná množina stavů, které mohou buňky nabývat\,--\,v každém diskrétním časovém kroku může každá buňka nabýt pouze a jenom 1 stavu, 
+    \item ${ S }$ je konečná množina stavů, kterých mohou buňky nabývat\,--\,v každém diskrétním časovém kroku může každá buňka nabývat pouze a jenom 1 stavu, 
     \item ${ N }$ je konečná množina sousedících buněk (okolí, které může, či nemusí obsahovat i~buňku samotnou) pro každou buňku, na kterém záleží její vývoj, ${ N \subseteq \alpha }$,
-    \item ${ f }$ je konečná množina pravidel pro přechod mezi stavy\,--\,v každém časovém kroku každá buňka aktualizuje svůj aktuální stav podle deterministické přechodové funkce $\phi : \Sigma^n \rightarrow \Sigma$, která mapuje okolí. Často (i když ne nutně) se počítá, že aktualizace je synchronní a bere jako vstup okolí v čase $t$ sousední stavy v bezprostředně předchozím časovém kroku $t-1$.
+    \item ${ f }$ je konečná množina pravidel pro přechod mezi stavy\,--\,v každém časovém kroku každá buňka aktualizuje svůj aktuální stav podle deterministické přechodové funkce $\phi : \Sigma^n \rightarrow \Sigma$, která mapuje okolí. Často (i když ne nutně) se počítá, že aktualizace je synchronní a v čase $t$ bere jako vstup stav svého okolí v bezprostředně předchozím časovém kroku $t-1$.
 \end{itemize}
-Příkladem zápisu definice celulárního automatu Game of Life (vysvětlený níže) lze zapsat jako:
+Příkladem definice celulárního automatu Game of Life (vysvětlený níže) je následující zápis:
 \begin{equation*}
 \begin{split}
     & \left( \alpha^{2}, \right. \\
@@ -245,7 +245,7 @@ Příkladem zápisu definice celulárního automatu Game of Life (vysvětlený n
 
 Vlastnosti CA je možné popsat také pomocí řetězců pravidel (anglicky \textit{rulestring}). V~následujícím textu jsou uvedeny 2 příklady přebrané ze stránky LifeWiki~\cite{LifeWiki} pro 2 stavové CA. Těmito stavy jsou 1 = živá buňka a 0 = mrtvá buňka. 
 \begin{itemize}
-    \item Birth/Survival notace\,--\,Nejpoužívanější notace, která je zapisována pomocí \verb|B{list}| \verb|/S{list}|. Notace je vyjadřována dvěma seznamy. V prvním (B) je zapsán počet živých sousedů potřebný pro vznik nové živé buňky, neboli oživení. Druhý seznam určuje kolik živých sousedů musí buňka mít, aby přežila do dalšího kroku. Game of Life by touto notací byla zapsána B3/S23.
+    \item Birth/Survival notace\,--\,Nejpoužívanější notace, která je zapisována pomocí \verb|B{list}| \verb|/S{list}|. Notace je vyjadřována dvěma seznamy. V prvním (B) je zapsán počet živých sousedů potřebný pro vznik nové živé buňky, neboli oživení. Druhý seznam určuje kolik živých sousedů musí buňka mít, aby přežila do dalšího kroku. Game of Life by touto notací byla zapsána jako B3/S23.
     \item S/B notace\,--\,Dříve často používaná, dnes spíše nahrazena Birth/Survival notací. Podobně jako ona je zapisována pomocí dvou seznamů \verb|{list}|\verb|/{list}|. Jeden označuje počet živých sousedů potřebných pro přežití živé buňky a druhý počet živých sousedů potřebných pro oživení mrtvé buňky. Tedy opak Birth/Survival listu. Game of Life je zapsána jako 23/3.
 \end{itemize}
 
@@ -263,25 +263,25 @@ Jak je již popsáno u formálního popisu, pravidla určují následující sta
 s(t + 1) = f(s(t), N_s(t))
 \label{eq:CA-rule}
 \end{equation}
-Některá pravidla mohou mít i vlastnosti udávající typ pravidlu, které definuje~\cite{mechanics-CA}:
+Některá pravidla mohou mít i vlastnosti udávající typ pravidla, které definuje~\cite{mechanics-CA}:
 \begin{itemize}
     \item \textbf{totalistic} = o výsledku rozhoduje součet hodnot vstupních buněk (např. Game of Life),
     \item \textbf{legal} = z nulového vstupu nemůže samostatně vzniknout nenulový.
 \end{itemize}
 
 \subsection*{Klasifikace}
-Stephen Wolfram ve své knize \textit{A New Kind of Science}~\cite{wolfram-NewKindOfScience} definoval 4 třídy pro dělní CA, vypsané níže.
+Stephen Wolfram ve své knize \textit{A New Kind of Science}~\cite{wolfram-NewKindOfScience} definoval 4 třídy pro dělení CA, vypsané níže.
 \begin{enumerate}
     \item Téměř všechny počáteční vzory CA se po konečném počtu kroků dostanou do jednoho stabilního, homogenního stavu. Zmizí jakákoliv náhodnost v počátečním vzoru.
     \item Téměř všechny počáteční vzory CA se vyvinou do periodicky se opakujících (oscilujících) struktur/stavů nebo zůstane stabilně v některém ze stavů.
     \item Deterministický chaos\,--\,téměř všechny počáteční vzory se vyvíjejí pseudonáhodným, nebo chaotických způsobem. Stabilní struktury, které se objeví, jsou rychle zničeny okolním šumem.
-    \item Téměř všechny počáteční vzory se vyvíjejí do struktur, které interagují složitým a zajímavým způsobem, s tvorbou místních struktur, které jsou schopny přežít po dlouhou dobu. Konečným výsledkem mohou být stabilní nebo oscilující struktury typu 2 (k~dosažení může být ale potřeba velký počet kroků). Pod tuto třídu patří Game of Life (viz níže).
+    \item Téměř všechny počáteční vzory se vyvíjejí do struktur, které interagují složitým a~zajímavým způsobem s tvorbou místních struktur, které jsou schopny přežít po dlouhou dobu. Konečným výsledkem mohou být stabilní nebo oscilující struktury typu 2 (k~dosažení může být ale potřeba velký počet kroků). Pod tuto třídu patří Game of Life (viz níže).
 \end{enumerate}
 
 Některé celulární automaty lze označovat také jako \textbf{reverzibilní}. Ty jsou definované jako systémy, které neztrácí informaci při svém vývoji v čase\,--\,což znamená, že v každém okamžiku lze otočit vývoj času a navrátit se k předchozím stavům~\cite{ims}. Kvůli jejích chaotickému chování nejsou CA 4. třídy nikdy reverzibilní.
 
 \subsection*{Historie a Game of Life}
-Za vznikem celulárních automatů stáli ve 40. letech 20. století matematici John von Neumann a~Stanisław Ulam. Ulam studoval růst krystalů pomocí jednoduché mřížky~\cite{pickover2009math} a~von Neumann řešil modely samoreprodukujících se organismů~\cite{history_CA}. Ulam von Neumannovi navrhl využití diskrétního systému~\cite{schiff2011cellular} s buňkami, které se mění po jednotlivých krocích/iteracích. Na základě dalšího výzkumu došli k vyvinutí základů CA a John von Neumann následně na základě myšlenek celulárních automatů sepsal knihu \textit{Theory of Self-Reproducing Automata}, kde detailně, spolu s důkazy o jeho možné existenci, popisuje jeden z prvních konceptů realistických samo-replikujícího systému, \textit{von Neumannův univerzální konstruktor}~\cite{theory_neumann} který funguje jako univerzální kopírka, jež by v teorii replikovala sebe sama pomocí surovin z prostředí, ve kterém se nachází. 
+Za vznikem celulárních automatů stáli ve 40. letech 20. století matematici John von Neumann a~Stanisław Ulam. Ulam studoval růst krystalů pomocí jednoduché mřížky~\cite{pickover2009math} a~von Neumann řešil modely samoreprodukujících se organismů~\cite{history_CA}. Ulam navrhl von Neumannovi využití diskrétního systému~\cite{schiff2011cellular} s buňkami, které se mění po jednotlivých krocích/iteracích. Na základě dalšího výzkumu došli k vyvinutí základů CA a John von Neumann následně na základě myšlenek celulárních automatů sepsal knihu \textit{Theory of Self-Reproducing Automata}, kde detailně, spolu s důkazy o jeho možné existenci, popisuje jeden z prvních konceptů realistického samo-replikujícího systému, \textit{von Neumannův univerzální konstruktor}~\cite{theory_neumann} který funguje jako univerzální kopírka, jež by v teorii replikovala sebe sama pomocí surovin z prostředí, ve kterém se nachází. 
 
 Dalším z důležitých matematiků pro vývoj CA byl John Conway, který v roce 1970 vytvořil pravidla pro \textbf{Game of Life}~\cite{history_CA}, celulární automat na 2D mřížce s buňkami nabývajících 2 stavů\,--\,živá, mrtvá, využívající Moorovo okolí o 8 sousedech (viz obrázek~\ref{fig:2D-okoli}). Pravidly jsou~\cite{Game_Of_Life}:
 \begin{itemize}
@@ -299,20 +299,20 @@ I přes svoji jednoduchost tento systém nabývá klasifikace 4. třídy, tedy p
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{obrazky-figures/ch2/Margolus.pdf}
-    \caption{Margolusovo okolí (tmavě modrá = zkoumaná buňka, červená = 2x2 blok, světle modrá = okolí).}
+    \includegraphics[width=0.65\textwidth]{obrazky-figures/ch2/Margolus.pdf}
+    \caption{Margolusovo okolí (tmavě modrá = zkoumaná buňka, červená = 2×2 blok, světle modrá = okolí).}
     \label{fig:Margolus}
 \end{figure}
 
 Posledním, zde zmíněným, důležitým vědcem v historii CA byl Stephen Wolfram, který, jak již bylo zmíněno, ve své knize \textit{A New Kind of Science}~\cite{wolfram-NewKindOfScience} popsal 4 třídy pro klasifikování celulárních automatů, a to podle jejich vztahu k druhému na základě fyzikálního zákonu zachování hmotnosti.
 
 \subsection*{Využití celulárních automatů ve hrách}
-Jedno z využití CA obsahují hry \uv{padajícího písku}, neboli \textit{Falling-sand games/simulators}. Tyto hry jsou nejčastěji 2D, sandboxové (= podporující kreativitu), jsou založeny například na blokovému/rozdělujícímu celulárnímu automatu, které mohou simulovat reálnou fyziku, jelikož jsou reverzibilní a dodržují fyzikální zákon zachování hmot~\cite{schiff2011cellular}. Nejjednodušší okolí využívané na vyhodnocení těchto CA je Margolusovo (viz obrázek~\ref{fig:Margolus})\,--\,2D mřížka je rozdělena na 2x2 čtverce, které se každou generaci posouvají diagonálně o jednu buňku~\cite{schiff2011cellular} (okolí v čase t se tedy skládá ze všech buněk, které se nacházejí v bloku v aktuálním čase).
+Jedno z využití CA obsahují hry \uv{padajícího písku}, neboli \textit{Falling-sand games/simulators}. Tyto hry jsou nejčastěji 2D, sandboxové (= podporující kreativitu). Ty mohou být založeny například na blokových/rozdělujících celulárních automatech, které mohou simulovat reálnou fyziku, jelikož jsou reverzibilní a dodržují fyzikální zákon zachování~\cite{schiff2011cellular}. Nejjednodušší okolí využívané na vyhodnocení těchto CA je Margolusovo (viz obrázek~\ref{fig:Margolus})\,--\,2D mřížka je rozdělena na 2×2 čtverce, které se každou generaci posouvají diagonálně o~jednu buňku~\cite{schiff2011cellular} (okolí v čase t se tedy skládá ze všech buněk, které se nacházejí v bloku v aktuálním čase).
 
-\noindent Hráč má při hraní hry přístup k několika materiálům/elementům, které mají každý své vlastní vlastnosti (gravitace, reaktivnost s jinými materiály).  S nimi může interagovat na dané ploše. Příkladem těchto her může být The Powder Toy\footnote{https://powdertoy.co.uk}, The Sandbox (2012), Sandspiel (ukázka na obrázku~\ref{fig:Sandspiel}) či Noita (hra doplněná o roguelike aspekt).
+\noindent Hráč má při hraní hry přístup k několika materiálům/elementům, které mají každý své vlastní vlastnosti (gravitace, reaktivnost s jinými materiály).  S nimi může interagovat na dané ploše. Příkladem těchto her může být The Powder Toy\footnote{https://powdertoy.co.uk}, The Sandbox (2012), Sandspiel (ukázka na obrázku~\ref{fig:Sandspiel}) či Noita (hra doplněná o roguelike aspekty).
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{obrazky-figures/ch2/SandSpiel.png}
+    \includegraphics[width=0.55\textwidth]{obrazky-figures/ch2/SandSpiel.png}
     \caption{Ukázka ze hry Sandspiel.}
     \label{fig:Sandspiel}
 \end{figure}
@@ -324,11 +324,11 @@ Jedno z využití CA obsahují hry \uv{padajícího písku}, neboli \textit{Fall
     \label{fig:minecraft_biom}
 \end{figure}
 
-Rozšířenější, a v moderních hrách i častější, je využití CA na procedurální generování terénu. CA je využito hlavně u her vyžadujících větší a pestrý svět\,--\,například Minecraft, či vysoký počet úrovní vyžadujících rozmanité překážky. Důvodem je, že tradiční \uv{lidské} vytváření map může být nákladné kvůli několika příčinám. Manuální navrhovaní obrovské mapy, či 100+ úrovní lidmi zabere mnoho času, energie a může se objevit repetitivita vytvořeného prostředí. Tyto před-vytvořené mapy také zabírají mnoho paměti a jejich načítaní může být obtížné na procesor\,--\,procedurální generace vytváří mapy za chodu aplikace, takže vyřeší oba problémy~\cite{Procedural_Game_Map}.
+Rozšířenější a v moderních hrách i častější, je využití CA na procedurální generování terénu. CA je využito hlavně u her vyžadujících větší a pestrý svět\,--\,například Minecraft, či vysoký počet úrovní vyžadujících rozmanité překážky. Důvodem je, že tradiční \uv{lidské} vytváření map může být nákladné kvůli několika příčinám. Manuální navrhovaní obrovské mapy, či 100+ úrovní lidmi zabere mnoho času, energie a může se objevit repetitivita vytvořeného prostředí. Tyto před-vytvořené mapy také zabírají mnoho paměti a jejich načítání může být obtížné na procesor\,--\,procedurální generace vytváří mapy za chodu aplikace, takže vyřeší oba problémy~\cite{Procedural_Game_Map}.
 
-Minecraft například generuje základ své mapy díky stochastickým celulárním automatům spuštěných nad zpracovanými (např. pomocí šumu) výsledky kongruentních generátorů~\cite{Minecraft}. U stochaistických/náhodných celulárních automatů nejsou pravidla deterministická (tj. nepředvídatelná), ale pravděpodobnostní. To znamená, že místo pevného pravidla určujícího následující stav buňky má zadané pravděpodobnosti možných nových stavů buňky~\cite{DBLP:journals/corr/abs-1304-7185}. Díky tomuto dochází k definování přechodů a prolínání mezi různými poddruhy biomů (příklad vygenerované mapy je vidět na obrázku~\ref{fig:minecraft_biom}). Například teplé oblasti mají 50\% šanci, že se promění v poušť, 33\% v savanu a 17\% v roviny, nebo oceány mají 50\% šanci, že se promění v zem~\cite{Minecraft}.
+Minecraft například generuje základ své mapy díky stochastickým celulárním automatům spuštěným nad zpracovanými (např. pomocí šumu) výsledky kongruentních generátorů~\cite{Minecraft}. U stochastických/náhodných celulárních automatů nejsou pravidla deterministická (tj. předvídatelná), ale pravděpodobnostní. To znamená, že místo pevného pravidla určujícího následující stav buňky má zadané pravděpodobnosti možných nových stavů buňky~\cite{DBLP:journals/corr/abs-1304-7185}. Díky tomu dochází k definování přechodů a prolínání mezi různými poddruhy biomů (příklad vygenerované mapy je vidět na obrázku~\ref{fig:minecraft_biom}). Například teplé oblasti mají 50\% šanci, že se promění v poušť, 33\% v savanu a 17\% v roviny, nebo oceány mají 50\% šanci, že se promění v zem~\cite{Minecraft}.
 
-Některé z jednodušších možností generování prostředí s celulárními automaty je využití algoritmů na náhodné generování jeskyní. Příkladem může být například algoritmus (zapsán níže algoritmem \ref{algo:cave_gen}) z naučné stránky envatotuts+~\cite{CaveCA}, kde buňka CA může nabývat 2 stavů\,--\,živá, mrtvá, jehož výsledek je na obrázku~\ref{fig:cave}.
+Některé z jednodušších možností generování prostředí s celulárními automaty je využití algoritmů na náhodné generování jeskyní. Příkladem může být například algoritmus (zapsán níže algoritmem \ref{algo:cave_gen}) z naučné stránky envatotuts+~\cite{CaveCA}, kde každá buňka CA může nabývat 2 stavů\,--\,živá, mrtvá. Výsledek tohoto algoritmu je na obrázku~\ref{fig:cave}.
 \begin{algorithm}
 \caption{Generování jeskyní pomocí CA}\label{algo:cave_gen}
 \begin{algorithmic}[1]
@@ -354,7 +354,7 @@ Některé z jednodušších možností generování prostředí s celulárními 
 \newline
 Algoritmus funguje na několika jednoduchých principech, s nimiž je možné různě manipulovat, a to změnou hodnot \verb|deathLimit| a \verb|birthLimit|:
 \begin{itemize}
-    \item narození = pokud je buňka mrtvá a má určitý počet živých sousedů, v následující iteraci oživí (podpora růstu jeskynních chodeb),
+    \item narození = pokud je buňka mrtvá a má určitý počet živých sousedů, v následující iteraci se oživí (podpora růstu jeskynních chodeb),
     \item smrt = pokud je buňka živá a má příliš málo mrtvých sousedů, zemře v následující iteraci (vytváření otevřených prostorů v jeskyni),
     \item přežití = pokud je buňka živá a má dostatečný počet živých sousedů, přežívá do následující iterace (udržování existující struktury jeskyní).
 \end{itemize}
@@ -368,7 +368,7 @@ Algoritmus funguje na několika jednoduchých principech, s nimiž je možné r�
 \end{figure}
 \vspace{0.5cm}
 
-Také je možné využít algoritmy generující strukturu podobnou bludišti. Celulárním automatem s touto vlastností je OCA:Maze~\cite{OCA:Maze}. Hlavním principem tohoto algoritmu s~Mooreovým okolím je, že pokud má buňka živých 1 až 5 sousedů, tak přežije a ožívá pokud má přesně 3 sousedy. To znamená, že je pro buňky složitější zemřít a tím se vytváří vzory podobné bludišti, jak je vidět v levé částí obrázku~\ref{fig:OCA:Maze}. Při generování s náhodnou matici, ale nejsou cesty zcela propojené, získáváme jen mnoho nepropojených místností. Existuje i~jeho upravená verze (Mazectric), která ale omezuje počet sousedů potřebný přežití na 1~až~4, díky čemuž vznikají rovnější a delší \uv{cesty}~\cite{OCA:Maze}, což je možné vidět na pravé částí obrázku~\ref{fig:OCA:Maze}.
+Také je možné využít algoritmy generující strukturu podobnou bludišti. Celulárním automatem s touto vlastností je OCA:Maze~\cite{OCA:Maze}. Hlavním principem tohoto algoritmu s~Mooreovým okolím je, že pokud má buňka živých 1 až 5 sousedů, tak přežije a ožívá pokud má přesně 3 sousedy. To znamená, že je pro buňky složitější zemřít a tím se vytváří vzory podobné bludišti, jak je vidět v levé částí obrázku~\ref{fig:OCA:Maze}. Při generování s náhodnou matici, ale nejsou cesty zcela propojené, získáváme jen mnoho nepropojených místností. Existuje i~jeho upravená verze (Mazectric), která omezuje počet sousedů potřebný přežití na 1~až~4, díky čemuž vznikají rovnější a delší \uv{cesty}~\cite{OCA:Maze}, což je možné vidět na pravé částí obrázku~\ref{fig:OCA:Maze}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.47\textwidth]{obrazky-figures/ch2/OCA:Maze.png}\hspace{0.5cm}
@@ -380,7 +380,7 @@ Také je možné využít algoritmy generující strukturu podobnou bludišti. C
 %--------------------------
 % Prohledávání stavového prostoru
 \section{Prohledávání stavového prostoru}
-Stavový prostor (anglicky \textit{State space}), využívaný na řešení úloh, lze v informatice popsat jako orientovaný graf, v němž jeho uzly reprezentují stavy, a hrany reprezentují operátory, či stavové přechody~\cite{State-Space_Search}. Formálně je možné stavový prostor a jeho aktuální řešenou úlohu zapsat jakožto čtveřici (S, O, $s_0$, G), jejíž prvky lze definovat jako~\cite{izu}:
+Stavový prostor (anglicky \textit{State space}), využívaný na řešení úloh, lze v informatice popsat jako orientovaný graf, v němž jeho uzly reprezentují stavy a hrany reprezentují operátory, či stavové přechody~\cite{State-Space_Search}. Formálně je možné stavový prostor a jeho aktuální řešenou úlohu zapsat jako čtveřici (S, O, $s_0$, G), jejíž prvky lze definovat následovně~\cite{izu}:
 \begin{itemize}
     \item S je množina všech možných stavů,
     \item O je množina všech přechodů mezi stavy/operátorů, kterými lze měnit stavy,
@@ -408,7 +408,7 @@ Prohledávání začíná v kořeni, neboli startovním uzlu, a postupně po úr
 Časová složitost je \(\mathcal{O}_{BFS} = |V| + |E|\), kde \(|V|\) je součet počtu uzlů a \(|E|\) je počet hran~\cite{CS225BFSDFS}.
 
 \subsubsection*{\textbullet Metoda slepého prohledávání do hloubky (DFS)}
-Metoda pracující se zásobníkem LIFO (\textit{= last-in, first-out}), který využívá k \textit{backtrackingu}, neboli navrácení~\cite{poole2023artificial}. Stejně jako BFS začíná v kořeni, od kterého ale jde do hloubky. To znamená, že vybere jeden neprozkoumaný synovský sousední uzel, u kterého vybere jeho neprozkoumaný synovský sousední uzel a takto pokračuje, dokud nedorazí na \uv{dno}, tedy do místa, kde už nemůže pokračovat hlouběji do dalších sousedů\,--\,v tomto případě se pomoci, již zmíněného, \textit{backtrackingu} navrátí k nejbližšímu otcovskému sousedovi, u kterého ještě nebyly prozkoumány všechny sousedské uzly a prohledává dál~\cite{Introduction_to_Algorithms}. Toto pokračuje, dokud nenajde hledaný cílový uzel, nebo dokud neprojde celý prostor bez nalezení cíle. Ukázka průchodu stromem je v pravé části obrázku~\ref{fig:BFS_DFS}.
+Metoda pracuje se zásobníkem LIFO (\textit{= last-in, first-out}), který využívá k~navrácení~\cite{poole2023artificial}. Stejně jako BFS začíná v kořeni, od kterého ale jde do hloubky. To znamená, že vybere jeden neprozkoumaný synovský sousední uzel, u kterého vybere jeho neprozkoumaný synovský sousední uzel a takto pokračuje, dokud nedorazí na \uv{dno}, tedy do místa, odkud již nelze dále pokračovat hlouběji\,--\,v tomto případě se navrátí k nejbližšímu otcovskému uzlu, u kterého ještě nebyly prozkoumány všechny synovské uzly a prohledává dál~\cite{Introduction_to_Algorithms}. Toto pokračuje, dokud nenalezne hledaný cílový uzel, nebo dokud neprojde celý prostor bez nalezení cíle. Ukázka průchodu stromem je v pravé části obrázku~\ref{fig:BFS_DFS}.
 
 Stejně jako u BFS, časová složitost je \(\mathcal{O}_{DFS} = |V| + |E|\), kde \(|V|\) je součet počtu uzlů a \(|E|\) je počet hran~\cite{CS225BFSDFS}.
 
@@ -428,23 +428,23 @@ IDS se využívá pokud nemůžeme stanovit hloubku řešení a jeho časová sl
 Informované metody na rozdíl od neinformovaných znají polohu cíle~\cite{izu}, kterou využívají na zhodnocení cesty pomocí funkce  ${f(n)}$, kde ${n}$ je stav/uzel. Tyto metody jsou také nazývány heuristickými, jelikož využívají k dosáhnutí cíle heuristickou funkci\,--\,díky této funkci ${h(n)}$ lze vypočítat pomocí uzlu ${n}$ nezáporné reálné číslo značící odhad nákladů na cestu z uzlu ${n}$~do uzlu cílového~\cite{poole2023artificial}. Čím menší je výsledné číslo, tím pravděpodobněji povede k cílovému uzlu a tedy ${h(n) = 0}$, ${n}$ je cílovým uzlem~\cite{AI-Modern_approach}.
 
 \subsubsection*{\textbullet Metoda hladového prohledávání}
-Anglicky nazývaný \textit{Greedy search}, je jeden z nejlehčích přístupů, jelikož využívá na zhodnocení uzlu pouze heuristickou funkci, tedy ${f(n) = h(n)}$~\cite{AI-Modern_approach}. Další krok od aktuálního uzlu se rozhoduje pouze v závislosti na této funkci, tedy hrana s nejmenší heuristikou, čímž může dojít k chybnému výsledku\,--\,metoda hladového prohledávání negarantuje nalezení výsledku~\cite{poole2023artificial}. 
+Anglicky nazývaný \textit{Greedy search}, je jeden z nejméně komplexních přístupů, jelikož využívá na zhodnocení uzlu pouze heuristickou funkci, tedy ${f(n) = h(n)}$~\cite{AI-Modern_approach}. Další krok od aktuálního uzlu se rozhoduje pouze v závislosti na této funkci, tedy hrana s nejmenší heuristikou, čímž může dojít k chybnému výsledku\,--\,metoda hladového prohledávání negarantuje nalezení výsledku~\cite{poole2023artificial}. 
 
-Chybný postup k výsledku můžeme vidět v obrázku~\ref{fig:GreedySearch}, na kterém se nachází příklad z knihy \uv{Artificial Intelligence: Foundations of Computational Agents}~\cite{poole2023artificial}, kde při snaze nalezení cesty z uzlu A do uzlu G zůstane algoritmus zacyklen v uzlech B, E, F.
+Chybný postup k výsledku můžeme vidět v obrázku~\ref{fig:GreedySearch}, na kterém se nachází příklad z knihy \uv{Artificial Intelligence: Foundations of Computational Agents}~\cite{poole2023artificial}, kde při snaze o nalezení cesty z uzlu A do uzlu G zůstane algoritmus zacyklen v uzlech B, E, F.
 
 \subsubsection*{\textbullet Metoda A*}
 Metoda A* vyhodnocuje další krok na základě hodnotící funkce ${f(n) = g(n) + h(n)}$, kde ${g(n)}$ udává cenu cesty z předešlého do uzlu ${n}$ a ${h(n)}$ je heuristická funkce~\cite{AI-Modern_approach}. 
 
-Pro správnou funkci A* algoritmu je důležité zvolit přípustnou (anglicky \textit{admissible}) heuristiku, což je heuristika, u které cena cesty z uzlu ${n}$ do cílového uzlu nikdy nepřeceňuje cenu ze startovního uzlu k cílovému~\cite{AI-Modern_approach, izu}. Jednou z přípustných heuristik, je přímá euklidovská vzdálenost mezi dvěma uzly~\cite{poole2023artificial}, která vhodná na využití u prostorových problémů s přesnými rozměry (např. 2D mřížkový prostor, bez překážek, se čtyřmi povolenými směry\,--\,nahoru, dolu, doleva, doprava). Pokud algoritmus při jeho výpočtu dorazí k výsledku heuristiky, která by toto nesplňovala, využívá \textit{backtracking} a pokračuje cestu k dalšímu nejlepšímu uzlu.
+Pro správnou funkci A* algoritmu je důležité zvolit přípustnou (anglicky \textit{admissible}) heuristiku, což je heuristika, u které cena cesty z uzlu ${n}$ je spodním odhadem skutečné ceny k cíli~\cite{AI-Modern_approach, izu}. Jednou z přípustných heuristik, je přímá euklidovská vzdálenost mezi dvěma uzly~\cite{poole2023artificial}, která je vhodná na využití u prostorových problémů s přesnými rozměry (např. 2D mřížkový prostor bez překážek se čtyřmi povolenými směry\,--\,nahoru, dolu, doleva, doprava). Pokud algoritmus při jeho výpočtu dorazí k~výsledku heuristiky, která by toto nesplňovala, využívá \textit{backtracking}/navrácení a pokračuje v cestě k~dalšímu nejlepšímu uzlu.
 
-Podobně jako u metody hladového prohledávání hledá algoritmus cestu po nejmenších hodnotách, ale díky využití kombinace ${g(n)}$ a ${h(n)}$ je algoritmus řazen jako přípustný (vždy, když existuje, vrací optimální řešení)~\cite{poole2023artificial}.
+Podobně jako u metody hladového prohledávání hledá algoritmus cestu po nejmenších hodnotách, ale díky využití kombinace ${g(n)}$ a ${h(n)}$ je algoritmus řazen jako optimální (vždy, když existuje, vrací optimální řešení)~\cite{poole2023artificial}.
     
 %--------------------------
 % Rejection sampling
 \section{Rejection sampling}
-Rejection sampling, či metoda accept-reject (česky přijetí-odmítnutí), je metoda vzorkování využívaná ke generování náhodných proměnných~\cite{thomopoulos2012essentials} a na vzorkování dat ze sofistikované, neboli obtížně vzorkovatelné, distribuce~\cite{Sachdeva_2021}.
+Rejection sampling, či metoda accept-reject (česky přijetí-odmítnutí), je metoda vzorkování využívaná ke generování náhodných proměnných~\cite{thomopoulos2012essentials} a na vzorkování dat ze sofistikované neboli obtížně vzorkovatelné distribuce~\cite{Sachdeva_2021}.
 
-Základní myšlenkou rejection samplingu je, že místo přímého vzorkování komplikované funkce f(X) můžeme generovat vzorky pomocí jednodušší distribuce Q(X), ty následně překontrolovat, zda patří do funkce komplikovanější~\cite{ghojogh2020sampling} a na základě toho je přijmout, pokud do ní nepatří, odmítnout. Vizuální příklad je možné vidět na obrázku~\ref{fig:RA_graph}, který vyobrazuje vzorky vygenerované na základě funkce Q(X). Vzorky nacházející se v území patřící pod funkci f(X) a označené zelenou barvou, budou akceptovány a body mimo (označené žlutě) jsou odmítnuty.
+Základní myšlenkou rejection samplingu je, že místo přímého vzorkování komplikované funkce f(X) můžeme generovat vzorky pomocí jednodušší distribuce Q(X) a následně zkontrolovat, zda patří do funkce komplikovanější~\cite{ghojogh2020sampling}. Na základě toho je poté lze přijmout, nebo odmítnout. Vizuální příklad je možné vidět na obrázku~\ref{fig:RA_graph}, který vyobrazuje vzorky vygenerované na základě funkce Q(X). Vzorky nacházející se v území patřící pod funkci f(X) a označené zelenou barvou budou akceptovány, kdežto body mimo (označené žlutě) jsou zamítnuty.
 
 \vspace{0.3cm}
 \begin{figure}[H]
@@ -479,21 +479,21 @@ Pro detailnější vysvětlení je využit algoritmus~\ref{algo:rejection_sampli
 % KONCEPT
 %===---------------====
 \chapter{Koncept 2D labyrintové hry}\label{chap:Koncept 2D labyrintové hry}
-Labyrintová hra ve svém pravém slova smyslu je hra, která umístí hráče do cizího prostředí, ze kterého má za úkol dostat se pryč. V základní verzi mu cestu ztěžují pouze slepé uličky. 
+Labyrintová hra ve svém pravém slova smyslu je hra, která umístí hráče do cizího prostředí, ze kterého se má za úkol dostat pryč. V základní verzi mu cestu ztěžují pouze slepé uličky. 
 
-Toto téma ale v základu moc zájmu nepřiláká. Nejvíce populárních labyrintových her bylo vyvinuto jako původně arkádové hry v 80. letech 20. století a každá byla doplněna o~nějaký prvek/mechaniku, který je dělal zábavnější a hratelnější. Pac-Man například doplnil bloudění bludištěm o výzvu \uv{duchů}, tedy nepřátel pronásledujících hráče a dále sesbírání všech teček namísto hledání východu. Bomberman využil zajímavé mechaniky s~bombami, díky kterým se hráč zbavuje nepřátel a vytváří unikátní bludiště, v němž hledá východ.
+Toto téma ale v základu moc zájmu nepřiláká. Nejvíce populárních labyrintových her bylo vyvinuto jako původně arkádové hry v 80. letech 20. století a každá byla doplněna o~nějaký prvek/mechaniku, který je dělal zábavnější a hratelnější. Pac-Man například doplnil bloudění bludištěm o výzvu \uv{duchů}, tedy nepřátel pronásledujících hráče a dále sesbírání všech teček namísto hledání východu. Bomberman využil zajímavé mechaniky s~bombami, díky kterým se hráč zbavuje nepřátel a vytváří unikátní bludiště.
 
 %--------------------------
 % Úvod
 \section{Fáze vývoje labyrintové hry}
-K vývoji hry byly využity upravené postupy aspektů vývoje, jelikož hra byla vytvářena pouze jednou osobou, takže k plánování a vývoji nebylo potřeba podrobných domluv s~několika týmy. Byla tedy odstraněna fáze \uv{před-produkce} a všechny potřebné věci byly promyšleny a otestovány ve fázi \uv{plánování}. Hru také nebylo v plánu komercializovat, což odstranilo fázi \uv{před-publikace}, jelikož pro hru nebylo potřeba vytvářet marketingový plán.
+K vývoji hry byly využity upravené postupy aspektů vývoje. Jelikož hra byla vytvářena pouze jednou osobou, tak k plánování a vývoji nebylo potřeba podrobných domluv s~několika týmy. Byla tedy odstraněna fáze \uv{preprodukce} a všechny potřebné věci byly promyšleny a otestovány ve fázi \uv{plánování}. Hru také nebylo v plánu komercializovat, což odstranilo fázi \uv{prelaunch}, jelikož pro hru nebylo potřeba vytvářet marketingový plán.
 
 \subsection*{Plánování}
-V této fázi byl vytvořen první návrh hry. Hlavním nápadem bylo vytvoření procedurálně generované bludiště pomocí celulárních automatů a popřípadě dalších algoritmů. Jeho cílem byla automatizace generování libovolně velkého hratelného bludiště, které ušetří lidskou práci na vývoji prostředí. Také by mělo přinést aspekt \uv{náhodnosti}, jelikož lidská bludiště mohou trpět na problémy repetitivnosti~\cite{Procedural_Game_Map}. Návrh vytváření tohoto bludiště je na obrázku~\ref{fig:navrh_generovani}.
+V této fázi byl vytvořen první návrh hry. Hlavním nápadem bylo vytvoření procedurálně generovaného bludiště pomocí celulárních automatů a popřípadě dalších algoritmů. Jeho cílem byla automatizace generování libovolně velkého hratelného bludiště, které ušetří lidskou práci na vývoji prostředí. Také by mělo přinést aspekt \uv{náhodnosti}, jelikož lidská bludiště mohou trpět na problémy repetitivnosti~\cite{Procedural_Game_Map}. Návrh vytváření tohoto bludiště je na obrázku~\ref{fig:navrh_generovani}.
 
-Inspirace pro premisy hry byla brána z arkádových (\textit{skill-based}) her, v češtině her založených na dovednosti. Byl ponechán základní úkol\,--\,v bludišti se co nejrychleji zorientovat a~dojít k východu. V tom by hráči měli zabraňovat různí nepřátelé, se kterými může bojovat pro větší zisk skóre a bezstarostnější hledání cíle. V boji, přežití a pohybu v bludišti by mu měly pomoci různé předměty. Nápady na různé herní objekty jsou popsány důkladněji v~kapitole~\ref{chap:Herní mechaniky}.
+Inspirace pro premisy hry byla brána z arkádových (\textit{skill-based}) her, v češtině her založených na dovednosti. Byl ponechán základní úkol\,--\,v bludišti se co nejrychleji zorientovat a~dojít k východu. V tom by hráči měli zabraňovat různí nepřátelé, se kterými může bojovat pro zisk vyššího skóre a bezstarostnější hledání cíle. V boji, přežití a pohybu v bludišti by mu měly pomoci různé předměty. Nápady na různé herní objekty jsou popsány důkladněji v~kapitole~\ref{chap:Herní mechaniky}.
 
-Hra byla vytvořena jako hra na počítač, konkrétně pro Windows a Linux. Kvůli svému žánru a povaze hra nemá příběh, ale je připravena hráče zabavit nápadem, výzvou a grafikou inspirovanou nostalgií a jednoduchostí arkádových pixelových her.
+Hra byla vytvořena jako produkt na počítač, konkrétně pro Windows a Linux. Kvůli svému žánru a povaze hra nemá příběh, ale je připravena hráče zabavit nápadem, výzvou a grafikou inspirovanou nostalgií a jednoduchostí arkádových pixelových her.
 
 \begin{figure}[t]
     \centering
@@ -505,16 +505,16 @@ Hra byla vytvořena jako hra na počítač, konkrétně pro Windows a Linux. Kv�
 \subsection*{Produkce}
 Produkce hry byla rozdělena na několik etap. V první etapě byly vytvořeny algoritmy generující mapu a její start a cíl. Ty byly následně důkladně otestovány a byly vybrány nejlepší způsoby generování různých velikostí map pomocí různých algoritmů. Druhá etapa zahrnovala implementaci hráčské postavy, jejích textur a mechanik. Ve třetí etapě byly implementovány a animovány herní objekty jako jsou nepřátelé a předměty. Nakonec bylo naimplementováno GUI navržené pomocí programu \textit{Figma}.
 
-Textury byly některé získány z internetu (stránky \textit{itch.io} pod licencí \textit{Creative Commons} a některé vytvořeny vlastnoručně a font získaný ze stránky \textit{Google Fonts} pod licencí \textit{Open Font License}\,--\,více informací ke game assetům se nachází v README na přiloženém CD.
+Některé textury byly získány z internetu (stránky \textit{itch.io} pod licencí \textit{Creative Commons} a některé byly vytvořeny vlastnoručně. Použitý font je získaný ze stránky \textit{Google Fonts} pod licencí \textit{Open Font License}\,--\,více informací ke game assetům se nachází v README na přiloženém paměťovém médiu.
 
 \subsection*{Testování}
 Alfa verze hry (tedy \uv{feature complete}) byla zpřístupněna veřejnosti spolu s formulářem obsahujícím otázky technického charakteru a hratelnosti hry. Testeři mohli po ohodnocení hry přidat i svoje návrhy a nápady na zlepšení hry, ze kterých bylo několik vybráno a~implementováno. Detailnější popis testování a~jeho výsledků se nachází v kapitole~\ref{chap:Uživatelské testování}.
 
 
 \subsection*{Publikace}
-Pro plánovanou publikaci hry byla vybrána stránka \textit{itch.io}, nebo jí podobná platforma \textit{Game Jolt} a to kvůli jejich přívětivosti pro začínající herní vývojáře oproti známější a~populárnější platformě na publikaci her Steam. Ten totiž vyžaduje za publikaci poplatek přes 90~€~\cite{Steam_submission}. Tento poplatek je navrácen poté co hra dosáhne čistého zisku minimálně 1000~\$. Hra je ale plánována k vydání zdarma. Vydání hry na \textit{itch.io}, či \textit{Game Jolt} je naopak rychlé a zdarma a~nabízí možnost lepšího propojení vývojáře s hráči a získávání zpětné vazby v~post-produkci, což z~ní dělá ideální platformu pro budoucí vývoj~\cite{GDevelop}. Populární platformou je také \textit{Epic Games}, ale pro publikaci musí hra projít náročným posouzením a~také je otevřena spíše hrám vytvořeným v Unreal Engine, jelikož je to jejich nativní game engine.
+Pro plánovanou publikaci hry byla vybrána stránka \textit{itch.io}, nebo jí podobná platforma \textit{Game Jolt} a to kvůli jejich přívětivosti pro začínající herní vývojáře oproti známější a~populárnější herní platformě Steam. Ten totiž vyžaduje za publikaci poplatek ve výši 90~€~\cite{Steam_submission}. Tento poplatek je navrácen poté co hra dosáhne čistého zisku minimálně 1000~\$. Hra je ale plánována k vydání zdarma. Vydání hry na \textit{itch.io}, či \textit{Game Jolt} je naopak rychlé a~zdarma a~nabízí možnost lepšího propojení vývojáře s hráči a získávání zpětné vazby v~post-produkci, což z~ní dělá ideální platformu pro budoucí vývoj~\cite{GDevelop}. Populární platformou je také \textit{Epic Games}, ale pro publikaci musí hra projít náročným posouzením.
 
-\subsection*{Post-produkce}
+\subsection*{Postprodukce}
 Je plánován budoucí vývoj hry i po dokončení práce. Do hry by mohly přibýt nové mechaniky či herní módy a budou opravovány nalezené chyby.
 
 %--------------------------
@@ -524,32 +524,34 @@ Jak už bylo zmíněno výše, hlavní myšlenkou hry je hráč procházející 
 
 \begin{figure}[h]
     \centering
+    \vspace{0.3cm}
     \includegraphics[width=\textwidth]{obrazky-figures/ch3/algoritmus_generovani_mapy.pdf}
     \caption{Návrh algoritmu pro generování mapy bludiště.}
     \label{fig:algoritmus_generovani_mapy}
 \end{figure}
 
 \subsection*{Bludiště}
-Hlavním problémem je řešení rychlého generování diverzních 2D bludišť. Díky tomu, že jsou dvoudimenzionální, je možné na jejich zobrazení využít matici o 2 náhodně vygenerovaných hodnotách\,--\,jedna hodnota symbolizující políčka zdí bludiště a druhá symbolizující políčka cest. Náhodný výběr hodnot vytvoří ideální základ pro další vývoj.
+Hlavním problémem je řešení rychlého generování diverzních 2D bludišť. Díky tomu, že jsou dvoudimenzionální, je možné na jejich zobrazení využít matici o 2 náhodně vygenerovaných hodnotách\,--\,jedna hodnota symbolizující políčka zdí bludiště a druhá symbolizující políčka cest. Náhodný výběr hodnot vytvoří ideální základ pro další algoritmy použité při generování bludiště.
 
-Pro využití generovaných bludišť ve hrách je potřeba jejich rychlého vytváření. Pokud by totiž hra založená pouze na bludištích každé bludiště generovala i jen několik sekund, pro hráče by to nebylo pozitivní \uv{user experience}. Proto jsou k hlavnímu vývoji využity celulární automaty. Jak je vidět na obrázku~\ref{fig:OCA:Maze}, z kapitoly~\ref{chap:Celulární automaty}, CA Mazectric generující bludiště vytváří pouze strukturu podobnou bludišti. Proto je důležité vymyslet způsob na propojení všech vytvořených místností do jedné jediné. Vybraným přístupem je vyhledat všechny vytvořené místnosti a postupně odstraňovat náhodné zdi, které je propojují\,--\,tím se algoritmus postupně dostane k bodu, kdy je v celém bludišti už jen 1 velká pospojovaná místnost. Vizualizace postupu tohoto algoritmu se nachází na obrázku~\ref{fig:algoritmus_generovani_mapy}.
+Pro využití generovaných bludišť ve hrách je potřeba jejich rychlého vytváření. Pokud by totiž hra, která je založená primárně na bludištích, generovala každé z nich byť i jen několik sekund, pro hráče by to nebyl pozitivní \uv{user experience}. Proto jsou k hlavnímu vývoji využity relativně rychlé celulární automaty. Jak je vidět na obrázku~\ref{fig:OCA:Maze}, z kapitoly~\ref{chap:Celulární automaty}, CA Mazectric generující bludiště vytváří pouze strukturu podobnou bludišti. Proto je důležité vymyslet algoritmus pro propojení všech vytvořených místností do jedné jediné. Vybraným přístupem je vyhledat všechny vytvořené místnosti a postupně odstraňovat náhodné zdi, které je propojují\,--\,tím se algoritmus postupně dostane k bodu, kdy je v celém bludišti už jen 1 velká pospojovaná místnost. Vizualizace postupu tohoto algoritmu se nachází na obrázku~\ref{fig:algoritmus_generovani_mapy}.
 
 Problém CA Mazectric je, že na velkých plochách vytváří zbytečně moc místností, které by bylo algoritmicky náročné a zdlouhavé propojovat. Proto je na tyto větší místnosti při generování využit CA generování jeskyní jakožto mezistupeň mezi náhodnou maticí a~Mazectric CA. Ten tvoří shluky bodů, jenž jsou následně rozgenerovány bludišťovým CA, které na velkých plochách přichází k lepším výsledkům. To díky tomu, že je \uv{explozivní}, což znamená, že většinou náhodně
 vygenerované počáteční vzory explodují do všech směrů, což vytváří malý počet delších a větších chodeb.
 
-Následně je potřeba v bludišti určit začátek a konec. Je možné vzít 2 náhodné body, každý na jiné straně bludiště. To ale může přinést problém, že tyto 2 body jsou propojené přímou, krátkou a nesložitou cestou, takže dosažení cíle nepředstavuje moc velkou výzvu. Pro zvýšení obtížnosti je nejlepší využít algoritmus vyhledávající vzdálenost bodů a nalézt díky němu 2 nejvzdálenější body v celém bludišti. K tomu se využívají neinformované metody, konkrétně metoda slepého prohledávání do šířky. Tato metoda je vybrána, jelikož na rozdíl od prohledávání do hloubky efektivnější díky způsobu postupu při prohledávání (od nejbližšího bodu k nejvzdálenějšímu) a neoptimálnosti DFS na tento problém. Opakované prohledávání bludiště by ale způsobilo zpomalení generovacího algoritmu, proto bude BFS nad bludištěm spuštěn pouze 2x, pro nalezení nejoptimálnějšího startu a cíle, jak pro hráčskou výzvu, tak výpočetní algoritmus.
+Následně je potřeba v bludišti určit začátek a konec. Je možné vzít 2 náhodné body, každý na jiné straně bludiště. To ale může přinést problém, že tyto 2 body jsou propojené přímou, krátkou a nesložitou cestou, takže dosažení cíle nepředstavuje moc velkou výzvu. Pro zvýšení obtížnosti je vhodné využít algoritmus vyhledávající 2 co nejvzdálenější body v celém bludišti. K tomu se využívají neinformované metody, konkrétně metoda slepého prohledávání do šířky. Opakované prohledávání bludiště by ale způsobilo zpomalení generovacího algoritmu, proto bude BFS nad bludištěm spuštěn pouze dvakrát, pro nalezení optimálního startu a cíle, jak pro hráčskou výzvu, tak výpočetní algoritmus.
 
 \subsection*{Úrovně a zvyšování složitosti}
-Pro práci se zvyšováním složitosti hry bylo vybráno několik prvků, které přinášejí postupně narůstající výzvu pro hráče. Jeden z těchto prvků spočívá v postupném zvětšování bludiště během hraní. Hráč začíná na relativně malém bludišti o velikosti $x \times x$ v úrovni 1. Po úspěšném dokončení této úrovně se přesouvá do bludiště o rozměrech $(x + 1) \times (x + 1)$ a~tak dále. Tento přístup vytváří pro hráče progresivně obtížnější prostředí s delšími cestami k~cíli a větším množstvím slepých cest, čímž poskytuje neustále rostoucí výzvu a napětí.
+Pro zvyšování složitosti videohry bylo vybráno několik prvků, které přinášejí postupně narůstající výzvu pro hráče. Jeden z těchto prvků spočívá v postupném zvětšování rozměrů bludiště během hraní. Hráč v úrovni 1 začíná na relativně malém čtvercovém bludišti. Po úspěšném dokončení této úrovně se přesouvá do bludiště o rozměrech $(x + 1) \times (x + 1)$ a~tak dále. Tento přístup vytváří pro hráče progresivně obtížnější prostředí se stále delšími cestami k~cíli a větším množstvím slepých cest, čímž poskytuje neustále rostoucí výzvu a~napětí.
 
 Dalším prvkem, který přidává do hry narůstající výzvu, je postupně se zvyšující počet nepřátel a pastí v bludišti, které brání hráči v dosažení cíle. Na začátku hry se hráč nesetká s~žádnými překážkami, aby se seznámil s~principy hry, ale jakmile tyto úrovně dokončí, začnou se v bludišti objevovat nepřátelé a pasti. Jejich počet bude postupně narůstat lineárně, což ztěžuje hráči průchod bludištěm a přidává napětí do hry.
 
 Kromě nepřátel se v bludišti také objevují předměty, které mohou hráči pomoci. Jejich výskyt následuje podobný trend jako u nepřátel, tedy s lineárním vzestupem v závislosti na úrovni hry.
 
-Získání pozic pro místa, kde se budou objevovat nepřátelé či objekty je nutné brát v~potaz diverzní vývoj bludiště. Proto nemůžou být zvoleny fixní body či oblasti pro zjevování nepřátel. Jako reakcí na to bylo zvoleno rejection sampling. Tato metoda přináší možnost volného náhodného výběru políček z prázdné vzorkové matice (o stejné velikosti jako bludiště) na kterých je možnost položení entity. Tato matice je následně překryta s maticí bludiště a políčka potenciálního bodu pro entitu překrývající se s políčky cesty mohou být posunuty další funkci\,--\,na obrázku~\ref{fig:rozmisteni_rs} jsou zvýrazněna zelenou barvou. Ta si převezme potřebný počet souřadnic, které potřebuje přiřadit entitám.
+Získání pozic pro místa, kde se budou objevovat nepřátelé či objekty je nutné brát v~potaz diverzní vývoj bludiště. Proto nemůžou být zvoleny fixní body či oblasti pro zjevování nepřátel. V reakci na to byla zvolena metoda zvaná rejection sampling. Tato metoda přináší možnost volného náhodného výběru políček z prázdné vzorkové matice (o stejné velikosti jako bludiště) na kterých je možnost položení entity. Tato matice je následně překryta s maticí bludiště a políčka potenciálního bodu pro entitu překrývající se s políčky cesty mohou být posunuty další funkci\,--\,na obrázku~\ref{fig:rozmisteni_rs} jsou zvýrazněna zelenou barvou. Ta si převezme potřebný počet souřadnic, které potřebuje přiřadit entitám.
 
 \begin{figure}[b]
     \centering
+    \vspace{0.5cm}
     \includegraphics[width=\textwidth]{obrazky-figures/ch3/rozmisteni_rs.pdf}
     \caption{Návrh algoritmu pro rozmístění entit (zelená políčka označují možná využitelná místa).}
     \label{fig:rozmisteni_rs}
@@ -557,9 +559,9 @@ Získání pozic pro místa, kde se budou objevovat nepřátelé či objekty je 
 
 
 \subsection*{Skóre}
-Za dokončení každé úrovně hráč získá jako odměnu skóre připočítávající se k jeho celkovému skóre. To je počítáno z jeho úrovně, kterou je násobena konstanta symbolizující dokončení bludiště, od kterého je ale odečteno, jak dlouho hráči trvalo úroveň dokončit. Cílem toho je motivovat hráče dokončit úroveň co nejrychleji. Zvyšování odměny za úspěšné dokončení úrovně je implementováno kvůli zvětšující se velikosti bludiště a tedy i zvyšujícímu se času na jeho dokončení.
+Za dokončení každé úrovně hráč získá jako odměnu Body připočítávající se k jeho celkovému skóre. Body jsou počítány z jeho úrovně, kterou je násobena konstanta symbolizující dokončení bludiště, od kterého je ale odečteno, jak dlouho hráči trvalo úroveň dokončit. Cílem toho je motivovat hráče dokončit úroveň co nejrychleji. Zvyšování odměny za úspěšné dokončení úrovně je implementováno kvůli zvětšující se velikosti bludiště a tedy i zvyšujícímu se času na jeho dokončení.
 
-Dále hráč získá body za zabití nepřátel a sběr předmětů, popřípadě bonusové body (viz Předměty). Podobně jako u dokončení levelu, bude tato hodnota označena konstantou a~násobena úrovní. Násobením těchto konstant se zaručuje udržení stejného ocenění získané odměny, ať už hráč zabije nepřítele na úrovni 5 či na úrovni 20. \\
+Dále hráč získá body za zabití nepřátel a sběr předmětů, popřípadě bonusové předměty (viz Předměty). Podobně jako u dokončení úrovně, bude tato hodnota označena konstantou a~násobena úrovní. Násobením těchto konstant se zaručuje udržení stejného ocenění získané odměny, ať už hráč zabije nepřítele na úrovni 5 či na úrovni 20. \\
 \newline
 \noindent Z těchto podmínek byla zhotovena rovnice:
 
@@ -570,7 +572,7 @@ Dále hráč získá body za zabití nepřátel a sběr předmětů, popřípad�
 
 \noindent kde:
 \begin{flalign*}
-    &&&\text{L} && := \text{úroveň hráče}, & \\
+    &&&\text{L} && := \text{úroveň bludiště}, & \\
     &&&\alpha && := \text{koeficient odměny za dokončení úrovně}, & \\
     &&&\text{t} && := \text{čas strávený na úrovni}, & \\
     &&&\text{E} && := \text{počet nepřátel, které hráč porazil}, & \\
@@ -582,14 +584,14 @@ Dále hráč získá body za zabití nepřátel a sběr předmětů, popřípad�
 
 
 \subsection*{Hráč}
-Pro simulaci bloudění v bludišti bylo vybrán pohled na hráčskou postavu z 3. osoby, ale s omezením na pouze malé okno (například 5x5 bloků). Vykreslování celého bludiště by totiž bylo moc složité s ohledem na jeho zvětšující velikost. Naopak ponechaní výřezu, ale zvětšení pohledu na hráče (např. 10x10 bloků) by bylo moc matoucí a ničilo by to výzvu nižších úrovní, jelikož by hrál viděl většinu bludiště již při startu.
+Pro simulaci bloudění v bludišti bylo vybrán pohled na hráčskou postavu z 3. osoby s~omezením pohledu na pouze malé okno (například 5×5 bloků). Vykreslování celého bludiště by totiž bylo moc složité s ohledem na jeho zvětšující velikost. Naopak ponechaní výřezu, ale zvětšení pohledu na hráče (např. 10×10 bloků) by bylo moc matoucí a ničilo by to výzvu nižších úrovní, jelikož by hráč viděl většinu bludiště již při startu.
 
-Hráč začíná s fixním počtem životů, který je ale možno zvýšit na vyšší, ale stále omezenou velikost. Jako bonus může získat i štít, jenž nuluje jeden útok. Může útočit na blízko a díky předmětům lze zvýšit zranění, které způsobuje.
+Hráč začíná s fixním počtem životů, který je možno zvýšit, ale jen do stanoveného maxima. Jako bonus může získat i štít, jenž nuluje jeden útok. Může útočit na blízko a díky předmětům lze zvýšit zranění, které způsobuje.
 
-Hráčská postavička může být ovládána jak tlačítky WASD tak i klávesami šipek pro vyhovění širší hráčské základně\,--\,toto by mělo fungovat bez zbytečného přepínání v nastavení, pro volnost předávání hry mezi více hráči.
+Hráčská postavička může být ovládána jak tlačítky WASD, tak i klávesami šipek pro vyhovění širší hráčské základně\,--\,toto by mělo fungovat bez zbytečného přepínání v nastavení, pro volnost předávání hry mezi více hráči.
 
 \subsection*{Nepřátelé a pasti}
-Pro zvýšení rozmanitosti a výzvy pro hráče bylo do hry přidáno několik různých nepřátel a pastí, každý s vlastními speciálními schopnostmi a vlastnostmi. V tabulce~\ref{tab:nepritele} lze nalézt seznam nepřátel, zatímco v tabulce~\ref{tab:pasti} jsou uvedeny pasti. Tyto prvky přinášejí hráčům pestrou škálu výzev a strategických možností, na než musí být při průchodu bludištěm, jelikož nikdy neví, který z nepřátel se v daném bludišti objeví.
+Pro zvýšení rozmanitosti a výzvy pro hráče bylo do hry přidáno několik různých nepřátel a pastí, každý s vlastními speciálními schopnostmi a vlastnostmi. V tabulce~\ref{tab:nepritele} lze nalézt seznam nepřátel, zatímco v tabulce~\ref{tab:pasti} jsou uvedeny pasti. Tyto prvky přinášejí hráčům pestrou škálu výzev a strategických možností, na než musí být při průchodu bludištěm připraveni, jelikož nikdy neví, který z nepřátel se v daném bludišti objeví.
 
 \begin{table}[ht]
     \centering
@@ -604,7 +606,7 @@ Pro zvýšení rozmanitosti a výzvy pro hráče bylo do hry přidáno několik 
     \hline
     \centering\includegraphics[width=1.5cm,height=1.5cm]{obrazky-figures/ch3/skeleton.png} & Kostlivec & Rychlý nepřítel. \\
     \hline
-    \centering\includegraphics[width=1.5cm,height=1.5cm]{obrazky-figures/ch3/slime.png} & Slime & Jeho útok hráči na omezenou dobu sníží rychlost. \\
+    \centering\includegraphics[width=1.5cm,height=1.5cm]{obrazky-figures/ch3/slime.png} & Slime & Jeho útok hráči na krátkou dobu sníží rychlost. \\
     \hline
     \centering\includegraphics[width=1.5cm,height=1.5cm]{obrazky-figures/ch3/yeti.png} & Yeti & V intervalech staví sněhuláky (viz past \uv{Sněhulák}). \\
     \hline
@@ -622,7 +624,7 @@ Pro zvýšení rozmanitosti a výzvy pro hráče bylo do hry přidáno několik 
     \multicolumn{1}{|c|}{\textbf{Obrázek}} & \multicolumn{1}{c|}{\textbf{Název}} & \multicolumn{1}{c|}{\textbf{Popis vlasnosti}} \\
     \hline
     \hline
-    \centering\includegraphics[width=1.5cm,height=1.5cm]{obrazky-figures/ch3/fire.png} & Oheň & Pokud na něj hráč vstoupí zapálí ho (ubírá mu postupně životy). Po určité době vyhasne. \\
+    \centering\includegraphics[width=1.5cm,height=1.5cm]{obrazky-figures/ch3/fire.png} & Oheň & Pokud na něj hráč vstoupí, zapálí se (ubírá mu postupně životy). Po určité době vyhasne. \\
     \hline
     \centering\includegraphics[width=1.5cm,height=2cm]{obrazky-figures/ch3/snowman.png} & Sněhulák & Blokuje hráči cestu, postupně se rozpouští a~může být zničen hráčem. \\
     \hline
@@ -643,7 +645,7 @@ Do hry bylo dále přidáno několik předmětů, které hráči pomáhají v bo
     \multicolumn{1}{|c|}{\textbf{Obrázek}} & \multicolumn{1}{c|}{\textbf{Název}} & \multicolumn{1}{c|}{\textbf{Popis bonusu}} \\
     \hline
     \hline
-    \centering\includegraphics[width=1.3cm,height=1.3cm]{obrazky-figures/ch3/green_potion.png} & Lektvar zrychlení & Permanentně hráči zvýší rychlost o konstantu. \\
+    \centering\includegraphics[width=1.3cm,height=1.3cm]{obrazky-figures/ch3/green_potion.png} & Lektvar zrychlení & Permanentně hráči zvýší rychlost. \\
     \hline
     \centering\includegraphics[width=1.3cm,height=1.3cm]{obrazky-figures/ch3/red_potion.png} & Lektvar zdraví & Vyléčí hráči několik životů. \\
     \hline
@@ -661,7 +663,7 @@ Do hry bylo dále přidáno několik předmětů, které hráči pomáhají v bo
 %--------------------------
 % Uživatelské rozhraní
 \section{Uživatelské rozhraní}
-Uživatelské rozhraní bylo navrženo v programu Figma s důrazem na jednoduchost a inspiraci z arkádových her. Proto byla použita simplistická barevná paleta textur a pixelové entity (viz obrázek~\ref{fig:end_level_game}). Cílem hry je dosáhnout co nejvyššího skóre. Hráč má možnost porovnat své výsledky ve výpisu nejvyšších skóre, jako je vidět na obrázku~\ref{fig:score_screen}. Na tuto obrazovku se dostane z menu, jen je zobrazeno na stejném obrázku. Návrh je také zaměřen na uživatelskou přívětivost, proto je ve hře stránka s návodem a příručkou k herním entitám a také jsou implementované potvrzovací vyskakovací okénka zabraňující mylnému překliku (obrázek~\ref{fig:information_screen}). 
+Uživatelské rozhraní bylo navrženo v programu Figma s důrazem na jednoduchost a inspiraci z arkádových her. Proto byla použita simplistická barevná paleta textur a pixelové entity (viz obrázek~\ref{fig:end_level_game}). Cílem hry je dosáhnout co nejvyššího skóre. Hráč má možnost porovnat své výsledky ve výpisu nejvyšších skóre, jako je vidět na obrázku~\ref{fig:score_screen}. Na tuto obrazovku se dostane z menu, jež je zobrazeno na stejném obrázku. Návrh je také zaměřen na uživatelskou přívětivost, proto je ve hře stránka s návodem a příručkou k herním entitám. Dále jsou také implementované potvrzovací vyskakovací okénka zabraňující mylným překlikům (obrázek~\ref{fig:information_screen}). 
 
 Pro samotnou hru bylo navrženo okno s čtvercovým pohledem kamery na hrací pole, které mění motivy v závislosti na úrovni. Na pravém a levém boku okna jsou umístěny hráčské životy a štíty spolu s aktivními bonusy. Tím vytváří nerozptylující a vyvážený symetrický pohled, který je možno vidět na obrázku~\ref{fig:game_screen}.
 
@@ -679,7 +681,7 @@ Pro samotnou hru bylo navrženo okno s čtvercovým pohledem kamery na hrací po
     \centering
     \includegraphics[width=0.42\textwidth]{obrazky-figures/ch3/Score_screen.png}\hspace{0.1cm}
     \includegraphics[width=0.505\textwidth]{obrazky-figures/ch1/game_menu.png}
-    \caption{Ukázka návrhu herní obrazovky z Figma\,--\,výpis nejvyšších skóre (vpravo) a~hlavní menu (vlevo).}
+    \caption{Ukázka návrhu herní obrazovky z Figma\,--\,výpis nejvyšších skóre (vlevo) a~hlavní menu (vpravo).}
     \label{fig:score_screen}
 \end{figure}
 
@@ -705,11 +707,11 @@ Pro samotnou hru bylo navrženo okno s čtvercovým pohledem kamery na hrací po
 % IMPLEMENTACE
 %===---------------====
 \chapter{Tvorba bludiště a realizace hry}\label{Tvorba bludiště a realizace hry}
-Pro implementaci hry bylo otestováno několik game enginů a zváženy jejich výhody a nevýhody. Jelikož cílem bylo vytvořit jednoduchou 2D hru, jejíž hlavním a nejsložitějším bodem je mapa byl vybrán Godot verze 4. 
+Pro implementaci hry bylo otestováno několik game enginů a zváženy jejich výhody a nevýhody. Jelikož cílem bylo vytvořit jednoduchou 2D hru, jejíž hlavním a nejsložitějším bodem je mapa byl vybrán Godot 4. 
 
-Tato platforma byla zvolena oproti jiným možnostem díky její široké a jednoduché podpoře vytváření 2D her. Unreal Engine nebyl vybrán, protože je zaměřený spíše na realistické 3D světy. Jak je již zmíněno v kapitole o Godotu, tento herní engine na rozdíl od Unity či Unreal Engine využívá vlastní skriptovací jazyk GDScript, podobný syntaxí pythonu, který díky svým knihovnám ulehčuje manipulaci s herními prvky (nodes) a urychluje tak vývoj.
+Tato platforma byla zvolena oproti jiným možnostem díky její široké a jednoduché podpoře vytváření 2D her. Unreal Engine nebyl vybrán, protože je zaměřený spíše na realistické 3D světy. Jak je již zmíněno v kapitole o Godotu, tento herní engine na rozdíl od Unity či Unreal Enginu využívá vlastní skriptovací jazyk GDScript, podobný syntaxí pythonu, který díky svým knihovnám ulehčuje manipulaci s herními prvky (nodes) a urychluje tak vývoj.
 
-Hru strukturovala řada funkčních prvků, které dohromady tvoří celkový koncept hry. Podrobnější popis implementace některých z těchto prvků je uveden v následujících částí této kapitoly. Schéma propojení mezi těmito skupinami je zobrazeno na obrázku~\ref{fig:schema_hry}.
+Hru strukturovala řada funkčních prvků, které dohromady tvoří celkový koncept hry. Podrobnější popis implementace některých z těchto prvků je uveden v následujících částech této kapitoly. Schéma propojení mezi těmito skupinami je zobrazeno na obrázku~\ref{fig:schema_hry}.
 
 \begin{figure}[H]
     \centering
@@ -726,11 +728,11 @@ Hru strukturovala řada funkčních prvků, které dohromady tvoří celkový ko
         \centering
         \[
         \begin{bmatrix}
-            0 & 1 & 0 & 1 & 0 & 1 & 0 \\
-            0 & 1 & 0 & 0 & 0 & 1 & 0 \\
-            0 & 1 & 0 & 1 & 1 & 1 & 0 \\
+            1 & 0 & 1 & 1 & 0 & 1 & 0 \\
             0 & 0 & 0 & 0 & 0 & 1 & 0 \\
-            1 & 1 & 0 & 1 & 0 & 0 & 0 \\
+            1 & 1 & 0 & 1 & 1 & 1 & 0 \\
+            0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+            1 & 0 & 1 & 1 & 0 & 0 & 0 \\
             0 & 0 & 0 & 1 & 0 & 1 & 0 \\
             0 & 1 & 0 & 1 & 0 & 1 & 0 \\
         \end{bmatrix}
@@ -748,7 +750,7 @@ Hru strukturovala řada funkčních prvků, které dohromady tvoří celkový ko
 \section{Generování mapy}
 Jakožto podklad 2D mapy byla vybrána matice o pevné velikosti $x \times y$, značící rozměry mapy. Obsah této matice reprezentuje strukturu bludiště (bez hraničních stěn). Každá buňka této matice může obsahovat hodnotu 1 nebo 0, kde hodnota 1 označuje zeď a hodnota 0 průchodnou cestu. Volba matice byla provedena z důvodu kompatibility s vizuálním prvkem Godotu TileMap, jenž ulehčuje vykreslování 2D herního pole. Ten umožňuje převést hodnoty matice na konkrétní pozice na mapě do dlaždic, jak je vidět na obrázku~\ref{fig:matrix_to_maze}. Takto lze jednoduše definovat strukturu bludiště pomocí algoritmů na matici a následně ji jen zobrazit prostřednictvím prvku TileMap.
 
-V následující části je po krocích (vizualizovaných v obrázku~\ref{fig:visualisation_generating}) popsáno generování bludiště optimalizované pro tvoření bludišť pro implementovanou hru. První úroveň bude mít kostku o rozměrech $7 \times 7$, což je optimální velikost pro hráče, aby se snáze naučili ovládání hry a pochopili její cíl. Tato velikost také, díky důkladnému testování, zaručuje, že v žádném testu nedojde ke vzniku prázdné nebo nulové matice. Menší velikosti měli občasné problémy s generováním prázdných ploch (nulových matic). Jak už bylo navrhnuto v konceptu, každá další úroveň zvětší každou stranu o 1.
+V následující části je po krocích (vizualizovaných v obrázku~\ref{fig:visualisation_generating}) popsáno generování bludiště optimalizované pro tvoření bludišť pro implementovanou hru. První úroveň bude mít kostku o rozměrech $7 \times 7$, což je optimální velikost pro hráče, aby se snáze naučili ovládání hry a pochopili její cíl. Tato velikost také, díky důkladnému testování, zaručuje, že v žádném testu nedojde ke vzniku prázdné nebo nulové matice. Menší velikosti měly občasné problémy s generováním prázdných ploch (nulových matic). Jak již bylo navrhnuto v konceptu, každá další úroveň zvětší oba rozměry bludiště o 1.
 
 \vspace{0.5cm}
 \begin{figure}[b]
@@ -759,13 +761,13 @@ V následující části je po krocích (vizualizovaných v obrázku~\ref{fig:vi
 \end{figure}
 
 \subsection*{Kostra bludiště}
-Na základě testů, které jsou popsané v další podkapitole~\ref{chap:Experimenty s generováním map}, byly vyhodnoceny 3 velikostní skupiny pro generování herních bludišť\,--\,malé (\verb|SMALL|), střední (\verb|MEDIUM|) a velké (\verb|LARGE|). Ty se od sebe liší drobnými rozdíly ve způsobu generování kostry, tedy nepropojené navržené části bludiště.
+Na základě testů, které jsou popsané v další podkapitole~\ref{chap:Experimenty s generováním map}, byly vyhodnoceny 3 velikostní skupiny pro generování bludišť\,--\,malé (\verb|SMALL|), střední (\verb|MEDIUM|) a velké (\verb|LARGE|). Ty se od sebe liší drobnostmi ve způsobu generování kostry, tedy nepropojené navržené části bludiště.
 
-Prvním krokem v generování bludiště je vytvoření náhodné matice, nad kterou budou později spuštěné celulární automaty. To je zařízeno díky nativnímu generátoru pseudo-náhodných čísel \verb|randi| od Godotu. Ten pracuje na základě PCG (Permuted Congruential Generator), což mu umožňuje vytvářet pseudonáhodná čísla s vylepšenými statistickými vlastnostmi a to díky kombinaci kongruenčního algoritmu a permutací~\cite{PCG}. 
+Prvním krokem v generování bludiště je vytvoření náhodné matice, nad kterou budou později spuštěné celulární automaty. To je zařízeno díky nativnímu generátoru pseudo-náhodných čísel \verb|randi| v Godotu. Ten pracuje na základě PCG (Permuted Congruential Generator), který umožňuje vytvářet pseudonáhodná čísla s vylepšenými statistickými vlastnostmi díky kombinaci kongruentního generátoru a permutací~\cite{PCG}. 
 
-Výsledky generátoru čísel funkce \verb|randi| (jenž vrací náhodné celé číslo) jsou transformovány do matic pomocí operace modulo 2, což zajistí, že matice obsahují pouze hodnoty 1~nebo 0. Tato technika je využita pro matice označené jako \verb|SMALL| a \verb|MEDIUM|. Pro bludiště typu \verb|LARGE| je použita složitější metoda, která zahrnuje dva kroky. Nejprve je výsledek operace \verb|randi| modulován číslem 3 a poté je výsledek této operace modulován ještě jednou číslem 2. Tento postup zajišťuje, že výsledná matice obsahuje více hodnot 0 (které reprezentují cesty) než hodnoty 1 (které reprezentují zdi), a to ve vztahu 2:3. Tím je dosaženo optimálnějšího generování bludiště. Srovnání vizuálního výstupu obou metod generování je zobrazeno na obrázku~\ref{fig:randi}.
+Výsledky generátoru čísel funkce \verb|randi| (jenž vrací náhodné celé číslo) jsou transformovány do matic pomocí operace modulo 2, což zajistí, že matice obsahují pouze hodnoty 1~nebo 0. Tato technika je využita pro matice označené jako \verb|SMALL| a \verb|MEDIUM|. Pro bludiště typu \verb|LARGE| je použita složitější metoda, která zahrnuje dva kroky. Nejprve je výsledek operace \verb|randi| modulován číslem 3 a poté je výsledek této operace modulován ještě jednou číslem 2. Tento postup zajišťuje, že výsledná matice obsahuje více nulových hodnot (které reprezentují cesty) než jedničkových (které reprezentují zdi), a to v poměru 2:3. Tím je dosaženo optimálnějšího generování bludiště. Srovnání vizuálního výstupu obou metod generování je zobrazeno na obrázku~\ref{fig:randi}.
 
-Náhodná matice je následně předána celulárním automatům. Matice reprezentující bludiště typu \verb|LARGE| a \verb|MEDIUM| jsou nejprve podrobeny jedné iteraci jeskynního celulárního automatu. Ten zaručí vytvoření shluků, ze kterých následně vznikne méně místností, které jsou lehčeji propojovatelné. Všechny typy matic prochází CA Mazectric. Zde projdou buď 25 iterací (otestovaná hodnota, kdy už se i struktura bludiště o rozměrech 100x100 ustálí/osciluje), či méně, za podmínky, že se matice ustálila\,--\,nová generace je identická té předchozí.
+Náhodná matice je následně předána celulárním automatům. Matice reprezentující bludiště typů \verb|LARGE| a \verb|MEDIUM| jsou nejprve podrobeny jedné iteraci jeskynního celulárního automatu. Ten zaručí vytvoření shluků, ze kterých následně vznikne méně místností, které jsou snadněji propojitelné. Všechny typy matic prochází CA Mazectric. Zde projdou buď 25 iteracemi (otestovaná hodnota, při které se již i struktura bludiště o rozměrech 100×100 ustálí, či osciluje mezi pár opakujícími stavy), či méně, pokud se již matice ustálila\,--\,nová generace je identická té předchozí.
 
 \begin{figure}[H]
     \centering
@@ -775,9 +777,9 @@ Náhodná matice je následně předána celulárním automatům. Matice repreze
 \end{figure}
 
 \subsection*{Propojení bludiště}
-Jak je již zmíněno v jiných kapitolách, či vidět na obrázku~\ref{fig:visualisation_generating} CA Mazectric nevytváří plně propojené bludiště, pouze místnosti/skupiny. Prvním krokem k propojení všech vytvořených místností je jejich identifikace. To je řešeno pomocí postupného procházení řádků matice a~číslováním skupin\,--\,podrobný popis postupu je přepsán v algoritmu~\ref{alg:labyrinth_decomposition}. 
+Jak již bylo zmíněno v předešlých kapitolách, či je vidět na obrázku~\ref{fig:visualisation_generating}, CA Mazectric nevytváří plně propojené bludiště, pouze místnosti/skupiny. Prvním krokem k propojení všech vytvořených místností je jejich identifikace. To je řešeno pomocí postupného procházení řádků matice a~číslováním skupin\,--\,přesný postup je popsán v algoritmu~\ref{alg:labyrinth_decomposition}. 
 
-Algoritmus funguje na principu postupného procházení bludištěm a~vyhledáváním buněk cest. Když je nějaká nalezena, tak ji očísluje, jakožto nově nalezenou skupinu, či pokud již sousedí s nějakou očíslovanou buňkou přiřadí jí její číslo symbolizující skupinu, do které patří. Také řeší problémy u setkání dvou rozdílných skupin, a to jejich splynutím. Po svém dokončení funkce navrátí matici ($\text{G}$) o stejné velikosti jako matice bludiště, s~označenými skupinami, kde jsou zdi označeny číslem 0 a skupiny svým přiřazeným číslem. Navrácen je také slovník ($\text{dict}$) všech skupin a souřadnic jejich buněk ve formátu \verb|[číslo]->{buňka1, buňka2, ... }|.
+Algoritmus funguje na principu postupného procházení bludiště a~vyhledávání buněk cest. Když je nějaká nalezena, tak ji očísluje jako nově nalezenou skupinu, či pokud již sousedí s nějakou očíslovanou buňkou, přiřadí jí k její skupině. Také řeší problémy u setkání dvou rozdílných skupin, a to jejich splynutím. Po svém dokončení funkce navrátí matici ($\text{G}$) o stejné velikosti jako matice bludiště, s~označenými skupinami, kde jsou zdi označeny číslem 0 a skupiny svou přiřazenou hodnotou. Navrácen je také slovník ($\text{dict}$) všech skupin a souřadnic jejich buněk ve formátu \verb|[číslo]->{buňka1, buňka2, ... }|.
 
 \begin{algorithm}[hb]
 \caption{Dekompozice místností labyrintu}\label{alg:labyrinth_decomposition}
@@ -844,18 +846,18 @@ Algoritmus funguje na principu postupného procházení bludištěm a~vyhledáv�
 
 Následně je procházen vytvořený slovník a jeho první zaznamenaná skupina je postupně propojována s jejími sousedy, díky čemuž je nakonec vytvořena pouze jedna místnost. 
 
-Z první místnosti jsou získané všechny zdi, které jí náleží, tedy buňky zdí přímo dotýkající se stranou buněk cest patřících do dané skupiny. Z tohoto seznamu zdí je náhodně vybraná jedna buňka zdi. Pokud tuto zeď sdílí první místnost s jednou, či více místnostmi označenými jiným číslem je tato buňka vymazána a čísla propojených místností zaznamenány (pokud s nikým nic nesdílí, je vybrána jiná). Tyto místnosti jsou následně všechny napojeny na první místnost, přečíslovány na hodnotu první místnosti a matice obsahující mapu skupin a~slovník k této mapě je náležitě upraven. Aktualizuje se také mapa bludišťové matice, kde je odmazána odstraněná zeď, aby vše souhlasilo. Toto se vykonává dokud ve slovníku skupin nezůstane pouze jedna plně rozšířená první místnost\,--\,to naznačuje plné propojení všech místností v bludišti.
+Z první místnosti jsou získané všechny zdi, které jí náleží, tedy buňky zdí přímo se dotýkající stranou buněk cest patřících do dané skupiny. Z tohoto seznamu zdí je náhodně vybraná jedna buňka zdi. Pokud tuto zeď sdílí první místnost s jednou, či více místnostmi označenými jiným číslem je tato buňka vymazána a čísla propojených místností zaznamenány (pokud s nikým nic nesdílí, je vybrána jiná). Tyto místnosti jsou následně všechny napojeny na první místnost, přečíslovány na hodnotu první místnosti a matice obsahující mapu skupin a~slovník k této mapě je náležitě upraven. Aktualizuje se také mapa bludišťové matice, kde je smazána odstraněná zeď, aby vše souhlasilo. Toto se vykonává, dokud ve slovníku skupin nezůstane pouze jedna plně rozšířená místnost\,--\,poté bylo docíleno propojení všech místností v bludišti.
 
-Nakonec je bludiště převedeno do vizuální podoby na TileMap. To je zařízeno díky přidáním hranic, kterými jsou tři sloupce/řádky zdí na každé straně bludiště, a to kvůli vizuálnímu efektu, aby hráč neviděl pozadí za hranicemi hry. Následně jsou převedeny hodnoty matice na náležité dlaždice textur pozadí. 
+Nakonec je bludiště převedeno do vizuální podoby na TileMap. To je zařízeno díky přidání hranic, kterými jsou tři sloupce/řádky zdí na každé straně bludiště, a to kvůli vizuálnímu efektu, aby hráč neviděl pozadí za hranicemi hry. Následně jsou převedeny hodnoty matice na náležité dlaždice textur pozadí. 
 
 Hra obsahuje čtyři různé typy pozadí (viz obrázek~\ref{fig:map_textures}), které se pravidelně střídají, což přispívá k pestrosti vizuálního zážitku hráče. Každý typ pozadí obsahuje jedinečný vzor dlaždic pro cesty, což pomáhá hráči udržovat orientaci a jasně rozlišit herní prostor. Dále jsou zdi vykreslovány pomocí dvou různých typů dlaždic, které se jemně liší a přispívají k~živému a originálnímu vzhledu hranic herního prostředí.
 
 \subsection*{Cesta bludištěm} 
-Cesta, tedy nejoptimálnější buňky pro start a cíl hry, jsou vyhledávány pomocí metody slepého prohledávání do šířky (BFS). 
+Cesta, tedy vhodné buňky pro start a cíl hry, jsou vyhledávány pomocí metody slepého prohledávání do šířky (BFS). 
 
-Startovní bod je získán pomocí získání první buňky typu cesta. Ta je nalezena pomocí postupného prohledávání matice z jejího levého horního rohu. Ta je vložena do BFS algoritmu, který navrátí startovní pozici, kde se na začátku úrovně objeví hráčská postava.
+Startovní bod je získán pomocí získání první buňky typu cesta. Ta je nalezena pomocí postupného prohledávání matice z levého horního rohu. Tato buňka je poté vložena do BFS algoritmu, který navrátí startovní pozici, kde se na začátku úrovně objeví hráčská postava.
 
-Cíl je získán opětovným vložením startovní pozice do BFS algoritmu. Díky tomu je nalezen nejvzdálenější bod od startovního, kde je umístěn cíl označeny portálem (viz obrázek~\ref{fig:portal}) vedoucím do další úrovně.
+Cíl je získán opětovným vložením startovní pozice do BFS algoritmu. Díky tomu je nalezen nejvzdálenější bod od startovního, kde je umístěn cíl označený portálem (viz obrázek~\ref{fig:portal}) vedoucím do další úrovně.
 
 \begin{figure}[H]
     \centering
@@ -870,7 +872,7 @@ Cíl je získán opětovným vložením startovní pozice do BFS algoritmu. Dík
 \section{Experimenty s generováním map}\label{chap:Experimenty s generováním map}
 Důvodem pro testování bylo ověření spolehlivosti generování. Dalším důvodem bylo vybrání nejoptimálnějších způsobů postupů generování pro různé velikosti generovaných map. 
 
-Proto byla vytvořena rovnice~\ref{eq:maze_efectivity} znázorňující výpočet rozmanitosti generovaných bludišť. Při kombinaci s vizuálním testováním a optimalizací pro hráče bylo zjištěno, že nejlepším výsledkem rozmanitosti pro bludiště $<20 \times 20$ je hodnota co nejvyšší. To totiž zaručí generování ideálních spletitějších bludišť. U bludišť větších než $20 \times 20$ je pro hráčský zážitek lepší využít způsoby generování s nejnižším výsledkem rozmanitosti, jelikož tyto instance jsou složitější a adekvátnější vyšším úrovním. Také generují rovnější cesty, což je polehčující okolnost pro generování větších bludišť, a to kvůli lehčí orientaci pro hráče.
+Proto byla vytvořena rovnice~\ref{eq:maze_efectivity} znázorňující výpočet rozmanitosti generovaných bludišť. Při kombinaci s vizuálním testováním a optimalizací pro hráče bylo zjištěno, že nejlepším výsledkem rozmanitosti pro bludiště menší než $20 \times 20$ je hodnota co nejvyšší. To totiž zaručí generování spletitějších bludišť. U bludišť větších než $20 \times 20$ je pro hráčský zážitek lepší využít způsoby generování s nejnižším výsledkem rozmanitosti, jelikož tyto instance jsou složitější a adekvátnější vyšším úrovním. Také generují rovnější cesty, což je polehčující okolnost pro generování větších bludišť, a to kvůli snazší orientaci pro hráče.
 
 \vspace{0.5cm}
 \begin{equation}
@@ -913,11 +915,11 @@ Tato rovnice je postavena tak, aby méně skupin vedlo k většímu výsledku. D
     \caption{Výsledky experimentu s mapou s využitím rovnice~\ref{eq:maze_efectivity}.}
 \end{table}
 
-Experiment byl proveden pro každou velikost bludiště a každou její možnost generování $100\times$. Výsledky jsou popsány v tabulce~\ref{tab:map_experiment}, kde každý sloupec (kromě prvního, který označuje velikost strany bludiště) označuje způsob generování. Bludiště byla generována pomocí randomizované matice s~poměrem generování 1:1 (zdi:cesty) a Mazectric; randomizované matice s~poměrem generování 2:3 a Mazectric; randomizované matice s~poměrem generování 1:1, instancí jeskyňovitého CA a Mazectric a jako poslední pomocí randomizované matice s~poměrem generování 2:3(zdi:cesty), instancí jeskyňovitého CA a Mazectric. Detailnější výsledky se nachází v příloze~\ref{chap:map_experiments}.
+Experiment byl proveden pro každou velikost bludiště a každou její možnost generování stokrát. Výsledky jsou popsány v tabulce~\ref{tab:map_experiment}, kde každý sloupec (kromě prvního, který označuje velikost strany bludiště) označuje způsob generování. Bludiště byla generována pomocí randomizované matice s~poměrem generování 1:1 (zdi:cesty) a Mazectric; randomizované matice s~poměrem generování 2:3 a Mazectric; randomizované matice s~poměrem generování 1:1, instancí jeskyňovitého CA a Mazectric a jako poslední pomocí randomizované matice s~poměrem generování 2:3(zdi:cesty), instancí jeskyňovitého CA a Mazectric. Detailnější výsledky se nachází v příloze~\ref{chap:map_experiments}.
 
 Díky těmto výsledkům bylo možno rozdělit bludiště na typy podle velikostí pro nejlepší možnou optimalizaci generování bludiště. Těmito typy je:
 \begin{itemize}
-    \item  malé (\verb|SMALL|)\,--\,úroveň menší rovna 16, bludiště o velikosti $7 \times 7$ až $23 \times 23$,
+    \item  malé (\verb|SMALL|)\,--\,úroveň nižší než 17, bludiště o velikosti $7 \times 7$ až $23 \times 23$,
     \item střední (\verb|MEDIUM|)\,--\,od úrovně 17 do úrovně 36, bludiště o velikosti $24 \times 24$ až $43 \times 43$,
     \item velké (\verb|LARGE|)\,--\,od úrovně 37 a velikosti $44 \times 44 $ výše.
 \end{itemize}
@@ -927,23 +929,23 @@ Typ \uv{malý} byl omezen i přes výsledky jeho testování pouze na 1 typ, a t
 %--------------------------
 % Nepřátelé, objekty a jejich rozmístění
 \section{Nepřátelé, objekty a jejich rozmístění}
-Pozice objektů jsou určeny pomocí rejection samplingu, kde vzorkovací matice o rozměrech bludiště je naplněna náhodnými hodnotami 0 a 1 v poměru 2:3. Tato matice je následně aplikována na bludiště, a na základě ní jsou vyhodnocovány možné pozice objektů.
+Pozice objektů jsou určeny pomocí rejection samplingu, kde vzorkovací matice o rozměrech bludiště je naplněna náhodnými hodnotami 0 a 1 v poměru 2:3. Tato matice je následně aplikována na bludiště a na základě ní jsou vyhodnocovány možné pozice objektů.
 
-Body jsou vybírány na základě několika kritérií. Prvním je, že bodem bude vybrána souřadnice, která má ve vzorkovací matici hodnotu 1 a v mapové matici hodnotu cesty. Tím jsou vyřazeny body překrývající zdi. Následně jsou odstraněny body v okolí tří dlaždicového radiusu od startovní pozice hráče, aby nedošlo k instantnímu střetu hráče a objektu hned na začátku, a také body na pozici cíle. 
+Body jsou vybírány na základě několika kritérií. Prvním je, že bodem bude vybrána souřadnice, která má ve vzorkovací matici hodnotu 1 a v mapové matici hodnotu cesty. Tím jsou vyřazeny body překrývající zdi. Následně jsou odstraněny body na pozici cíle, a~také v okolí třídlaždicového rádia od startovní pozice hráče, aby nedošlo k instantnímu střetu hráče a objektu hned na začátku.
 
-Všechny zbylé body jsou zapsány do listu a promíchány. Následně se z tohoto seznamu vyjme potřebný počet pozic, které budou umístěny náhodně vybrané objekty. Pokud algoritmus vygeneruje nedostatečný počet vhodných pozic, je spuštěn znovu a nové hodnoty jsou doplněny do původního listu. Toto je opakováno, dokud není získán potřebný počet bodů.
+Všechny zbylé body jsou zapsány do listu a promíchány. Následně se z tohoto seznamu vyjme potřebný počet pozic, na které budou umístěny náhodně vybrané objekty. Pokud algoritmus vygeneruje nedostatečný počet vhodných pozic, je spuštěn znovu a nové hodnoty jsou doplněny do původního listu. Toto je opakováno, dokud není získán potřebný počet bodů.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{obrazky-figures/ch4/vyber_pozic.pdf}
-    \caption{Algoritmus výběru pozic\,--\,zeleně jsou označena výsledné možné pozice entit.}
+    \caption{Algoritmus výběru pozic\,--\,zeleně jsou označeny výsledné možné pozice entit.}
     \label{fig:vyber_pozic}
 \end{figure}
 
 \subsection*{Nepřátelé a pasti}
-Ve hře se vyskytují nepřátelé a pasti, kteří společně tvoří jednu skupinu nazvanou \uv{nepřátelské entity}. Proto jsou k seznamu nepřátel přidány i pasti ve formě vysunovacích bodáků (zbylé pasti jsou považovány za nepřátele). Z tohoto sjednoceného seznamu je pro každou úroveň náhodně vybrán přesný počet objektů, které jsou následně umístěny na hrací pole.
+Ve hře se vyskytují nepřátelé a pasti, kteří společně tvoří jednu skupinu nazvanou \uv{nepřátelské entity}. Proto jsou k seznamu nepřátel přidány i pasti ve formě vysunovacích bodáků (zbylé pasti jsou pokládány nepřáteli). Z tohoto sjednoceného seznamu je pro každou úroveň náhodně vybrán přesný počet objektů, které jsou následně umístěny na hrací pole.
 
-Počet nepřátel na mapě je vyhodnocen na základě hráčovy úrovně. V~následující rovnici~\ref{eq:hostile} figuruje $L$~jakožto označení pro číslo úrovně. Každá skupina dvou úrovní přidává k~počtu nepřátel minulé skupiny úrovní jednoho nepřítele. Například, na úrovních 1~a~2~nejsou žádní nepřátelé. Teprve na úrovních 3, 4 se na každé mapě objeví jeden nepřítel. Až hráč dosáhne úrovní 6, 7 objeví se na mapách dva nepřátelé atd.
+Počet nepřátel na mapě je vyhodnocen na základě úrovně. V~následující rovnici~\ref{eq:hostile} figuruje $L$~jakožto označení pro číslo úrovně. V každé druhé úrovni dochází ke zvýšení počtu nepřátelských entit o jednu. Například, na úrovních 1~a~2~nejsou žádní nepřátelé. Teprve na úrovních 3, 4 se na každé mapě objeví jeden nepřítel. Až hráč dosáhne úrovní 6, 7 objeví se na mapách dva nepřátelé atd.
 
 \begin{equation}
     \text{Počet nepřátel na mapě} = \left\lfloor \frac{\text{L} - 1}{2} \right\rfloor
@@ -951,7 +953,7 @@ Počet nepřátel na mapě je vyhodnocen na základě hráčovy úrovně. V~nás
 \end{equation}
 
 \subsection*{Předměty}
-Pokládání předmětů je přísnější, jak počet pokládaných nepřátelských entit. Předmětů se pokládá průměrně méně než nepřátel, a to kvůli zvyšování obtížnosti hry. Stejně jako nepřátelé jsou vybírány náhodně z jejich seznamu. Rovnice pro potřebný počet pokládaných předmětů je~\ref{eq:item}. V této rovnici $L$~značí číslo úrovně. Rovnice funguje stejně jako rovnice na počet nepřátelských entit~\ref{eq:hostile}, ale zvyšuje se pomaleji. Skupiny úrovní jsou po třech, což znamená, že první tři úrovně hráč neobjeví žádný předmět, další tři na každé mapě jeden~atd.
+Pokládání předmětů je přísnější než počet pokládaných nepřátelských entit. Předmětů se pokládá průměrně méně než nepřátel, a to kvůli zvyšování obtížnosti hry. Stejně jako nepřátelé jsou vybírány náhodně z jejich seznamu. Rovnici~\ref{eq:item} pro počet pokládaných předmětů lze vidět níže. V této rovnici značí $L$~číslo úrovně. Rovnice funguje stejně jako rovnice~\ref{eq:hostile} na počet pokládaných nepřátelských entit, ale zvyšuje se pomaleji. Skupiny úrovní jsou po třech, první tři úrovně tedy hráč neobjeví žádný předmět, další tři na každé mapě jeden~atd.
 
 \begin{equation}
     \text{Počet předmětů na mapě} = \left\lfloor \frac{\text{L} - 1}{3} \right\rfloor
@@ -961,16 +963,16 @@ Pokládání předmětů je přísnější, jak počet pokládaných nepřátels
 %--------------------------
 % Úrovňový systém
 \section{Úrovňový systém}
-Úroveň 1 začíná na poli o velikosti $7 \times 7$ s 0 předměty a nepřáteli. Dále se v každé úrovni pole zvětšuje o $(n + 1) \times (n + 1)$ a entity se přidávají vzhledem k jejich rovnicím.
+Úroveň 1 začíná na poli o velikosti $7 \times 7$ s 0 předměty a nepřáteli. Dále se v každé úrovni pole zvětší na $(n + 1) \times (n + 1)$ ($n$ = velikost strany minulé úrovně) a entity se přidávají vzhledem k jejich rovnicím.
 
-Číslo úrovně je jednou z nejdůležitějších proměnných v celé hře. Na základně úrovně je vybírána velikost bludiště, způsob jeho generování, jeho textura, počet nepřátel a předmětů a také je z něj počítáno skóre.
+Číslo úrovně je jednou z nejdůležitějších proměnných v celé hře. Na základně úrovně je vybírána velikost bludiště, způsob jeho generování, jeho textura, počet nepřátel, předmětů a také je z něj počítáno skóre.
 
 \subsection*{Skóre}
-Rovnice herního skóre~\ref{eq:score} je upravená rovnice~\ref{eq:default_score}. Konstantám odměn je udělena adekvátní hodnota odpovídající splnění úkolu. Za dokončení úrovně ($\alpha$) je uděleno $(50 \times\text{úroveň}) -~\text{čas}$ bodů. Skóre je pojištěné, aby nemohlo dosahovat záporných hodnot. Pokud hráči bude trvat dokončení úrovně déle, než je bodové ohdnocení za ni, získá za tento úkol 0 bodů.
+Rovnice herního skóre~\ref{eq:score} je upravená rovnice~\ref{eq:default_score}. Konstantám odměn je udělena adekvátní hodnota odpovídající splnění úkolu. Za dokončení úrovně ($\alpha$) je uděleno $(50 \times\text{úroveň}) -~\text{čas}$ bodů. Skóre je pojištěné, aby nemohlo dosahovat záporných hodnot. Pokud hráči bude trvat dokončení úrovně déle, než je bodové ohodnocení za ni, získá za tento úkol 0 bodů.
 
 Za bonusové úkoly, kterými je zabití nepřítele ($\beta$), je uděleno skóre $40 \times \text{úroveň}$ bodů a~za~získaný item ($\delta$) je $20 \times \text{úroveň}$ bodů. Jako \textit{Bonus} jsou označeny body, které může hráč získat z předmětu \uv{truhla}.
 
-Skóre je po dosažení každého úkolu přičteno k celkovému skóre, takže se hráči přičtou body např. za sesbírání předmětů i pokud bludiště dokončil neúspěšně.
+Skóre je po dosažení každého úkolu přičteno k celkovému skóre, takže se hráči přičtou body např. za sesbírání předmětů i pokud bludiště nedokončil úspěšně.
 
 \begin{equation}
     \text{Skóre} = ((\text{L} \times 50) - \text{t}) + (\text{E} \times 40) + (\text{I} \times 20) + \textit{Bonus}
@@ -981,7 +983,7 @@ Skóre je po dosažení každého úkolu přičteno k celkovému skóre, takže 
 % TESTOVANI
 %===---------------====
 \chapter{Uživatelské testování}\label{chap:Uživatelské testování}
-Uživatelské testování bylo prováděno formou online anonymního dotazníku (Google Forms), který testované subjekty vyplnily po otestování alfa verze hry. Hra byla testována na počítačích s Windows a Linux operačními systémy. Testery byli aktivní i nezkušení hráči her, naverbováni primárně díky sdílení testovacích prostředků na sociálních sítích.
+Uživatelské testování bylo prováděno formou online anonymního dotazníku (Google Forms), který testované subjekty vyplnily po otestování alfa verze hry. Hra byla testována na počítačích s Windows a Linux operačními systémy. Testeři byli aktivní i nezkušení hráči her. Naverbováni byli primárně díky sdílení testovacích prostředků na sociálních sítích.
 %--------------------------
 \section{Dotazník}
 
@@ -1031,15 +1033,15 @@ Uživatelské testování bylo prováděno formou online anonymního dotazníku 
     \label{fig:nejvyssi_uroven}
 \end{figure}
 
-Otázky byly vytvořeny k testování hlavních aspektů hry, jako je hratelnost, uživatelské rozhraní, stabilita programu a celková náročnost. Dotazník je navržen tak, aby umožňoval rychlé vyhodnocení prostřednictvím výběru z několika otázek s předdefinovanými možnostmi/škálami. V dotazníku je také pár otevřených otázek, a to kvůli využití hromadného testování. Otázky a~jejich typ je vypsán v tabulce~\ref{tab:questions}, některé uzavřené otázky využívají stupnici 1 až 10, kde 1 je nejhorší možnost a 10 nejlepší.
+Otázky byly vytvořeny k testování hlavních aspektů hry, jako je hratelnost, uživatelské rozhraní, stabilita programu a celková náročnost. Dotazník je navržen tak, aby umožňoval rychlé vyhodnocení prostřednictvím výběru z několika otázek s předdefinovanými možnostmi/škálami. V dotazníku je také pár otevřených otázek, a to kvůli využití hromadného testování. Otázky a~jejich typy jsou vypsány v tabulce~\ref{tab:questions}, některé uzavřené otázky využívají stupnici 1 až 10, kde 1 je nejhorší možnost a 10 nejlepší.
 
 %--------------------------
 % Analýza výsledků
 \section{Analýza výsledků} \label{chap:Analýza výsledků}
-Byly získány odpovědi od 22 subjektů, kompletní výpis všech odpovědí je dostupný v příloze~\ref{chap:user_testing}. Hráči strávili hraním hry průměrně půl hodiny s mediánem 20 minut. Průměrná úroveň, které dosáhli byla úroveň 14 a nejvyšší dosažený level byl 28, viz obrázek~\ref{fig:nejvyssi_uroven}.
+Byly získány odpovědi od 22 subjektů, kompletní výpis všech odpovědí je dostupný v příloze~\ref{chap:user_testing}. Hráči strávili hraním hry průměrně půl hodiny s mediánem 20 minut. Průměrně hráči dosáhli 14. úrovně a nejvýše bylo dosaženo úrovně 28, viz obrázek~\ref{fig:nejvyssi_uroven}.
 
 \subsection*{Hratelnost}
-Celkový dojem hráčů ze hry byl spíše kladný, jak je vidět na obrázku s grafem~\ref{fig:hodnoceni_celkovy_dojem}. Největší problém byl se způsobem počítání skóre, u kterého připouštím, že první verze nebyla dokonalá. Hlavním problémem bylo, že skóre bylo rozděleno dle stupňů, které nebyly rozděleny adekvátně tak aby odpovídaly jejich společné časové náročnosti. To následně vytvořilo problém, že někteří hráči získávali za vyšší úrovně skóre záporné. Skóre se také občas špatně řadilo v tabulce výsledků. K tomuto jevu podle testerů docházelo, pokud bylo v tabulce více příspěvků se stejným jménem. Také se objevila stížnost na chybějící návod na ovládání.
+Celkový dojem hráčů ze hry byl spíše kladný, jak je vidět na obrázku s grafem~\ref{fig:hodnoceni_celkovy_dojem}. Jedny z nejčastějších výtek se týkaly způsobu výpočtu skóre. Hlavním problémem bylo rozdělení skóre do stupňů, které nebyly adekvátně nastaveny tak aby, odpovídaly jejich společné časové náročnosti. To následně vytvořilo problém, kdy někteří hráči získávali za vyšší úrovně skóre záporné. Skóre se také občas špatně řadilo v tabulce výsledků. K tomuto jevu podle testerů docházelo, pokud bylo v tabulce více příspěvků se stejným jménem. Také se objevila stížnost na chybějící instrukce k ovládání hry.
 
 \begin{figure}[ht]
     \centering
@@ -1066,14 +1068,14 @@ Celkový dojem hráčů ze hry byl spíše kladný, jak je vidět na obrázku s 
     \label{fig:hodnoceni_celkovy_dojem}
 \end{figure}
 
-Dalším problémem, na který několik testerů upozornilo, byla absence legendy, či vysvětlení významu a vlastností objektů ve hře (předmětů a nepřátel). To také vyvolávalo zmatení u některých předmětů, jelikož hráči očekávali jinou funkci\,--\,například předmět truhly původně po sebrání jen zmizel bez dodatečných efektů, což u hráče vyvolalo zmatení, jelikož očekával, že dostane nějaký bonusový předmět, přestože truhla dodává pouze bonusové skóre.
+Dalším problémem, na který několik testerů upozornilo, byla absence legendy, či vysvětlení významu a vlastností objektů ve hře (předmětů a nepřátel). To také vyvolávalo zmatení u některých předmětů, jelikož hráči očekávali jinou funkci\,--\,například předmět truhly v alfa verzi hry po sebrání zmizel bez dodatečných efektů, což u hráčů vyvolávalo zmatení. Ti totiž očekávali zisk nějakého bonusového předmětu, truhla nicméně hráče obdarovává pouze bonusovým skóre.
 
-Objevilo se také několik drobných technických problémů, a to u kamery s pohledem na hráče, jež dle recenzí testerů nebyla vhodně vycentrovaná a optimalizovaná pro rychlost hratelné postavy, kvůli čemuž se hráči setkávali s problémem že kamera \uv{nestíhala} zabírat postavičku při vertikálním pohybu a nastávaly neočekávané kolize se zdmi/pastmi či nepřáteli. To mohlo vést i k pocitu, že kamera zabírá moc malé území. Také si jeden tester povšiml, že hráčská postava se pohybuje diagonálně rychleji, než vertikálně a horizontálně, a že vyslání signálu útoku hráče není správně synchronizované s animací útoku, jelikož postava prvně zaútočí a odebere životy nepřátelům a následně se provede animace seknutí.
+Objevilo se také několik drobných technických problémů, a to u kamery s pohledem na hráče, jež dle recenzí testerů nebyla vhodně vycentrovaná a optimalizovaná pro rychlost hratelné postavy. Kvůli tomu se hráči setkávali s problémem, kdy kamera \uv{nestíhala} zabírat postavičku při vertikálním pohybu a nastávaly neočekávané kolize se zdmi, pastmi, či nepřáteli. To mohlo též vést k pocitu, že kamera zabírá moc malé území. Jeden z testerů si také povšiml, že hráčská postava se pohybuje diagonálně rychleji, než vertikálně a horizontálně, nebo že vyslání signálu útoku hráče není správně synchronizované s animací útoku, jelikož postava prvně zaútočí a odebere životy nepřátelům a následně se provede animace seknutí.
 
 Hráči také vyjádřili své přání k budoucím implementacím pro zvýšení zábavnosti hry. Těmito návrhy bylo například přidání hudby, či možnost úpravy hratelné postavy za získané skóre (jako měna).
 
 \subsection*{Uživatelské rozhraní a grafická stránka hry}
-Uživatelské rozhraní hodnotili testeři kladně, pouze s drobnými chybičkami\,--\,průměrný výsledek hodnocení je 8, tedy blíže k velmi přehledné s mediánem 8,5, jak je vidět na obrázku~\ref{fig:hodnoceni_ui}. Hráči oceňovali nápaditost a jednoduchost grafické a pixelové stránky hry. 
+Uživatelské rozhraní hodnotili testeři kladně, pouze s drobnými problémy\,--\,průměrný výsledek hodnocení je 8 s mediánem 8,5, tedy blíže k velmi přehledné, jak je vidět na obrázku~\ref{fig:hodnoceni_ui}. Hráči oceňovali nápaditost a jednoduchost grafické a pixelové stránky hry. 
 
 \begin{figure}[hb]
 \centering
@@ -1100,16 +1102,16 @@ Uživatelské rozhraní hodnotili testeři kladně, pouze s drobnými chybičkam
 \label{fig:hodnoceni_ui}
 \end{figure}
 
-Nejčastěji opakovanou potřebou byla žádost na zobrazování skóre či uběhlého času v~úrovni, a ne pouze na konci u vyhodnocení, jelikož hráči byli zmatení nad způsobem počítání skóre. Na rozložení se objevila se pouze jedna stížnost testera, který byl zmatený umístěním srdíček, označující životy a jejich významem. Jiné stížnosti na rozložení nebyly, pouze jeden tester vyjádřil přání lepší viditelnosti zvoleného tlačítka, jelikož dle něj nebyl původní způsob dostatečně viditelný (byla pouze měněna barva textu tlačítka).
+Nejčastěji opakovanými potřebami byly žádosti na zobrazování skóre a uběhlého času v~úrovni, nikoliv pouze na konci u vyhodnocení. Tyto žádosti vyplynuly ze zmatení nad způsobem výpočtu skóre. Na rozložení se objevila se pouze jedna stížnost testera, který byl zmatený umístěním srdíček označujících životy a jejich významem. Jedinou další stížností k~rozložení hry bylo přání jednoho testera pro lepší viditelnosti zvoleného tlačítka, jelikož dle něj nebyl původní způsob dostatečně viditelný (byla pouze měněna barva textu tlačítka).
 
-K ovládání se objevili stížnosti u hráčů hrajících pomocí šipek, jelikož ty jsou propojené i s ovládáním tlačítek v různých menu. Podle hráčů při vertikálnímu vstupu do portálu mohlo dojít k neočekávanému vypnutí hry, jelikož šipky ihned začaly reagovat v ovládání menu. V otázce o dalších funkcích byla odpověď s návrhem na odchod z pauzy pomocí \textit{Esc} tlačítka. Jeden tester také vyjádřil žádost, aby se hra ihned po spuštění nedostávala do módu celé obrazovky, ale například jen do maximalizace, a to kvůli lepšímu manipulování při využití více obrazovek.
+K ovládání se objevily stížnosti u hráčů hrajících pomocí šipek, jelikož ty jsou propojené i~s~ovládáním tlačítek v různých menu. Podle hráčů při vertikálnímu vstupu do portálu mohlo dojít k neočekávanému vypnutí hry, jelikož šipky ihned začaly reagovat v ovládání menu. V~otázce o dalších funkcích byla odpověď s návrhem na odchod z pauzy pomocí \textit{Esc} tlačítka. Jeden tester také vyjádřil žádost, aby se hra ihned po spuštění nedostávala do módu celé obrazovky, ale například jen do maximalizace, a to kvůli lepšímu manipulování při využití více obrazovek.
 
-Pár drobných grafických úprav si dle testerů vyžádaly i některé předměty, jako například meč (předmět zvyšující poškození) u kterého nebylo nijak jasné, že se násobní, nebo předmět truhly, který po jejím sebrání nedával nijak najevo jaký byl jeho význam. U pasti byl objeven problém s chybně vloženou texturou, takže se při hraní zobrazovala část textury jiné.
+Pár drobných grafických úprav si dle testerů vyžádaly i některé předměty. Příkladem může být meč (předmět zvyšující poškození) u kterého nebylo nijak jasné, že se poškození násobí, nebo předmět truhly, který po jejím sebrání nedával nijak najevo, jaký byl jeho význam. U pasti byl objeven problém s chybně vloženou texturou, takže se při hraní zobrazovala část textury jiné.
 
 \subsection*{Stabilita programu}
-Většina testerů (90\%, viz obrázek~\ref{fig:hodnoceni_stabilita}) označila hru jako stabilní a plynulou, nesetkali se tedy s žádným zbytečně dlouhým čekáním na generování nové úrovně či pády hry.
+Většina testerů (90 \%, viz obrázek~\ref{fig:hodnoceni_stabilita}) označila hru jako stabilní a plynulou, nesetkali se tedy s žádným zbytečně dlouhým čekáním na generování nové úrovně, ani s pády hry.
 
-Pouze 10\% (2 testeři) mělo drobné problémy, z nichž jeden se týkal pádu hry po zadaní jména a stisknutí \textit{Enter}\,--\,po znovuspuštění hry bylo ale vše úspěšně uloženo. Tato chyba se však nepodařila replikovat. Druhý tester zaznamenal občasné záseky, ale dle zbytku jeho vyplněného dotazníku se tyto problémy zdají být spojeny spíše s chováním nepřítele \uv{boar}/divočák (viz další podkapitola) než se stabilitou hry samotné.\\
+Pouze 10 \% (2 testeři) mělo drobné problémy, z nichž jeden se údajně týkal pádu hry po zadaní jména a stisknutí \textit{Enter}\,--\,po znovuspuštění hry bylo ale vše úspěšně uloženo. Tato chyba se však nepodařila replikovat. Druhý tester zaznamenal občasné záseky, ale dle zbytku jeho vyplněného dotazníku se tyto problémy zdají být spojeny spíše s chováním nepřítele \uv{boar}/divočák (viz další podkapitola), než se stabilitou hry samotné.\\
 
 \begin{figure}[hb]
     \centering
@@ -1151,33 +1153,34 @@ Pouze 10\% (2 testeři) mělo drobné problémy, z nichž jeden se týkal pádu 
 \end{figure}
 
 \subsection*{Náročnost}
-Na náročnost hry a její postupné zvyšování obtížností úrovně byl převážně kladný názor (jak je vidět na obrázku~\ref{fig:hodnoceni_vyvazenost}), i~když se našli někteří (3 testeři), kteří nepocítili rozdíly mezi různými úrovněmi. Někteří si naopak přáli možnost lehčího vyhýbání se nepřátelům, jelikož boje byly moc složité a bylo na ně málo místa. Také ale přišlo pár žádostí na ulehčení bloudění, a to například přidáním odhalující se minimapy, předmětu na poznačování cest, či seznamu hledaných předmětů a~nepřátel na začátku úrovně. Pár hráčům přišlo, že se nepřátelé a předměty neobjevují nějak kontrolovaně, například že v některých úrovních se jim nepovedlo potkat žádného nepřítele a v jiných i několik. Podobné reakce byly~i~u~předmětů a jeden tester dokonce oznámil, že se mu v jedné úrovni nedařilo najít konec hry (portál). 
+Na náročnost hry a její postupné zvyšování obtížností úrovně byl převážně kladný názor (jak je vidět na obrázku~\ref{fig:hodnoceni_vyvazenost}), i~když se našli někteří (3 testeři), kteří nepocítili rozdíly mezi různými úrovněmi. Někteří si naopak přáli možnost snadnějšího vyhýbání se nepřátelům, jelikož boje byly moc složité a bylo na ně málo prostoru. Také ale přišlo pár žádostí na ulehčení bloudění, a to například přidáním odhalující se minimapy, předmětu na poznačování cest, či seznamu hledaných předmětů a~nepřátel na začátku úrovně. Pár hráčům přišlo, že se nepřátelé a předměty neobjevují nějak kontrolovaně, například že v některých úrovních se jim nepovedlo potkat žádného nepřítele a v jiných i několik. Podobné reakce byly~i~u~předmětů, jeden tester dokonce oznámil, že se mu v jedné úrovni nedařilo najít konec hry (portál). 
 
-Na základě zpětné vazby ohledně obtížnosti hry bylo nutné přemýšlet nad úpravou některých herních objektů. Jedním z nich byly boty/předmět na zrychlení, které poskytovaly hráči velké zrychlení po omezenou dobu. Další stížnosti se týkaly nepřítele \uv{slime}, který byl příliš obtížný kvůli svému excesivnímu zpomalení hráče. Také byly identifikovány problémy s nepřítelem \uv{boar}/divočák, který se zasekával na hráčské postavě kvůli svému speciálnímu útoku a často zůstával uvízlý na zdech, což snižovalo jeho herní výzvu.
+Na základě zpětné vazby ohledně obtížnosti hry bylo nutné přemýšlet nad úpravou některých herních objektů. Jedním z nich byly boty\,--\,předmět na zrychlení, který poskytoval hráči velké zrychlení po omezenou dobu. Další stížnosti se týkaly nepřítele \uv{slime}, který byl příliš obtížný kvůli svému excesivnímu zpomalení hráče. Také byly identifikovány problémy s nepřítelem \uv{boar}/divočák, který se zasekával na hráčské postavě kvůli svému speciálnímu útoku a často zůstával uvízlý na zdech, což snižovalo jeho herní výzvu.
 
 %--------------------------
 % Závěr testování
 \section{Závěr testování}
-Na základě dotazníku byla vyhodnocena zpětná vazba, včetně otázky číslo 9 \uv{Jaké další funkce/vlastnosti/prvky byste ve hře ocenili/změnili?}, návrhy a poznámky byly rozděleny na skupiny \uv{implementované} a \uv{zavrhnuté a pro budoucí práci} a to v závislosti na jejich důležitosti pro hratelnost/vyváženost/chod hry, složitosti implementace a dle počtu žádostí o změnu/přidání.
+Na základě dotazníku byla vyhodnocena zpětná vazba, včetně otázky číslo 9\,--\,\uv{Jaké další funkce/vlastnosti/prvky byste ve hře ocenili/změnili?}. Návrhy a poznámky byly rozděleny na skupiny \uv{implementované} a \uv{zavrhnuté a pro budoucí práci} a to v závislosti na jejich důležitosti pro hratelnost/vyváženost/chod hry, složitosti implementace a dle počtu žádostí o změnu/přidání.
 
 \subsection*{Implementované změny}
 Důležitým kritériem pro výběr návrhu na implementaci byl počet žádostí o konkrétní změnu/přidání a časová složitost implementace prvků.
 
 \subsubsection*{\textbullet Hratelnost}
-Hlavním problémem, který vyžadoval opravu, jak je již zmíněno v kapitole~\ref{chap:Analýza výsledků} Analýza výsledků, bylo počítání skóre. Bylo zjištěno, že původní způsob výpočtu skóre nedokázal zaručit správnou funkcionalitu a přesnost výsledků, jelikož se hráč mohl dostat do záporného skóre u delšího prohledávání bludiště. Proto byla vytvořena nová rovnice~\ref{eq:score} na počítání skóre. Ta byla navržena a implementována tak, aby lépe odpovídala požadavkům hry a lépe reflektovala dobu na projití zvětšujících se bludišť v úrovních. Dále byla do kódu přidána kontrola, která zajišťuje, že výsledné skóre z úrovně nemůže být nižší než 0, což předchází možným nekonzistencím a nežádoucím stavům hry.
+Hlavním problémem, který vyžadoval opravu, jak již bylo zmíněno v kapitole~\ref{chap:Analýza výsledků}, bylo počítání skóre. Bylo zjištěno, že původní způsob výpočtu skóre nedokázal zaručit správnou funkcionalitu a přesnost výsledků, jelikož se hráč mohl dostat do záporného skóre u delšího prohledávání bludiště. Proto byla vytvořena nová rovnice~\ref{eq:score} na počítání skóre. Ta byla navržena a implementována tak, aby lépe odpovídala požadavkům hry a lépe reflektovala dobu na projití zvětšujících se bludišť v úrovních. Dále byla do kódu přidána kontrola, která zajišťuje, že výsledné skóre z úrovně nemůže být nižší než 0, což předchází možným nekonzistencím a nežádoucím stavům hry.
 
-Dalším vylepšením bylo provedení změny v metodě řazení skóre. Namísto původního nativního Godot řazení byl implementován lehčí a spolehlivější bubble sort algoritmus. Tato úprava přinesla zlepšení jak efektivity, tak i přehlednosti kódu a zajištění lepšího výkonu hry při zpracování a řazení skóre hráčů.
+Dalším vylepšením byla úprava v metodě řazení skóre. Původní řazení totiž nefungovalo podle očekávání a objevovaly se chyby při více vstupech se stejným jménem. V nové verzi hry se již tento problém nevyskytuje.
 
 Druhý častý problém testerů byl s nepochopením významu některých předmětů, a tedy i absence legendy/průvodce herními objekty. Proto byla přidaná do menu záložka \uv{Guide}, neboli \uv{Průvodce}, jenž má čtyři stránky. První stránka \uv{Basics}, vysvětluje hráči základní ovládání, prioritu úkolů pro získání nejvyššího skóre a připomíná hráči mortalitu jeho herní postavy v závislosti na ikonách srdíček v levé části obrazovky. Další část \uv{Enemies} popisuje všechny nepřátele ve hře, jejich životy a speciální vlastnosti. Vlastnosti předmětů a~pastí/překážek pak popisují stránky \uv{Items} a \uv{Traps}.
 
-Následně bylo potřeba upravit pohled kamery, aby se zabránilo problémům s postavičkou opouštějící střed obrazovky a způsobující nečekané kolize. Řešením bylo zvýšení rychlosti posunu kamery (na 16 pixelů, velikost 1 dlaždice hry) a důkladnější vycentrování postavy, rozdíl mezi původní kamerou a novou je vidět na obrázku~\ref{fig:rozdil_kamer}.
+Následně bylo potřeba upravit pohled kamery, aby se zabránilo problémům s postavičkou opouštějící střed obrazovky a způsobující nečekané kolize. Řešením bylo zvýšení rychlosti posunu kamery (na 16 pixelů, velikost 1 dlaždice hry) a důkladnější vycentrování postavy. Rozdíl mezi původní kamerou a novou lze vidět na obrázku~\ref{fig:rozdil_kamer}.
 
-Hráčská postava prošla také aktualizací, jelikož její diagonální pohyb je v aktualizované formě stejně rychlý jak pohyb vertikální/horizontální, čehož bylo docíleno pomocí normalizace rychlostního vektoru. Také byl upraven čas vyslání signálu útoku hráče na nepřítele, aby byl synchronizovaný s animací útoku (čas kdy hráčská postava sekne zbraní, oproti původnímu napřahování se).
+Hráčská postava prošla také aktualizací, jelikož její diagonální pohyb je v aktualizované verzi stejně rychlý, jako je rychlost vertikálního/horizontálního pohybu, čehož bylo docíleno pomocí normalizace rychlostního vektoru. Také byl upraven čas vyslání signálu útoku hráče na nepřítele, aby byl synchronizovaný s animací útoku (čas kdy hráčská postava sekne zbraní, oproti původnímu napřahování se).
 
+\vspace{0.5cm}
 \begin{figure}[hb]
     \centering
-    \includegraphics[width=0.45\textwidth]{obrazky-figures/ch5/old_camera.png}\hspace{0.5cm}
-    \includegraphics[width=0.474\textwidth]{obrazky-figures/ch5/new_camera.png}
+    \includegraphics[width=0.46\textwidth]{obrazky-figures/ch5/old_camera.png}\hspace{0.5cm}
+    \includegraphics[width=0.484\textwidth]{obrazky-figures/ch5/new_camera.png}
     \caption{Rozdíl mezi pohledem staré kamery (vlevo) a nové (vpravo).}
     \label{fig:rozdil_kamer}
 \end{figure}
@@ -1192,20 +1195,21 @@ Hráčská postava prošla také aktualizací, jelikož její diagonální pohyb
 
 
 \subsubsection*{\textbullet Uživatelské rozhraní a grafická stránka hry}
-Z pohledu uživatelského rozhraní bylo na žádost testerů přidáno viditelné počítaní času stráveného na úrovni v horní liště hry. Je to kompromis, jelikož kvůli způsobu počítaní skóre (tedy odečítání uplynulého času) by bylo ubývající skóre pro hráče matoucí. V liště byl i zvětšen text popisků informačních sloupců (\uv{HP} a \uv{MODS}) pro zdůraznění jejich důležitosti.
+Z pohledu uživatelského rozhraní bylo na žádost testerů přidáno viditelné počítaní času stráveného na úrovni v horní liště hry. Je to kompromis, jelikož kvůli způsobu počítaní skóre (tedy odečítání uplynulého času) by bylo ubývající skóre pro hráče matoucí. V liště byl také zvětšen text popisků informačních sloupců (\uv{HP} a \uv{MODS}) pro zdůraznění jejich důležitosti.
 
-Významnou změnou pro UI je přidání několika-setinového zamrznutí ovládání po vstupu do obrazovky shrnující úspěšné dokončení úrovně. K tomu byla přidána vyskakující okna potvrzující hráčovo rozhodnutí o opuštění hry, či navrácení se ze hry do menu. Tyto změny byly mířené na testery, kteří měli problém s mylným vypínáním hry. Pro hráčské pohodlí je hra spouštěna namísto předvolby celé obrazovky pouze v maximalizovaném okně. Také hráčům bylo umožněno odejít z pauzy pomocí žádaného tlačítka \textit{Esc}. Dále byla poupravena textura zvolených tlačítek, a to pomocí přidání světlého rámečku ohraničující vybrané tlačítko.
-Ikony vylepšení v sloupci \uv{MODS} prošly grafickou úpravou. Při sbírání mečů se nyní zobrazuje ikona meče, nově s rámečkem, vyjadřujícím poškození. Podobně byla upravena ikona bot pro zrychlení, která nově zobrazuje násobek původní rychlosti. Obě nové ikony jsou vidět na obrázku~\ref{fig:new_icons}. Byla také přidána animace přičtení skóre při sebrání truhly pro vizuální vysvětlení jejího významu. Textura pasti byla opravena a již nezobrazuje kus jiné textury.
+Významnou změnou pro UX je přidání několikasetinového zablokování ovládání šipkami po dokončení úrovně. K tomu byla přidána vyskakovací okna potvrzující hráčovo rozhodnutí o opuštění hry, či navrácení se ze hry do menu. Tyto změny byly mířené na testery, kteří měli problém s nechtěným vypínáním hry. Pro hráčské pohodlí je hra spouštěna namísto předvolby celé obrazovky pouze v maximalizovaném okně. Také bylo hráčům umožněno odejít z pauzy pomocí žádané klávesy \textit{Esc}. Dále byla upravena textura zvolených tlačítek, a to pomocí přidání světlého rámečku ohraničující vybrané tlačítko.
+
+Ikony vylepšení v sloupci \uv{MODS} prošly grafickou úpravou. Při sbírání mečů se nyní zobrazuje ikona meče, nově s rámečkem vyjadřujícím poškození. Podobně byla upravena ikona bot pro zrychlení, která nově zobrazuje násobek původní rychlosti. Obě nové ikony jsou vidět na obrázku~\ref{fig:new_icons}. Byla také přidána animace přičtení skóre při sebrání truhly pro vizuální vysvětlení jejího významu. Textura pasti byla opravena a již nezobrazuje kus jiné textury.
 
 \subsubsection*{\textbullet Stabilita programu}
 Jak již bylo zmíněno v analýze dotazníku, při dodatečném testování nebylo možné zreplikovat pád hry, jenž jeden z testerů popisoval. I tak ale byla přidána ikona potvrzení jména po stisknutí klávesy \textit{Enter} na obrazovce konce hry, která má naznačovat uživateli úspěšné dokončení uložení výsledků hry. Vzhledem k spokojenosti ostatních testerů se stabilitou hry nebylo třeba implementovat žádné úpravy zajišťující lepší stabilitu.
 
 \subsubsection*{\textbullet Náročnost}
-Vzhledem k několika zmínkám ve zpětné vazbě o nesprávném generování, kdy chyběly v~některých úrovních nepřátelé, předměty a či portál/cíl hry, bylo provedeno důkladné testování na mnoha úrovních testujících, zda algoritmy generování odpovídají očekávaní. I tak ale byly upraveny pro konzistentnější míru objevování jak předmětů, tak nepřátel a zabránění zmatení.
+Vzhledem k několika zmínkám ve zpětné vazbě o nesprávném generování, kdy chyběly v~některých úrovních nepřátelé, předměty, či dokonce portál/cíl hry. Bylo provedeno důkladné testování na mnoha úrovních testující, zda algoritmy generování odpovídají očekávaní. Správnost algoritmů byla potvrzena, přesto ale byly upraveny pro konzistentnější míru objevování jak předmětů, tak nepřátel a pro celkové zabránění zmatení.
 
-Na základě zpětné vazby byla upravena celková náročnost hry. Jelikož pár hráčům přišlo, že se obtížnost zvyšuje moc pomalu, byla snížena úroveň, na které se poprvé objeví nepřítel na úroveň 3. Naopak ale byla podpořena výzva pro možnost procházení bludiště bez bojů díky zmenšení nepřátelských modelů a snížení vzdálenosti od které začnou pronásledovat hráče na 3 bloky. Na vyvážení této změny byla zvýšena bodová odměna za zabití nepřítele. Díky tomu má hráč stále motivaci s nepřáteli raději bojovat než se jim vyhýbat.
+Na základě zpětné vazby byla upravena celková náročnost hry. Jelikož pár hráčům přišlo, že se obtížnost zvyšuje příliš pomalu, byla snížena úroveň, na které se poprvé objeví nepřítel na úroveň 3. Naopak ale byla podpořena výzva pro možnost procházení bludiště bez bojů díky zmenšení nepřátelských modelů a snížení vzdálenosti, od které začnou hráče pronásledovat, na 3 bloky. Na vyvážení této změny byla zvýšena bodová odměna za zabití nepřítele. Díky tomu má hráč stále motivaci s nepřáteli raději bojovat, než se jim vyhýbat.
 
-Byl přepracován předmět lektvar zrychlení, který nyní poskytuje dlouhodobé mírné zrychlení hráče, na rozdíl od původního krátkodobého rapidního zrychlení. Úpravu dostal i \uv{slime} (zpomalovací nepřítel), jehož zpomalení se již nenásobí, ale pouze obnovuje časovač zpomalení a jeho zdraví bylo sníženo z 10 na 8. Nakonec byl odstraněn nepřítel \uv{boar}/divočák, který byl na základě dodatečného testování a snah o opravu vyhodnocen jako nevhodný do prostorů bludiště.
+Byl přepracován předmět lektvar zrychlení, který nyní poskytuje dlouhodobé mírné zrychlení hráče oproti původnímu krátkodobému rapidnímu zrychlení. Úpravu dostal i~nepřítel \uv{slime} (zpomalovací nepřítel), jehož zpomalení se již nenásobí, ale pouze obnovuje časovač zpomalení a jeho zdraví bylo sníženo z 10 na 8. Nakonec byl odstraněn nepřítel \uv{boar}/divočák, který byl na základě dodatečného testování a snah o opravu vyhodnocen jako svým návrhem nevhodný do prostor bludiště.
 
 \subsection*{Zavrhnuté návrhy a návrhy pro budoucí práci}
 Ve zpětné vazbě bylo získáno mnoho návrhů na úpravu hry. Některé z nich byly bohužel komplexní a vzhledem k období, ve kterém se testování odehrávalo, již nebyl čas je implementovat. Jiné byly naopak vyhodnoceny jako nápady, které by podkopávaly hlavní nápad hry, tedy bloudění a simulace reálného labyrintu.
@@ -1213,7 +1217,7 @@ Ve zpětné vazbě bylo získáno mnoho návrhů na úpravu hry. Některé z nic
 \noindent Zavrhnuté nápady:
 \begin{itemize}
     \item Zobrazení skóre ve hře\,--\,matoucí kvůli způsobu počítání skóre, nahrazeno zobrazením času.
-    \item  Ukázka získatelných předmětů na začátku úrovně\,--\, nabádalo by k ignorování nepotřebných předmětů, čímž by byl ztracen důvod pro důkladné prohledávání bludiště.
+    \item  Ukázka získatelných předmětů na začátku úrovně\,--\,nabádalo by k ignorování nepotřebných předmětů, čímž by byl ztracen důvod pro důkladné prohledávání bludiště.
     \item  Oddálení kamery\,--\,aktuální velikost ideální k udržení zmatení simulující bloudění.
     \item Zobrazení dokončené mapy bludiště\,--\,rušivé, bránící plynulému přechodu do další úrovně.
 \end{itemize}
@@ -1224,7 +1228,7 @@ Ve zpětné vazbě bylo získáno mnoho návrhů na úpravu hry. Některé z nic
     (návrh na obrázku~\ref{fig:map_idea}).
     \item Hudba\,--\,není čas a přístup k vytvoření vlastní hudby.
     \item Obchod/Editace postavy za sesbírané skóre\,--\,podporuje opakované hraní hry kvůli získaní přizpůsobitelných předmětů.
-    \item  Předmět na poznačování prošlých úseků\,--\,vhodný pro pozdější, větší, úrovně, možnost implementace jako sbíratelný předmět.
+    \item  Předmět na poznačování prošlých úseků\,--\,vhodný pro pozdější větší úrovně, možnost implementace jako sbíratelný předmět.
 \end{itemize}
 
 \begin{figure}[H]
@@ -1238,15 +1242,15 @@ Ve zpětné vazbě bylo získáno mnoho návrhů na úpravu hry. Některé z nic
 % ZAVER
 %===---------------====
 \chapter{Závěr}\label{chap:Závěr}
-Cílem práce bylo vytvořit procedurální generátor labyrintů pomocí celulárních automatů a~následně ho implementovat do hry, což bylo úspěšně dosaženo.
+Cílem práce bylo vytvořit procedurální generátor labyrintů pomocí celulárních automatů a~následně ho implementovat do hry, čehož bylo úspěšně dosaženo.
 
-Techniky herního vývoje jsou popsány v kapitole~\ref{chap:Aspekty vývoje videoher}. Konkrétněji v jejím úvodu je uveden postup vývoje a v podkapitole~\ref{chap:Herní engine} různé populární herní engine. Z~těchto zmíněných herních engine byl pro implementaci finální hry vybrán Godot a to kvůli jeho vlastnostem a lehkosti implementace 2D her. Dalším úkolem zadání bylo nastudovat techniky generování herních labyrintů\,--\,tomu je věnována část kapitoly~\ref{chap:Celulární automaty}. Ta popisuje možnosti využití celulárních automatů na procedurální generování jak terénů obecně, tak labyrintů. Návrh a~popis implementace jak procedurálního generátoru bludišť, tak labyrintové hry samotné se nachází v kapitolách~\ref{chap:Koncept 2D labyrintové hry} a~\ref{Tvorba bludiště a realizace hry}. Hra byla uživatelsky testována, analýza a popis implementace výsledků se nachází v kapitole~\ref{chap:Uživatelské testování}. Možnosti publikace jsou popsané v~podkapitole \uv{Publikace} kapitoly~\ref{chap:Koncept 2D labyrintové hry}. Demonstrační video je přiloženo v odevzdaném adresáři (viz příloha~\ref{chap:file_directory}).
+Techniky herního vývoje jsou popsány v kapitole~\ref{chap:Aspekty vývoje videoher}. Konkrétněji v jejím úvodu je uveden postup vývoje a v podkapitole~\ref{chap:Herní engine} různé populární herní enginy. Z~těchto zmíněných herních enginů byl pro implementaci finální hry vybrán Godot, a to pro jeho vlastnosti a~zaměření na implementaci 2D her. Dalším úkolem zadání bylo nastudovat techniky generování herních labyrintů\,--\,tomu je věnována část kapitoly~\ref{chap:Celulární automaty}. Ta popisuje možnosti využití celulárních automatů na procedurální generování jak terénů obecně, tak labyrintů. Návrh a~popis implementace jak procedurálního generátoru bludišť tak labyrintové hry samotné se nachází v kapitolách~\ref{chap:Koncept 2D labyrintové hry} a~\ref{Tvorba bludiště a realizace hry}. Hra byla uživatelsky testována, analýza a popis implementace výsledků se nachází v kapitole~\ref{chap:Uživatelské testování}. Možnosti publikace jsou popsané v~podkapitole \uv{Publikace} kapitoly~\ref{chap:Koncept 2D labyrintové hry}. Demonstrační video je přiloženo v odevzdaném adresáři (viz příloha~\ref{chap:file_directory}).
 
-Vytvořený generátor labyrintů dokáže procedurálně generovat 2D bludiště různých velikostí. Nejoptimálnější výsledky však generuje až od velikosti $7 \times 7$, proto jsou tyto rozměry využity i jako startovní úroveň v naimplementované hře. Díky využití celulárních automatů je generování rychlé a efektivní, proto je ideální na využití ve hrách. V naimplementované hře díky tomu hráč může plynule přecházet mezi úrovněmi bez čekání na načtení nové mapy. Hra obdržela pozitivní hodnocení od jejích testerů. Byla zanalyzována zpětná vazba a byly naimplementovány návrhy, které byly vyhodnoceny jako žádané/potřebné. Kromě generovaných bludišť hra obsahuje také různé nepřátele s unikátními mechanikami, předměty pro hráče na sběr a úrovňový systém. Hráč je za dokončování bludiště odměňován body a jeho úkolem je dostat se do co nejvyšší úrovně.
+Vytvořený generátor labyrintů dokáže procedurálně generovat 2D bludiště různých velikostí. Nejvhodnější výsledky však generuje až od velikosti $7 \times 7$, proto jsou tyto rozměry využity i jako startovní úroveň v naimplementované hře. Díky využití celulárních automatů je generování rychlé a efektivní, proto je ideální na využití ve hrách. Díky tomu hráč může v~naimplementované hře plynule přecházet mezi úrovněmi bez čekání na načtení nové mapy. Hra obdržela pozitivní hodnocení od jejích testerů. Byla zanalyzována zpětná vazba a byly implementovány návrhy, které byly vyhodnoceny jako vysoce žádané a potřebné. Kromě generovaných bludišť hra obsahuje také různé nepřátele s unikátními mechanikami, sbíratelné předměty pro hráče a úrovňový systém. Hráč je za dokončování bludiště odměňován body a jeho úkolem je dostat se do co nejvyšší úrovně.
 
 Tato práce mi poskytla příležitost naučit se pracovat s herním enginem Godot a jeho jazykem GDScript. Také mi dala zkušenosti z vývoje mé první hry a náhled do způsobů procedurálního generování.
 
-Budoucí práce vyžaduje hlavně rozšíření hry. Bylo by možné přidat návrhy testerů (z kapitoly~\ref{chap:Uživatelské testování}), které nebylo, kvůli časové náročnosti, možné přidat do odevzdání práce. Těmi je například implementace lehčí verze pro hru, kde hráč bude mít k dispozici odhalovací minimapu, či obchod, kde bu hráč mohl spotřebovat své nasbírané skóre. Dalším nápadem je implementace vylepšeného generování, jenž by tvořilo v bludišti větší místnosti. V těchto místnostech by se hráč mohl utkat se silnějšími nepřáteli (tzv. \uv{boss}). Tento prvek by přidal do hry možnost lepšího taktizování a prvek rozptýlení od neustálého bloudění.
+Budoucí práce vyžaduje hlavně rozšíření hry. Bylo by možné přidat návrhy z uživatelského testování (z~kapitoly~\ref{chap:Uživatelské testování}), které nebylo z důvodu časové náročnosti možné přidat do odevzdání práce. Těmi je například implementace lehčí verze pro hru, kde hráč bude mít k dispozici odhalovací minimapu, či obchod, kde bu hráč mohl spotřebovat své nasbírané skóre. Dalším nápadem je implementace vylepšeného generování, jenž by tvořilo v bludišti větší místnosti. V těchto místnostech by se hráč mohl utkat se silnějšími nepřáteli (tzv. \uv{boss}). Tento element by přidal do hry možnost lepšího taktizování a prvek rozptýlení od neustálého bloudění.
 
 %===============================================================================
 
